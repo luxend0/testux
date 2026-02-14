@@ -13,6 +13,7 @@ qt_add_executable(testux src/main.cpp)
 qt_add_qml_module(testux
     URI Testux
     VERSION 1.0
+    SOURCES src/launcher.h src/launcher.cpp
     QML_FILES qml/Main.qml
 )
 
