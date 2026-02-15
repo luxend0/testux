@@ -5,7 +5,6 @@ namespace {
 // QEMU splits option values on ',' and reads ",," as a literal comma.
 QString escaped(QString value)
 {
-    qDebug() << Q_FUNC_INFO;
     return value.replace(',', ",,");
 }
 
