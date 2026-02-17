@@ -27,6 +27,21 @@ QStringList cpuArgs(const QString& accelerator)
     return {"-cpu", "max"};
 }
 
+QStringList machineArgs(const QemuConfig& config)
+{
+    QStringList args{"-name", escaped(config.title), "-nodefaults"};
+    args << "-machine" << "q35";
+    args << "-accel" << acceleratorOption(config.accelerator);
+    args << cpuArgs(config.accelerator);
+    args << "-m" << QString::number(config.ramMb);
+    args << "-smp" << QString::number(config.cpus);
+    if (!config.firmwarePath.isEmpty()) {
+        args << "-drive"
+             << "if=pflash,format=raw,unit=0,readonly=on,file=" + escaped(config.firmwarePath);
+    }
+    return args;
+}
+
 // The test disk boots first: while it is empty the firmware falls through to the ISO, and
 // after a test install the VM starts the installed system with the ISO still attached.
 QStringList storageArgs(const QemuConfig& config)
@@ -41,6 +56,13 @@ QStringList storageArgs(const QemuConfig& config)
     args << "-drive" << "if=none,id=cd0,media=cdrom,readonly=on,file=" + escaped(config.isoPath);
     args << "-device" << QString("ide-cd,drive=cd0,bootindex=%1").arg(hasDisk ? 1 : 0);
     return args;
+}
+
+QStringList qmpArgs(const QemuConfig& config)
+{
+    if (config.qmpPort == 0)
+        return {};
+    return {"-qmp", QString("tcp:127.0.0.1:%1,server=on,wait=off").arg(config.qmpPort)};
 }
 
 } // namespace
