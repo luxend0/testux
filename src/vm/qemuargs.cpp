@@ -10,6 +10,7 @@ QString escaped(QString value)
 
 QString acceleratorOption(const QString& accelerator)
 {
+    // WHPX misbehaves with the in-kernel irqchip on many Windows builds.
     if (accelerator == "whpx")
         return "whpx,kernel-irqchip=off";
     return accelerator == "kvm" ? "kvm" : "tcg";
