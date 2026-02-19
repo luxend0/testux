@@ -1,5 +1,7 @@
 #include "launcher.h"
 
+#include "vm/qemuargs.h"
+
 Launcher::Launcher(QObject *parent)
     : QObject(parent)
 {
@@ -7,11 +9,11 @@ Launcher::Launcher(QObject *parent)
 
 void Launcher::start(const QString &isoPath)
 {
-    const QStringList args = {
-        "-enable-kvm", "-m", "4096", "-smp", "4",
-        "-cdrom", isoPath,
-        "-vga", "virtio",
-        "-display", "gtk",
-    };
-    m_qemu.start("qemu-system-x86_64", args);
+    QemuConfig config;
+    config.isoPath = isoPath;
+    config.accelerator = "kvm";
+    config.ramMb = 4096;
+    config.cpus = 4;
+    config.title = "Testux";
+    m_qemu.start("qemu-system-x86_64", QemuArgs::build(config));
 }
