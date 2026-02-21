@@ -1,5 +1,8 @@
 #pragma once
 
+#include <QString>
+#include <QStringList>
+
 // Everything that decides the QEMU command line. Host detection lives in VmManager;
 // this stays a plain value so the argument building is testable.
 struct QemuConfig
@@ -18,5 +21,10 @@ struct QemuConfig
 };
 
 namespace QemuArgs {
+
+// Arguments for qemu-system-x86_64 (without the program itself). Always: q35, virtio
+// display shown in QEMU's GTK window, user networking, virtio-balloon (id "balloon0")
+// for RAM stats and, with `clipboard`, qemu-vdagent clipboard sharing.
+QStringList build(const QemuConfig& config);
 
 } // namespace QemuArgs
