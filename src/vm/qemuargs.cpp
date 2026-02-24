@@ -65,4 +65,27 @@ QStringList qmpArgs(const QemuConfig& config)
     return {"-qmp", QString("tcp:127.0.0.1:%1,server=on,wait=off").arg(config.qmpPort)};
 }
 
+QStringList deviceArgs(const QemuConfig& config)
+{
+    QStringList args;
+    // romfile= drops the PXE option ROM: nobody network boots a live ISO, and it would
+    // add a boot delay plus a dependency on QEMU's iPXE blobs.
+    args << "-netdev" << "user,id=net0";
+    args << "-device" << "virtio-net-pci,netdev=net0,romfile=";
+    args << "-device" << "qemu-xhci";
+    args << "-device" << "usb-tablet";
+    args << "-device" << "virtio-balloon-pci,id=balloon0,guest-stats-polling-interval=2";
+    if (config.clipboard) {
+        args << "-chardev" << "qemu-vdagent,id=vdagent,name=vdagent,clipboard=on";
+        args << "-device" << "virtio-serial-pci";
+        args << "-device" << "virtserialport,chardev=vdagent,name=com.redhat.spice.0";
+    }
+    if (!config.audioDriver.isEmpty()) {
+        args << "-audiodev" << config.audioDriver + ",id=audio0";
+        args << "-device" << "intel-hda";
+        args << "-device" << "hda-duplex,audiodev=audio0";
+    }
+    return args;
+}
+
 } // namespace
