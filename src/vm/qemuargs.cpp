@@ -58,6 +58,13 @@ QStringList storageArgs(const QemuConfig& config)
     return args;
 }
 
+QStringList displayArgs(const QemuConfig& config)
+{
+    if (config.gl)
+        return {"-device", "virtio-vga-gl", "-display", "gtk,gl=on,zoom-to-fit=on"};
+    return {"-device", "virtio-vga", "-display", "gtk,zoom-to-fit=on"};
+}
+
 QStringList qmpArgs(const QemuConfig& config)
 {
     if (config.qmpPort == 0)
@@ -89,3 +96,9 @@ QStringList deviceArgs(const QemuConfig& config)
 }
 
 } // namespace
+
+QStringList QemuArgs::build(const QemuConfig& config)
+{
+    return machineArgs(config) + storageArgs(config) + displayArgs(config) + deviceArgs(config) +
+           qmpArgs(config);
+}
