@@ -2,6 +2,7 @@
 #include <QIcon>
 #include <QLocale>
 #include <QQmlApplicationEngine>
+#include <QQuickStyle>
 #include <QTranslator>
 
 int main(int argc, char* argv[])
