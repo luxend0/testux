@@ -1,46 +1,45 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Controls
+import QtQuick.Controls.Basic
 import QtQuick.Layouts
-import Testux
 
 ApplicationWindow {
-    width: 800
-    height: 500
-    visible: true
-    title: "Testux"
+    id: window
 
-    Launcher {
-        id: launcher
+    function openDistro(id: string) {
+        const distro = Catalog.distro(id)
+        if (distro.id !== "")
+            stack.push(distroPage, { distro: distro })
     }
 
-    ColumnLayout {
-        anchors.centerIn: parent
-        spacing: 12
+    function openBootWizard(id: string) {
+        console.log("openBootWizard")
+        stack.push(bootWizard, { distro: Catalog.distro(id) })
+    }
 
-        TextField {
-            id: isoPath
-            Layout.preferredWidth: 420
-            placeholderText: "Path to an ISO"
-            text: "/home/luxend/isos/mint.iso"
-        }
+    width: 1180
+    height: 760
+    minimumWidth: 960
+    minimumHeight: 640
+    visible: true
+    title: "Testux"
+    color: Theme.background
+    font.pixelSize: Theme.fontBase
 
-        RowLayout {
-            Label {
-                text: "RAM (MB)"
-            }
-
-            SpinBox {
-                id: ram
-                from: 1024
-                to: 16384
-                stepSize: 1024
-                value: 4096
-            }
-        }
-
-        Button {
-            text: launcher.running ? "Stop" : "Boot"
-            onClicked: launcher.running ? launcher.stop() : launcher.start(isoPath.text, ram.value)
-        }
+    palette {
+        window: Theme.background
+        windowText: Theme.text
+        base: Theme.surface
+        text: Theme.text
+        button: Theme.surface
+        buttonText: Theme.text
+        highlight: Theme.accent
+        highlightedText: Theme.accentText
+        placeholderText: Theme.textFaint
+        dark: Theme.textMuted
+        mid: Theme.borderStrong
+        midlight: Theme.border
+        light: Theme.surface
     }
 }
