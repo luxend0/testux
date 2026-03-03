@@ -14,7 +14,6 @@ ApplicationWindow {
     }
 
     function openBootWizard(id: string) {
-        console.log("openBootWizard")
         stack.push(bootWizard, { distro: Catalog.distro(id) })
     }
 
