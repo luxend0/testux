@@ -19,7 +19,6 @@ QemuConfig baseConfig()
 
 QStringList valuesOf(const QStringList& args, const QString& option)
 {
-    qDebug() << Q_FUNC_INFO;
     QStringList values;
     for (qsizetype i = 0; i + 1 < args.size(); ++i) {
         if (args[i] == option)
