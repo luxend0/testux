@@ -17,6 +17,23 @@ QemuConfig baseConfig()
     return config;
 }
 
+QStringList valuesOf(const QStringList& args, const QString& option)
+{
+    qDebug() << Q_FUNC_INFO;
+    QStringList values;
+    for (qsizetype i = 0; i + 1 < args.size(); ++i) {
+        if (args[i] == option)
+            values << args[i + 1];
+    }
+    return values;
+}
+
+bool anyStartsWith(const QStringList& values, const QString& prefix)
+{
+    return std::any_of(values.begin(), values.end(),
+                       [&](const QString& value) { return value.startsWith(prefix); });
+}
+
 } // namespace
 
 class TestQemuArgs : public QObject
