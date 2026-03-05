@@ -47,4 +47,10 @@ ApplicationWindow {
         midlight: Theme.border
         light: Theme.surface
     }
+
+    Component {
+        id: thisPcPage
+
+        ThisPcPage {}
+    }
 }
