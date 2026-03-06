@@ -5,7 +5,7 @@
 #include <QQuickStyle>
 #include <QTranslator>
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
     app.setOrganizationName("Testux");

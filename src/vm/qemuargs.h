@@ -25,6 +25,6 @@ namespace QemuArgs {
 // Arguments for qemu-system-x86_64 (without the program itself). Always: q35, virtio
 // display shown in QEMU's GTK window, user networking, virtio-balloon (id "balloon0")
 // for RAM stats and, with `clipboard`, qemu-vdagent clipboard sharing.
-QStringList build(const QemuConfig& config);
+QStringList build(const QemuConfig &config);
 
 } // namespace QemuArgs

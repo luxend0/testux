@@ -8,7 +8,7 @@ QString escaped(QString value)
     return value.replace(',', ",,");
 }
 
-QString acceleratorOption(const QString& accelerator)
+QString acceleratorOption(const QString &accelerator)
 {
     // WHPX misbehaves with the in-kernel irqchip on many Windows builds.
     if (accelerator == "whpx")
@@ -18,7 +18,7 @@ QString acceleratorOption(const QString& accelerator)
 
 // Under WHPX the guest sees the host CPUID no matter which model is chosen, so QEMU's
 // default is left alone there. "host" needs KVM; "max" is the richest model TCG emulates.
-QStringList cpuArgs(const QString& accelerator)
+QStringList cpuArgs(const QString &accelerator)
 {
     if (accelerator == "kvm")
         return {"-cpu", "host"};
@@ -27,7 +27,7 @@ QStringList cpuArgs(const QString& accelerator)
     return {"-cpu", "max"};
 }
 
-QStringList machineArgs(const QemuConfig& config)
+QStringList machineArgs(const QemuConfig &config)
 {
     QStringList args{"-name", escaped(config.title), "-nodefaults"};
     args << "-machine" << "q35";
@@ -44,7 +44,7 @@ QStringList machineArgs(const QemuConfig& config)
 
 // The test disk boots first: while it is empty the firmware falls through to the ISO, and
 // after a test install the VM starts the installed system with the ISO still attached.
-QStringList storageArgs(const QemuConfig& config)
+QStringList storageArgs(const QemuConfig &config)
 {
     const bool hasDisk = !config.diskPath.isEmpty();
     QStringList args;
@@ -58,21 +58,21 @@ QStringList storageArgs(const QemuConfig& config)
     return args;
 }
 
-QStringList displayArgs(const QemuConfig& config)
+QStringList displayArgs(const QemuConfig &config)
 {
     if (config.gl)
         return {"-device", "virtio-vga-gl", "-display", "gtk,gl=on,zoom-to-fit=on"};
     return {"-device", "virtio-vga", "-display", "gtk,zoom-to-fit=on"};
 }
 
-QStringList qmpArgs(const QemuConfig& config)
+QStringList qmpArgs(const QemuConfig &config)
 {
     if (config.qmpPort == 0)
         return {};
     return {"-qmp", QString("tcp:127.0.0.1:%1,server=on,wait=off").arg(config.qmpPort)};
 }
 
-QStringList deviceArgs(const QemuConfig& config)
+QStringList deviceArgs(const QemuConfig &config)
 {
     QStringList args;
     // romfile= drops the PXE option ROM: nobody network boots a live ISO, and it would
@@ -97,7 +97,7 @@ QStringList deviceArgs(const QemuConfig& config)
 
 } // namespace
 
-QStringList QemuArgs::build(const QemuConfig& config)
+QStringList QemuArgs::build(const QemuConfig &config)
 {
     return machineArgs(config) + storageArgs(config) + displayArgs(config) + deviceArgs(config) +
            qmpArgs(config);

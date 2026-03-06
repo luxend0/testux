@@ -17,7 +17,7 @@ QemuConfig baseConfig()
     return config;
 }
 
-QStringList valuesOf(const QStringList& args, const QString& option)
+QStringList valuesOf(const QStringList &args, const QString &option)
 {
     QStringList values;
     for (qsizetype i = 0; i + 1 < args.size(); ++i) {
@@ -27,10 +27,10 @@ QStringList valuesOf(const QStringList& args, const QString& option)
     return values;
 }
 
-bool anyStartsWith(const QStringList& values, const QString& prefix)
+bool anyStartsWith(const QStringList &values, const QString &prefix)
 {
     return std::any_of(values.begin(), values.end(),
-                       [&](const QString& value) { return value.startsWith(prefix); });
+                       [&](const QString &value) { return value.startsWith(prefix); });
 }
 
 } // namespace
