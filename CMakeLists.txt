@@ -13,3 +13,20 @@ qt_add_executable(testux WIN32 src/main.cpp)
 
 
 set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
+qt_add_qml_module(testux
+    URI Testux
+    VERSION 1.0
+    SOURCES
+        src/vm/qemuargs.h src/vm/qemuargs.cpp
+    QML_FILES
+        qml/Main.qml
+    RESOURCES
+)
+
+if(WIN32)
+    target_sources(testux PRIVATE)
+    target_link_libraries(testux PRIVATE setupapi ole32 shell32 propsys)
+else()
+    target_sources(testux PRIVATE)
+endif()
