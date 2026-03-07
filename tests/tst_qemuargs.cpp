@@ -163,3 +163,5 @@ private slots:
 };
 
 QTEST_APPLESS_MAIN(TestQemuArgs)
+
+#include "tst_qemuargs.moc"
