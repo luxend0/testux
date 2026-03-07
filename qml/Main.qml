@@ -50,6 +50,41 @@ ApplicationWindow {
         light: Theme.surface
     }
 
+    RowLayout {
+        anchors.fill: parent
+        spacing: 0
+
+        Sidebar {
+            sections: window.sections
+            current: window.section
+            onPicked: key => window.showSection(key)
+            Layout.fillHeight: true
+        }
+
+        StackView {
+            id: stack
+
+            initialItem: distrosPage
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            pushEnter: FadeIn {}
+            pushExit: FadeOut {}
+            popEnter: FadeIn {}
+            popExit: FadeOut {}
+            replaceEnter: FadeIn {}
+            replaceExit: FadeOut {}
+        }
+    }
+
+    Component {
+        id: distrosPage
+
+        DistrosPage {
+            onDistroSelected: id => window.openDistro(id)
+        }
+    }
+
     Component {
         id: distroPage
 
@@ -73,5 +108,11 @@ ApplicationWindow {
         id: thisPcPage
 
         ThisPcPage {}
+    }
+
+    Component {
+        id: settingsPage
+
+        SettingsPage {}
     }
 }
