@@ -10,3 +10,6 @@ qt_standard_project_setup(REQUIRES 6.8 I18N_SOURCE_LANGUAGE en I18N_TRANSLATED_L
 qt_policy(SET QTP0004 NEW)
 
 qt_add_executable(testux WIN32 src/main.cpp)
+
+
+set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
