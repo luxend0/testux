@@ -7,6 +7,12 @@ import QtQuick.Layouts
 ApplicationWindow {
     id: window
 
+    function showSection(key: string) {
+        section = key
+        const pages = { distros: distrosPage, compare: comparePage, pc: thisPcPage, settings: settingsPage }
+        stack.replace(null, pages[key])
+    }
+
     function openDistro(id: string) {
         const distro = Catalog.distro(id)
         if (distro.id !== "")
