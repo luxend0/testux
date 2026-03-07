@@ -7,6 +7,8 @@ import QtQuick.Layouts
 ApplicationWindow {
     id: window
 
+    property string section: "distros"
+
     function showSection(key: string) {
         section = key
         const pages = { distros: distrosPage, compare: comparePage, pc: thisPcPage, settings: settingsPage }
@@ -46,6 +48,25 @@ ApplicationWindow {
         mid: Theme.borderStrong
         midlight: Theme.border
         light: Theme.surface
+    }
+
+    Component {
+        id: distroPage
+
+        DistroPage {
+            id: detail
+
+            onBackRequested: stack.pop()
+            onBootRequested: window.openBootWizard(detail.distro.id)
+        }
+    }
+
+    Component {
+        id: bootWizard
+
+        BootWizard {
+            onBackRequested: stack.pop()
+        }
     }
 
     Component {
