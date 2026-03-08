@@ -10,4 +10,6 @@
 // skipped, not fatal. A catalog without categories is unusable.
 namespace CatalogParser {
 
+Result parse(const QByteArray &json, const QString &language);
+
 } // namespace CatalogParser
