@@ -32,3 +32,18 @@ if(WIN32)
 else()
     target_sources(testux PRIVATE)
 endif()
+
+target_include_directories(testux PRIVATE src
+    src/catalog src/download src/vm src/hw src/baremetal)
+target_compile_definitions(testux PRIVATE
+    TESTUX_VERSION="${PROJECT_VERSION}"
+    TESTUX_VERSION_MAJOR=${PROJECT_VERSION_MAJOR}
+    TESTUX_VERSION_MINOR=${PROJECT_VERSION_MINOR}
+    TESTUX_VERSION_PATCH=${PROJECT_VERSION_PATCH})
+target_link_libraries(testux PRIVATE Qt6::Concurrent Qt6::Network Qt6::Quick Qt6::QuickControls2)
+
+qt_add_translations(testux
+    TS_FILE_BASE testux
+    TS_FILE_DIR i18n
+    RESOURCE_PREFIX /i18n
+    NO_GENERATE_PLURALS_TS_FILE)
