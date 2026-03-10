@@ -23,6 +23,7 @@ qt_add_qml_module(testux
     QML_FILES
         qml/Main.qml
     RESOURCES
+        catalog/catalog.json
 )
 
 if(WIN32)

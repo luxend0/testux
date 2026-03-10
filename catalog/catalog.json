@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "checklist": [
+    {
+      "id": "browser",
+      "title": {
+        "en": "Open a website"
+      },
+      "detail": {
+        "en": "Start the web browser (usually Firefox) and open a few sites you use every day."
+      }
+    },
+    {
+      "id": "video",
+      "title": {
+        "en": "Play a video"
+      },
+      "detail": {
+        "en": "Play a YouTube video in full screen. Does it run smoothly and is there sound?"
+      }
+    },
+    {
+      "id": "wifi",
+      "title": {
+        "en": "Connect to Wi-Fi"
+      },
+      "detail": {
+        "en": "In the window, the VM simply uses your PC's connection. When you boot the live system on this PC, connect through the network icon in the panel."
+      }
+    }
+  ],
+  "distros": [
+    {
+      "id": "linuxmint-cinnamon",
+      "name": "Linux Mint",
+      "edition": "Cinnamon",
+      "version": "22.3",
+      "category": "beginner",
+      "summary": {
+        "en": "Feels familiar right away: start menu, taskbar, everything where you expect it."
+      },
+      "description": {
+        "en": "Linux Mint is the classic choice for people coming from Windows. The Cinnamon desktop works like the Windows taskbar and start menu, and the Driver Manager and Update Manager keep things simple. It is based on Ubuntu LTS, so it stays stable for years."
+      },
+      "website": "https://linuxmint.com",
+      "color": "#87cf3e",
+      "desktop": "Cinnamon",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-cinnamon-64bit.iso",
+        "sha256Url": "https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt",
+        "size": 3091660800
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048,
+      "checklist": []
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu",
+      "edition": "Desktop",
+      "version": "24.04.4 LTS",
+      "category": "beginner",
+      "summary": {
+        "en": "The best-known Linux, with five years of updates for every LTS release."
+      },
+      "description": {
+        "en": "Ubuntu is the distro most guides and programs are written for, which makes help easy to find. It uses a customized GNOME desktop with a dock on the left. The installer can set up drivers for graphics and Wi-Fi for you."
+      },
+      "website": "https://ubuntu.com/desktop",
+      "color": "#e95420",
+      "desktop": "GNOME",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://releases.ubuntu.com/24.04.4/ubuntu-24.04.4-desktop-amd64.iso",
+        "sha256Url": "https://releases.ubuntu.com/24.04.4/SHA256SUMS",
+        "size": 6655619072
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 6144
+    },
+    {
+      "id": "fedora-workstation",
+      "name": "Fedora",
+      "edition": "Workstation",
+      "version": "43",
+      "category": "other",
+      "summary": {
+        "en": "Up-to-date GNOME exactly as its developers intended, without extra changes."
+      },
+      "description": {
+        "en": "Fedora brings new versions of the desktop and kernel early, but still goes through careful testing."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository."
+      },
+      "website": "https://fedoraproject.org/workstation/",
+      "color": "#51a2da",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Workstation/x86_64/iso/Fedora-Workstation-Live-43-1.6.x86_64.iso",
+        "sha256Url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Workstation/x86_64/iso/Fedora-Workstation-43-1.6-x86_64-CHECKSUM",
+        "size": 2742190080
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048,
+      "checklist": []
+    }
+  ]
+}
