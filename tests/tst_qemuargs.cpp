@@ -17,6 +17,7 @@ QemuConfig baseConfig()
     return config;
 }
 
+// Values given to every occurrence of `option`, e.g. all "-device" lines.
 QStringList valuesOf(const QStringList &args, const QString &option)
 {
     QStringList values;
