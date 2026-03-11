@@ -68,3 +68,38 @@ std::optional<Distro> parseDistro(const QJsonObject &object, const QString &lang
 }
 
 } // namespace
+
+CatalogParser::Result CatalogParser::parse(const QByteArray &json, const QString &language)
+{
+    Result result;
+
+    QJsonParseError parseError;
+    const QJsonDocument document = QJsonDocument::fromJson(json, &parseError);
+    if (parseError.error != QJsonParseError::NoError) {
+        result.error =
+            QCoreApplication::translate("CatalogParser", "The catalog is not valid JSON: %1")
+                .arg(parseError.errorString());
+        return result;
+    }
+    const QJsonObject root = document.object();
+    if (!root.value(u"distros").isArray()) {
+        result.error =
+            QCoreApplication::translate("CatalogParser", "The catalog contains no distro list.");
+        return result;
+    }
+
+    const QJsonObject app = root.value(u"app").toObject();
+    result.latestAppVersion = app.value(u"latest").toString();
+    result.latestAppUrl = app.value(u"url").toString();
+    result.checklist = parseChecklist(root.value(u"checklist"), language);
+
+    QSet<QString> seen;
+    for (const QJsonValue &entry : root.value(u"distros").toArray()) {
+        const std::optional<Distro> distro = parseDistro(entry.toObject(), language);
+        if (distro && isKnownCategory(distro->category) && !seen.contains(distro->id)) {
+            seen.insert(distro->id);
+            result.distros.append(*distro);
+        }
+    }
+    return result;
+}
