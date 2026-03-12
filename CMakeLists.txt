@@ -22,6 +22,7 @@ qt_add_qml_module(testux
         src/vm/qemuargs.h src/vm/qemuargs.cpp
     QML_FILES
         qml/Main.qml
+        qml/NavItem.qml
     RESOURCES
         catalog/catalog.json
 )
