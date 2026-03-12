@@ -1,7 +1,7 @@
 # Catalog
 
 `catalog.json` is the list of distros Testux offers. The app downloads it from `main` on
-every start, so a megred change here reaches every user without a new release. The copy
+every start, so a merged change here reaches every user without a new release. The copy
 built into the binary is only the offline fallback.
 
 ## Format
@@ -58,7 +58,7 @@ The checksum listing is searched for the last path segment of `iso.url`. When it
 different file but holds exactly one entry, that entry is used: "current" links such as
 KDE neon's and openSUSE Tumbleweed's publish a listing that names the dated file the link
 points to. Every text field that users read is localized; `en` is required, other
-languaegs fall back to it.
+languages fall back to it.
 
 `tools/check_catalog.py` verifies every URL and checksum listing. CI runs it weekly and on
 every change to this directory.
