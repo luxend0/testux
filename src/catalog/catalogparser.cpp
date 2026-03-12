@@ -12,6 +12,12 @@ using namespace Qt::StringLiterals;
 
 namespace {
 
+bool isKnownCategory(const QString &category)
+{
+    static const QSet<QString> categories{u"beginner"_s, u"kde"_s, u"gaming"_s, u"other"_s};
+    return categories.contains(category);
+}
+
 QList<ChecklistItem> parseChecklist(const QJsonValue &value, const QString &language)
 {
     QList<ChecklistItem> items;
