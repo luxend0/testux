@@ -9,4 +9,13 @@ AbstractButton {
     padding: Theme.gapM
     leftPadding: Theme.gapL
     implicitHeight: 40
+
+    background: Rectangle {
+        radius: Theme.radiusSmall
+        color: item.current ? Theme.accentSoft : (item.hovered ? Theme.surfaceMuted : "transparent")
+
+        FocusRing {
+            visible: item.visualFocus
+        }
+    }
 }
