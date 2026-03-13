@@ -35,6 +35,7 @@ else()
     target_sources(testux PRIVATE)
 endif()
 
+# qmltyperegistrar includes the QML_ELEMENT headers by bare file name.
 target_include_directories(testux PRIVATE src
     src/catalog src/download src/vm src/hw src/baremetal)
 target_compile_definitions(testux PRIVATE
@@ -44,6 +45,7 @@ target_compile_definitions(testux PRIVATE
     TESTUX_VERSION_PATCH=${PROJECT_VERSION_PATCH})
 target_link_libraries(testux PRIVATE Qt6::Concurrent Qt6::Network Qt6::Quick Qt6::QuickControls2)
 
+# main.cpp loads ":/i18n/testux_<lang>.qm"; English is the source, no plurals file needed.
 qt_add_translations(testux
     TS_FILE_BASE testux
     TS_FILE_DIR i18n
