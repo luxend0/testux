@@ -47,7 +47,10 @@ static const QJsonArray defaultCategories{category(u"beginner"_s, u"Beginner"_s,
 static QByteArray catalogWith(const QJsonArray &distros,
                               const QJsonArray &categories = defaultCategories)
 {
-    // TODO
+    return QJsonDocument(QJsonObject{{u"version"_s, 1},
+                                     {u"categories"_s, categories},
+                                     {u"distros"_s, distros}})
+        .toJson();
 }
 
 void TestCatalogParser::requiresCategories()
