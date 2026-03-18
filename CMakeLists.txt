@@ -27,6 +27,7 @@ qt_add_qml_module(testux
         qml/Theme.qml
     RESOURCES
         catalog/catalog.json
+        assets/testux.svg
 )
 
 if(WIN32)
