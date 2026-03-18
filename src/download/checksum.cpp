@@ -20,3 +20,34 @@ bool sameFile(QStringView listed, const QString &fileName)
 }
 
 } // namespace
+
+QString Checksum::findSha256(const QByteArray &listing, const QString &fileName)
+{
+    static const QRegularExpression bsd(QStringLiteral("^SHA256 \\((.+)\\) = ([0-9a-fA-F]{64})$"));
+    // Coreutils writes two spaces or " *"; some distros (KaOS) use a single space.
+    static const QRegularExpression gnu(QStringLiteral("^([0-9a-fA-F]{64})\\s+\\*?(.+)$"));
+
+    QStringList lines;
+    for (const QByteArray &raw : listing.split('\n')) {
+        const QString line = QString::fromUtf8(raw).trimmed();
+        if (!line.isEmpty())
+            lines.append(line);
+    }
+
+    if (lines.size() == 1 && isSha256Hex(lines.first()))
+        return lines.first().toLower();
+
+    QList<std::pair<QString, QString>> entries; // file name, hash
+    for (const QString &line : std::as_const(lines)) {
+        if (const auto match = bsd.match(line); match.hasMatch())
+            entries.append({match.captured(1), match.captured(2)});
+        else if (const auto match = gnu.match(line); match.hasMatch())
+            entries.append({match.captured(2), match.captured(1)});
+    }
+
+    for (const auto &[name, hash] : std::as_const(entries)) {
+        if (sameFile(name, fileName))
+            return hash.toLower();
+    }
+    return {};
+}
