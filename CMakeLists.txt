@@ -22,6 +22,7 @@ qt_add_qml_module(testux
         src/download/checksum.h src/download/checksum.cpp
         src/vm/qemuargs.h src/vm/qemuargs.cpp
     QML_FILES
+        qml/DistroPage.qml
         qml/Main.qml
         qml/NavItem.qml
         qml/Theme.qml
