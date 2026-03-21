@@ -16,7 +16,7 @@ USB stick needed.
   a window. Poke around, open the app store, check if your games and tools are there. If it
   feels right, Testux prepares your PC so it can boot that distro for real.
 - **Linux users who hop distros.** Try the newest Fedora, CachyOS or openSUSE in a VM
-  without huntnig for ISOs, checksums and QEMU flags.
+  without hunting for ISOs, checksums and QEMU flags.
 
 ## Download
 
@@ -25,9 +25,9 @@ Get the latest version from the [releases page](https://github.com/luxend0/testu
 ### Windows
 
 Download and run the `TestuxSetup` installer. It installs Testux together with QEMU and
-turns on the Windows Hypervisor Platform feature, which can requrie one restart.
+turns on the Windows Hypervisor Platform feature, which can require one restart.
 
-The installer is not code signed yet, so Windows SmartScreen will show "Windows portected
+The installer is not code signed yet, so Windows SmartScreen will show "Windows protected
 your PC". Click **More info**, then **Run anyway**. Signing is on the list.
 
 Windows 10 or 11, 64-bit. Windows Home works too.
