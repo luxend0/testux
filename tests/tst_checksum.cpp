@@ -4,6 +4,15 @@
 
 using namespace Qt::StringLiterals;
 
+class TestChecksum : public QObject
+{
+    Q_OBJECT
+
+private slots:
+    void findSha256_data();
+    void findSha256();
+};
+
 static const QByteArray HashA(64, 'a');
 static const QByteArray HashB(64, 'b');
 
@@ -50,3 +59,6 @@ void TestChecksum::findSha256()
 
     QCOMPARE(Checksum::findSha256(listing, fileName), expected);
 }
+
+QTEST_GUILESS_MAIN(TestChecksum)
+#include "tst_checksum.moc"
