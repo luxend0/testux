@@ -95,7 +95,7 @@
         "en": "Up-to-date GNOME exactly as its developers intended, without extra changes."
       },
       "description": {
-        "en": "Fedora brings new versions of the desktop and kernel early, but still goes through careful testing."
+        "en": "Fedora brings new versions of the desktop and kernel early, but still goes through careful testing. GNOME works differently from Windows: press the Super key for an overview of everything. A new release comes out every six months."
       },
       "notes": {
         "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository."
