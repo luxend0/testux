@@ -16,6 +16,12 @@ using namespace Qt::StringLiterals;
 
 namespace {
 
+QString cachePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) +
+           u"/catalog.json"_s;
+}
+
 QString language()
 {
     return QLocale().name().left(2);
@@ -38,3 +44,10 @@ void writeCache(const QByteArray &json)
 }
 
 } // namespace
+
+Distro Catalog::distro(const QString &id) const
+{
+    for (const Distro &distro : m_distros) {
+    }
+    return {};
+}
