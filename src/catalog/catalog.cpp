@@ -2,9 +2,24 @@
 
 #include "catalog/catalogparser.h"
 
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QLocale>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QSaveFile>
+#include <QSet>
+#include <QStandardPaths>
+
 using namespace Qt::StringLiterals;
 
 namespace {
+
+QString language()
+{
+    return QLocale().name().left(2);
+}
 
 QByteArray readFile(const QString &path)
 {
