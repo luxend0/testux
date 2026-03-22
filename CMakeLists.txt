@@ -23,6 +23,7 @@ qt_add_qml_module(testux
         src/vm/qemuargs.h src/vm/qemuargs.cpp
     QML_FILES
         qml/DistroPage.qml
+        qml/DistroTile.qml
         qml/Main.qml
         qml/NavItem.qml
         qml/Theme.qml
