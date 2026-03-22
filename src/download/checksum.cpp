@@ -11,6 +11,7 @@ bool isSha256Hex(QStringView text)
     return hex.matchView(text).hasMatch();
 }
 
+// Listings name files relative to their directory, sometimes with "./" or a subdirectory.
 bool sameFile(QStringView listed, const QString &fileName)
 {
     if (listed.startsWith(u"./"))
