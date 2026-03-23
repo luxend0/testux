@@ -26,6 +26,7 @@ qt_add_qml_module(testux
     QML_FILES
         qml/DistroPage.qml
         qml/DistroTile.qml
+        qml/Heading.qml
         qml/Main.qml
         qml/NavItem.qml
         qml/Theme.qml
