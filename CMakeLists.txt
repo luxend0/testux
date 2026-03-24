@@ -18,6 +18,7 @@ qt_add_qml_module(testux
     URI Testux
     VERSION 1.0
     SOURCES
+        src/catalog/distro.h
         src/catalog/catalogparser.h src/catalog/catalogparser.cpp
         src/catalog/catalog.h src/catalog/catalog.cpp
         src/download/checksum.h src/download/checksum.cpp
