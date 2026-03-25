@@ -48,6 +48,8 @@ void writeCache(const QByteArray &json)
 Distro Catalog::distro(const QString &id) const
 {
     for (const Distro &distro : m_distros) {
+        if (distro.id == id)
+            return distro;
     }
     return {};
 }
