@@ -9,7 +9,7 @@ function(testux_test name)
 endfunction()
 
 set(src ${PROJECT_SOURCE_DIR}/src)
-testux_test(tst_catalogparser ${src}/catalog/catalogparser.cpp)
+testux_test(tst_catalogparser ${src}/catalog/distro.h ${src}/catalog/catalogparser.cpp)
 target_compile_definitions(tst_catalogparser PRIVATE TESTUX_CATALOG="${PROJECT_SOURCE_DIR}/catalog/catalog.json")
 testux_test(tst_checksum ${src}/download/checksum.cpp)
 testux_test(tst_qemuargs ${src}/vm/qemuargs.cpp)
