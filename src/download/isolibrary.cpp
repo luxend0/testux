@@ -18,6 +18,7 @@ int httpStatus(const QNetworkReply *reply)
 
 } // namespace
 
+// The .part file opened for appending, together with the hash of everything written to it.
 struct IsoDownload::Part
 {
     explicit Part(const QString &path) : file(path) {}

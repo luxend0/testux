@@ -49,5 +49,7 @@ QString Checksum::findSha256(const QByteArray &listing, const QString &fileName)
         if (sameFile(name, fileName))
             return hash.toLower();
     }
+    // "Current" links (KDE neon, openSUSE Tumbleweed) publish a listing that names the dated
+    // file the link points to.
     return {};
 }
