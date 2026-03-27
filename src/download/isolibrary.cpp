@@ -140,6 +140,32 @@ void IsoDownload::download()
     connect(m_reply, &QNetworkReply::finished, this, &IsoDownload::transferFinished);
 }
 
+void IsoDownload::receive()
+{
+    const int status = httpStatus(m_reply);
+    if (status != 200 && status != 206)
+        return; // an error page, not ISO data; transferFinished() reports it
+
+    if (!m_part->rangeChecked) {
+        m_part->rangeChecked = true;
+        if (status == 200) // the server ignored the Range header and sends everything
+            m_part->truncate();
+        m_received = m_part->file.size();
+        const qint64 remaining = m_reply->header(QNetworkRequest::ContentLengthHeader).toLongLong();
+        m_total = remaining > 0 ? m_received + remaining : m_distro.isoSize;
+    }
+
+    const QByteArray chunk = m_reply->readAll();
+    if (!m_part->append(chunk)) {
+        const QString reason = m_part->file.errorString();
+        cancel();
+        setState(Failed, tr("Writing the ISO failed: %1").arg(reason));
+        return;
+    }
+    m_received += chunk.size();
+    emit progressChanged();
+}
+
 void IsoDownload::verify(const QString &actualSha256)
 {
     if (!m_distro.isoSha256.isEmpty()) {
@@ -160,4 +186,17 @@ void IsoDownload::verify(const QString &actualSha256)
         const QString isoName = QUrl(m_distro.isoUrl).fileName();
         complete(actualSha256, Checksum::findSha256(reply->readAll(), isoName));
     });
+}
+
+void IsoDownload::complete(const QString &actualSha256, const QString &expectedSha256)
+{
+    // TODO
+}
+
+qint64 IsoLibrary::usedBytes() const
+{
+    qint64 total = 0;
+    for (const QFileInfo &file : QDir(m_dir).entryInfoList(QDir::Files))
+        total += file.size();
+    return total;
 }
