@@ -65,6 +65,13 @@ struct IsoDownload::Part
     bool rangeChecked = false;
 };
 
+IsoDownload::IsoDownload(const Distro &distro, const QString &path, QNetworkAccessManager *network,
+                         QObject *parent)
+    : QObject(parent), m_distro(distro), m_path(path), m_network(network), m_total(distro.isoSize)
+{
+    // TODO
+}
+
 void IsoDownload::start()
 {
     if (m_state == Downloading || m_state == Verifying || m_state == Ready)
@@ -164,6 +171,25 @@ void IsoDownload::receive()
     }
     m_received += chunk.size();
     emit progressChanged();
+}
+
+void IsoDownload::transferFinished()
+{
+    qDebug() << Q_FUNC_INFO;
+    QNetworkReply *reply = std::exchange(m_reply, nullptr);
+    reply->deleteLater();
+
+    const bool alreadyComplete = httpStatus(reply) == 416 && m_part->file.size() > 0;
+    if (reply->error() != QNetworkReply::NoError && !alreadyComplete) {
+        m_part.reset();
+        setState(Failed, tr("Download failed: %1").arg(reply->errorString()));
+        return;
+    }
+
+    const QString actualSha256 = m_part->sha256();
+    m_part.reset(); // closes the file before it gets renamed
+    setState(Verifying);
+    verify(actualSha256);
 }
 
 void IsoDownload::verify(const QString &actualSha256)
