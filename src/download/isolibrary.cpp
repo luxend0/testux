@@ -190,7 +190,27 @@ void IsoDownload::verify(const QString &actualSha256)
 
 void IsoDownload::complete(const QString &actualSha256, const QString &expectedSha256)
 {
-    // TODO
+    // Keep the .part: the data may be fine and a corrected catalog can still verify it.
+    if (expectedSha256.isEmpty()) {
+        setState(
+            Failed,
+            tr("The checksum list does not mention %1.").arg(QUrl(m_distro.isoUrl).fileName()));
+        return;
+    }
+    if (actualSha256.compare(expectedSha256, Qt::CaseInsensitive) != 0) {
+        QFile::remove(partPath(m_path));
+        m_received = 0;
+        emit progressChanged();
+        setState(Failed, tr("The download is damaged (checksum mismatch). Please try again."));
+        return;
+    }
+    if (!QFile::rename(partPath(m_path), m_path)) {
+        setState(Failed, tr("Could not move the ISO to %1.").arg(QDir::toNativeSeparators(m_path)));
+        return;
+    }
+    m_received = m_total = QFileInfo(m_path).size();
+    emit progressChanged();
+    setState(Ready);
 }
 
 qint64 IsoLibrary::usedBytes() const
