@@ -175,7 +175,6 @@ void IsoDownload::receive()
 
 void IsoDownload::transferFinished()
 {
-    qDebug() << Q_FUNC_INFO;
     QNetworkReply *reply = std::exchange(m_reply, nullptr);
     reply->deleteLater();
 
