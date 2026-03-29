@@ -69,7 +69,13 @@ IsoDownload::IsoDownload(const Distro &distro, const QString &path, QNetworkAcce
                          QObject *parent)
     : QObject(parent), m_distro(distro), m_path(path), m_network(network), m_total(distro.isoSize)
 {
-    // TODO
+    // Only verified ISOs are ever renamed to `path`, so an existing file needs no recheck.
+    if (QFileInfo::exists(m_path)) {
+        m_state = Ready;
+        m_received = m_total = QFileInfo(m_path).size();
+    } else {
+        m_received = QFileInfo(partPath(m_path)).size();
+    }
 }
 
 void IsoDownload::start()
