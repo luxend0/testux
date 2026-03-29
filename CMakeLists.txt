@@ -32,6 +32,7 @@ qt_add_qml_module(testux
         qml/Heading.qml
         qml/Main.qml
         qml/NavItem.qml
+        qml/PageHeader.qml
         qml/SegmentedControl.qml
         qml/Sidebar.qml
         qml/Theme.qml
