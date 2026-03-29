@@ -137,6 +137,7 @@ void IsoDownload::remove()
     setState(Missing);
 }
 
+// Requests whatever the .part file is still missing.
 void IsoDownload::download()
 {
     QNetworkRequest request{QUrl(m_distro.isoUrl)};
