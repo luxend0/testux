@@ -56,7 +56,17 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "mint-drivers",
+          "title": {
+            "en": "Open the Driver Manager"
+          },
+          "detail": {
+            "en": "Menu > Administration > Driver Manager shows which extra drivers (for example NVIDIA) Mint would install for your hardware."
+          }
+        }
+      ]
     },
     {
       "id": "ubuntu",
@@ -114,7 +124,17 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "fedora-overview",
+          "title": {
+            "en": "Use the Activities overview"
+          },
+          "detail": {
+            "en": "Press the Super (Windows) key: you see all open windows and workspaces, and you can start typing to search for apps."
+          }
+        }
+      ]
     }
   ]
 }
