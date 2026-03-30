@@ -14,4 +14,12 @@ ColumnLayout {
         wrapMode: Text.Wrap
         Layout.fillWidth: true
     }
+
+    BodyText {
+        id: subtitleLabel
+        visible: text !== ""
+        muted: true
+        font.pixelSize: Theme.fontLarge - 1
+        Layout.fillWidth: true
+    }
 }
