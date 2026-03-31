@@ -30,6 +30,7 @@ qt_add_qml_module(testux
         qml/DistroPage.qml
         qml/DistrosPage.qml
         qml/DistroTile.qml
+        qml/Flag.qml
         qml/Heading.qml
         qml/Main.qml
         qml/NavItem.qml
