@@ -26,6 +26,7 @@ qt_add_qml_module(testux
         src/vm/qemuargs.h src/vm/qemuargs.cpp
     QML_FILES
         qml/AppCheckBox.qml
+        qml/BodyText.qml
         qml/DistroCard.qml
         qml/DistroPage.qml
         qml/DistrosPage.qml
