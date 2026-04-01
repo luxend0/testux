@@ -40,6 +40,7 @@ qt_add_qml_module(testux
         qml/SegmentedControl.qml
         qml/Sidebar.qml
         qml/Theme.qml
+        qml/TryPanel.qml
     RESOURCES
         catalog/catalog.json
         assets/testux.svg
