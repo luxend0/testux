@@ -25,6 +25,7 @@ qt_add_qml_module(testux
         src/download/isolibrary.h src/download/isolibrary.cpp
         src/vm/qemuargs.h src/vm/qemuargs.cpp
     QML_FILES
+        qml/AppCheckBox.qml
         qml/DistroPage.qml
         qml/DistrosPage.qml
         qml/DistroTile.qml
