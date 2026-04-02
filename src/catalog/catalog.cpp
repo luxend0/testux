@@ -54,6 +54,8 @@ Distro Catalog::distro(const QString &id) const
     return {};
 }
 
+// Replaces the current data only with a catalog that has at least one usable distro, so a
+// broken download never empties the list.
 bool Catalog::apply(const QByteArray &json)
 {
     CatalogParser::Result result = CatalogParser::parse(json, language());
