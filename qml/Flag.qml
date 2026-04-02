@@ -6,6 +6,9 @@ import QtQuick.Layouts
 RowLayout {
     id: flag
 
+    property alias text: label.text
+    property bool on: false
+
     spacing: Theme.gapXs + 2
 
     StatusDot {
