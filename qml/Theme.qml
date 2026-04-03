@@ -21,6 +21,13 @@ QtObject {
     readonly property color accentText: "#ffffff"
     readonly property color focus: "#86a9ee"
 
+    readonly property color ok: "#2e8a57"
+    readonly property color okSoft: "#e6f4ec"
+    readonly property color warning: "#a8670f"
+    readonly property color warningSoft: "#fdf3e1"
+    readonly property color danger: "#c0433d"
+    readonly property color dangerSoft: "#fbeaea"
+
     readonly property int radiusSmall: 8
     readonly property int radius: 12
     readonly property int radiusLarge: 16
