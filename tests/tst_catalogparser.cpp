@@ -67,7 +67,6 @@ void TestCatalogParser::resolvesLanguageWithEnglishFallback()
 
 void TestCatalogParser::skipsUnusableEntries()
 {
-    qDebug() << Q_FUNC_INFO;
     QJsonObject noUrl = entry(u"no-url"_s);
     noUrl[u"iso"_s] = QJsonObject{{u"sha256"_s, QString(64, u'a')}};
     QJsonObject noChecksum = entry(u"no-checksum"_s);
