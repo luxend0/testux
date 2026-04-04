@@ -53,12 +53,59 @@ static QByteArray catalogWith(const QJsonArray &distros,
         .toJson();
 }
 
+void TestCatalogParser::resolvesLanguageWithEnglishFallback()
+{
+    const QByteArray json = catalogWith({entry(u"a"_s)});
+
+    const Distro german = CatalogParser::parse(json, u"de"_s).distros.value(0);
+    QCOMPARE(german.summary, u"Deutsch"_s);
+    QCOMPARE(german.description, u"Only English"_s);
+
+    const Distro french = CatalogParser::parse(json, u"fr"_s).distros.value(0);
+    QCOMPARE(french.summary, u"English"_s);
+}
+
+void TestCatalogParser::skipsUnusableEntries()
+{
+    qDebug() << Q_FUNC_INFO;
+    QJsonObject noUrl = entry(u"no-url"_s);
+    noUrl[u"iso"_s] = QJsonObject{{u"sha256"_s, QString(64, u'a')}};
+    QJsonObject noChecksum = entry(u"no-checksum"_s);
+    noChecksum[u"iso"_s] = QJsonObject{{u"url"_s, u"https://example.org/x.iso"_s}};
+    QJsonObject badCategory = entry(u"bad-category"_s);
+    badCategory[u"category"_s] = u"server"_s;
+
+    const QByteArray json = catalogWith({entry(u"good"_s), noUrl, noChecksum, badCategory,
+                                         entry(u"good"_s), entry(u"also-good"_s)});
+    const CatalogParser::Result result = CatalogParser::parse(json, u"en"_s);
+
+    QVERIFY(result.error.isEmpty());
+    QCOMPARE(result.distros.size(), 2);
+    QCOMPARE(result.distros.at(0).id, u"good"_s);
+    QCOMPARE(result.distros.at(1).id, u"also-good"_s);
+}
+
 void TestCatalogParser::requiresCategories()
 {
     const QByteArray missing =
         QJsonDocument(QJsonObject{{u"distros"_s, QJsonArray{entry(u"a"_s)}}}).toJson();
     QVERIFY(!CatalogParser::parse(missing, u"en"_s).error.isEmpty());
     QVERIFY(!CatalogParser::parse(catalogWith({entry(u"a"_s)}, {}), u"en"_s).error.isEmpty());
+}
+
+void TestCatalogParser::parsesShippedCatalog()
+{
+    QFile file(QStringLiteral(TESTUX_CATALOG));
+    if (!file.open(QIODevice::ReadOnly))
+        QSKIP("catalog/catalog.json not present");
+    const QByteArray json = file.readAll();
+
+    const CatalogParser::Result result = CatalogParser::parse(json, u"de"_s);
+    QVERIFY2(result.error.isEmpty(), qPrintable(result.error));
+    const qsizetype entries = QJsonDocument::fromJson(json)[u"distros"_s].toArray().size();
+    QCOMPARE(result.distros.size(), entries);
+    QVERIFY(!result.checklist.isEmpty());
+    QCOMPARE(result.categories.value(0), (Category{u"beginner"_s, u"Einsteiger"_s}));
 }
 
 QTEST_GUILESS_MAIN(TestCatalogParser)
