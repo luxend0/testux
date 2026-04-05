@@ -144,3 +144,37 @@ startup > Restart now, then choose "Use a device" and pick Testux.
 If you installed Linux and never go back to Windows, the TESTUX partition stays on the
 disk. It does no harm. You can delete it from Linux with GNOME Disks or KDE Partition
 Manager.
+
+## Building from source
+
+You need Qt 6.8 or newer (Quick, Quick Controls 2, Network, Concurrent, Linguist tools),
+CMake 3.21+ and a C++20 compiler.
+
+### Linux
+
+```sh
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+ctest --test-dir build
+./build/testux
+```
+
+### Windows
+
+In a "Developer PowerShell for VS 2022" with Qt for MSVC installed:
+
+```powershell
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\Qt\6.8.3\msvc2022_64
+cmake --build build
+ctest --test-dir build
+C:\Qt\6.8.3\msvc2022_64\bin\windeployqt.exe --qmldir qml build\testux.exe
+```
+
+The installer and the AppImage are built by CI, see `.github/workflows/build.yml` and the
+`pcakaging/` folder.
+
+To update the translation files after changing UI strings:
+
+```sh
+cmake --build build --target update_translations
+```
