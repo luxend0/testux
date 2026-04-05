@@ -25,6 +25,7 @@ qt_add_qml_module(testux
         src/download/isolibrary.h src/download/isolibrary.cpp
         src/vm/qemuargs.h src/vm/qemuargs.cpp
     QML_FILES
+        qml/AppButton.qml
         qml/AppCheckBox.qml
         qml/BodyText.qml
         qml/DistroCard.qml
