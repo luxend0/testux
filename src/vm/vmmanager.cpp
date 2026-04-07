@@ -35,7 +35,11 @@ constexpr auto TestDiskSize = "30G";
 
 QString findQemu()
 {
-    // TODO
+    // A QEMU shipped next to Testux (the Windows installer does that) wins over the system one.
+    const QString name = "qemu-system-x86_64";
+    const QString bundled =
+        QStandardPaths::findExecutable(name, {QCoreApplication::applicationDirPath() + "/qemu"});
+    return bundled.isEmpty() ? QStandardPaths::findExecutable(name) : bundled;
 }
 
 Firmware findFirmware(const QString &qemu)
