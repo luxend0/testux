@@ -28,11 +28,11 @@ USB stick needed.
 - **Search and filters**: by name, desktop, base, Secure Boot, live session, NVIDIA driver,
   release model and whether a distro fits your PC's memory.
 - **Official ISOs only**, downloaded from the distro's own servers and verified against
-  their pbulished SHA-256 checksums. Downloads resume if they get interrupted.
+  their published SHA-256 checksums. Downloads resume if they get interrupted.
 - **VM mode**: the live system runs in a QEMU window with hardware acceleration (KVM on
   Linux, Windows Hypervisor Platform on Windows). RAM and CPU cores are picked
   automatically. On Windows, copy and paste works between your system and the VM (the
-  QEMU builds of Linux distros leave that featrue out).
+  QEMU builds of Linux distros leave that feature out).
 - **Optional test disk**: a 30 GB disk (it only takes the space you actually use) so you
   can run the distro's installer inside the VM and keep the installed system.
 - **Hardware check**: Secure Boot, BitLocker, Fast Startup, UEFI, free space, NVIDIA GPU,
@@ -171,7 +171,7 @@ C:\Qt\6.8.3\msvc2022_64\bin\windeployqt.exe --qmldir qml build\testux.exe
 ```
 
 The installer and the AppImage are built by CI, see `.github/workflows/build.yml` and the
-`pcakaging/` folder.
+`packaging/` folder.
 
 To update the translation files after changing UI strings:
 
