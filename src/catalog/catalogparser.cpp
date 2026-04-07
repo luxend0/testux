@@ -12,6 +12,7 @@ using namespace Qt::StringLiterals;
 
 namespace {
 
+// A {"en": ..., "de": ...} object resolved to `language`, or a plain string as it is.
 QString localized(const QJsonValue &value, const QString &language)
 {
     if (value.isString())
