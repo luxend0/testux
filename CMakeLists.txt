@@ -12,7 +12,7 @@ qt_policy(SET QTP0004 NEW)
 qt_add_executable(testux WIN32 src/main.cpp)
 
 
-set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Theme.qml qml/Format.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_qml_module(testux
     URI Testux
@@ -36,6 +36,7 @@ qt_add_qml_module(testux
         qml/DistroTile.qml
         qml/DownloadPanel.qml
         qml/Flag.qml
+        qml/Format.qml
         qml/Heading.qml
         qml/Main.qml
         qml/NavItem.qml
