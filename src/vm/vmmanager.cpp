@@ -1,5 +1,7 @@
 #include "vm/vmmanager.h"
 
+#include "vm/qemuargs.h"
+
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QDir>
@@ -81,6 +83,44 @@ QString detectAccelerator()
     return "kvm";
 #endif
 }
+
+#ifndef Q_OS_WIN
+// ID and ID_LIKE from /etc/os-release, e.g. {"linuxmint", "ubuntu", "debian"}.
+QStringList osReleaseIds()
+{
+    QFile file("/etc/os-release");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return {};
+    QStringList ids;
+    for (const QByteArray &line : file.readAll().split('\n')) {
+        const qsizetype separator = line.indexOf('=');
+        const QByteArray key = line.left(separator);
+        if (key == "ID" || key == "ID_LIKE") {
+            const QString value = QString::fromUtf8(line.mid(separator + 1)).remove('"');
+            ids += value.split(' ', Qt::SkipEmptyParts);
+        }
+    }
+    return ids;
+}
+
+// Command that installs QEMU with the GTK display, audio and qemu-img.
+QString qemuInstallCommand()
+{
+    static const std::pair<const char *, const char *> commands[] = {
+        {"debian", "sudo apt install qemu-system-x86 qemu-system-gui qemu-utils"},
+        {"ubuntu", "sudo apt install qemu-system-x86 qemu-system-gui qemu-utils"},
+        {"fedora", "sudo dnf install qemu-system-x86 qemu-img"},
+        {"arch", "sudo pacman -S qemu-desktop"},
+        {"suse", "sudo zypper install qemu-x86 qemu-ui-gtk qemu-audio-pa "
+                 "qemu-hw-display-virtio-vga qemu-img"},
+        {"gentoo", "sudo emerge --ask app-emulation/qemu"},
+    };
+    const QStringList ids = osReleaseIds();
+    for (const auto &[id, command] : commands) {
+    }
+    return {};
+}
+#endif
 
 QString missingQemuHint()
 {
