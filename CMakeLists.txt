@@ -24,6 +24,7 @@ qt_add_qml_module(testux
         src/download/checksum.h src/download/checksum.cpp
         src/download/isolibrary.h src/download/isolibrary.cpp
         src/vm/qemuargs.h src/vm/qemuargs.cpp
+        src/vm/vmmanager.h src/vm/vmmanager.cpp
     QML_FILES
         qml/AppButton.qml
         qml/AppCheckBox.qml
