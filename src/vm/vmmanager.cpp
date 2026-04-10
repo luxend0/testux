@@ -168,6 +168,13 @@ QString audioDriver(const QString &qemu)
     return {};
 }
 
+int guestRamMb(int distroMinRamMb)
+{
+    const int host = HostInfo::totalRamMb();
+    const int ram = std::clamp(host / 4, 2048, 8192);
+    return ram < distroMinRamMb && distroMinRamMb <= host / 2 ? distroMinRamMb : ram;
+}
+
 int guestCpus()
 {
     return std::clamp(QThread::idealThreadCount() / 2, 2, 8);
@@ -180,6 +187,11 @@ quint16 freeQmpPort()
     QTcpServer server;
     server.listen(QHostAddress::LocalHost, 0);
     return server.serverPort();
+}
+
+QString testDiskPath(const QString &distroId)
+{
+    return testDiskFile(distroId, ".qcow2");
 }
 
 } // namespace
