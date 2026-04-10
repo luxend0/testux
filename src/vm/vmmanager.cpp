@@ -75,6 +75,11 @@ QString detectAccelerator()
 #endif
 }
 
+QString missingQemuHint()
+{
+    // TODO
+}
+
 // Output of `qemu <option> help`, asked once per option because it never changes.
 QString qemuHelp(const QString &qemu, const QString &option)
 {
