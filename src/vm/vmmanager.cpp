@@ -135,6 +135,21 @@ QString missingQemuHint()
 #endif
 }
 
+QString slowVmHint()
+{
+#ifdef Q_OS_WIN
+    return VmManager::tr("The Windows Hypervisor Platform is off, so VMs run very slwoly. Run "
+                         "this in an administrator terminal, then restart: dism /online "
+                         "/enable-feature /featurename:HypervisorPlatform /all");
+#else
+    if (QFileInfo::exists("/dev/kvm"))
+        return VmManager::tr("Your user may not use KVM, so VMs run very slowly. Run: sudo "
+                             "usermod -aG kvm $USER, then log out and back in.");
+    return VmManager::tr("KVM is not available, so VMs run very slowly. Enable virtualization "
+                         "(Intel VT-x or AMD-V/SVM) in your firmware settings.");
+#endif
+}
+
 // Output of `qemu <option> help`, asked once per option because it never changes.
 QString qemuHelp(const QString &qemu, const QString &option)
 {
@@ -194,4 +209,10 @@ QString testDiskPath(const QString &distroId)
     return testDiskFile(distroId, ".qcow2");
 }
 
+bool hasEnded(VmSession::State state)
+{
+    return state == VmSession::Stopped || state == VmSession::Failed;
+}
+
 } // namespace
+
