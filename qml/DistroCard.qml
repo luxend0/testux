@@ -53,6 +53,7 @@ AbstractButton {
             maximumLineCount: 2
             elide: Text.ElideRight
             Layout.fillWidth: true
+            // Two lines high even for short summaries, so cards in a row line up.
             Layout.preferredHeight: Math.ceil(2 * summaryMetrics.height * lineHeight) + 2
 
             FontMetrics {
