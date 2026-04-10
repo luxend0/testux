@@ -179,6 +179,8 @@ QString audioDriver(const QString &qemu)
     const QStringList preferred{"pa", "pipewire"};
 #endif
     for (const QString &driver : preferred) {
+        if (qemuSupports(qemu, "-audiodev", driver))
+            return driver;
     }
     return {};
 }
