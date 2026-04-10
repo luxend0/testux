@@ -218,3 +218,26 @@ bool hasEnded(VmSession::State state)
 
 } // namespace
 
+void VmSession::launch()
+{
+    connect(m_process, &QProcess::started, this, [this] {
+        if (m_qmpPort == 0)
+            setState(Running);
+        else
+            m_qmp->connectToHost(QHostAddress::LocalHost, m_qmpPort);
+    });
+    connect(m_process, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
+        if (error == QProcess::FailedToStart)
+            setState(Failed, tr("QEMU could not be started: %1").arg(m_process->errorString()));
+    });
+    connect(m_process, &QProcess::finished, this,
+            [this](int exitCode, QProcess::ExitStatus status) {
+                m_statsTimer->stop();
+                if (status == QProcess::NormalExit && exitCode == 0)
+                    setState(Stopped); // window closed or guest powered off
+                else
+                    setState(Failed, failureMessage(m_process->readAllStandardError(), exitCode));
+            });
+    m_process->start();
+}
+
