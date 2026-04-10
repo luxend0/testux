@@ -77,7 +77,15 @@ QString detectAccelerator()
 
 QString missingQemuHint()
 {
-    // TODO
+#ifdef Q_OS_WIN
+    return VmManager::tr("QEMU is missing from the Testux folder. Reinstall Testux to fix it.");
+#else
+    const QString command = qemuInstallCommand();
+    if (command.isEmpty())
+        return VmManager::tr("QEMU is not installed. Install qemu-system-x86_64 and qemu-img "
+                             "with your package manager.");
+    return VmManager::tr("QEMU is not installed. Install it with: %1").arg(command);
+#endif
 }
 
 // Output of `qemu <option> help`, asked once per option because it never changes.
