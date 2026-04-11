@@ -29,6 +29,6 @@ QtObject {
     }
 
     function releaseModelName(model: string): string {
-        return model === "rolling" ? qsTr("Rolling reelase") : qsTr("Fixed releases")
+        return model === "rolling" ? qsTr("Rolling release") : qsTr("Fixed releases")
     }
 }
