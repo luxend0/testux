@@ -117,6 +117,8 @@ QString qemuInstallCommand()
     };
     const QStringList ids = osReleaseIds();
     for (const auto &[id, command] : commands) {
+        if (ids.contains(id))
+            return command;
     }
     return {};
 }
