@@ -140,7 +140,7 @@ QString missingQemuHint()
 QString slowVmHint()
 {
 #ifdef Q_OS_WIN
-    return VmManager::tr("The Windows Hypervisor Platform is off, so VMs run very slwoly. Run "
+    return VmManager::tr("The Windows Hypervisor Platform is off, so VMs run very slowly. Run "
                          "this in an administrator terminal, then restart: dism /online "
                          "/enable-feature /featurename:HypervisorPlatform /all");
 #else
