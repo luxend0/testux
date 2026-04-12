@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
 
+// Tinted message box. Buttons placed inside end up in a row under the text.
 Rectangle {
     id: notice
 

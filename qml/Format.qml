@@ -2,6 +2,7 @@ pragma Singleton
 
 import QtQuick
 
+// Human readable sizes and labels shared by several pages.
 QtObject {
     function decimal(value: real): string {
         return Number(value).toLocaleString(Qt.locale(), "f", 1)
