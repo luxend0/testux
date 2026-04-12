@@ -218,6 +218,7 @@ QString testDiskPath(const QString &distroId)
     return testDiskFile(distroId, ".qcow2");
 }
 
+
 bool hasEnded(VmSession::State state)
 {
     return state == VmSession::Stopped || state == VmSession::Failed;
@@ -248,3 +249,17 @@ void VmSession::launch()
     m_process->start();
 }
 
+
+VmManager::VmManager(QObject *parent)
+    : QObject(parent), m_qemu(findQemu()), m_accelerator(detectAccelerator())
+{
+    if (!available()) {
+        m_setupHint = missingQemuHint();
+        return;
+    }
+    m_qemuImg = findQemuImg(m_qemu);
+    const Firmware firmware = findFirmware(m_qemu);
+    m_firmware = firmware.code;
+    if (m_accelerator == "tcg")
+        m_setupHint = slowVmHint();
+}
