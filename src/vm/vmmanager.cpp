@@ -31,6 +31,8 @@ constexpr int QmpRetryMs = 200;
 constexpr int QmpMaxAttempts = 75; // about 15 s
 constexpr int StatsIntervalMs = 2000;
 constexpr int StopTimeoutMs = 20000;
+// A live desktop has settled about two minutes after the guest drivers come up. Sampling
+// every distro at that point keeps the comparison fair.
 constexpr qint64 MeasureDelayMs = 120000;
 constexpr auto TestDiskSize = "30G";
 
@@ -51,6 +53,9 @@ struct Firmware
     QString varsTemplate; // "" if none ships with the code image
 };
 
+// Plain (non Secure Boot) UEFI builds. Without a vars image OVMF keeps its variables in RAM,
+// so they are gone at the next start. That is fine for a live session; a test disk gets its
+// own copy of the template so the boot entry an installer writes survives.
 Firmware findFirmware(const QString &qemu)
 {
     const QString bin = QFileInfo(qemu).absolutePath();
