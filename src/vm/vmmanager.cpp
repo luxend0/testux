@@ -218,6 +218,14 @@ QString testDiskPath(const QString &distroId)
     return testDiskFile(distroId, ".qcow2");
 }
 
+void saveMeasurement(const QString &distroId, int ramUsedMb)
+{
+    QSettings settings;
+    settings.beginGroup("measurements/" + distroId);
+    settings.setValue("ramUsedMb", ramUsedMb);
+    settings.setValue("measuredAt", QDateTime::currentDateTime());
+}
+
 
 bool hasEnded(VmSession::State state)
 {
@@ -247,6 +255,34 @@ void VmSession::launch()
                     setState(Failed, failureMessage(m_process->readAllStandardError(), exitCode));
             });
     m_process->start();
+}
+
+void VmSession::stop()
+{
+    if (m_process->state() == QProcess::NotRunning)
+        return;
+    // Whichever way QEMU ends from here on (guest poewrs off, or the kill below), it is the
+    // stop the user asked for and not a failure.
+    disconnect(m_process, &QProcess::finished, this, nullptr);
+    connect(m_process, &QProcess::finished, this, [this] {
+        m_statsTimer->stop();
+        setState(Stopped);
+    });
+
+    if (m_qmp->state() == QTcpSocket::ConnectedState)
+        m_qmp->write(qmpCommand("system_powerdown", "powerdown"));
+    else
+        m_process->kill();
+    QTimer::singleShot(StopTimeoutMs, m_process, [process = m_process] { process->kill(); });
+}
+
+void VmSession::setState(State state, const QString &error)
+{
+    if (m_state == state && m_error == error)
+        return;
+    m_state = state;
+    m_error = error;
+    emit stateChanged();
 }
 
 
