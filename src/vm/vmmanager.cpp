@@ -204,6 +204,19 @@ int guestCpus()
     return std::clamp(QThread::idealThreadCount() / 2, 2, 8);
 }
 
+// The vdagent only reaches the host clipboard when QEMU's GTK UI was built with gtk_clipboard.
+// The QEMU bundled for Windows has it. Arch, Debian and Fedora build without it (QEMU's default
+// since 7.1), so on Linux the guest would get a clipboard that never syncs.
+bool clipboardSharing(const QString &qemu)
+{
+#ifdef Q_OS_WIN
+    return qemuSupports(qemu, "-chardev", "qemu-vdagent");
+#else
+    Q_UNUSED(qemu);
+    return false;
+#endif
+}
+
 // QEMU listens for QMP on this port. Asking the OS for a free one is racy in theory,
 // fine in practice.
 quint16 freeQmpPort()
