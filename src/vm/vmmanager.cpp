@@ -192,6 +192,8 @@ QString audioDriver(const QString &qemu)
     return {};
 }
 
+// A quarter of the host RAM within 2..8 GiB: half pushed a 16 GiB PC with a browser open into
+// swap. Distros that want more get their minimum as long as the host keeps half.
 int guestRamMb(int distroMinRamMb)
 {
     const int host = HostInfo::totalRamMb();
