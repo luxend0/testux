@@ -36,6 +36,7 @@ constexpr int StopTimeoutMs = 20000;
 constexpr qint64 MeasureDelayMs = 120000;
 constexpr auto TestDiskSize = "30G";
 
+// Host detection
 
 QString findQemu()
 {
@@ -171,6 +172,7 @@ QString qemuHelp(const QString &qemu, const QString &option)
     return *it;
 }
 
+// Whether `qemu <option> help` lists `name`, e.g. ("-audiodev", "pa").
 bool qemuSupports(const QString &qemu, const QString &option, const QString &name)
 {
     const QStringList lines = qemuHelp(qemu, option).split('\n');
@@ -300,6 +302,7 @@ void VmSession::setState(State state, const QString &error)
     emit stateChanged();
 }
 
+// VmManager
 
 VmManager::VmManager(QObject *parent)
     : QObject(parent), m_qemu(findQemu()), m_accelerator(detectAccelerator())
