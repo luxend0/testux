@@ -39,6 +39,7 @@ qt_add_qml_module(testux
         qml/Heading.qml
         qml/Main.qml
         qml/NavItem.qml
+        qml/Notice.qml
         qml/PageHeader.qml
         qml/PageScroll.qml
         qml/Panel.qml
