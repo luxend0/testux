@@ -28,7 +28,8 @@ struct IsoDownload::Part
 
     bool append(const QByteArray &chunk)
     {
-        // TODO: handle failure
+        if (file.write(chunk) != chunk.size())
+            return false;
         hash.addData(chunk);
         return true;
     }
