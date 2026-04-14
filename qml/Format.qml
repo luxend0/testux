@@ -25,6 +25,10 @@ QtObject {
         return on ? qsTr("Yes") : qsTr("No")
     }
 
+    function fullName(d: distro): string {
+        return d.edition !== "" ? d.name + " " + d.edition : d.name
+    }
+
     function baseName(base: string): string {
         return base === "independent" ? qsTr("Independent") : base
     }
