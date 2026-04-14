@@ -244,6 +244,14 @@ void saveMeasurement(const QString &distroId, int ramUsedMb)
 }
 
 
+// QEMU marks values the guest driver has not delivered yet as -1, which arrives as 2^64 - 1.
+std::optional<double> statBytes(const QJsonObject &stats, const char *key)
+{
+    const double value = stats.value(key).toDouble(-1);
+    // TODO: handle failure
+    return value;
+}
+
 bool hasEnded(VmSession::State state)
 {
     return state == VmSession::Stopped || state == VmSession::Failed;
