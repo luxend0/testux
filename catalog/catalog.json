@@ -36,6 +36,15 @@
       "detail": {
         "en": "Steam runs most Windows games through Proton. Look up your favorite games on protondb.com, and check whether games with anti-cheat are supported."
       }
+    },
+    {
+      "id": "settings",
+      "title": {
+        "en": "Make it yours"
+      },
+      "detail": {
+        "en": "Change the wallpaper, switch to dark mode, set your keyboard layout and see how the taskbar or panel works."
+      }
     }
   ],
   "distros": [
