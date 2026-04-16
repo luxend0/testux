@@ -47,6 +47,13 @@ QString findQemu()
     return bundled.isEmpty() ? QStandardPaths::findExecutable(name) : bundled;
 }
 
+QString findQemuImg(const QString &qemu)
+{
+    const QString sibling =
+        QStandardPaths::findExecutable("qemu-img", {QFileInfo(qemu).absolutePath()});
+    return sibling.isEmpty() ? QStandardPaths::findExecutable("qemu-img") : sibling;
+}
+
 // A UEFI code image and the vars template built with it. QEMU needs both from one build.
 struct Firmware
 {
@@ -259,6 +266,54 @@ bool hasEnded(VmSession::State state)
 }
 
 } // namespace
+
+VmSession::VmSession(const QString &distroId, const QString &program, const QStringList &arguments,
+                     quint16 qmpPort, QObject *parent)
+    : QObject(parent), m_distroId(distroId), m_process(new QProcess(this)),
+      m_qmp(new QTcpSocket(this)), m_statsTimer(new QTimer(this)), m_qmpPort(qmpPort)
+{
+    m_process->setProgram(program);
+    m_process->setArguments(arguments);
+    m_process->setStandardOutputFile(QProcess::nullDevice());
+
+    m_statsTimer->setInterval(StatsIntervalMs);
+    connect(m_statsTimer, &QTimer::timeout, this, [this] {
+        if (m_qmp->state() == QTcpSocket::ConnectedState)
+            m_qmp->write(balloonStatsCommand());
+    });
+
+    connect(m_qmp, &QTcpSocket::readyRead, this, [this] {
+        while (m_qmp->canReadLine()) {
+            const QJsonObject message = QJsonDocument::fromJson(m_qmp->readLine()).object();
+            const QString id = message.value("id").toString();
+            if (message.contains("QMP")) {
+                m_qmp->write(qmpCommand("qmp_capabilities", "capabilities"));
+            } else if (id == "capabilities") {
+                setState(Running);
+                m_statsTimer->start();
+            } else if (id == "stats") {
+                if (const auto stats = parseBalloonStats(message)) {
+                    m_ramUsedMb = stats->usedMb;
+                    m_ramTotalMb = stats->totalMb;
+                    emit statsChanged();
+                }
+            }
+        }
+    });
+
+    // QEMU creates the socket or pipe a moment after the process starts, so early refusals
+    // are retried. On Windows QEMU waits on the pipe until we connect, so giving up has to
+    // end it: it would never open its window.
+    connect(m_qmp, &QTcpSocket::errorOccurred, this, [this, attempts = 0]() mutable {
+        if (++attempts > QmpMaxAttempts) {
+            disconnect(m_process, &QProcess::finished, this, nullptr);
+            setState(Failed, tr("QEMU did not open its control channel."));
+            m_process->kill();
+            return;
+        }
+        QTimer::singleShot(QmpRetryMs, this, [this] { m_qmp->connectToHost(QHostAddress::LocalHost, m_qmpPort); });
+    });
+}
 
 void VmSession::launch()
 {
