@@ -42,6 +42,13 @@ QString findQemu()
     return bundled.isEmpty() ? QStandardPaths::findExecutable(name) : bundled;
 }
 
+// A UEFI code image and the vars template built with it. QEMU needs both from one build.
+struct Firmware
+{
+    QString code;
+    QString varsTemplate; // "" if none ships with the code image
+};
+
 Firmware findFirmware(const QString &qemu)
 {
     const QString bin = QFileInfo(qemu).absolutePath();
