@@ -243,6 +243,7 @@ void saveMeasurement(const QString &distroId, int ramUsedMb)
     settings.setValue("measuredAt", QDateTime::currentDateTime());
 }
 
+// QMP
 
 // QEMU marks values the guest driver has not delivered yet as -1, which arrives as 2^64 - 1.
 std::optional<double> statBytes(const QJsonObject &stats, const char *key)
