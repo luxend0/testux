@@ -29,12 +29,39 @@
       }
     },
     {
+      "id": "sound",
+      "title": {
+        "en": "Test sound and microphone"
+      },
+      "detail": {
+        "en": "Open the sound settings, pick your speakers or headset and play the test sound. Speak into the microphone and watch the level move."
+      }
+    },
+    {
+      "id": "store",
+      "title": {
+        "en": "Install an app"
+      },
+      "detail": {
+        "en": "Open the software store, search for VLC or GIMP and install it. In a live session the app is gone after a restart, an installed system keeps it."
+      }
+    },
+    {
       "id": "games",
       "title": {
         "en": "Check your games"
       },
       "detail": {
         "en": "Steam runs most Windows games through Proton. Look up your favorite games on protondb.com, and check whether games with anti-cheat are supported."
+      }
+    },
+    {
+      "id": "printer",
+      "title": {
+        "en": "Find your printer"
+      },
+      "detail": {
+        "en": "Open the printer settings. Many network printers show up on their own, print a test page."
       }
     },
     {
