@@ -237,9 +237,20 @@ quint16 freeQmpPort()
     return server.serverPort();
 }
 
+
 QString testDiskPath(const QString &distroId)
 {
     return testDiskFile(distroId, ".qcow2");
+}
+
+// On failure QEMU refuses to open the disk and its message becomes the session error.
+void createTestDisk(const QString &qemuImg, const QString &path)
+{
+    QDir().mkpath(QFileInfo(path).absolutePath());
+    QProcess process;
+    process.start(qemuImg, {"create", "-q", "-f", "qcow2", path, TestDiskSize});
+    if (!process.waitForFinished(30000) || process.exitCode() != 0)
+        qWarning("qemu-img failed: %s", process.readAllStandardError().constData());
 }
 
 void saveMeasurement(const QString &distroId, int ramUsedMb)
