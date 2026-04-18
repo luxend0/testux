@@ -46,6 +46,7 @@ qt_add_qml_module(testux
         qml/Panel.qml
         qml/SegmentedControl.qml
         qml/Sidebar.qml
+        qml/StatusDot.qml
         qml/Theme.qml
         qml/TryPanel.qml
     RESOURCES
