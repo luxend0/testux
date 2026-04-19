@@ -16,4 +16,17 @@ Rectangle {
     readonly property VmSession session: VmManager.session
     readonly property bool sessionActive: session !== null
                                           && (session.state === VmSession.Starting || session.state === VmSession.Running)
+
+    implicitWidth: 208
+    color: Theme.surface
+
+    Rectangle {
+        width: 1
+        color: Theme.border
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            right: parent.right
+        }
+    }
 }
