@@ -20,4 +20,12 @@ Panel {
     // hasTestDisk() does not notify, so the binding re-evaluates on this counter.
     property int diskRevision: 0
     readonly property bool hasTestDisk: diskRevision >= 0 && VmManager.hasTestDisk(distro.id)
+
+    Connections {
+        target: VmManager
+
+        function onTestDisksChanged() {
+            ++panel.diskRevision
+        }
+    }
 }
