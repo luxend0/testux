@@ -13,6 +13,46 @@ ColumnLayout {
 
     spacing: Theme.gapS
 
+    RowLayout {
+        spacing: Theme.gapM
+        visible: panel.download.state === IsoDownload.Missing
+        Layout.fillWidth: true
+
+        BodyText {
+            text: panel.download.received > 0
+                  ? qsTr("Download paused at %1 of %2.").arg(Format.bytes(panel.download.received)).arg(Format.bytes(panel.total))
+                  : qsTr("First Testux downloads the official ISO (%1) and checks it.").arg(Format.bytes(panel.total))
+            muted: true
+            Layout.fillWidth: true
+        }
+
+        AppButton {
+            kind: "primary"
+            text: panel.download.received > 0 ? qsTr("Resume") : qsTr("Download")
+            onClicked: panel.download.start()
+        }
+    }
+
+    RowLayout {
+        spacing: Theme.gapS
+        visible: panel.download.state === IsoDownload.Ready
+        Layout.fillWidth: true
+
+        StatusDot {}
+
+        Label {
+            text: qsTr("ISO downloaded and verified (%1)").arg(Format.bytes(panel.total))
+            color: Theme.textMuted
+            Layout.fillWidth: true
+        }
+
+        AppButton {
+            kind: "quiet"
+            text: qsTr("Delete ISO")
+            onClicked: panel.download.remove()
+        }
+    }
+
     Notice {
         kind: "error"
         visible: panel.download.state === IsoDownload.Failed
