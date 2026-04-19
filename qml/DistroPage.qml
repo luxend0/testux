@@ -10,6 +10,17 @@ PageScroll {
     signal backRequested()
     signal bootRequested()
 
+    readonly property bool wide: contentColumnWidth > 1000
+    readonly property string baseName: Format.baseName(distro.base)
+
+    AppButton {
+        kind: "quiet"
+        text: qsTr("Back to all distros")
+        onClicked: page.backRequested()
+        Layout.leftMargin: -Theme.gapM
+        Layout.bottomMargin: -Theme.gapM
+    }
+
     RowLayout {
         spacing: Theme.gapL
         Layout.fillWidth: true
