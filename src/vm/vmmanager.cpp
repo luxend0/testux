@@ -237,6 +237,7 @@ quint16 freeQmpPort()
     return server.serverPort();
 }
 
+// Test disks and measurements
 
 QString testDiskPath(const QString &distroId)
 {
