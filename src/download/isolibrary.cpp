@@ -278,6 +278,7 @@ void IsoLibrary::removeAll()
 {
     for (IsoDownload *download : std::as_const(m_isos))
         download->remove();
+    // Also files of distros that were dropped from the catalog.
     const QDir dir(m_dir);
     for (const QString &name : dir.entryList({u"*.iso"_s, u"*.part"_s}, QDir::Files))
         QFile::remove(dir.filePath(name));
