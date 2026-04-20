@@ -114,6 +114,37 @@
       ]
     },
     {
+      "id": "popos",
+      "name": "Pop!_OS",
+      "edition": "NVIDIA",
+      "version": "24.04 LTS",
+      "category": "beginner",
+      "summary": {
+        "en": "Clean and fast, with the new COSMIC desktop and window tiling built in."
+      },
+      "description": {
+        "en": "Pop!_OS is made by the PC maker System76 and runs their own COSMIC desktop. Windows can tile themselves side by side automatically, which is handy on big screens. Testux uses the NVIDIA variant, it also works on AMD and Intel graphics."
+      },
+      "notes": {
+        "en": "Pop!_OS does not support Secure Boot. To boot it on this PC, Secure Boot has to be turned off in the UEFI settings."
+      },
+      "website": "https://system76.com/pop/",
+      "color": "#48b9c7",
+      "desktop": "COSMIC",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://iso.pop-os.org/24.04/amd64/nvidia/28/pop-os_24.04_amd64_nvidia_28.iso",
+        "sha256": "bd867a6b93810769b2189471cfc2d7b6b9c642213c7bf827de511be5f42ce666",
+        "size": 3934945280
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "ubuntu",
       "name": "Ubuntu",
       "edition": "Desktop",
