@@ -141,6 +141,34 @@
       "minRamMb": 6144
     },
     {
+      "id": "zorin-core",
+      "name": "Zorin OS",
+      "edition": "Core",
+      "version": "18.1",
+      "category": "beginner",
+      "summary": {
+        "en": "Made for Windows switchers, with a desktop layout that looks like Windows."
+      },
+      "description": {
+        "en": "Zorin OS puts a lot of work into looking and feeling like Windows, down to the start menu. The Zorin Appearance app switches between several layouts. It is based on Ubuntu LTS and comes with NVIDIA drivers on the ISO."
+      },
+      "website": "https://zorin.com/os/",
+      "color": "#15a6f0",
+      "desktop": "GNOME",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.edge.kernel.org/zorinos-isos/18/Zorin-OS-18.1-Core-64-bit.iso",
+        "sha256Url": "https://mirrors.edge.kernel.org/zorinos-isos/18/SHA256SUMS.txt",
+        "size": 3909091328
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048,
+      "checklist": []
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
