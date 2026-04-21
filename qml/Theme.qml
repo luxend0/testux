@@ -20,4 +20,20 @@ QtObject {
     readonly property color accentSoft: "#e8effc"
     readonly property color accentText: "#ffffff"
     readonly property color focus: "#86a9ee"
+
+    readonly property int radiusSmall: 8
+    readonly property int radius: 12
+    readonly property int radiusLarge: 16
+
+    readonly property int fontSmall: 12
+    readonly property int fontBase: 14
+    readonly property int fontLarge: 16
+    readonly property int fontTitle: 20
+    readonly property int fontHeadline: 26
+
+    function levelSoftColor(level: string): color {
+        if (level === "blocker")
+            return dangerSoft
+        return level === "warning" ? warningSoft : okSoft
+    }
 }
