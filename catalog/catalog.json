@@ -27,6 +27,15 @@
       "detail": {
         "en": "In the window, the VM simply uses your PC's connection. When you boot the live system on this PC, connect through the network icon in the panel."
       }
+    },
+    {
+      "id": "games",
+      "title": {
+        "en": "Check your games"
+      },
+      "detail": {
+        "en": "Steam runs most Windows games through Proton. Look up your favorite games on protondb.com, and check whether games with anti-cheat are supported."
+      }
     }
   ],
   "distros": [
