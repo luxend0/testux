@@ -79,3 +79,46 @@ void IsoDownload::start()
         download();
     });
 }
+
+void IsoDownload::cancel()
+{
+    if (m_state != Downloading && m_state != Verifying)
+        return;
+    m_part.reset();
+    if (QNetworkReply *reply = std::exchange(m_reply, nullptr)) {
+        reply->disconnect(this);
+        reply->abort();
+        reply->deleteLater();
+    }
+    setState(Missing);
+}
+
+void IsoDownload::remove()
+{
+    cancel();
+    if (QFileInfo::exists(m_path) && !QFile::remove(m_path)) {
+        setState(Ready, tr("Could not delete the ISO. Is a VM still using it?"));
+        return;
+    }
+    QFile::remove(partPath(m_path));
+    m_received = 0;
+    m_total = m_distro.isoSize;
+    emit progressChanged();
+    setState(Missing);
+}
+
+void IsoDownload::download()
+{
+    QNetworkRequest request{QUrl(m_distro.isoUrl)};
+    request.setTransferTimeout(TransferTimeoutMs);
+    const qint64 offset = m_part->file.size();
+    if (offset > 0)
+        request.setRawHeader("Range", "bytes=" + QByteArray::number(offset) + '-');
+
+    m_received = offset;
+    emit progressChanged();
+
+    m_reply = m_network->get(request);
+    connect(m_reply, &QNetworkReply::readyRead, this, &IsoDownload::receive);
+    connect(m_reply, &QNetworkReply::finished, this, &IsoDownload::transferFinished);
+}
