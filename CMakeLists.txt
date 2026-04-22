@@ -30,6 +30,7 @@ qt_add_qml_module(testux
         qml/AppCheckBox.qml
         qml/AppProgressBar.qml
         qml/BodyText.qml
+        qml/ChecklistPanel.qml
         qml/DistroCard.qml
         qml/DistroPage.qml
         qml/DistrosPage.qml
