@@ -36,6 +36,7 @@ qt_add_qml_module(testux
         qml/DistrosPage.qml
         qml/DistroTile.qml
         qml/DownloadPanel.qml
+        qml/FactList.qml
         qml/Flag.qml
         qml/Format.qml
         qml/Heading.qml
