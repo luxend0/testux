@@ -148,7 +148,7 @@
       "id": "ubuntu",
       "name": "Ubuntu",
       "edition": "Desktop",
-      "version": "24.04.4 LTS",
+      "version": "26.04 LTS",
       "category": "beginner",
       "summary": {
         "en": "The best-known Linux, with five years of updates for every LTS release."
@@ -162,9 +162,9 @@
       "base": "Debian",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://releases.ubuntu.com/24.04.4/ubuntu-24.04.4-desktop-amd64.iso",
-        "sha256Url": "https://releases.ubuntu.com/24.04.4/SHA256SUMS",
-        "size": 6655619072
+        "url": "https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso",
+        "sha256Url": "https://releases.ubuntu.com/26.04/SHA256SUMS",
+        "size": 6518974464
       },
       "secureBoot": true,
       "liveSession": true,
