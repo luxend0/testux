@@ -67,6 +67,8 @@ Distro Catalog::distro(const QString &id) const
 
 void Catalog::refresh()
 {
+    if (m_loading)
+        return;
     setLoading(true);
 
     QNetworkRequest request(QUrl(QString::fromLatin1(RemoteUrl)));
@@ -111,7 +113,8 @@ bool Catalog::apply(const QByteArray &json)
 
 void Catalog::setLoading(bool loading)
 {
-    // TODO check this
+    if (m_loading == loading)
+        return;
     m_loading = loading;
     emit loadingChanged();
 }
