@@ -7,6 +7,10 @@ import QtQuick.Layouts
 ColumnLayout {
     id: list
 
+    // [{ label: string, value: string }]
+    property var facts: []
+    property int labelWidth: 150
+
     Repeater {
         model: list.facts
 
