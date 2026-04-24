@@ -7,4 +7,12 @@ Rectangle {
 
     required property VmSession session
     required property string distroName
+
+    readonly property bool running: session.state === VmSession.Running
+    property bool stopping: false
+
+    implicitHeight: column.implicitHeight + 2 * Theme.gapL
+    radius: Theme.radius
+    color: Theme.surfaceMuted
+    border.color: Theme.border
 }
