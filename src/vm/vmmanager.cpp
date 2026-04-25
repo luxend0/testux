@@ -237,7 +237,23 @@ quint16 freeQmpPort()
     return server.serverPort();
 }
 
+QString windowTitle(const Distro &distro)
+{
+    QStringList parts{distro.name, distro.edition, distro.version};
+    parts.removeAll(QString());
+    return VmManager::tr("%1 in Testux").arg(parts.join(' '));
+}
+
 // Test disks and measurements
+
+QString testDiskFile(const QString &distroId, const QString &suffix)
+{
+    static const QRegularExpression slug("^[a-z0-9][a-z0-9._-]*$");
+    if (!slug.match(distroId).hasMatch())
+        return {};
+    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + "/disks/" +
+           distroId + suffix;
+}
 
 QString testDiskPath(const QString &distroId)
 {
@@ -394,4 +410,14 @@ VmManager::VmManager(QObject *parent)
     m_firmware = firmware.code;
     if (m_accelerator == "tcg")
         m_setupHint = slowVmHint();
+}
+
+QVariantMap VmManager::measurement(const QString &distroId) const
+{
+    QSettings settings;
+    settings.beginGroup("measurements/" + distroId);
+    if (!settings.contains("ramUsedMb"))
+        return {};
+    return {{"ramUsedMb", settings.value("ramUsedMb").toInt()},
+            {"measuredAt", settings.value("measuredAt").toDateTime()}};
 }
