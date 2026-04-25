@@ -4,3 +4,5 @@
 
 #include <QHash>
 #include <QObject>
+
+#include <memory>
