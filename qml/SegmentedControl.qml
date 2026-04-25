@@ -7,6 +7,7 @@ import QtQuick.Controls.Basic
 Rectangle {
     id: control
 
+    // [{ value: string, label: string }]
     property var options: []
     property string current: ""
 }
