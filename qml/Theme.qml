@@ -32,11 +32,25 @@ QtObject {
     readonly property int radius: 12
     readonly property int radiusLarge: 16
 
+    readonly property int gapXs: 4
+    readonly property int gapS: 8
+    readonly property int gapM: 12
+    readonly property int gapL: 16
+    readonly property int gapXl: 24
+    readonly property int gapXxl: 32
+
     readonly property int fontSmall: 12
     readonly property int fontBase: 14
     readonly property int fontLarge: 16
     readonly property int fontTitle: 20
     readonly property int fontHeadline: 26
+
+    // "ok", "warning" and "blcoker" as used by checkResult.level.
+    function levelColor(level: string): color {
+        if (level === "blocker")
+            return danger
+        return level === "warning" ? warning : ok
+    }
 
     function levelSoftColor(level: string): color {
         if (level === "blocker")
