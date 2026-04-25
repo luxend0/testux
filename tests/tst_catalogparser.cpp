@@ -43,3 +43,17 @@ static QJsonObject category(const QString &id, const QString &english, const QSt
 
 static const QJsonArray defaultCategories{category(u"beginner"_s, u"Beginner"_s, u"Einsteiger"_s),
                                           category(u"gaming"_s, u"Gaming"_s, u"Gaming"_s)};
+
+static QByteArray catalogWith(const QJsonArray &distros,
+                              const QJsonArray &categories = defaultCategories)
+{
+    // TODO
+}
+
+void TestCatalogParser::requiresCategories()
+{
+    const QByteArray missing =
+        QJsonDocument(QJsonObject{{u"distros"_s, QJsonArray{entry(u"a"_s)}}}).toJson();
+    QVERIFY(!CatalogParser::parse(missing, u"en"_s).error.isEmpty());
+    QVERIFY(!CatalogParser::parse(catalogWith({entry(u"a"_s)}, {}), u"en"_s).error.isEmpty());
+}
