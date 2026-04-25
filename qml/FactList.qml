@@ -4,6 +4,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
 
+// Label/value rows separated by hairlines.
 ColumnLayout {
     id: list
 
