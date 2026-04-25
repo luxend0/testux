@@ -80,3 +80,14 @@ qt_add_translations(testux
     TS_FILE_DIR i18n
     RESOURCE_PREFIX /i18n
     NO_GENERATE_PLURALS_TS_FILE)
+
+include(GNUInstallDirs)
+install(TARGETS testux BUNDLE DESTINATION . RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+if(WIN32)
+    install(DIRECTORY DESTINATION scripts)
+endif()
+
+include(CTest)
+if(BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
