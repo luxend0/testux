@@ -346,6 +346,15 @@ VmSession::VmSession(const QString &distroId, const QString &program, const QStr
     });
 }
 
+VmSession::~VmSession()
+{
+    if (m_process->state() != QProcess::NotRunning) {
+        m_process->disconnect(this); // no state signals from a half-destroyed session
+        m_process->kill();
+        m_process->waitForFinished(3000);
+    }
+}
+
 void VmSession::launch()
 {
     connect(m_process, &QProcess::started, this, [this] {
