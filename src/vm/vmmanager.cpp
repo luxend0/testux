@@ -284,7 +284,8 @@ void saveMeasurement(const QString &distroId, int ramUsedMb)
 std::optional<double> statBytes(const QJsonObject &stats, const char *key)
 {
     const double value = stats.value(key).toDouble(-1);
-    // TODO: handle failure
+    if (value < 0 || value >= 0x1p63)
+        return std::nullopt;
     return value;
 }
 
