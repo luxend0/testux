@@ -203,7 +203,7 @@
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
-      "version": "43",
+      "version": "44",
       "category": "other",
       "summary": {
         "en": "Up-to-date GNOME exactly as its developers intended, without extra changes."
@@ -220,9 +220,9 @@
       "base": "independent",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Workstation/x86_64/iso/Fedora-Workstation-Live-43-1.6.x86_64.iso",
-        "sha256Url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Workstation/x86_64/iso/Fedora-Workstation-43-1.6-x86_64-CHECKSUM",
-        "size": 2742190080
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/x86_64/iso/Fedora-Workstation-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/x86_64/iso/Fedora-Workstation-44-1.7-x86_64-CHECKSUM",
+        "size": 2851612672
       },
       "secureBoot": true,
       "liveSession": true,
