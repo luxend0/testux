@@ -281,6 +281,14 @@ void saveMeasurement(const QString &distroId, int ramUsedMb)
 
 // QMP
 
+QByteArray qmpCommand(const QString &command, const QString &id, const QJsonObject &arguments = {})
+{
+    QJsonObject message{{"execute", command}, {"id", id}};
+    if (!arguments.isEmpty())
+        message.insert("arguments", arguments);
+    return QJsonDocument(message).toJson(QJsonDocument::Compact) + '\n';
+}
+
 // QEMU marks values the guest driver has not delivered yet as -1, which arrives as 2^64 - 1.
 std::optional<double> statBytes(const QJsonObject &stats, const char *key)
 {
@@ -288,6 +296,17 @@ std::optional<double> statBytes(const QJsonObject &stats, const char *key)
     if (value < 0 || value >= 0x1p63)
         return std::nullopt;
     return value;
+}
+
+std::optional<BalloonStats> parseBalloonStats(const QJsonObject &reply)
+{
+    const QJsonObject stats = reply.value("return").toObject().value("stats").toObject();
+    const auto total = statBytes(stats, "stat-total-memory");
+    const auto available = statBytes(stats, "stat-available-memory");
+    if (!total || !available || *total <= 0 || *available > *total)
+        return std::nullopt;
+    constexpr double Mb = 1024.0 * 1024.0;
+    return BalloonStats{int((*total - *available) / Mb), int(*total / Mb)};
 }
 
 bool hasEnded(VmSession::State state)
