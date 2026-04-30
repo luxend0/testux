@@ -289,6 +289,12 @@ QByteArray qmpCommand(const QString &command, const QString &id, const QJsonObje
     return QJsonDocument(message).toJson(QJsonDocument::Compact) + '\n';
 }
 
+struct BalloonStats
+{
+    int usedMb = 0;
+    int totalMb = 0;
+};
+
 // QEMU marks values the guest driver has not delivered yet as -1, which arrives as 2^64 - 1.
 std::optional<double> statBytes(const QJsonObject &stats, const char *key)
 {
@@ -440,6 +446,78 @@ VmManager::VmManager(QObject *parent)
     m_firmware = firmware.code;
     if (m_accelerator == "tcg")
         m_setupHint = slowVmHint();
+}
+
+VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool withTestDisk)
+{
+    if (!available())
+        return nullptr;
+
+    if (VmSession *previous = std::exchange(m_session, nullptr)) {
+        if (hasEnded(previous->state()))
+            previous->deleteLater();
+        else
+            previous->stop(); // deletes itself once QEMU is gone, see below
+    }
+
+    QemuConfig config;
+    config.title = windowTitle(distro);
+    config.isoPath = isoPath;
+    config.firmwarePath = m_firmware;
+    config.accelerator = m_accelerator;
+    config.audioDriver = audioDriver(m_qemu);
+    config.ramMb = guestRamMb(distro.minRamMb);
+    config.cpus = guestCpus();
+    config.clipboard = clipboardSharing(m_qemu);
+    config.qmpPort = freeQmpPort();
+    if (withTestDisk) {
+        config.diskPath = testDiskPath(distro.id);
+        if (!config.diskPath.isEmpty() && !QFileInfo::exists(config.diskPath)) {
+            createTestDisk(m_qemuImg, config.diskPath);
+            emit testDisksChanged();
+        }
+    }
+
+    auto *session = new VmSession(distro.id, m_qemu, QemuArgs::build(config), config.qmpPort, this);
+    QQmlEngine::setObjectOwnership(session, QQmlEngine::CppOwnership);
+
+    // A stopped session goes away. A failed one stays current so the UI can show its error
+    // until the next start(); a replaced one has nobody left to show it.
+    connect(session, &VmSession::stateChanged, this, [this, session] {
+        if (session != m_session) {
+            session->deleteLater();
+        } else if (session->state() == VmSession::Stopped) {
+            m_session = nullptr;
+            emit sessionChanged();
+            session->deleteLater();
+        }
+    });
+
+    connect(session, &VmSession::statsChanged, this,
+            [this, session, sinceFirstStats = QElapsedTimer(), measured = false]() mutable {
+                if (measured || session->guestRamUsedMb() <= 0)
+                    return;
+                if (!sinceFirstStats.isValid())
+                    sinceFirstStats.start();
+                // TODO: error handling
+                saveMeasurement(session->distroId(), session->guestRamUsedMb());
+                measured = true;
+                emit measurementsChanged();
+            });
+
+    m_session = session;
+    emit sessionChanged();
+    session->launch();
+    return session;
+}
+
+void VmManager::removeTestDisk(const QString &distroId)
+{
+    // QEMU holds the disk open while the VM runs.
+    // TODO check this
+    const QString path = testDiskPath(distroId);
+    if (!path.isEmpty() && QFile::remove(path))
+        emit testDisksChanged();
 }
 
 QVariantMap VmManager::measurement(const QString &distroId) const
