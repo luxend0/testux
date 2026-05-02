@@ -246,6 +246,13 @@ void IsoDownload::complete(const QString &actualSha256, const QString &expectedS
     setState(Ready);
 }
 
+void IsoDownload::setState(State state, const QString &error)
+{
+    m_state = state;
+    m_error = error;
+    emit stateChanged();
+}
+
 IsoLibrary::IsoLibrary(QObject *parent)
     : QObject(parent),
       m_dir(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/isos"_s),
