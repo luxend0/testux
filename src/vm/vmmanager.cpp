@@ -514,7 +514,8 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
 void VmManager::removeTestDisk(const QString &distroId)
 {
     // QEMU holds the disk open while the VM runs.
-    // TODO check this
+    if (m_session && m_session->distroId() == distroId && !hasEnded(m_session->state()))
+        return;
     const QString path = testDiskPath(distroId);
     if (!path.isEmpty() && QFile::remove(path))
         emit testDisksChanged();
