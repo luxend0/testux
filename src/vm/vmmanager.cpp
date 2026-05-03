@@ -322,6 +322,7 @@ bool hasEnded(VmSession::State state)
 
 } // namespace
 
+
 VmSession::VmSession(const QString &distroId, const QString &program, const QStringList &arguments,
                      quint16 qmpPort, QObject *parent)
     : QObject(parent), m_distroId(distroId), m_process(new QProcess(this)),
@@ -512,6 +513,12 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
     emit sessionChanged();
     session->launch();
     return session;
+}
+
+bool VmManager::hasTestDisk(const QString &distroId) const
+{
+    const QString path = testDiskPath(distroId);
+    return !path.isEmpty() && QFileInfo::exists(path);
 }
 
 void VmManager::removeTestDisk(const QString &distroId)
