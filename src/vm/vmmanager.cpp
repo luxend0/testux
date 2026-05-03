@@ -289,6 +289,12 @@ QByteArray qmpCommand(const QString &command, const QString &id, const QJsonObje
     return QJsonDocument(message).toJson(QJsonDocument::Compact) + '\n';
 }
 
+QByteArray balloonStatsCommand()
+{
+    return qmpCommand("qom-get", "stats",
+                      {{"path", "/machine/peripheral/balloon0"}, {"property", "guest-stats"}});
+}
+
 struct BalloonStats
 {
     int usedMb = 0;
@@ -313,6 +319,13 @@ std::optional<BalloonStats> parseBalloonStats(const QJsonObject &reply)
         return std::nullopt;
     constexpr double Mb = 1024.0 * 1024.0;
     return BalloonStats{int((*total - *available) / Mb), int(*total / Mb)};
+}
+
+// QEMU's last words on stderr, e.g. "qemu-system-x86_64: -accel kvm: Could not access KVM".
+QString failureMessage(const QByteArray &stderrOutput, int exitCode)
+{
+    const QStringList lines = QString::fromLocal8Bit(stderrOutput).split('\n', Qt::SkipEmptyParts);
+    return lines.mid(std::max<qsizetype>(0, lines.size() - 3)).join('\n').trimmed();
 }
 
 bool hasEnded(VmSession::State state)
