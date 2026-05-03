@@ -84,6 +84,24 @@ void TestCatalogParser::skipsUnusableEntries()
     QCOMPARE(result.distros.at(1).id, u"also-good"_s);
 }
 
+void TestCatalogParser::parsesCategoriesInOrder()
+{
+    QJsonObject game = entry(u"game"_s);
+    game[u"category"_s] = u"gaming"_s;
+    const QJsonArray categories{category(u"gaming"_s, u"Gaming"_s, u"Spiele"_s),
+                                category(u"beginner"_s, u"Beginner"_s, u"Einsteiger"_s),
+                                category(u"gaming"_s, u"Duplicate"_s, u"Doppelt"_s),
+                                QJsonObject{{u"id"_s, u"untitled"_s}}};
+
+    const CatalogParser::Result result =
+        CatalogParser::parse(catalogWith({entry(u"plain"_s), game}, categories), u"de"_s);
+    QVERIFY(result.error.isEmpty());
+    QCOMPARE(result.categories.size(), 2);
+    QCOMPARE(result.categories.at(0), (Category{u"gaming"_s, u"Spiele"_s}));
+    QCOMPARE(result.categories.at(1), (Category{u"beginner"_s, u"Einsteiger"_s}));
+    QCOMPARE(result.distros.size(), 2);
+}
+
 void TestCatalogParser::requiresCategories()
 {
     const QByteArray missing =
