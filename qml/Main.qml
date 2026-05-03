@@ -9,6 +9,13 @@ ApplicationWindow {
 
     property string section: "distros"
 
+    readonly property var sections: [
+        { key: "distros", title: qsTr("Distros") },
+        { key: "compare", title: qsTr("Compare") },
+        { key: "pc", title: qsTr("This PC") },
+        { key: "settings", title: qsTr("Settings") }
+    ]
+
     function showSection(key: string) {
         section = key
         const pages = { distros: distrosPage, compare: comparePage, pc: thisPcPage, settings: settingsPage }
