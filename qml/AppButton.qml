@@ -33,4 +33,24 @@ Button {
             return control.kind === "quiet" ? Theme.accent : Theme.text
         }
     }
+
+    background: Rectangle {
+        implicitHeight: 38
+        radius: Theme.radiusSmall
+        color: {
+            if (control.primary)
+                return control.down || control.hovered ? Theme.accentHover : Theme.accent
+            if (control.kind === "quiet")
+                return control.hovered ? Theme.accentSoft : "transparent"
+            if (control.kind === "danger")
+                return control.hovered ? Theme.dangerSoft : Theme.surface
+            return control.hovered ? Theme.surfaceMuted : Theme.surface
+        }
+        border.width: control.primary || control.kind === "quiet" ? 0 : 1
+        border.color: control.kind === "danger" ? Qt.lighter(Theme.danger, 1.6) : Theme.borderStrong
+
+        FocusRing {
+            visible: control.visualFocus
+        }
+    }
 }
