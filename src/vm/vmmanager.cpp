@@ -325,6 +325,8 @@ std::optional<BalloonStats> parseBalloonStats(const QJsonObject &reply)
 QString failureMessage(const QByteArray &stderrOutput, int exitCode)
 {
     const QStringList lines = QString::fromLocal8Bit(stderrOutput).split('\n', Qt::SkipEmptyParts);
+    if (lines.isEmpty())
+        return VmSession::tr("QEMU stopped unexpectedly (exit code %1).").arg(exitCode);
     return lines.mid(std::max<qsizetype>(0, lines.size() - 3)).join('\n').trimmed();
 }
 
