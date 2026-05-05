@@ -12,6 +12,8 @@ ColumnLayout {
     property var facts: []
     property int labelWidth: 150
 
+    spacing: 0
+
     Repeater {
         model: list.facts
 
