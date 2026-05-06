@@ -61,7 +61,8 @@ if(WIN32)
     target_sources(testux PRIVATE)
     target_link_libraries(testux PRIVATE setupapi ole32 shell32 propsys)
 else()
-    target_sources(testux PRIVATE)
+    target_sources(testux PRIVATE
+        src/hw/hardwareprobe_linux.cpp)
 endif()
 
 # qmltyperegistrar includes the QML_ELEMENT headers by bare file name.
