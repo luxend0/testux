@@ -2,9 +2,26 @@
 
 #include "download/checksum.h"
 
+#include <QCryptographicHash>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QLocale>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QQmlEngine>
+#include <QStandardPaths>
+#include <QStorageInfo>
+#include <QtConcurrentRun>
+
 using namespace Qt::StringLiterals;
 
 namespace {
+
+// Left free on the cache drive after the download, so Testux never fills it to the brim.
+constexpr qint64 SpaceMargin = 512LL * 1024 * 1024;
+// Inactivity limit: a stalled connection fails instead of hanging, slow ones are fine.
+constexpr int TransferTimeoutMs = 60 * 1000;
 
 QString partPath(const QString &isoPath)
 {
@@ -121,4 +138,26 @@ void IsoDownload::download()
     m_reply = m_network->get(request);
     connect(m_reply, &QNetworkReply::readyRead, this, &IsoDownload::receive);
     connect(m_reply, &QNetworkReply::finished, this, &IsoDownload::transferFinished);
+}
+
+void IsoDownload::verify(const QString &actualSha256)
+{
+    if (!m_distro.isoSha256.isEmpty()) {
+        complete(actualSha256, m_distro.isoSha256);
+        return;
+    }
+
+    QNetworkRequest request{QUrl(m_distro.isoSha256Url)};
+    request.setTransferTimeout(TransferTimeoutMs);
+    m_reply = m_network->get(request);
+    connect(m_reply, &QNetworkReply::finished, this, [this, actualSha256] {
+        QNetworkReply *reply = std::exchange(m_reply, nullptr);
+        reply->deleteLater();
+        if (reply->error() != QNetworkReply::NoError) {
+            setState(Failed, tr("Could not fetch the checksum: %1").arg(reply->errorString()));
+            return;
+        }
+        const QString isoName = QUrl(m_distro.isoUrl).fileName();
+        complete(actualSha256, Checksum::findSha256(reply->readAll(), isoName));
+    });
 }
