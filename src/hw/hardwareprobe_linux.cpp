@@ -29,7 +29,20 @@ QByteArray loadPciIds()
 // devices) is named after its sysfs node.
 Device deviceAt(const QString &sysfsDevice, const QByteArray &pciIds)
 {
-    // TODO
+    if (QFile::exists(sysfsDevice + "/vendor")) {
+        const auto vendor = quint16(readHex(sysfsDevice + "/vendor"));
+        const auto device = quint16(readHex(sysfsDevice + "/device"));
+        return {pciName(vendor, device, pciIds), vendor};
+    }
+    if (QFile::exists(sysfsDevice + "/../idVendor")) {
+        const auto vendor = quint16(readHex(sysfsDevice + "/../idVendor"));
+        const auto product = quint16(readHex(sysfsDevice + "/../idProduct"));
+        return {QStringLiteral("USB %1:%2")
+                    .arg(vendor, 4, 16, QLatin1Char('0'))
+                    .arg(product, 4, 16, QLatin1Char('0')),
+                vendor};
+    }
+    return {QDir(sysfsDevice).dirName(), 0};
 }
 
 } // namespace
