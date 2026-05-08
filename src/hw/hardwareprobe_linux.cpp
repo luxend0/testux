@@ -1,5 +1,10 @@
 #include "hw/hardware.h"
 
+#include <QDir>
+#include <QFile>
+#include <QStorageInfo>
+#include <QThread>
+
 namespace {
 
 constexpr quint16 VendorNvidia = 0x10de;
@@ -15,6 +20,14 @@ struct Device
 quint32 readHex(const QString &path)
 {
     return readFile(path).trimmed().toUInt(nullptr, 16);
+}
+
+bool secureBootEnabled()
+{
+    // efivarfs: 4 bytes of attributes, then the variable data (1 = enabled).
+    const QByteArray var =
+        readFile("/sys/firmware/efi/efivars/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c");
+    return var.size() >= 5 && var.at(4) == 1;
 }
 
 QByteArray loadPciIds()
