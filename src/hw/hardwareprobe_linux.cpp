@@ -110,6 +110,19 @@ Device deviceAt(const QString &sysfsDevice, const QByteArray &pciIds)
     return {QDir(sysfsDevice).dirName(), 0};
 }
 
+QList<Device> gpus(const QByteArray &pciIds)
+{
+    qDebug() << Q_FUNC_INFO;
+    QList<Device> result;
+    const QDir devices("/sys/bus/pci/devices");
+    for (const QString &entry : devices.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
+        const QString path = devices.filePath(entry);
+        if ((readHex(path + "/class") >> 16) == 0x03) // display controller
+            result << deviceAt(path, pciIds);
+    }
+    return result;
+}
+
 QList<Device> wifiAdapters(const QByteArray &pciIds)
 {
     QList<Device> result;
@@ -125,3 +138,29 @@ QList<Device> wifiAdapters(const QByteArray &pciIds)
 }
 
 } // namespace
+
+HardwareReport probeHardware()
+{
+    HardwareReport report;
+    report.windows = false;
+    report.uefi = QFile::exists("/sys/firmware/efi");
+    report.secureBoot = report.uefi && secureBootEnabled();
+    report.virtualization = HostInfo::hardwareVirtualization();
+    report.ramMb = HostInfo::totalRamMb();
+    report.cpuThreads = QThread::idealThreadCount();
+    report.systemFreeBytes = QStorageInfo::root().bytesAvailable();
+
+    const QByteArray pciIds = loadPciIds();
+    for (const Device &gpu : gpus(pciIds)) {
+        report.gpus << gpu.name;
+        report.nvidiaGpu |= gpu.vendor == VendorNvidia;
+    }
+    for (const Device &adapter : wifiAdapters(pciIds)) {
+        report.wifiAdapters << adapter.name;
+        report.broadcomWifi |=
+            adapter.vendor == VendorBroadcomPci || adapter.vendor == VendorBroadcomUsb;
+    }
+
+    report.valid = true;
+    return report;
+}
