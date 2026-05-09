@@ -17,6 +17,14 @@ struct Device
     quint16 vendor = 0;
 };
 
+QByteArray readFile(const QString &path)
+{
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly))
+        return {};
+    return file.readAll();
+}
+
 quint32 readHex(const QString &path)
 {
     return readFile(path).trimmed().toUInt(nullptr, 16);
@@ -35,6 +43,28 @@ QByteArray loadPciIds()
     for (const char *path : {"/usr/share/hwdata/pci.ids", "/usr/share/misc/pci.ids"}) {
     }
     return {};
+}
+
+QString pciName(quint16 vendor, quint16 device, const QByteArray &pciIds)
+{
+    const QByteArray vendorKey = QByteArray::number(vendor, 16).rightJustified(4, '0') + "  ";
+    const QByteArray deviceKey =
+        '\t' + QByteArray::number(device, 16).rightJustified(4, '0') + "  ";
+
+    QString vendorName;
+    for (const QByteArray &line : pciIds.split('\n')) {
+        if (vendorName.isEmpty()) {
+            if (line.startsWith(vendorKey))
+                vendorName = preferBracketed(QString::fromUtf8(line.mid(vendorKey.size())));
+            continue;
+        }
+        if (!line.startsWith('\t') && !line.startsWith('#') && !line.isEmpty())
+            break; // next vendor, the device is not listed
+        if (line.startsWith(deviceKey))
+            return vendorName + u' ' +
+                   preferBracketed(QString::fromUtf8(line.mid(deviceKey.size())));
+    }
+    return vendorName.isEmpty() ? fallbackVendorName(vendor) : vendorName;
 }
 
 // PCI deviecs expose vendor/device next to each other; USB network interfaces sit one
