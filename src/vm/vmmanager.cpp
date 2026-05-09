@@ -337,6 +337,7 @@ bool hasEnded(VmSession::State state)
 
 } // namespace
 
+// VmSession
 
 VmSession::VmSession(const QString &distroId, const QString &program, const QStringList &arguments,
                      quint16 qmpPort, QObject *parent)
