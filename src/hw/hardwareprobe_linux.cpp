@@ -45,6 +45,28 @@ QByteArray loadPciIds()
     return {};
 }
 
+QString preferBracketed(const QString &name)
+{
+    const qsizetype open = name.indexOf(u'[');
+    return name.sliced(open + 1, name.size() - open - 2);
+}
+
+QString fallbackVendorName(quint16 vendor)
+{
+    switch (vendor) {
+    case VendorNvidia:
+        return QStringLiteral("NVIDIA");
+    case 0x1002:
+        return QStringLiteral("AMD");
+    case 0x8086:
+        return QStringLiteral("Intel");
+    case VendorBroadcomPci:
+        return QStringLiteral("Broadcom");
+    default:
+        return QStringLiteral("PCI %1").arg(vendor, 4, 16, QLatin1Char('0'));
+    }
+}
+
 QString pciName(quint16 vendor, quint16 device, const QByteArray &pciIds)
 {
     const QByteArray vendorKey = QByteArray::number(vendor, 16).rightJustified(4, '0') + "  ";
@@ -86,6 +108,20 @@ Device deviceAt(const QString &sysfsDevice, const QByteArray &pciIds)
                 vendor};
     }
     return {QDir(sysfsDevice).dirName(), 0};
+}
+
+QList<Device> wifiAdapters(const QByteArray &pciIds)
+{
+    QList<Device> result;
+    const QDir interfaces("/sys/class/net");
+    for (const QString &name : interfaces.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
+        const QString path = interfaces.filePath(name);
+        const bool wireless =
+            QFile::exists(path + "/wireless") || QFile::exists(path + "/phy80211");
+        if (wireless && QFile::exists(path + "/device"))
+            result << deviceAt(QDir(path + "/device").canonicalPath(), pciIds);
+    }
+    return result;
 }
 
 } // namespace
