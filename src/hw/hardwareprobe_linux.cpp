@@ -112,7 +112,6 @@ Device deviceAt(const QString &sysfsDevice, const QByteArray &pciIds)
 
 QList<Device> gpus(const QByteArray &pciIds)
 {
-    qDebug() << Q_FUNC_INFO;
     QList<Device> result;
     const QDir devices("/sys/bus/pci/devices");
     for (const QString &entry : devices.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
