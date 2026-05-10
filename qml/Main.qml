@@ -112,6 +112,14 @@ ApplicationWindow {
     }
 
     Component {
+        id: comparePage
+
+        ComparePage {
+            onDistroSelected: id => window.openDistro(id)
+        }
+    }
+
+    Component {
         id: thisPcPage
 
         ThisPcPage {}
@@ -121,5 +129,10 @@ ApplicationWindow {
         id: settingsPage
 
         SettingsPage {}
+    }
+
+    Component.onCompleted: {
+        if (BareMetal.postBoot || BareMetal.pending)
+            welcomeBack.open()
     }
 }
