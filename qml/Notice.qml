@@ -20,6 +20,18 @@ Rectangle {
         }
     }
 
+    implicitHeight: column.implicitHeight + 2 * Theme.gapL
+    implicitWidth: column.implicitWidth + 2 * Theme.gapL
+    radius: Theme.radius
+    color: {
+        switch (kind) {
+        case "ok": return Theme.okSoft
+        case "warning": return Theme.warningSoft
+        case "error": return Theme.dangerSoft
+        default: return Theme.accentSoft
+        }
+    }
+
     Rectangle {
         width: 4
         radius: 2
