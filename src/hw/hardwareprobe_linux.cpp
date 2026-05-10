@@ -41,6 +41,8 @@ bool secureBootEnabled()
 QByteArray loadPciIds()
 {
     for (const char *path : {"/usr/share/hwdata/pci.ids", "/usr/share/misc/pci.ids"}) {
+        if (QByteArray ids = readFile(path); !ids.isEmpty())
+            return ids;
     }
     return {};
 }
@@ -48,6 +50,8 @@ QByteArray loadPciIds()
 QString preferBracketed(const QString &name)
 {
     const qsizetype open = name.indexOf(u'[');
+    if (open < 0 || !name.endsWith(u']'))
+        return name;
     return name.sliced(open + 1, name.size() - open - 2);
 }
 
