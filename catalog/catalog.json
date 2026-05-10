@@ -215,7 +215,17 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "zorin-layout",
+          "title": {
+            "en": "Switch the desktop layout"
+          },
+          "detail": {
+            "en": "Open Zorin Appearance > Layout and try the Windows-like layout next to the others."
+          }
+        }
+      ]
     },
     {
       "id": "fedora-workstation",
