@@ -11,6 +11,8 @@ ColumnLayout {
 
     readonly property real total: download.total > 0 ? download.total : distro.isoSize
 
+    spacing: Theme.gapS
+
     Notice {
         kind: "error"
         visible: panel.download.state === IsoDownload.Failed
