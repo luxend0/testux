@@ -42,4 +42,16 @@ QtObject {
     function releaseModelName(model: string): string {
         return model === "rolling" ? qsTr("Rolling release") : qsTr("Fixed releases")
     }
+
+    // True when dotted version `candidate` is newer than `current`, e.g. "0.2.0" > "0.1.3".
+    function isNewer(candidate: string, current: string): bool {
+        const a = candidate.split(".").map(Number)
+        const b = current.split(".").map(Number)
+        for (let i = 0; i < Math.max(a.length, b.length); ++i) {
+            const difference = (a[i] || 0) - (b[i] || 0)
+            if (difference !== 0)
+                return difference > 0
+        }
+        return false
+    }
 }
