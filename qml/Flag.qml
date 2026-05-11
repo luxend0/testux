@@ -17,4 +17,10 @@ RowLayout {
         implicitWidth: 8
         implicitHeight: 8
     }
+
+    Label {
+        id: label
+        font.pixelSize: Theme.fontSmall
+        color: flag.on ? Theme.textMuted : Theme.textFaint
+    }
 }
