@@ -425,7 +425,7 @@ void VmSession::stop()
 {
     if (m_process->state() == QProcess::NotRunning)
         return;
-    // Whichever way QEMU ends from here on (guest poewrs off, or the kill below), it is the
+    // Whichever way QEMU ends from here on (guest powers off, or the kill below), it is the
     // stop the user asked for and not a failure.
     disconnect(m_process, &QProcess::finished, this, nullptr);
     connect(m_process, &QProcess::finished, this, [this] {
