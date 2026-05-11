@@ -137,7 +137,7 @@ PageScroll {
                             { label: qsTr("Download"), value: Format.bytes(page.distro.isoSize) },
                             { label: qsTr("Memory"), value: qsTr("%1 or more").arg(Format.megabytes(page.distro.minRamMb)) },
                             { label: qsTr("Secure Boot"), value: page.distro.secureBoot ? qsTr("Works with Secure Boot on") : qsTr("Secure Boot must be off") },
-                            { label: qsTr("Live sessoin"), value: page.distro.liveSession ? qsTr("Yes, try before installing") : qsTr("No, installer only") },
+                            { label: qsTr("Live session"), value: page.distro.liveSession ? qsTr("Yes, try before installing") : qsTr("No, installer only") },
                             { label: qsTr("NVIDIA driver"), value: page.distro.nvidiaReady ? qsTr("Included or offered") : qsTr("Install it afterwards") }
                         ]
                         Layout.fillWidth: true
