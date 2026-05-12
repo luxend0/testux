@@ -24,6 +24,11 @@ Panel {
         store.setValue(distro.id, JSON.stringify(next))
     }
 
+    Settings {
+        id: store
+        category: "checklist"
+    }
+
     ColumnLayout {
         anchors.fill: parent
         spacing: Theme.gapL
