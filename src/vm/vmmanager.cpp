@@ -51,6 +51,9 @@ struct Firmware
     QString varsTemplate; // "" if none ships with the code image
 };
 
+// Plain (non Secure Boot) UEFI builds. Without a vars image OVMF keeps its variables in RAM,
+// so they are gone at the next start. That is fine for a live session; a test disk gets its
+// own copy of the template so the boot entry an installer writes survives.
 Firmware findFirmware(const QString &qemu)
 {
     const QString bin = QFileInfo(qemu).absolutePath();
@@ -187,6 +190,8 @@ QString audioDriver(const QString &qemu)
     return {};
 }
 
+// A quarter of the host RAM within 2..8 GiB: half pushed a 16 GiB PC with a browser open into
+// swap. Distros that want more get their minimum as long as the host keeps half.
 int guestRamMb(int distroMinRamMb)
 {
     const int host = HostInfo::totalRamMb();
