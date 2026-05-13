@@ -13,4 +13,14 @@ Panel {
 
     readonly property list<checklistItem> items: [...Catalog.checklist, ...distro.checklist]
     property list<string> done
+
+    Component.onCompleted: done = JSON.parse(store.value(distro.id, "[]"))
+
+    function setDone(itemId: string, checked: bool) {
+        const next = done.filter(id => id !== itemId)
+        if (checked)
+            next.push(itemId)
+        done = next
+        store.setValue(distro.id, JSON.stringify(next))
+    }
 }
