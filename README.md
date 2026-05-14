@@ -145,6 +145,11 @@ If you installed Linux and never go back to Windows, the TESTUX partition stays 
 disk. It does no harm. You can delete it from Linux with GNOME Disks or KDE Partition
 Manager.
 
+## Privacy
+
+No telemetry, no account. Testux talks to GitHub to load the catalog and to the distro
+mirrors to download ISOs. Nothing else.
+
 ## Building from source
 
 You need Qt 6.8 or newer (Quick, Quick Controls 2, Network, Concurrent, Linguist tools),
@@ -178,3 +183,25 @@ To update the translation files after changing UI strings:
 ```sh
 cmake --build build --target update_translations
 ```
+
+## Adding or updating a distro
+
+Everything lives in [`catalog/catalog.json`](catalog/catalog.json); the format is described
+in [`catalog/README.md`](catalog/README.md). After editing, check that every URL and
+checksum still resolves:
+
+```sh
+python3 tools/check_catalog.py
+```
+
+Then open a pull request. Once it is merged, every Testux picks it up on the next start.
+New translations of the app itself go into `i18n/`.
+
+## Credits
+
+Tux by Larry Ewing (lewing@isc.tamu.edu), created with The GIMP. The vector version the
+Testux icon builds on is by Simon Budig and Garrett LeSage
+([File:Tux.svg](https://commons.wikimedia.org/wiki/File:Tux.svg) on Wikimedia Commons).
+
+Distro names and logos are trademarks of their owners and are shown only to identify each
+distro; sources and licenses are listed in [catalog/logos](catalog/logos/README.md).
