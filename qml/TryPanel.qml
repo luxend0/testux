@@ -17,6 +17,7 @@ Panel {
     readonly property bool otherActive: session !== null && !sessionHere
                                         && (session.state === VmSession.Starting || session.state === VmSession.Running)
 
+    // hasTestDisk() does not notify, so the binding re-evaluates on this counter.
     property int diskRevision: 0
     readonly property bool hasTestDisk: diskRevision >= 0 && VmManager.hasTestDisk(distro.id)
 }
