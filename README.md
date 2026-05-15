@@ -205,3 +205,8 @@ Testux icon builds on is by Simon Budig and Garrett LeSage
 
 Distro names and logos are trademarks of their owners and are shown only to identify each
 distro; sources and licenses are listed in [catalog/logos](catalog/logos/README.md).
+
+## License
+
+Testux is free software under the [GNU General Public License v3.0](LICENSE). The bundled
+QEMU on Windows is licensed under the GPL-2.0.
