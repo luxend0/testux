@@ -15,6 +15,17 @@ AbstractButton {
         cursorShape: Qt.PointingHandCursor
     }
 
+    background: Rectangle {
+        radius: Theme.radiusLarge
+        color: card.down ? Theme.surfaceMuted : Theme.surface
+        border.color: card.hovered ? Theme.borderStrong : Theme.border
+
+        FocusRing {
+            baseRadius: Theme.radiusLarge
+            visible: card.visualFocus
+        }
+    }
+
     contentItem: ColumnLayout {
         spacing: Theme.gapM
 
