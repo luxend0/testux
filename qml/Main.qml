@@ -131,6 +131,10 @@ ApplicationWindow {
         SettingsPage {}
     }
 
+    WelcomeBackDialog {
+        id: welcomeBack
+    }
+
     Component.onCompleted: {
         if (BareMetal.postBoot || BareMetal.pending)
             welcomeBack.open()
