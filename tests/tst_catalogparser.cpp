@@ -125,6 +125,13 @@ void TestCatalogParser::requiresCategories()
     QVERIFY(!CatalogParser::parse(catalogWith({entry(u"a"_s)}, {}), u"en"_s).error.isEmpty());
 }
 
+void TestCatalogParser::reportsBrokenJson()
+{
+    QVERIFY(!CatalogParser::parse("{ \"distros\": [", u"en"_s).error.isEmpty());
+    QVERIFY(!CatalogParser::parse("{}", u"en"_s).error.isEmpty());
+    QVERIFY(CatalogParser::parse("{ \"distros\": [", u"en"_s).distros.isEmpty());
+}
+
 void TestCatalogParser::parsesShippedCatalog()
 {
     QFile file(QStringLiteral(TESTUX_CATALOG));
