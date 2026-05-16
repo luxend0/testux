@@ -57,4 +57,9 @@ QtObject {
             return dangerSoft
         return level === "warning" ? warningSoft : okSoft
     }
+
+    function textOn(fill: color): color {
+        const luminance = 0.299 * fill.r + 0.587 * fill.g + 0.114 * fill.b
+        return luminance > 0.62 ? text : "#ffffff"
+    }
 }
