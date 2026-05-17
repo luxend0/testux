@@ -77,6 +77,23 @@ struct Device
     quint16 vendor = 0;
 };
 
+std::optional<DWORD> registryDword(const wchar_t *subKey, const wchar_t *name)
+{
+    DWORD value = 0;
+    DWORD size = sizeof(value);
+    if (RegGetValueW(HKEY_LOCAL_MACHINE, subKey, name, RRF_RT_REG_DWORD, nullptr, &value, &size) !=
+        ERROR_SUCCESS)
+        return std::nullopt;
+    return value;
+}
+
+QString systemDrive()
+{
+    wchar_t windowsDir[MAX_PATH];
+    const UINT length = GetSystemWindowsDirectoryW(windowsDir, MAX_PATH);
+    return QString::fromWCharArray(windowsDir, 2);
+}
+
 bool secureBootEnabled()
 {
     return registryDword(L"SYSTEM\\CurrentControlSet\\Control\\SecureBoot\\State",
@@ -94,6 +111,20 @@ bool fastStartupEnabled()
         registryDword(L"SYSTEM\\CurrentControlSet\\Control\\Power", L"HibernateEnabled")
             .value_or(1) != 0;
     return hiberboot && hibernation;
+}
+
+bool onGptDisk(const QString &drive)
+{
+    const QString volumePath = QStringLiteral("\\\\.\\") + drive;
+    HANDLE raw = CreateFileW(wide(volumePath), 0, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr,
+                             OPEN_EXISTING, 0, nullptr);
+    const UniqueHandle volume(raw);
+
+    PARTITION_INFORMATION_EX info{};
+    DWORD returned = 0;
+    return DeviceIoControl(volume.get(), IOCTL_DISK_GET_PARTITION_INFO_EX, nullptr, 0, &info,
+                           sizeof(info), &returned, nullptr) &&
+           info.PartitionStyle == PARTITION_STYLE_GPT;
 }
 
 } // namespace
