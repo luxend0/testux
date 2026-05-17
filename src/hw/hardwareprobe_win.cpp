@@ -79,6 +79,11 @@ struct Device
     quint16 vendor = 0;
 };
 
+const wchar_t *wide(const QString &text)
+{
+    return reinterpret_cast<const wchar_t *>(text.utf16());
+}
+
 std::optional<DWORD> registryDword(const wchar_t *subKey, const wchar_t *name)
 {
     DWORD value = 0;
@@ -127,6 +132,14 @@ bool onGptDisk(const QString &drive)
     return DeviceIoControl(volume.get(), IOCTL_DISK_GET_PARTITION_INFO_EX, nullptr, 0, &info,
                            sizeof(info), &returned, nullptr) &&
            info.PartitionStyle == PARTITION_STYLE_GPT;
+}
+
+quint16 vendorId(const QString &hardwareId)
+{
+    qDebug() << Q_FUNC_INFO;
+    static const QRegularExpression pattern(QStringLiteral("(?:VEN|VID)_([0-9A-Fa-f]{4})"));
+    const QRegularExpressionMatch match = pattern.match(hardwareId);
+    return match.hasMatch() ? match.captured(1).toUShort(nullptr, 16) : 0;
 }
 
 QList<Device> presentDevices(const GUID &deviceClass)
