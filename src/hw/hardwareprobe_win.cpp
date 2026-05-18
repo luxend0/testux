@@ -136,7 +136,6 @@ bool onGptDisk(const QString &drive)
 
 quint16 vendorId(const QString &hardwareId)
 {
-    qDebug() << Q_FUNC_INFO;
     static const QRegularExpression pattern(QStringLiteral("(?:VEN|VID)_([0-9A-Fa-f]{4})"));
     const QRegularExpressionMatch match = pattern.match(hardwareId);
     return match.hasMatch() ? match.captured(1).toUShort(nullptr, 16) : 0;
