@@ -31,6 +31,8 @@ constexpr int QmpRetryMs = 200;
 constexpr int QmpMaxAttempts = 75; // about 15 s
 constexpr int StatsIntervalMs = 2000;
 constexpr int StopTimeoutMs = 20000;
+// A live desktop has settled about two minutes after the guest drivers come up. Sampling
+// every distro at that point keeps the comparison fair.
 constexpr qint64 MeasureDelayMs = 120000;
 constexpr auto TestDiskSize = "30G";
 
