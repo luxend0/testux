@@ -60,3 +60,6 @@ void TestCatalogParser::requiresCategories()
     QVERIFY(!CatalogParser::parse(missing, u"en"_s).error.isEmpty());
     QVERIFY(!CatalogParser::parse(catalogWith({entry(u"a"_s)}, {}), u"en"_s).error.isEmpty());
 }
+
+QTEST_GUILESS_MAIN(TestCatalogParser)
+#include "tst_catalogparser.moc"
