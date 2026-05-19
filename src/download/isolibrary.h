@@ -6,3 +6,6 @@
 #include <QObject>
 
 #include <memory>
+
+class QNetworkAccessManager;
+class QNetworkReply;
