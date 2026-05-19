@@ -125,6 +125,8 @@ bool onGptDisk(const QString &drive)
     const QString volumePath = QStringLiteral("\\\\.\\") + drive;
     HANDLE raw = CreateFileW(wide(volumePath), 0, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr,
                              OPEN_EXISTING, 0, nullptr);
+    if (raw == INVALID_HANDLE_VALUE)
+        return false;
     const UniqueHandle volume(raw);
 
     PARTITION_INFORMATION_EX info{};
