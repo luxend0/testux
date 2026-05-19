@@ -16,6 +16,9 @@ using namespace Qt::StringLiterals;
 
 namespace {
 
+constexpr auto EmbeddedPath = ":/qt/qml/Testux/catalog/catalog.json";
+constexpr int TransferTimeoutMs = 15'000;
+
 QString cachePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) +
