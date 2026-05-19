@@ -185,6 +185,7 @@ void IsoDownload::transferFinished()
     QNetworkReply *reply = std::exchange(m_reply, nullptr);
     reply->deleteLater();
 
+    // 416 means there is nothing left to fetch: the .part was already complete.
     const bool alreadyComplete = httpStatus(reply) == 416 && m_part->file.size() > 0;
     if (reply->error() != QNetworkReply::NoError && !alreadyComplete) {
         m_part.reset();
