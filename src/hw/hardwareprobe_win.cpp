@@ -23,6 +23,8 @@
 
 #include <devguid.h>
 
+using Microsoft::WRL::ComPtr;
+
 namespace {
 
 constexpr quint16 VendorNvidia = 0x10de;
@@ -125,6 +127,28 @@ bool onGptDisk(const QString &drive)
     return DeviceIoControl(volume.get(), IOCTL_DISK_GET_PARTITION_INFO_EX, nullptr, 0, &info,
                            sizeof(info), &returned, nullptr) &&
            info.PartitionStyle == PARTITION_STYLE_GPT;
+}
+
+QList<Device> presentDevices(const GUID &deviceClass)
+{
+    QList<Device> devices;
+    HDEVINFO raw = SetupDiGetClassDevsW(&deviceClass, nullptr, nullptr, DIGCF_PRESENT);
+    if (raw == INVALID_HANDLE_VALUE)
+        return devices;
+    const UniqueDeviceInfoSet set(raw);
+
+    SP_DEVINFO_DATA data{};
+    data.cbSize = sizeof(data);
+    for (DWORD index = 0; SetupDiEnumDeviceInfo(raw, index, &data); ++index) {
+        Device device;
+        device.name = deviceProperty(raw, data, SPDRP_FRIENDLYNAME);
+        if (device.name.isEmpty())
+            device.name = deviceProperty(raw, data, SPDRP_DEVICEDESC);
+        device.hardwareId = deviceProperty(raw, data, SPDRP_HARDWAREID);
+        device.vendor = vendorId(device.hardwareId);
+        devices << device;
+    }
+    return devices;
 }
 
 } // namespace
