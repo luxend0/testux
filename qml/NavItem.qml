@@ -10,6 +10,10 @@ AbstractButton {
     leftPadding: Theme.gapL
     implicitHeight: 40
 
+    HoverHandler {
+        cursorShape: Qt.PointingHandCursor
+    }
+
     background: Rectangle {
         radius: Theme.radiusSmall
         color: item.current ? Theme.accentSoft : (item.hovered ? Theme.surfaceMuted : "transparent")
