@@ -92,7 +92,17 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "mint-drivers",
+          "title": {
+            "en": "Open the Driver Manager"
+          },
+          "detail": {
+            "en": "Menu > Administration > Driver Manager shows which extra drivers (for example NVIDIA) Mint would install for your hardware."
+          }
+        }
+      ]
     },
     {
       "id": "popos",
@@ -178,7 +188,17 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "zorin-layout",
+          "title": {
+            "en": "Switch the desktop layout"
+          },
+          "detail": {
+            "en": "Open Zorin Appearance > Layout and try the Windows-like layout next to the others."
+          }
+        }
+      ]
     },
     {
       "id": "fedora-workstation",
@@ -209,7 +229,17 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "fedora-overview",
+          "title": {
+            "en": "Use the Activities overview"
+          },
+          "detail": {
+            "en": "Press the Super (Windows) key: you see all open windows and workspaces, and you can start typing to search for apps."
+          }
+        }
+      ]
     }
   ]
 }
