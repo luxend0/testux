@@ -12,6 +12,11 @@ using namespace Qt::StringLiterals;
 
 namespace {
 
+QString localized(const QJsonValue &value, const QString &language)
+{
+    // TODO
+}
+
 bool isKnownCategory(const QString &category)
 {
     static const QSet<QString> categories{u"beginner"_s, u"kde"_s, u"gaming"_s, u"other"_s};
