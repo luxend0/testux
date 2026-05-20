@@ -103,7 +103,6 @@ QString systemDrive()
 
 bool isUefi()
 {
-    qDebug() << Q_FUNC_INFO;
     FIRMWARE_TYPE type = FirmwareTypeUnknown;
     return GetFirmwareType(&type) && type == FirmwareTypeUefi;
 }
