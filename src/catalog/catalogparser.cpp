@@ -14,7 +14,11 @@ namespace {
 
 QString localized(const QJsonValue &value, const QString &language)
 {
-    // TODO
+    if (value.isString())
+        return value.toString();
+    const QJsonObject texts = value.toObject();
+    const QString text = texts.value(language).toString();
+    return text.isEmpty() ? texts.value(u"en").toString() : text;
 }
 
 bool isKnownCategory(const QString &category)
