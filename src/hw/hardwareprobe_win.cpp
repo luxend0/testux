@@ -144,7 +144,17 @@ bool onGptDisk(const QString &drive)
 
 QString deviceProperty(HDEVINFO set, SP_DEVINFO_DATA &device, DWORD property)
 {
-    // TODO
+    DWORD required = 0;
+    SetupDiGetDeviceRegistryPropertyW(set, &device, property, nullptr, nullptr, 0, &required);
+    if (required == 0)
+        return {};
+
+    std::vector<wchar_t> buffer(required / sizeof(wchar_t) + 1, L'\0');
+    if (!SetupDiGetDeviceRegistryPropertyW(set, &device, property, nullptr,
+                                           reinterpret_cast<PBYTE>(buffer.data()),
+                                           DWORD(buffer.size() * sizeof(wchar_t)), nullptr))
+        return {};
+    return QString::fromWCharArray(buffer.data());
 }
 
 quint16 vendorId(const QString &hardwareId)
