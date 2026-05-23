@@ -11,7 +11,6 @@ CheckResult warning(const QString &id, const QString &title, const QString &deta
 
 CheckResult blocker(const QString &id, const QString &title, const QString &detail)
 {
-    qDebug() << Q_FUNC_INFO;
     return result(id, QStringLiteral("blocker"), title, detail);
 }
 
