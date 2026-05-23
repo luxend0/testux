@@ -37,3 +37,8 @@ bool HardwareCheck::canBoot(const Distro &distro, int linuxSpaceGb) const
 {
     return !Readiness::hasBlocker(evaluate(distro, linuxSpaceGb));
 }
+
+qint64 HardwareCheck::requiredBytes(const Distro &distro, int linuxSpaceGb) const
+{
+    return Readiness::requiredBytes(distro, linuxSpaceGb);
+}
