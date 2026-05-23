@@ -128,6 +128,8 @@ bool fastStartupEnabled()
 
 bool onGptDisk(const QString &drive)
 {
+    // IOCTL_DISK_GET_PARTITION_INFO_EX is FILE_ANY_ACCESS, so a handle without any access
+    // rights works for regular users.
     const QString volumePath = QStringLiteral("\\\\.\\") + drive;
     HANDLE raw = CreateFileW(wide(volumePath), 0, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr,
                              OPEN_EXISTING, 0, nullptr);
@@ -157,6 +159,7 @@ QString deviceProperty(HDEVINFO set, SP_DEVINFO_DATA &device, DWORD property)
     return QString::fromWCharArray(buffer.data());
 }
 
+// Hardware ids look like "PCI\VEN_10DE&DEV_2684&..." or "USB\VID_0A5C&PID_BD1E&...".
 quint16 vendorId(const QString &hardwareId)
 {
     static const QRegularExpression pattern(QStringLiteral("(?:VEN|VID)_([0-9A-Fa-f]{4})"));
