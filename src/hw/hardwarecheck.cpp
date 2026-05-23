@@ -1,5 +1,7 @@
 #include "hw/hardwarecheck.h"
 
+#include "hw/readiness.h"
+
 #include <QFutureWatcher>
 #include <QtConcurrent/QtConcurrentRun>
 
