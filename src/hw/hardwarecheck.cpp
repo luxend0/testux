@@ -5,7 +5,6 @@
 
 HardwareCheck::HardwareCheck(QObject *parent) : QObject(parent)
 {
-    qDebug() << Q_FUNC_INFO;
     run();
 }
 
