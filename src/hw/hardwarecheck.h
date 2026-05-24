@@ -3,6 +3,8 @@
 #include "catalog/distro.h"
 #include "hw/hardware.h"
 
+#include <QObject>
+
 class HardwareCheck : public QObject
 {
     Q_OBJECT
