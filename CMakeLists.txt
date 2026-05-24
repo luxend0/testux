@@ -54,6 +54,7 @@ qt_add_qml_module(testux
         qml/Sidebar.qml
         qml/StatusDot.qml
         qml/Theme.qml
+        qml/ThisPcPage.qml
         qml/TryPanel.qml
     RESOURCES
         catalog/catalog.json
