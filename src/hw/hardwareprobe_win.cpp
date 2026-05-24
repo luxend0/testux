@@ -210,6 +210,23 @@ QList<Device> presentDevices(const GUID &deviceClass)
     return devices;
 }
 
+// The network class also holds WAN miniports, VPN, Bluetooth and Hyper-V adapters. A Wi-Fi
+// adapter is a real bus device whose name says so, which vendors do consistently
+// ("Intel(R) Wi-Fi 6 AX201", "Broadcom 802.11ac Network Adapter", "... Wireless LAN Card").
+bool isWifiAdapter(const Device &device)
+{
+    static const QStringList buses = {"PCI\\", "USB\\", "SDIO\\"};
+    static const QStringList markers = {"wi-fi", "wifi", "wireless", "wlan", "802.11"};
+
+    const bool physical = std::any_of(buses.cbegin(), buses.cend(), [&](const QString &bus) {
+        return device.hardwareId.startsWith(bus, Qt::CaseInsensitive);
+    });
+    const QString name = device.name.toLower();
+    const bool wireless = std::any_of(markers.cbegin(), markers.cend(),
+                                      [&](const QString &marker) { return name.contains(marker); });
+    return physical && wireless;
+}
+
 } // namespace
 
 HardwareReport probeHardware()
