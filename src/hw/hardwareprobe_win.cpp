@@ -114,6 +114,7 @@ bool secureBootEnabled()
                .value_or(0) == 1;
 }
 
+// Fast Startup is part of hibernation and only takes effect while hibernation is enabled.
 bool fastStartupEnabled()
 {
     const bool hiberboot =
