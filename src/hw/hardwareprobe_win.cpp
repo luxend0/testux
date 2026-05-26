@@ -139,6 +139,8 @@ bool bitLockerProtected(const QString &drive)
 
     ComPtr<IShellItem2> item;
     const QString root = drive + u'\\';
+    if (FAILED(SHCreateItemFromParsingName(wide(root), nullptr, IID_PPV_ARGS(&item))))
+        return false;
 
     PropVariant property;
     LONG state = 0;
