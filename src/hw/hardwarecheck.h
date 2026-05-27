@@ -16,7 +16,7 @@ class HardwareCheck : public QObject
 public:
     explicit HardwareCheck(QObject *parent = nullptr);
 
-    HardwareReport report() const { return m_hw; }
+    HardwareReport report() const { return m_report; }
     bool busy() const { return m_busy; }
 
     Q_INVOKABLE void run(); // ignored while busy; the constructor runs it once
@@ -29,6 +29,6 @@ signals:
     void busyChanged();
 
 private:
-    HardwareReport m_hw;
+    HardwareReport m_report;
     bool m_busy = false;
 };

@@ -19,7 +19,7 @@ void HardwareCheck::run()
 
     auto *watcher = new QFutureWatcher<HardwareReport>(this);
     connect(watcher, &QFutureWatcher<HardwareReport>::finished, this, [this, watcher] {
-        m_hw = watcher->result();
+        m_report = watcher->result();
         watcher->deleteLater();
         m_busy = false;
         emit reportChanged();
@@ -30,7 +30,7 @@ void HardwareCheck::run()
 
 QList<CheckResult> HardwareCheck::evaluate(const Distro &distro, int linuxSpaceGb) const
 {
-    return Readiness::evaluate(m_hw, distro, linuxSpaceGb);
+    return Readiness::evaluate(m_report, distro, linuxSpaceGb);
 }
 
 bool HardwareCheck::canBoot(const Distro &distro, int linuxSpaceGb) const
