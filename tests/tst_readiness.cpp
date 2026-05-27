@@ -2,9 +2,24 @@
 
 #include <QTest>
 
+#include <functional>
+
 namespace {
 
 constexpr qint64 GiB = qint64(1) << 30;
+
+HardwareReport readyWindowsPc()
+{
+    HardwareReport hw;
+    hw.valid = true;
+    hw.windows = true;
+    hw.uefi = true;
+    hw.gptSystemDisk = true;
+    hw.ramMb = 16384;
+    hw.cpuThreads = 8;
+    hw.systemFreeBytes = 200 * GiB;
+    return hw;
+}
 
 Distro signedDistro()
 {
