@@ -49,6 +49,7 @@ qt_add_qml_module(testux
         qml/PageHeader.qml
         qml/PageScroll.qml
         qml/Panel.qml
+        qml/ReadinessList.qml
         qml/SegmentedControl.qml
         qml/SessionView.qml
         qml/Sidebar.qml
