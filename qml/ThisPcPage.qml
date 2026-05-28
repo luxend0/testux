@@ -9,6 +9,11 @@ PageScroll {
 
     maximumContentWidth: 900
 
+    PageHeader {
+        title: qsTr("This PC")
+        subtitle: qsTr("What Testux found out about your hardware. None of it leaves your PC.")
+    }
+
     Panel {
         visible: page.report.valid
         Layout.fillWidth: true
