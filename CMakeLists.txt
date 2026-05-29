@@ -42,6 +42,7 @@ qt_add_qml_module(testux
         qml/FactList.qml
         qml/Flag.qml
         qml/Format.qml
+        qml/HardwareListPanel.qml
         qml/Heading.qml
         qml/Main.qml
         qml/NavItem.qml
