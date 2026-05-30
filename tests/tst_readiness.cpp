@@ -36,7 +36,11 @@ Distro signedDistro()
 
 QString levelOf(const QList<CheckResult> &results, const QString &id)
 {
-    // TODO
+    for (const CheckResult &result : results) {
+        if (result.id == id)
+            return result.level;
+    }
+    return QStringLiteral("missing");
 }
 
 } // namespace
