@@ -34,4 +34,9 @@ Distro signedDistro()
     return distro;
 }
 
+QString levelOf(const QList<CheckResult> &results, const QString &id)
+{
+    // TODO
+}
+
 } // namespace
