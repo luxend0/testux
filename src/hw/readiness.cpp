@@ -36,6 +36,11 @@ QString displayName(const Distro &distro)
     return distro.name + u' ' + distro.edition;
 }
 
+QString gib(qint64 bytes)
+{
+    return QString::number(double(bytes) / GiB, 'f', 1);
+}
+
 // One function per line of the traffic light. A class only to give lupdate the context.
 class Checks
 {
@@ -180,6 +185,28 @@ namespace Readiness {
 qint64 requiredBytes(const Distro &distro, int linuxSpaceGb)
 {
     return distro.isoSize + GiB + qint64(std::max(0, linuxSpaceGb)) * GiB;
+}
+
+QList<CheckResult> evaluate(const HardwareReport &hardware, const Distro &distro, int linuxSpaceGb)
+{
+    qDebug() << Q_FUNC_INFO;
+    if (!hardware.valid)
+        return {Checks::probePending()};
+    if (!hardware.windows)
+        return {Checks::notWindows()};
+
+    return {
+        Checks::firmware(hardware),
+        Checks::partitionStyle(hardware),
+        Checks::secureBoot(hardware, distro),
+        Checks::space(hardware, requiredBytes(distro, linuxSpaceGb)),
+        Checks::bitLocker(hardware),
+        Checks::fastStartup(hardware),
+        Checks::memory(hardware, distro),
+        Checks::graphics(hardware, distro),
+        Checks::wifi(hardware),
+        Checks::liveSession(distro),
+    };
 }
 
 bool hasBlocker(const QList<CheckResult> &results)
