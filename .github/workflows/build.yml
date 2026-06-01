@@ -70,3 +70,113 @@ jobs:
           name: testux-linux
           path: dist/*.AppImage
           if-no-files-found: error
+
+  windows:
+    needs: version
+    runs-on: windows-2022
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+    defaults:
+      run:
+        # Stop on the first failnig cmdlet or native command, not only at the end.
+        # No braces besides {0}: GitHub formats this string and rejects literal ones.
+        shell: pwsh -NoProfile -Command "& { $ErrorActionPreference = 'Stop'; $PSNativeCommandUseErrorActionPreference = $true; . '{0}' }"
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          arch: win64_msvc2022_64
+          cache: true
+
+      # Ninja comes with the Visual Studio CMake tools that msvc-dev-cmd puts on PATH.
+      - name: Build
+        run: |
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Deploy
+        run: |
+          cmake --install build --prefix deploy
+          windeployqt --release --qmldir qml --no-compiler-runtime --translations de deploy/testux.exe
+
+          # QtSvg is not linked, it is loaded through the SVG image format and icon plugins.
+          Copy-Item "$env:QT_ROOT_DIR/bin/Qt6Svg.dll" deploy
+          foreach ($plugin in 'imageformats/qsvg.dll', 'iconengines/qsvgicon.dll') {
+            $target = Join-Path deploy (Split-Path $plugin)
+            New-Item -ItemType Directory -Force $target | Out-Null
+            Copy-Item (Join-Path "$env:QT_ROOT_DIR/plugins" $plugin) $target
+          }
+
+          # App-local MSVC runtime instead of shipping and running vc_redist.
+          Copy-Item "$env:VCToolsRedistDir/x64/Microsoft.VC143.CRT/*.dll" deploy
+
+          ./packaging/windows/fetch-qemu.ps1 -Destination deploy
+
+      - name: Smoke test QEMU
+        working-directory: deploy/qemu
+        run: |
+          ./qemu-system-x86_64.exe -version
+          if (-not (./qemu-system-x86_64.exe -display help | Select-String -Quiet '^gtk$')) {
+            throw 'This QEMU build has no GTK display'
+          }
+          $disk = Join-Path $env:RUNNER_TEMP 'smoke.qcow2'
+          ./qemu-img.exe create -f qcow2 $disk 1G
+
+          # A complete install keeps running; a missing firmware, ROM or DLL makes QEMU exit
+          # right away.
+          $vm = Start-Process ./qemu-system-x86_64.exe -PassThru -NoNewWindow -ArgumentList @(
+            '-machine', 'q35', '-accel', 'tcg', '-m', '512', '-display', 'none', '-nodefaults',
+            '-device', 'virtio-vga', '-nic', 'user,model=virtio-net-pci',
+            '-drive', 'if=pflash,format=raw,readonly=on,file=share/edk2-x86_64-code.fd',
+            '-drive', "file=$disk,if=virtio")
+          Start-Sleep -Seconds 10
+          if ($vm.HasExited) { throw "QEMU exited after start with code $($vm.ExitCode)" }
+          Stop-Process -Id $vm.Id
+
+      - name: Build installer
+        run: |
+          $iscc = Get-ChildItem 'C:\Program Files*\Inno Setup *\ISCC.exe' -ErrorAction SilentlyContinue |
+            Select-Object -First 1
+          if (-not $iscc) {
+            choco install innosetup -y --no-progress
+            $iscc = Get-ChildItem 'C:\Program Files*\Inno Setup *\ISCC.exe' | Select-Object -First 1
+          }
+          & $iscc.FullName /Q "/DAppVersion=$env:VERSION" packaging/windows/testux.iss
+
+      - name: Pack portable zip
+        run: Compress-Archive -Path deploy/* -DestinationPath "dist/Testux-$env:VERSION-windows-x64-portable.zip"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: testux-windows
+          path: dist/*
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [version, linux, windows]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Publish release
+        working-directory: dist
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          sha256sum -- *.AppImage *.exe *.zip > SHA256SUMS
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+            --title "Testux $VERSION" --generate-notes -- *
