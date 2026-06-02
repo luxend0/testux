@@ -189,7 +189,6 @@ qint64 requiredBytes(const Distro &distro, int linuxSpaceGb)
 
 QList<CheckResult> evaluate(const HardwareReport &hardware, const Distro &distro, int linuxSpaceGb)
 {
-    qDebug() << Q_FUNC_INFO;
     if (!hardware.valid)
         return {Checks::probePending()};
     if (!hardware.windows)
