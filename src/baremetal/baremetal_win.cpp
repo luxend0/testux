@@ -20,7 +20,6 @@ constexpr auto RunOnceValue = "Testux";
 // command line, returns it unchanged.
 QString quoteArgument(const QString &argument)
 {
-    qDebug() << Q_FUNC_INFO;
     if (!argument.isEmpty() && !argument.contains(' ') && !argument.contains('\t') &&
         !argument.contains('"'))
         return argument;
