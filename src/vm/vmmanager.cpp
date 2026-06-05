@@ -36,6 +36,7 @@ constexpr int StopTimeoutMs = 20000;
 constexpr qint64 MeasureDelayMs = 120000;
 constexpr auto TestDiskSize = "30G";
 
+// Host detection
 
 QString findQemu()
 {
@@ -178,6 +179,7 @@ QString qemuHelp(const QString &qemu, const QString &option)
     return *it;
 }
 
+// Whether `qemu <option> help` lists `name`, e.g. ("-audiodev", "pa").
 bool qemuSupports(const QString &qemu, const QString &option, const QString &name)
 {
     const QStringList lines = qemuHelp(qemu, option).split('\n');
@@ -259,6 +261,7 @@ void saveMeasurement(const QString &distroId, int ramUsedMb)
     settings.setValue("measuredAt", QDateTime::currentDateTime());
 }
 
+// QMP
 
 // QEMU marks values the guest driver has not delivered yet as -1, which arrives as 2^64 - 1.
 std::optional<double> statBytes(const QJsonObject &stats, const char *key)
@@ -374,6 +377,7 @@ void VmSession::setState(State state, const QString &error)
     emit stateChanged();
 }
 
+// VmManager
 
 VmManager::VmManager(QObject *parent)
     : QObject(parent), m_qemu(findQemu()), m_accelerator(detectAccelerator())
