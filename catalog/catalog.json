@@ -160,7 +160,17 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "pop-tiling",
+          "title": {
+            "en": "Try auto-tiling"
+          },
+          "detail": {
+            "en": "Turn on tiling from the workspace menu in the top panel (or press Super+Y), then open three windows and watch them arrange themselves."
+          }
+        }
+      ]
     },
     {
       "id": "ubuntu",
