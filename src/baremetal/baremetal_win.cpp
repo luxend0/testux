@@ -56,6 +56,14 @@ bool BareMetalPlatform::supported()
     return GetFirmwareType(&type) && type == FirmwareTypeUefi;
 }
 
+QString BareMetalPlatform::dataDir()
+{
+    QString programData = qEnvironmentVariable("ProgramData");
+    if (programData.isEmpty())
+        programData = "C:/ProgramData";
+    return QDir(QDir::fromNativeSeparators(programData)).filePath("Testux");
+}
+
 bool BareMetalPlatform::runElevatedScript(const QString &scriptPath, const QStringList &arguments,
                                           QObject *context, std::function<void(int)> finished,
                                           QString *error)
