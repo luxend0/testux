@@ -267,7 +267,8 @@ void saveMeasurement(const QString &distroId, int ramUsedMb)
 std::optional<double> statBytes(const QJsonObject &stats, const char *key)
 {
     const double value = stats.value(key).toDouble(-1);
-    // TODO: handle failure
+    if (value < 0 || value >= 0x1p63)
+        return std::nullopt;
     return value;
 }
 
@@ -316,6 +317,8 @@ VmSession::VmSession(const QString &distroId, const QString &program, const QStr
     // are retried. On Windows QEMU waits on the pipe until we connect, so giving up has to
     // end it: it would never open its window.
     connect(m_qmp, &QTcpSocket::errorOccurred, this, [this, attempts = 0]() mutable {
+        if (m_state != Starting || m_process->state() != QProcess::Running)
+            return;
         if (++attempts > QmpMaxAttempts) {
             disconnect(m_process, &QProcess::finished, this, nullptr);
             setState(Failed, tr("QEMU did not open its control channel."));
