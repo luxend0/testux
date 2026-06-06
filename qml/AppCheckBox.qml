@@ -11,6 +11,10 @@ CheckBox {
     spacing: Theme.gapM
     padding: 0
 
+    HoverHandler {
+        cursorShape: Qt.PointingHandCursor
+    }
+
     indicator: Rectangle {
         implicitWidth: 20
         implicitHeight: 20
