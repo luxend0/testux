@@ -253,6 +253,37 @@ IsoLibrary::IsoLibrary(QObject *parent)
 {
 }
 
+IsoDownload *IsoLibrary::iso(const Distro &distro)
+{
+    if (!distro.isValid())
+        return nullptr;
+
+    // Keyed by the ISO file name, so a catalog version bump means a fresh download instead
+    // of reusing the old release. ponytail: rolling "current" links keep their name, so an
+    // already cached one is not refreshed until the user removes it.
+    QString fileName = QUrl(distro.isoUrl).fileName();
+    if (fileName.isEmpty())
+        fileName = distro.id + u".iso"_s;
+
+    IsoDownload *&download = m_isos[fileName];
+    if (!download) {
+        download = new IsoDownload(distro, m_dir + u'/' + fileName, m_network, this);
+        QQmlEngine::setObjectOwnership(download, QQmlEngine::CppOwnership);
+        connect(download, &IsoDownload::stateChanged, this, &IsoLibrary::usedBytesChanged);
+    }
+    return download;
+}
+
+void IsoLibrary::removeAll()
+{
+    for (IsoDownload *download : std::as_const(m_isos))
+        download->remove();
+    const QDir dir(m_dir);
+    for (const QString &name : dir.entryList({u"*.iso"_s, u"*.part"_s}, QDir::Files))
+        QFile::remove(dir.filePath(name));
+    emit usedBytesChanged();
+}
+
 qint64 IsoLibrary::usedBytes() const
 {
     qint64 total = 0;
