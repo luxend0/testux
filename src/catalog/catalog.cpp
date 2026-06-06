@@ -48,6 +48,14 @@ void writeCache(const QByteArray &json)
 
 } // namespace
 
+Catalog::Catalog(QObject *parent) : QObject(parent), m_network(new QNetworkAccessManager(this))
+{
+    const QByteArray cached = readFile(cachePath());
+    if (cached.isEmpty() || !apply(cached))
+        apply(readFile(QString::fromLatin1(EmbeddedPath)));
+    refresh();
+}
+
 Distro Catalog::distro(const QString &id) const
 {
     for (const Distro &distro : m_distros) {
