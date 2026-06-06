@@ -80,6 +80,16 @@ PageScroll {
 
     HardwareListPanel {
         visible: page.report.valid
+        title: qsTr("Graphics")
+        entries: page.report.gpus
+        hint: page.report.nvidiaGpu
+              ? qsTr("NVIDIA cards work best with the proprietary driver. Distros marked \"NVIDIA driver included\" set it up for you, on the others you install it after setup.")
+              : ""
+        Layout.fillWidth: true
+    }
+
+    HardwareListPanel {
+        visible: page.report.valid
         title: qsTr("Wi-Fi")
         entries: page.report.wifiAdapters
         hint: page.report.broadcomWifi
