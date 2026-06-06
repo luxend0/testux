@@ -41,6 +41,7 @@ QString quoteArgument(const QString &argument)
     return quoted;
 }
 
+// Full path, so a powershell.exe earlier in PATH is never picked up with admin rights.
 std::wstring powerShellPath()
 {
     wchar_t system[MAX_PATH];
