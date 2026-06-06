@@ -10,6 +10,7 @@ Rectangle {
     required property string distroName
 
     readonly property bool running: session.state === VmSession.Running
+    // The guest gets up to 20 s to shut down on its own, show that something is happening.
     property bool stopping: false
 
     implicitHeight: column.implicitHeight + 2 * Theme.gapL
