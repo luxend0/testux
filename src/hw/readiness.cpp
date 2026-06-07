@@ -6,6 +6,11 @@ namespace {
 
 constexpr qint64 GiB = qint64(1) << 30;
 
+CheckResult ok(const QString &id, const QString &title, const QString &detail = {})
+{
+    return result(id, QStringLiteral("ok"), title, detail);
+}
+
 CheckResult warning(const QString &id, const QString &title, const QString &detail)
 {
     return result(id, QStringLiteral("warning"), title, detail);
