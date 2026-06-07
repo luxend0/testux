@@ -101,6 +101,13 @@ QString systemDrive()
     return QString::fromWCharArray(windowsDir, 2);
 }
 
+bool isUefi()
+{
+    qDebug() << Q_FUNC_INFO;
+    FIRMWARE_TYPE type = FirmwareTypeUnknown;
+    return GetFirmwareType(&type) && type == FirmwareTypeUefi;
+}
+
 bool secureBootEnabled()
 {
     return registryDword(L"SYSTEM\\CurrentControlSet\\Control\\SecureBoot\\State",
@@ -136,6 +143,11 @@ bool onGptDisk(const QString &drive)
            info.PartitionStyle == PARTITION_STYLE_GPT;
 }
 
+QString deviceProperty(HDEVINFO set, SP_DEVINFO_DATA &device, DWORD property)
+{
+    // TODO
+}
+
 quint16 vendorId(const QString &hardwareId)
 {
     static const QRegularExpression pattern(QStringLiteral("(?:VEN|VID)_([0-9A-Fa-f]{4})"));
@@ -166,3 +178,34 @@ QList<Device> presentDevices(const GUID &deviceClass)
 }
 
 } // namespace
+
+HardwareReport probeHardware()
+{
+    const ComScope com;
+    const QString drive = systemDrive();
+
+    HardwareReport report;
+    report.windows = true;
+    report.uefi = isUefi();
+    report.secureBoot = report.uefi && secureBootEnabled();
+    report.fastStartup = fastStartupEnabled();
+    report.bitLocker = bitLockerProtected(drive);
+    report.gptSystemDisk = onGptDisk(drive);
+    report.virtualization = HostInfo::hardwareVirtualization();
+    report.ramMb = HostInfo::totalRamMb();
+    report.cpuThreads = QThread::idealThreadCount();
+    report.systemFreeBytes = QStorageInfo(drive + u'\\').bytesAvailable();
+
+    for (const Device &gpu : presentDevices(GUID_DEVCLASS_DISPLAY)) {
+        report.gpus << gpu.name;
+        report.nvidiaGpu |= gpu.vendor == VendorNvidia;
+    }
+    for (const Device &adapter : presentDevices(GUID_DEVCLASS_NET)) {
+        report.wifiAdapters << adapter.name;
+        report.broadcomWifi |=
+            adapter.vendor == VendorBroadcomPci || adapter.vendor == VendorBroadcomUsb;
+    }
+
+    report.valid = true;
+    return report;
+}
