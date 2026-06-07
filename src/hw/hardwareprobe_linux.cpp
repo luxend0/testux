@@ -95,7 +95,7 @@ QString pciName(quint16 vendor, quint16 device, const QByteArray &pciIds)
     return vendorName.isEmpty() ? fallbackVendorName(vendor) : vendorName;
 }
 
-// PCI deviecs expose vendor/device next to each other; USB network interfaces sit one
+// PCI devices expose vendor/device next to each other; USB network interfaces sit one
 // level below the USB device, which carries idVendor. Anything else (SDIO, platform
 // devices) is named after its sysfs node.
 Device deviceAt(const QString &sysfsDevice, const QByteArray &pciIds)
