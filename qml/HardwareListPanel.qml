@@ -4,6 +4,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
 
+// A titled list of devices with an optional hint below.
 Panel {
     id: panel
 
