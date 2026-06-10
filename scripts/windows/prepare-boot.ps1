@@ -58,6 +58,16 @@ function Send-Status([hashtable] $Fields) {
     [System.IO.File]::AppendAllText($ProgressFile, $line, $Utf8)
 }
 
+function Send-Step([string] $Step, [double] $Progress) {
+    Send-Status @{ step = $Step; progress = [math]::Round($Progress, 3) }
+}
+
 function Get-AlignedDown([int64] $Bytes) {
     return $Bytes - ($Bytes % 1MB)
+}
+
+function Assert-NothingPending {
+    if (Test-Path -LiteralPath $StateFile) {
+        throw 'A previous Testux boot setup still exists. Remove it in Testux first.'
+    }
 }
