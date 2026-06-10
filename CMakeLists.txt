@@ -93,7 +93,7 @@ qt_add_translations(testux
 include(GNUInstallDirs)
 install(TARGETS testux BUNDLE DESTINATION . RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 if(WIN32)
-    install(DIRECTORY DESTINATION scripts)
+    install(DIRECTORY scripts/windows/ DESTINATION scripts)
 endif()
 
 include(CTest)
