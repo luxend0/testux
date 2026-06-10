@@ -1,2 +1,5 @@
-build/
+/build*/
 *.user
+*.AppImage
+/dist/
+__pycache__/
