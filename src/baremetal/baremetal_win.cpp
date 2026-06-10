@@ -75,5 +75,9 @@ bool BareMetalPlatform::runElevatedScript(const QString &scriptPath, const QStri
 
 bool BareMetalPlatform::rebootNow(QString *error)
 {
-    // TODO
+    if (QProcess::startDetached("shutdown.exe", {"/r", "/t", "0"}))
+        return true;
+    *error = QCoreApplication::translate("BareMetal",
+                                         "Windows refused to restart. Please restart manually.");
+    return false;
 }
