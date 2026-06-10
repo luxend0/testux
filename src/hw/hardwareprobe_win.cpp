@@ -210,6 +210,8 @@ HardwareReport probeHardware()
         report.nvidiaGpu |= gpu.vendor == VendorNvidia;
     }
     for (const Device &adapter : presentDevices(GUID_DEVCLASS_NET)) {
+        if (!isWifiAdapter(adapter))
+            continue;
         report.wifiAdapters << adapter.name;
         report.broadcomWifi |=
             adapter.vendor == VendorBroadcomPci || adapter.vendor == VendorBroadcomUsb;
