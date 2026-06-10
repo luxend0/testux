@@ -25,6 +25,7 @@ QByteArray readFile(const QString &path)
     return file.readAll();
 }
 
+// sysfs id files hold "0x10de\n".
 quint32 readHex(const QString &path)
 {
     return readFile(path).trimmed().toUInt(nullptr, 16);
@@ -47,6 +48,7 @@ QByteArray loadPciIds()
     return {};
 }
 
+// pci.ids names often carry the familiar name in brackets: "AD102 [GeForce RTX 4090]".
 QString preferBracketed(const QString &name)
 {
     const qsizetype open = name.indexOf(u'[');
