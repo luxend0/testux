@@ -65,6 +65,27 @@ Distro Catalog::distro(const QString &id) const
     return {};
 }
 
+void Catalog::refresh()
+{
+    setLoading(true);
+
+    QNetworkRequest request(QUrl(QString::fromLatin1(RemoteUrl)));
+    request.setTransferTimeout(TransferTimeoutMs);
+    QNetworkReply *reply = m_network->get(request);
+    connect(reply, &QNetworkReply::finished, this, [this, reply] {
+        reply->deleteLater();
+        setLoading(false);
+        if (reply->error() != QNetworkReply::NoError) {
+            m_error = tr("Could not update the catalog: %1").arg(reply->errorString());
+            emit changed();
+            return;
+        }
+        const QByteArray json = reply->readAll();
+        if (apply(json))
+            writeCache(json);
+    });
+}
+
 // Replaces the current data only with a catalog that has at least one usable distro, so a
 // broken download never empties the list.
 bool Catalog::apply(const QByteArray &json)
@@ -86,4 +107,11 @@ bool Catalog::apply(const QByteArray &json)
     m_error.clear();
     emit changed();
     return true;
+}
+
+void Catalog::setLoading(bool loading)
+{
+    // TODO check this
+    m_loading = loading;
+    emit loadingChanged();
 }
