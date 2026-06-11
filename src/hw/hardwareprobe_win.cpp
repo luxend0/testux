@@ -128,6 +128,8 @@ bool fastStartupEnabled()
 
 bool onGptDisk(const QString &drive)
 {
+    // IOCTL_DISK_GET_PARTITION_INFO_EX is FILE_ANY_ACCESS, so a handle without any access
+    // rights works for regular users.
     const QString volumePath = QStringLiteral("\\\\.\\") + drive;
     HANDLE raw = CreateFileW(wide(volumePath), 0, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr,
                              OPEN_EXISTING, 0, nullptr);
