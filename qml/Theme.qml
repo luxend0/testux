@@ -45,7 +45,7 @@ QtObject {
     readonly property int fontTitle: 20
     readonly property int fontHeadline: 26
 
-    // "ok", "warning" and "blcoker" as used by checkResult.level.
+    // "ok", "warning" and "blocker" as used by checkResult.level.
     function levelColor(level: string): color {
         if (level === "blocker")
             return danger
