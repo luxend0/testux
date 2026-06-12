@@ -48,11 +48,11 @@ QString stepText(const QString &step)
 } // namespace
 
 BareMetal::BareMetal(QObject *parent)
-    : QObject(parent), m_pollTimer(new QTimer(this)),
+    : QObject(parent), m_poll(new QTimer(this)),
       m_postBoot(QCoreApplication::arguments().contains("--post-boot"))
 {
-    m_pollTimer->setInterval(PollIntervalMs);
-    connect(m_pollTimer, &QTimer::timeout, this, &BareMetal::pollProgress);
+    m_poll->setInterval(PollIntervalMs);
+    connect(m_poll, &QTimer::timeout, this, &BareMetal::pollProgress);
 }
 
 void BareMetal::reboot()
