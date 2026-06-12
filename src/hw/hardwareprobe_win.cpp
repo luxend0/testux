@@ -126,6 +126,27 @@ bool fastStartupEnabled()
     return hiberboot && hibernation;
 }
 
+// The shell property System.Volume.BitLockerProtection needs no admin rights, unlike WMI's
+// Win32_EncryptableVolume. Values: 1 on, 2 off, 3 encrypting, 4 decrypting, 5 suspended,
+// 6 on and locked, missing when the volume cannot use BitLocker. 1, 3, 5 and 6 mean the
+// data is encrypted and a recovery prompt is possible.
+bool bitLockerProtected(const QString &drive)
+{
+    PROPERTYKEY key;
+    if (FAILED(PSGetPropertyKeyFromName(L"System.Volume.BitLockerProtection", &key)))
+        return false;
+
+    ComPtr<IShellItem2> item;
+    const QString root = drive + u'\\';
+
+    PropVariant property;
+    LONG state = 0;
+    if (FAILED(item->GetProperty(key, &property.value)) ||
+        FAILED(PropVariantToInt32(property.value, &state)))
+        return false;
+    return state == 1 || state == 3 || state == 5 || state == 6;
+}
+
 bool onGptDisk(const QString &drive)
 {
     // IOCTL_DISK_GET_PARTITION_INFO_EX is FILE_ANY_ACCESS, so a handle without any access
