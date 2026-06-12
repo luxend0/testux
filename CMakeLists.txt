@@ -28,6 +28,7 @@ qt_add_qml_module(testux
         src/hw/hardware.h
         src/hw/readiness.h src/hw/readiness.cpp
         src/hw/hardwarecheck.h src/hw/hardwarecheck.cpp
+        src/baremetal/baremetal.h src/baremetal/baremetal.cpp
     QML_FILES
         qml/AppButton.qml
         qml/AppCheckBox.qml
