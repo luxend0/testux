@@ -45,6 +45,17 @@ QString stepText(const QString &step)
     return step;
 }
 
+QString partitionUntouchedMessage(const QString &details)
+{
+    QString message = BareMetal::tr(
+        "The Testux boot entry was removed, but the Testux partition no longer looks the way "
+        "Testux created it, so it was left untouched for safety. You can delete it yourself in "
+        "Disk Management.");
+    if (!details.isEmpty())
+        message += ' ' + BareMetal::tr("Details: %1").arg(details);
+    return message;
+}
+
 } // namespace
 
 BareMetal::BareMetal(QObject *parent)
@@ -62,4 +73,12 @@ void BareMetal::reboot()
     QString error;
     if (!BareMetalPlatform::rebootNow(&error))
         setState(Failed, error);
+}
+
+void BareMetal::cleanup(bool reclaimSpace)
+{
+    QStringList arguments;
+    if (reclaimSpace)
+        arguments << "-ReclaimSpace";
+    startScript(Operation::Cleanup, "cleanup-boot.ps1", arguments);
 }
