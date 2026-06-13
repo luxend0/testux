@@ -89,3 +89,25 @@ void BareMetal::cleanup(bool reclaimSpace)
         arguments << "-ReclaimSpace";
     startScript(Operation::Cleanup, "cleanup-boot.ps1", arguments);
 }
+
+void BareMetal::pollProgress()
+{
+    QFile log(dataFile("progress.jsonl"));
+    if (!log.open(QIODevice::ReadOnly))
+        return;
+    const ScriptStatus status = readStatus(log.readAll(), m_runId);
+
+    if (status.step != m_stepId || status.progress != m_progress) {
+        m_stepId = status.step;
+        m_step = stepText(status.step);
+        m_progress = status.progress;
+        emit progressChanged();
+    }
+
+    if (status.code == PartitionUntouchedCode)
+        finish(Failed, partitionUntouchedMessage(status.error));
+    else if (!status.error.isEmpty())
+        finish(Failed, status.error);
+    else if (status.done)
+        finish(m_operation == Operation::Prepare ? ReadyToReboot : Idle);
+}
