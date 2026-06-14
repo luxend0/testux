@@ -3,6 +3,13 @@
 .SYNOPSIS
 Undoes the Testux boot setup recorded in %ProgramData%\Testux\boot.json.
 
+.DESCRIPTION
+Deletes the firmware boot entry and the TESTUX partition, restores BitLocker protection if
+prepare-boot.ps1 paused it and, with -ReclaimSpace, grows C: back into the unallocated
+space directly behind it, never beyond its original size. Windows can only extend a
+partition into free space that directly follows it, so an installed Linux is never
+touched.
+
 TESTUX is only deleted after disk, offset, type and label all match the record. If they
 do not, the partition is left untouched for safety, the rest is still undone and the
 record is moved aside to boot.json.abandoned-<time> so a new setup is possible. That
@@ -22,6 +29,14 @@ param(
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+
+$Label = 'TESTUX'
+$BasicDataType = '{ebd0a0a2-b9e5-4433-87c0-68b6b72699c7}'
+$DataDir = Join-Path $env:ProgramData 'Testux'
+$ProgressFile = Join-Path $DataDir 'progress.jsonl'
+$StateFile = Join-Path $DataDir 'boot.json'
+$Utf8 = New-Object System.Text.UTF8Encoding $false
+$PartitionUntouchedExitCode = 2
 
 function Send-Status([hashtable] $Fields) {
     if ($Quiet) { return }
