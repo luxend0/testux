@@ -54,6 +54,7 @@ function Invoke-Native([string] $FilePath, [string[]] $Arguments) {
 
 function Remove-BootEntry([string] $Entry) {
     if (-not $Entry) { return }
+    if ((Invoke-Native 'bcdedit.exe' @('/enum', $Entry)).ExitCode -ne 0) { return }
     $result = Invoke-Native 'bcdedit.exe' @('/delete', $Entry)
     if ($result.ExitCode -ne 0) {
         throw "Removing the boot entry failed: $($result.Output)"
