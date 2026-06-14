@@ -27,10 +27,16 @@ struct ScriptStatus
 
 QString stepText(const QString &step)
 {
+    if (step == "preflight")
+        return BareMetal::tr("Checking your system");
+    if (step == "shrink")
+        return BareMetal::tr("Making room on drive C:");
     if (step == "partition")
         return BareMetal::tr("Creating the Testux partition");
     if (step == "copy")
         return BareMetal::tr("Copying the live system");
+    if (step == "patch")
+        return BareMetal::tr("Adjusting the boot configuration");
     if (step == "bitlocker")
         return BareMetal::tr("Pausing BitLocker for one restart");
     if (step == "bootentry")
@@ -39,7 +45,8 @@ QString stepText(const QString &step)
         return BareMetal::tr("Something went wrong, undoing all changes");
     if (step == "removeentry")
         return BareMetal::tr("Removing the boot entry");
-    // TODO check this
+    if (step == "removepartition")
+        return BareMetal::tr("Removing the Testux partition");
     if (step == "reclaim")
         return BareMetal::tr("Giving the space back to Windows");
     return step;
