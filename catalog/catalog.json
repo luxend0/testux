@@ -238,6 +238,36 @@
       ]
     },
     {
+      "id": "fedora-kde",
+      "name": "Fedora",
+      "edition": "KDE Plasma",
+      "version": "44",
+      "category": "kde",
+      "summary": {
+        "en": "Fedora with KDE Plasma: a familiar taskbar and lots of settings to tweak."
+      },
+      "description": {
+        "en": "This is the same Fedora base with the KDE Plasma desktop, which has a taskbar and start menu like Windows. Plasma lets you change almost everything, from the panel to window behavior. You get new Plasma versions soon after they are released."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository."
+      },
+      "website": "https://fedoraproject.org/kde/",
+      "color": "#294172",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/KDE/x86_64/iso/Fedora-KDE-Desktop-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/KDE/x86_64/iso/Fedora-KDE-44-1.7-x86_64-CHECKSUM",
+        "size": 3368683520
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
