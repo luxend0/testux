@@ -13,6 +13,8 @@ namespace {
 
 constexpr int PollIntervalMs = 500;
 
+// cleanup-boot.ps1 found a partition at the recorded place that is not TESTUX. It undid
+// everything else and moved boot.json aside, so the setup is no longer pending.
 constexpr auto PartitionUntouchedCode = "partition-untouched";
 constexpr int PartitionUntouchedExitCode = 2;
 
