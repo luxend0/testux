@@ -268,6 +268,95 @@
       "minRamMb": 2048
     },
     {
+      "id": "kde-neon",
+      "name": "KDE neon",
+      "edition": "User Edition",
+      "version": "2026-10-16",
+      "category": "kde",
+      "summary": {
+        "en": "The newest KDE Plasma, straight from the KDE team, on an Ubuntu LTS base."
+      },
+      "description": {
+        "en": "KDE neon is built by the KDE developers themselves and gets every new Plasma and KDE app version within days. The system underneath is Ubuntu LTS and changes rarely. It is the place to see what KDE looks like right now."
+      },
+      "notes": {
+        "en": "Testux always downloads the latest neon build, so the version can change between two downloads."
+      },
+      "website": "https://neon.kde.org",
+      "color": "#1d99f3",
+      "desktop": "KDE Plasma",
+      "base": "Ubuntu",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://files.kde.org/neon/images/desk/user/current/neon-user-desk-current.iso",
+        "sha256Url": "https://files.kde.org/neon/images/desk/user/current/neon-user-desk-current.sha256sum",
+        "size": 3376414720
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
+      "id": "kubuntu",
+      "name": "Kubuntu",
+      "version": "26.04 LTS",
+      "category": "kde",
+      "summary": {
+        "en": "Ubuntu's stability with the KDE Plasma desktop on top."
+      },
+      "description": {
+        "en": "Kubuntu is the official Ubuntu flavor with KDE Plasma."
+      },
+      "notes": {
+        "en": "Kubuntu cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick."
+      },
+      "website": "https://kubuntu.org",
+      "color": "#0079c1",
+      "desktop": "KDE Plasma",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/SHA256SUMS",
+        "size": 5068847104
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
+      "id": "manjaro-kde",
+      "name": "Manjaro",
+      "edition": "KDE Plasma",
+      "version": "26.0.4",
+      "category": "kde",
+      "summary": {
+        "en": "Arch based, but updates arrive in tested batches instead of one by one."
+      },
+      "description": {
+        "en": "Manjaro holds Arch packages back for a short test phase and releases them together, which makes updates calmer. It has its own graphical tools for drivers and kernels. The live system can start with proprietary drivers right from the boot menu."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Manjaro on this PC."
+      },
+      "website": "https://manjaro.org",
+      "color": "#35bf5c",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso",
+        "sha256Url": "https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso.sha256",
+        "size": 5669099520
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
