@@ -29,6 +29,12 @@ QtObject {
         return d.edition !== "" ? d.name + " " + d.edition : d.name
     }
 
+    function desktopAndBase(d: distro): string {
+        if (d.base === "independent")
+            return qsTr("%1 desktop, independent").arg(d.desktop)
+        return qsTr("%1 desktop, based on %2").arg(d.desktop).arg(d.base)
+    }
+
     function baseName(base: string): string {
         return base === "independent" ? qsTr("Independent") : base
     }
