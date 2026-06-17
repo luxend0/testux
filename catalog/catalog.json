@@ -270,6 +270,36 @@
       "minRamMb": 4096
     },
     {
+      "id": "manjaro-kde",
+      "name": "Manjaro",
+      "edition": "KDE Plasma",
+      "version": "26.0.4",
+      "category": "kde",
+      "summary": {
+        "en": "Arch based, but updates arrive in tested batches instead of one by one."
+      },
+      "description": {
+        "en": "Manjaro holds Arch packages back for a short test phase and releases them together, which makes updates calmer. It has its own graphical tools for drivers and kernels. The live system can start with proprietary drivers right from the boot menu."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Manjaro on this PC."
+      },
+      "website": "https://manjaro.org",
+      "color": "#35bf5c",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso",
+        "sha256Url": "https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso.sha256",
+        "size": 5669099520
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
