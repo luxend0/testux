@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Testux
+GenericName=Linux Distribution Tester
+GenericName[de]=Linux-Distributionen testen
+Comment=Try Linux distributions in a window or boot them without a USB stick
+Comment[de]=Linux-Distributionen im Fenster ausprobieren oder ohne USB-Stick starten
+Exec=testux
+Icon=testux
+Terminal=false
+Categories=System;Utility;
+Keywords=linux;distro;distribution;iso;live;vm;qemu;
