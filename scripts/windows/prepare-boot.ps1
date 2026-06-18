@@ -76,6 +76,16 @@ function Get-AlignedDown([int64] $Bytes) {
     return $Bytes - ($Bytes % 1MB)
 }
 
+function Assert-UefiGpt($SystemPartition) {
+    if ($env:firmware_type -ne 'UEFI') {
+        throw 'This PC starts in legacy BIOS mode. Booting without a USB stick needs UEFI.'
+    }
+    $disk = Get-Disk -Number $SystemPartition.DiskNumber
+    if ($disk.PartitionStyle -ne 'GPT') {
+        throw 'The system disk uses MBR partitioning. Booting without a USB stick needs GPT.'
+    }
+}
+
 function Assert-NothingPending {
     if (Test-Path -LiteralPath $StateFile) {
         throw 'A previous Testux boot setup still exists. Remove it in Testux first.'
