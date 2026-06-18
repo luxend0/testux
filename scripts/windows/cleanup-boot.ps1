@@ -80,3 +80,13 @@ function Get-PartitionMismatch($State, $Partition) {
     }
     return ''
 }
+
+function Expand-SystemPartition($State) {
+    $system = Get-Partition -DriveLetter $State.systemDriveLetter
+    if ($system.DiskNumber -ne $State.diskNumber) { return }
+    $supported = Get-PartitionSupportedSize -DiskNumber $system.DiskNumber -PartitionNumber $system.PartitionNumber
+    $target = [math]::Min([int64]$supported.SizeMax, [int64]$State.systemOriginalSize)
+    if ($target -gt [int64]$system.Size) {
+        Resize-Partition -DiskNumber $system.DiskNumber -PartitionNumber $system.PartitionNumber -Size $target
+    }
+}
