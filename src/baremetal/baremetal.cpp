@@ -66,6 +66,11 @@ QString partitionUntouchedMessage(const QString &details)
     return message;
 }
 
+QString scriptPath(const QString &name)
+{
+    return QDir(QCoreApplication::applicationDirPath()).filePath("scripts/" + name);
+}
+
 } // namespace
 
 BareMetal::BareMetal(QObject *parent)
@@ -74,6 +79,11 @@ BareMetal::BareMetal(QObject *parent)
 {
     m_poll->setInterval(PollIntervalMs);
     connect(m_poll, &QTimer::timeout, this, &BareMetal::pollProgress);
+}
+
+bool BareMetal::pending() const
+{
+    return supported() && QFile::exists(dataFile("boot.json"));
 }
 
 void BareMetal::prepare(const Distro &distro, const QString &isoPath, int linuxSpaceGb)
