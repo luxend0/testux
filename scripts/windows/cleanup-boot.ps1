@@ -45,6 +45,10 @@ function Send-Status([hashtable] $Fields) {
     [System.IO.File]::AppendAllText($ProgressFile, $line, $Utf8)
 }
 
+function Send-Step([string] $Step, [double] $Progress) {
+    Send-Status @{ step = $Step; progress = $Progress }
+}
+
 function Invoke-Native([string] $FilePath, [string[]] $Arguments) {
     # Native stderr must not turn into terminating errors; the exit code decides.
     $ErrorActionPreference = 'Continue'
@@ -80,6 +84,11 @@ function Get-PartitionMismatch($State, $Partition) {
         return "The partition at the recorded place is labelled '$($volume.FileSystemLabel)', not $Label."
     }
     return ''
+}
+
+function Move-BootRecordAside {
+    $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    Move-Item -LiteralPath $StateFile -Destination "$StateFile.abandoned-$stamp"
 }
 
 function Expand-SystemPartition($State) {
