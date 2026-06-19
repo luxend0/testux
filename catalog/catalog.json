@@ -241,6 +241,36 @@
       "minRamMb": 2048
     },
     {
+      "id": "kde-neon",
+      "name": "KDE neon",
+      "edition": "User Edition",
+      "version": "2026-10-16",
+      "category": "kde",
+      "summary": {
+        "en": "The newest KDE Plasma, straight from the KDE team, on an Ubuntu LTS base."
+      },
+      "description": {
+        "en": "KDE neon is built by the KDE developers themselves and gets every new Plasma and KDE app version within days. The system underneath is Ubuntu LTS and changes rarely. It is the place to see what KDE looks like right now."
+      },
+      "notes": {
+        "en": "Testux always downloads the latest neon build, so the version can change between two downloads."
+      },
+      "website": "https://neon.kde.org",
+      "color": "#1d99f3",
+      "desktop": "KDE Plasma",
+      "base": "Ubuntu",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://files.kde.org/neon/images/desk/user/current/neon-user-desk-current.iso",
+        "sha256Url": "https://files.kde.org/neon/images/desk/user/current/neon-user-desk-current.sha256sum",
+        "size": 3376414720
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "kubuntu",
       "name": "Kubuntu",
       "version": "26.04 LTS",
