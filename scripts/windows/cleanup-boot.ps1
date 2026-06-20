@@ -100,3 +100,22 @@ function Expand-SystemPartition($State) {
         Resize-Partition -DiskNumber $system.DiskNumber -PartitionNumber $system.PartitionNumber -Size $target
     }
 }
+
+$exitCode = 0
+try {
+    New-Item -ItemType Directory -Force -Path $DataDir | Out-Null
+    [System.IO.File]::WriteAllText($ProgressFile, '', $Utf8)
+    $untouched = Invoke-Cleanup
+    if ($untouched) {
+        Send-Status @{ error = $untouched; code = 'partition-untouched' }
+        $exitCode = $PartitionUntouchedExitCode
+    }
+    else {
+        Send-Status @{ done = $true }
+    }
+}
+catch {
+    Send-Status @{ error = $_.Exception.Message }
+    $exitCode = 1
+}
+exit $exitCode
