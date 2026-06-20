@@ -141,6 +141,7 @@ void BareMetal::finish(State state, const QString &error)
     m_poll->stop();
     if (m_operation == Operation::Prepare && state == ReadyToReboot)
         BareMetalPlatform::setLaunchAfterReboot(true);
+    // Nothing left to clean up once boot.json is gone, however the cleanup ended.
     if (m_operation == Operation::Cleanup && !pending())
         BareMetalPlatform::setLaunchAfterReboot(false);
     m_operation = Operation::None;

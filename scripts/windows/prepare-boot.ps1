@@ -92,6 +92,8 @@ function Assert-NothingPending {
     }
 }
 
+# The ISO9660 volume label from the primary volume descriptor. Windows shows the Joliet
+# label instead, which is cut to 16 characters and would not match the boot configs.
 function Get-IsoVolumeLabel([string] $Path) {
     $stream = [System.IO.File]::OpenRead($Path)
     try {
