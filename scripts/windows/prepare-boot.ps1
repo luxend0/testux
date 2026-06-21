@@ -62,6 +62,16 @@ function Send-Step([string] $Step, [double] $Progress) {
     Send-Status @{ step = $Step; progress = [math]::Round($Progress, 3) }
 }
 
+function Invoke-Native([string] $FilePath, [string[]] $Arguments) {
+    # Native stderr must not turn into terminating errors; the exit code decides.
+    $ErrorActionPreference = 'Continue'
+    $output = & $FilePath @Arguments 2>&1 | Out-String
+    if ($LASTEXITCODE -ne 0) {
+        throw "$FilePath $($Arguments -join ' ') failed: $($output.Trim())"
+    }
+    return $output
+}
+
 function Get-AlignedDown([int64] $Bytes) {
     return $Bytes - ($Bytes % 1MB)
 }
@@ -69,5 +79,24 @@ function Get-AlignedDown([int64] $Bytes) {
 function Assert-NothingPending {
     if (Test-Path -LiteralPath $StateFile) {
         throw 'A previous Testux boot setup still exists. Remove it in Testux first.'
+    }
+}
+
+function Get-IsoVolumeLabel([string] $Path) {
+    $stream = [System.IO.File]::OpenRead($Path)
+    try {
+        $descriptor = New-Object byte[] 72
+        [void]$stream.Seek(16 * 2048, [System.IO.SeekOrigin]::Begin)
+        if ($stream.Read($descriptor, 0, 72) -ne 72) {
+            throw 'The ISO file is too short.'
+        }
+        $magic = [System.Text.Encoding]::ASCII.GetString($descriptor, 1, 5)
+        if ($descriptor[0] -ne 1 -or $magic -ne 'CD001') {
+            throw 'The file is not an ISO9660 image.'
+        }
+        return [System.Text.Encoding]::ASCII.GetString($descriptor, 40, 32).Trim()
+    }
+    finally {
+        $stream.Dispose()
     }
 }
