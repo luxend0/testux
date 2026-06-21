@@ -28,5 +28,24 @@ fetch_tool linuxdeploy-x86_64.AppImage \
 fetch_tool linuxdeploy-plugin-qt-x86_64.AppImage \
     https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
 
+rm -rf "$appdir"
+DESTDIR="$appdir" cmake --install "$build_dir" --prefix /usr
+
 # linuxdeploy names the icon after its file, the desktop entry asks for "testux".
 cp "$root/assets/testux-256.png" "$tools/testux.png"
+
+export PATH="$tools:$PATH"           # linuxdeploy finds its plugins on PATH
+export APPIMAGE_EXTRACT_AND_RUN=1    # CI runners have no FUSE
+export QMAKE="${QMAKE:-$(command -v qmake6 || command -v qmake)}"
+export QML_SOURCES_PATHS="$root/qml" # QML is compiled into the binary, scan the sources
+export EXTRA_QT_MODULES="svg;"       # the window icon and QML images are SVG
+export LINUXDEPLOY_OUTPUT_VERSION="$version"
+export LDAI_OUTPUT="$output"
+
+rm -f "$output"
+linuxdeploy-x86_64.AppImage \
+    --appdir "$appdir" \
+    --desktop-file "$root/packaging/linux/testux.desktop" \
+    --icon-file "$tools/testux.png" \
+    --plugin qt \
+    --output appimage
