@@ -2,9 +2,17 @@
 
 #include <QCoreApplication>
 
+#include <algorithm>
+
 namespace {
 
 constexpr qint64 GiB = qint64(1) << 30;
+
+CheckResult result(const QString &id, const QString &level, const QString &title,
+                   const QString &detail = {})
+{
+    return CheckResult{id, level, title, detail};
+}
 
 CheckResult ok(const QString &id, const QString &title, const QString &detail = {})
 {
@@ -19,6 +27,11 @@ CheckResult warning(const QString &id, const QString &title, const QString &deta
 CheckResult blocker(const QString &id, const QString &title, const QString &detail)
 {
     return result(id, QStringLiteral("blocker"), title, detail);
+}
+
+QString displayName(const Distro &distro)
+{
+    return distro.name + u' ' + distro.edition;
 }
 
 } // namespace
