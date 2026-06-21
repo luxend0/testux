@@ -114,6 +114,7 @@ bool secureBootEnabled()
                .value_or(0) == 1;
 }
 
+// Fast Startup is part of hibernation and only takes effect while hibernation is enabled.
 bool fastStartupEnabled()
 {
     const bool hiberboot =
@@ -182,6 +183,7 @@ QString deviceProperty(HDEVINFO set, SP_DEVINFO_DATA &device, DWORD property)
     return QString::fromWCharArray(buffer.data());
 }
 
+// Hardware ids look like "PCI\VEN_10DE&DEV_2684&..." or "USB\VID_0A5C&PID_BD1E&...".
 quint16 vendorId(const QString &hardwareId)
 {
     static const QRegularExpression pattern(QStringLiteral("(?:VEN|VID)_([0-9A-Fa-f]{4})"));
