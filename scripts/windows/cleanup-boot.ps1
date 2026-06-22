@@ -86,6 +86,7 @@ function Get-PartitionMismatch($State, $Partition) {
     return ''
 }
 
+# Keeps the record for reference, but out of the way of the next setup.
 function Move-BootRecordAside {
     $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
     Move-Item -LiteralPath $StateFile -Destination "$StateFile.abandoned-$stamp"
