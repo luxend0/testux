@@ -6,6 +6,21 @@
 
 #include <functional>
 
+// Boots a live ISO on this PC without a USB stick (Windows, UEFI, GPT only).
+//
+// prepare() runs scripts/prepare-boot.ps1 elevated. The script shrinks C:, creates a FAT32
+// partition labelled TESTUX holding the ISO contents, leaves `linuxSpaceGb` unallocated for
+// the distro installer, suspends BitLocker for one reboot, adds a firmware boot entry and
+// makes it the one-time BootNext. On success the app registers "Testux.exe --post-boot" in
+// RunOnce so it can offer the cleanup when the user is back in Windows.
+//
+// Progress is exchanged through %ProgramData%\Testux\: the script appends JSON lines tagged
+// with the run id it was given ({"run": id, "step": "copy", "progress": 0.4} / {"run": id,
+// "error": "..."} / {"run": id, "done": true}) to progress.jsonl and records every change in
+// boot.json before making it; cleanup-boot.ps1 reads boot.json to undo exactly those
+// changes and deletes it when finished. If the partition no longer matches the record it
+// is left untouched, everything else is undone and boot.json is moved aside, so the
+// setup stops being pending ({"run": id, "error": "...", "code": "partition-untouched"}).
 class BareMetal : public QObject
 {
     Q_OBJECT
