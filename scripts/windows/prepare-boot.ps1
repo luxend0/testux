@@ -124,3 +124,265 @@ function Get-IsoVolumeLabel([string] $Path) {
         $stream.Dispose()
     }
 }
+
+function Mount-Iso([string] $Path) {
+    $image = Get-DiskImage -ImagePath $Path
+    $mountedByUs = -not $image.Attached
+    if ($mountedByUs) {
+        $image = Mount-DiskImage -ImagePath $Path -PassThru
+    }
+    $letter = $null
+    for ($attempt = 0; $attempt -lt 20 -and -not $letter; $attempt++) {
+        $letter = (Get-DiskImage -ImagePath $Path | Get-Volume).DriveLetter
+        if (-not $letter) { Start-Sleep -Milliseconds 500 }
+    }
+    if (-not $letter) {
+        throw 'Windows mounted the ISO without a drive letter.'
+    }
+    return @{ Root = "${letter}:\"; MountedByUs = $mountedByUs }
+}
+
+# Size of everything on the ISO; fails on files FAT32 cannot hold or a missing UEFI loader.
+function Measure-IsoContent([string] $Root) {
+    # Some ISOs (Rhino Linux) keep a 0-byte plaecholder there and the real loader only in
+    # the El Torito image, which a plain file copy cannot reach.
+    $loader = Get-Item -LiteralPath (Join-Path $Root $BootLoader) -Force -ErrorAction SilentlyContinue
+    if ($null -eq $loader -or $loader.Length -eq 0) {
+        throw 'This ISO has no UEFI boot loader (\EFI\BOOT\BOOTX64.EFI) that can start from a hard drive.'
+    }
+    $files = @(Get-ChildItem -LiteralPath $Root -Recurse -File -Force)
+    $tooLarge = @($files | Where-Object { $_.Length -gt $MaxFat32File })
+    if ($tooLarge.Count -gt 0) {
+        $names = ($tooLarge | ForEach-Object { $_.FullName.Substring($Root.Length) }) -join ', '
+        throw "This ISO contains files larger than 4 GiB, which FAT32 cannot store: $names"
+    }
+    return [int64]($files | Measure-Object -Property Length -Sum).Sum
+}
+
+function Assert-CanShrink($SystemPartition, [int64] $Bytes) {
+    $supported = Get-PartitionSupportedSize -DiskNumber $SystemPartition.DiskNumber `
+        -PartitionNumber $SystemPartition.PartitionNumber
+    $possible = [int64]$SystemPartition.Size - [int64]$supported.SizeMin
+    if ($Bytes -gt $possible) {
+        $needGB = [math]::Ceiling($Bytes / 1GB)
+        $haveGB = [math]::Floor($possible / 1GB)
+        throw "Drive C: can only give up $haveGB GB right now, $needGB GB are needed. Free up space or cohose less space for Linux."
+    }
+}
+
+function New-BootState($SystemPartition, [int64] $PartitionSize, [int64] $ShrinkBy) {
+    $remaining = Get-AlignedDown ([int64]$SystemPartition.Size - $ShrinkBy)
+    return [ordered]@{
+        version            = 1
+        distro             = $DistroName
+        diskNumber         = $SystemPartition.DiskNumber
+        systemDriveLetter  = [string]$SystemPartition.DriveLetter
+        systemOriginalSize = [int64]$SystemPartition.Size
+        systemShrunkSize   = $remaining
+        partitionOffset    = Get-AlignedUp ([int64]$SystemPartition.Offset + $remaining)
+        partitionSize      = $PartitionSize
+        partitionGuid      = $null
+        bootEntry          = $null
+        bitLockerSuspended = $false
+    }
+}
+
+function Get-PartitionByGuid([int] $DiskNumber, [string] $Guid) {
+    return Get-Partition -DiskNumber $DiskNumber | Where-Object { $_.Guid -eq $Guid }
+}
+
+# TESTUX goes right behind where C: really ends, in case Windows rounded the new size.
+function Resize-SystemPartition($SystemPartition, $State) {
+    Resize-Partition -DiskNumber $SystemPartition.DiskNumber `
+        -PartitionNumber $SystemPartition.PartitionNumber -Size $State.systemShrunkSize
+    $shrunk = Get-Partition -DiskNumber $SystemPartition.DiskNumber -PartitionNumber $SystemPartition.PartitionNumber
+    $State.partitionOffset = Get-AlignedUp ([int64]$shrunk.Offset + [int64]$shrunk.Size)
+    Save-State $State
+}
+
+# Creates, formats and mounts TESTUX; returns its drive letter. Formatting happens before
+# a letter is assigned so Explorer never offers to format a raw volume.
+function New-TestuxPartition($State) {
+    $partition = New-Partition -DiskNumber $State.diskNumber -Offset $State.partitionOffset `
+        -Size $State.partitionSize -GptType $BasicDataType
+    $State.partitionGuid = $partition.Guid
+    $State.partitionSize = [int64]$partition.Size
+    Save-State $State
+
+    $partition | Format-Volume -FileSystem FAT32 -NewFileSystemLabel $Label -Force -Confirm:$false | Out-Null
+    $partition | Add-PartitionAccessPath -AssignDriveLetter
+    $letter = (Get-PartitionByGuid $State.diskNumber $State.partitionGuid).DriveLetter
+    if (-not ([string]$letter -match '^[A-Z]$')) {
+        throw 'The new partition did not get a drive letter.'
+    }
+    return [string]$letter
+}
+
+function Copy-IsoContent([string] $Source, [string] $Letter, [int64] $TotalBytes) {
+    # "X:\." instead of "X:\": robocopy reads \" as an escaped quote.
+    $arguments = "`"$($Source).`" `"${Letter}:\.`" /E /COPY:DT /DCOPY:T /FFT /R:2 /W:2 /NP /NFL /NDL /NJH /NJS"
+    $process = Start-Process -FilePath 'robocopy.exe' -ArgumentList $arguments -WindowStyle Hidden -PassThru
+    [void]$process.Handle # keeps ExitCode readable after the process ends
+    $volume = Get-Volume -DriveLetter $Letter
+    $baseline = [int64]$volume.Size - [int64]$volume.SizeRemaining
+    $total = [double][math]::Max(1, $TotalBytes)
+    while (-not $process.HasExited) {
+        $volume = Get-Volume -DriveLetter $Letter
+        $copied = [int64]$volume.Size - [int64]$volume.SizeRemaining - $baseline
+        Send-Step 'copy' (0.2 + 0.7 * [math]::Min(1.0, [math]::Max(0, $copied) / $total))
+        Start-Sleep -Seconds 2
+    }
+    $process.WaitForExit()
+    if ($process.ExitCode -ge 8) {
+        throw "Copying the ISO failed (robocopy exit code $($process.ExitCode))."
+    }
+}
+
+function Update-BootConfig([string] $Root, [string] $IsoLabel) {
+    # GRUB configs may escape spaces in labels.
+    $variants = @($IsoLabel, $IsoLabel.Replace(' ', '\x20'), $IsoLabel.Replace(' ', '\040')) |
+        Select-Object -Unique
+    $configs = Get-ChildItem -LiteralPath $Root -Recurse -File -Force |
+        Where-Object { ($_.Extension -eq '.cfg' -or $_.Extension -eq '.conf') -and $_.Length -lt 1MB }
+    foreach ($config in $configs) {
+        $original = [System.IO.File]::ReadAllText($config.FullName)
+        $patched = $original
+        foreach ($variant in $variants) {
+            $patched = $patched.Replace($variant, $Label)
+        }
+        if ($patched -ne $original) {
+            [System.IO.File]::WriteAllText($config.FullName, $patched, $Utf8)
+        }
+    }
+}
+
+function Get-SystemEncryptableVolume {
+    try {
+        return Get-CimInstance -Namespace 'root\cimv2\Security\MicrosoftVolumeEncryption' `
+            -ClassName Win32_EncryptableVolume -Filter "DriveLetter = '$env:SystemDrive'"
+    }
+    catch {
+        return $null # no BitLocker support on this edition
+    }
+}
+
+# Changing the boot order makes BitLocker ask for the recovery key unless it is suspended.
+# DisableCount 1 resumes protection by itself after the next Windows start.
+function Suspend-BitLockerOnce($State) {
+    $volume = Get-SystemEncryptableVolume
+    if (-not $volume -or $volume.ProtectionStatus -ne 1) { return }
+    $State.bitLockerSuspended = $true
+    Save-State $State
+    $result = Invoke-CimMethod -InputObject $volume -MethodName DisableKeyProtectors `
+        -Arguments @{ DisableCount = [uint32]1 }
+    if ($result.ReturnValue -ne 0) {
+        throw "Pausing BitLocker failed (error $($result.ReturnValue))."
+    }
+}
+
+function Add-BootEntry($State, [string] $Letter) {
+    $safeName = $DistroName -replace '[^A-Za-z0-9 ._!+-]', ''
+    $output = Invoke-Native 'bcdedit.exe' @('/copy', '{bootmgr}', '/d', "Testux: $safeName")
+    $entry = [regex]::Match($output, '\{[0-9A-Fa-f-]{36}\}')
+    if (-not $entry.Success) {
+        throw "bcdedit did not return the new entry: $($output.Trim())"
+    }
+    $State.bootEntry = $entry.Value
+    Save-State $State
+
+    Invoke-Native 'bcdedit.exe' @('/set', $State.bootEntry, 'device', "partition=${Letter}:") | Out-Null
+    Invoke-Native 'bcdedit.exe' @('/set', $State.bootEntry, 'path', $BootLoader) | Out-Null
+    Invoke-Native 'bcdedit.exe' @('/set', '{fwbootmgr}', 'displayorder', $State.bootEntry, '/addlast') | Out-Null
+    Invoke-Native 'bcdedit.exe' @('/set', '{fwbootmgr}', 'bootsequence', $State.bootEntry) | Out-Null
+}
+
+# The firmware finds TESTUX by its GPT partition GUID, so it needs no drive letter. Hidden
+# from Explorer its files cannot be deleted by accident. Cosmetic, so failures are ignored.
+function Hide-TestuxPartition($State, [string] $Letter) {
+    try {
+        $partition = Get-PartitionByGuid $State.diskNumber $State.partitionGuid
+        $partition | Remove-PartitionAccessPath -AccessPath "${Letter}:\"
+        $partition | Set-Partition -NoDefaultDriveLetter $true
+    }
+    catch {
+        return
+    }
+}
+
+function Undo-BootSetup {
+    Send-Step 'undo' 0
+    & (Join-Path $PSScriptRoot 'cleanup-boot.ps1') -ReclaimSpace -Quiet
+}
+
+$state = $null
+$iso = $null
+$exitCode = 0
+try {
+    New-Item -ItemType Directory -Force -Path $DataDir | Out-Null
+    [System.IO.File]::WriteAllText($ProgressFile, '', $Utf8)
+
+    Send-Step 'preflight' 0
+    Assert-Administrator
+    Assert-NothingPending
+    if (-not (Test-Path -LiteralPath $IsoPath -PathType Leaf)) {
+        throw "The ISO file does not exist: $IsoPath"
+    }
+    $systemPartition = Get-Partition -DriveLetter ($env:SystemDrive.Substring(0, 1))
+    Assert-UefiGpt $systemPartition
+    $isoLabel = Get-IsoVolumeLabel $IsoPath
+    $iso = Mount-Iso $IsoPath
+    $contentBytes = Measure-IsoContent $iso.Root
+    $partitionSize = Get-AlignedUp ($contentBytes + $Headroom)
+    if ($partitionSize -gt $MaxFat32Volume) {
+        throw 'This ISO is too large for a FAT32 boot partition.'
+    }
+    $shrinkBy = $partitionSize + [int64]$LinuxSpaceGB * 1GB
+    Assert-CanShrink $systemPartition $shrinkBy
+
+    $state = New-BootState $systemPartition $partitionSize $shrinkBy
+    Save-State $state
+
+    Send-Step 'shrink' 0.05
+    Resize-SystemPartition $systemPartition $state
+
+    Send-Step 'partition' 0.15
+    $letter = New-TestuxPartition $state
+
+    Send-Step 'copy' 0.2
+    Copy-IsoContent $iso.Root $letter $contentBytes
+
+    Send-Step 'patch' 0.92
+    Update-BootConfig "${letter}:\" $isoLabel
+
+    Send-Step 'bitlocker' 0.95
+    Suspend-BitLockerOnce $state
+
+    Send-Step 'bootentry' 0.97
+    Add-BootEntry $state $letter
+    Hide-TestuxPartition $state $letter
+
+    Send-Step 'bootentry' 1
+    Send-Status @{ done = $true }
+}
+catch {
+    $message = $_.Exception.Message
+    if ($state) {
+        try {
+            Undo-BootSetup
+        }
+        catch {
+            $message += " Undoing the changes failed as well: $($_.Exception.Message)"
+            if (Test-Path -LiteralPath $StateFile) {
+                $message += ' Remove the Testux boot setup in Testux to try again.'
+            }
+        }
+    }
+    Send-Status @{ error = $message }
+    $exitCode = 1
+}
+finally {
+    if ($iso -and $iso.MountedByUs) {
+        Dismount-DiskImage -ImagePath $IsoPath | Out-Null
+    }
+}
+exit $exitCode
