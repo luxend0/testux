@@ -144,7 +144,7 @@ function Mount-Iso([string] $Path) {
 
 # Size of everything on the ISO; fails on files FAT32 cannot hold or a missing UEFI loader.
 function Measure-IsoContent([string] $Root) {
-    # Some ISOs (Rhino Linux) keep a 0-byte plaecholder there and the real loader only in
+    # Some ISOs (Rhino Linux) keep a 0-byte placeholder there and the real loader only in
     # the El Torito image, which a plain file copy cannot reach.
     $loader = Get-Item -LiteralPath (Join-Path $Root $BootLoader) -Force -ErrorAction SilentlyContinue
     if ($null -eq $loader -or $loader.Length -eq 0) {
@@ -166,7 +166,7 @@ function Assert-CanShrink($SystemPartition, [int64] $Bytes) {
     if ($Bytes -gt $possible) {
         $needGB = [math]::Ceiling($Bytes / 1GB)
         $haveGB = [math]::Floor($possible / 1GB)
-        throw "Drive C: can only give up $haveGB GB right now, $needGB GB are needed. Free up space or cohose less space for Linux."
+        throw "Drive C: can only give up $haveGB GB right now, $needGB GB are needed. Free up space or choose less space for Linux."
     }
 }
 
