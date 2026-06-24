@@ -28,6 +28,27 @@ struct ScriptStatus
     bool done = false;
 };
 
+ScriptStatus readStatus(const QByteArray &log, const QString &runId)
+{
+    ScriptStatus status;
+    for (const QByteArray &line : log.split('\n')) {
+        const QJsonObject message = QJsonDocument::fromJson(line).object();
+        if (message.value("run").toString() != runId)
+            continue;
+        if (message.contains("step")) {
+            status.step = message.value("step").toString();
+            status.progress = message.value("progress").toDouble(status.progress);
+        }
+        if (message.contains("error")) {
+            status.error = message.value("error").toString();
+            status.code = message.value("code").toString();
+        }
+        if (message.value("done").toBool())
+            status.done = true;
+    }
+    return status;
+}
+
 QString stepText(const QString &step)
 {
     if (step == "preflight")
@@ -122,6 +143,39 @@ void BareMetal::cleanup(bool reclaimSpace)
     if (reclaimSpace)
         arguments << "-ReclaimSpace";
     startScript(Operation::Cleanup, "cleanup-boot.ps1", arguments);
+}
+
+void BareMetal::startScript(Operation operation, const QString &script, QStringList arguments)
+{
+    if (m_state == Working)
+        return;
+    if (!supported()) {
+        setState(Failed, tr("Booting without a USB stick needs Windows on a UEFI PC."));
+        return;
+    }
+    const QString path = scriptPath(script);
+    if (!QFileInfo::exists(path)) {
+        setState(Failed, tr("%1 is missing. Please reinstall Testux.").arg(script));
+        return;
+    }
+
+    m_runId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    arguments << "-RunId" << m_runId;
+
+    QString error;
+    const auto finished = [this](int exitCode) { onScriptFinished(exitCode); };
+    if (!BareMetalPlatform::runElevatedScript(path, arguments, this, finished, &error)) {
+        setState(Failed, error);
+        return;
+    }
+
+    m_operation = operation;
+    m_stepId.clear();
+    m_step.clear();
+    m_progress = 0;
+    emit progressChanged();
+    setState(Working);
+    m_poll->start();
 }
 
 void BareMetal::pollProgress()
