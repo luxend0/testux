@@ -239,6 +239,7 @@ function Copy-IsoContent([string] $Source, [string] $Letter, [int64] $TotalBytes
 }
 
 function Update-BootConfig([string] $Root, [string] $IsoLabel) {
+    if ($IsoLabel.Length -lt 3) { return }
     # GRUB configs may escape spaces in labels.
     $variants = @($IsoLabel, $IsoLabel.Replace(' ', '\x20'), $IsoLabel.Replace(' ', '\040')) |
         Select-Object -Unique
