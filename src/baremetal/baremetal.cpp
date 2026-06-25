@@ -76,6 +76,17 @@ BareMetal::BareMetal(QObject *parent)
     connect(m_poll, &QTimer::timeout, this, &BareMetal::pollProgress);
 }
 
+void BareMetal::prepare(const Distro &distro, const QString &isoPath, int linuxSpaceGb)
+{
+    if (!QFileInfo::exists(isoPath)) {
+        setState(Failed, tr("The ISO file is missing. Download it again."));
+        return;
+    }
+    startScript(Operation::Prepare, "prepare-boot.ps1",
+                {"-IsoPath", QDir::toNativeSeparators(isoPath), "-DistroName", distro.name,
+                 "-LinuxSpaceGB", QString::number(qMax(0, linuxSpaceGb))});
+}
+
 void BareMetal::reboot()
 {
     if (m_state == Working || !pending())
@@ -113,4 +124,15 @@ void BareMetal::pollProgress()
         finish(Failed, status.error);
     else if (status.done)
         finish(m_operation == Operation::Prepare ? ReadyToReboot : Idle);
+}
+
+void BareMetal::finish(State state, const QString &error)
+{
+    m_poll->stop();
+    if (m_operation == Operation::Prepare && state == ReadyToReboot)
+        BareMetalPlatform::setLaunchAfterReboot(true);
+    if (m_operation == Operation::Cleanup && !pending())
+        BareMetalPlatform::setLaunchAfterReboot(false);
+    m_operation = Operation::None;
+    setState(state, error);
 }
