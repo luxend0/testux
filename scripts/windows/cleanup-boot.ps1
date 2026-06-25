@@ -70,6 +70,7 @@ function Find-TestuxPartition($State) {
     return $partitions | Where-Object { [int64]$_.Offset -eq [int64]$State.partitionOffset }
 }
 
+# Why $Partition must not be deleted, '' if it is exactly the one prepare-boot.ps1 made.
 function Get-PartitionMismatch($State, $Partition) {
     if ([int64]$Partition.Offset -ne [int64]$State.partitionOffset -or $Partition.GptType -ne $BasicDataType) {
         return 'The partition at the recorded place is not the Testux partition.'

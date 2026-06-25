@@ -18,6 +18,7 @@ constexpr int PollIntervalMs = 500;
 constexpr auto PartitionUntouchedCode = "partition-untouched";
 constexpr int PartitionUntouchedExitCode = 2;
 
+// What the script reported so far for one run, folded from all of its progress lines.
 struct ScriptStatus
 {
     QString step;
