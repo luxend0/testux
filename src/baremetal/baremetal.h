@@ -81,6 +81,11 @@ private:
 // Platform part, baremetal_win.cpp or baremetal_stub.cpp.
 namespace BareMetalPlatform {
 
+bool supported();  // Windows booted in UEFI mode
+QString dataDir(); // %ProgramData%\Testux, "" where unsupported
+
+bool rebootNow(QString *error);
+
 // Adds or removes "Testux.exe --post-boot" in the current user's RunOnce key.
 void setLaunchAfterReboot(bool enabled);
 
