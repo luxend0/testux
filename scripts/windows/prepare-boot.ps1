@@ -80,6 +80,10 @@ function Get-AlignedDown([int64] $Bytes) {
     return $Bytes - ($Bytes % 1MB)
 }
 
+function Get-AlignedUp([int64] $Bytes) {
+    return Get-AlignedDown ($Bytes + 1MB - 1)
+}
+
 function Assert-Administrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
     $principal = New-Object Security.Principal.WindowsPrincipal $identity
