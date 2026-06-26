@@ -86,6 +86,17 @@ function Get-PartitionMismatch($State, $Partition) {
     return ''
 }
 
+# Deletes TESTUX. Returns why it was left untouched instead, '' once it is gone.
+function Remove-TestuxPartition($State) {
+    $partition = Find-TestuxPartition $State
+    if (-not $partition) { return '' }
+    $mismatch = Get-PartitionMismatch $State $partition
+    if (-not $mismatch) {
+        $partition | Remove-Partition -Confirm:$false
+    }
+    return $mismatch
+}
+
 # Keeps the record for reference, but out of the way of the next setup.
 function Move-BootRecordAside {
     $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
