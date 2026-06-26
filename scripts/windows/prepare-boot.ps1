@@ -218,6 +218,7 @@ function New-TestuxPartition($State) {
     return [string]$letter
 }
 
+# robocopy has no machine readable progress, so progress is the space used on TESTUX.
 function Copy-IsoContent([string] $Source, [string] $Letter, [int64] $TotalBytes) {
     # "X:\." instead of "X:\": robocopy reads \" as an escaped quote.
     $arguments = "`"$($Source).`" `"${Letter}:\.`" /E /COPY:DT /DCOPY:T /FFT /R:2 /W:2 /NP /NFL /NDL /NJH /NJS"
