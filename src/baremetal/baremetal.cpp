@@ -200,6 +200,17 @@ void BareMetal::pollProgress()
         finish(m_operation == Operation::Prepare ? ReadyToReboot : Idle);
 }
 
+void BareMetal::onScriptFinished(int exitCode)
+{
+    pollProgress();
+    if (m_state != Working)
+        return;
+    if (m_operation == Operation::Cleanup && exitCode == PartitionUntouchedExitCode)
+        finish(Failed, partitionUntouchedMessage({}));
+    else
+        finish(Failed, tr("The setup script stopped unexpectedly (exit code %1).").arg(exitCode));
+}
+
 void BareMetal::finish(State state, const QString &error)
 {
     m_poll->stop();
