@@ -67,6 +67,8 @@ Distro Catalog::distro(const QString &id) const
 
 void Catalog::refresh()
 {
+    if (m_loading)
+        return;
     setLoading(true);
 
     QNetworkRequest request(QUrl(QString::fromLatin1(RemoteUrl)));
