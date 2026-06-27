@@ -14,6 +14,11 @@ QString unsupportedMessage()
 
 } // namespace
 
+bool BareMetalPlatform::supported()
+{
+    return false;
+}
+
 QString BareMetalPlatform::dataDir()
 {
     return {};
