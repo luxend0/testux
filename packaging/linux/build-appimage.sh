@@ -49,3 +49,5 @@ linuxdeploy-x86_64.AppImage \
     --icon-file "$tools/testux.png" \
     --plugin qt \
     --output appimage
+
+echo "$output"
