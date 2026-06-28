@@ -202,6 +202,8 @@ void BareMetal::pollProgress()
 
 void BareMetal::onScriptFinished(int exitCode)
 {
+    if (m_state != Working)
+        return;
     pollProgress();
     if (m_state != Working)
         return;
