@@ -33,6 +33,7 @@ qt_add_qml_module(testux
         qml/AppButton.qml
         qml/AppCheckBox.qml
         qml/AppProgressBar.qml
+        qml/AppRadioButton.qml
         qml/BodyText.qml
         qml/ChecklistPanel.qml
         qml/DistroCard.qml
