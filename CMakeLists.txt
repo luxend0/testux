@@ -59,6 +59,7 @@ qt_add_qml_module(testux
         qml/SessionView.qml
         qml/Sidebar.qml
         qml/StatusDot.qml
+        qml/StepIndicator.qml
         qml/Theme.qml
         qml/ThisPcPage.qml
         qml/TryPanel.qml
