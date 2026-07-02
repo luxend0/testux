@@ -40,4 +40,9 @@ PageScroll {
         title: qsTr("Boot %1 on this PC").arg(wizard.name)
         subtitle: qsTr("Your PC starts %1 once, straight from the hard drive. No USB stick needed.").arg(wizard.name)
     }
+
+    StepIndicator {
+        steps: [qsTr("Check"), qsTr("Space"), qsTr("Confirm"), qsTr("Prepare"), qsTr("Restart")]
+        current: wizard.step
+    }
 }
