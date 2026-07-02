@@ -36,6 +36,7 @@ qt_add_qml_module(testux
         qml/AppRadioButton.qml
         qml/AppSlider.qml
         qml/BodyText.qml
+        qml/BootPanel.qml
         qml/BootWizard.qml
         qml/ChecklistPanel.qml
         qml/DistroCard.qml
