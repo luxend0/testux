@@ -36,6 +36,15 @@ PageScroll {
         }
     }
 
+    AppButton {
+        kind: "quiet"
+        text: qsTr("Back to %1").arg(wizard.name)
+        enabled: !wizard.working
+        onClicked: wizard.backRequested()
+        Layout.leftMargin: -Theme.gapM
+        Layout.bottomMargin: -Theme.gapM
+    }
+
     PageHeader {
         title: qsTr("Boot %1 on this PC").arg(wizard.name)
         subtitle: qsTr("Your PC starts %1 once, straight from the hard drive. No USB stick needed.").arg(wizard.name)
