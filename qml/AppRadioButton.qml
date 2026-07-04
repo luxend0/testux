@@ -6,4 +6,11 @@ RadioButton {
     id: control
 
     property string detail: ""
+
+    spacing: Theme.gapM
+    padding: 0
+
+    HoverHandler {
+        cursorShape: Qt.PointingHandCursor
+    }
 }
