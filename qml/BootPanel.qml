@@ -6,4 +6,6 @@ Panel {
     id: panel
 
     required property distro distro
+
+    signal setupRequested()
 }
