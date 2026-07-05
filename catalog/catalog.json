@@ -38,6 +38,33 @@
       }
     },
     {
+      "id": "store",
+      "title": {
+        "en": "Install an app"
+      },
+      "detail": {
+        "en": "Open the software store, search for VLC or GIMP and install it. In a live session the app is gone after a restart, an installed system keeps it."
+      }
+    },
+    {
+      "id": "office",
+      "title": {
+        "en": "Open an office document"
+      },
+      "detail": {
+        "en": "LibreOffice opens Word and Excel files. Download one of your own documents and check that it looks right."
+      }
+    },
+    {
+      "id": "display",
+      "title": {
+        "en": "Check scaling and monitors"
+      },
+      "detail": {
+        "en": "In the display settings, set the scaling you use on Windows (for example 125% or 150%). On this PC, also plug in your second monitor."
+      }
+    },
+    {
       "id": "games",
       "title": {
         "en": "Check your games"
