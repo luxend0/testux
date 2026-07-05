@@ -16,6 +16,32 @@ constexpr auto RunOnceKey =
     R"(HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce)";
 constexpr auto RunOnceValue = "Testux";
 
+// Quotes one argument so that CommandLineToArgvW, which powershell.exe uses to split its
+// command line, returns it unchanged.
+QString quoteArgument(const QString &argument)
+{
+    qDebug() << Q_FUNC_INFO;
+    if (!argument.isEmpty() && !argument.contains(' ') && !argument.contains('\t') &&
+        !argument.contains('"'))
+        return argument;
+
+    QString quoted = "\"";
+    int backslashes = 0;
+    for (const QChar c : argument) {
+        if (c == '\\') {
+            ++backslashes;
+            continue;
+        }
+        // Backslashes only escape when a quote follows them.
+        quoted += QString(c == u'"' ? backslashes * 2 + 1 : backslashes, u'\\');
+        quoted += c;
+        backslashes = 0;
+    }
+    quoted += QString(backslashes * 2, u'\\');
+    quoted += '"';
+    return quoted;
+}
+
 // Full path, so a powershell.exe earlier in PATH is never picked up with admin rights.
 std::wstring powerShellPath()
 {
@@ -25,6 +51,12 @@ std::wstring powerShellPath()
 }
 
 } // namespace
+
+bool BareMetalPlatform::supported()
+{
+    FIRMWARE_TYPE type = FirmwareTypeUnknown;
+    return GetFirmwareType(&type) && type == FirmwareTypeUefi;
+}
 
 bool BareMetalPlatform::runElevatedScript(const QString &scriptPath, const QStringList &arguments,
                                           QObject *context, std::function<void(int)> finished,
