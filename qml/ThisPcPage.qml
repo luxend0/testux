@@ -14,6 +14,22 @@ PageScroll {
         subtitle: qsTr("What Testux found out about your hardware. None of it leaves your PC.")
     }
 
+    RowLayout {
+        visible: HardwareCheck.busy || !page.report.valid
+        spacing: Theme.gapM
+
+        BusyIndicator {
+            running: visible
+            implicitWidth: 28
+            implicitHeight: 28
+        }
+
+        Label {
+            text: qsTr("Checking your PC")
+            color: Theme.textMuted
+        }
+    }
+
     Panel {
         visible: page.report.valid
         Layout.fillWidth: true
@@ -60,5 +76,15 @@ PageScroll {
                 Layout.fillWidth: true
             }
         }
+    }
+
+    HardwareListPanel {
+        visible: page.report.valid
+        title: qsTr("Wi-Fi")
+        entries: page.report.wifiAdapters
+        hint: page.report.broadcomWifi
+              ? qsTr("Broadcom Wi-Fi often needs an extra driver on Linux. Keep a network cable or phone tethering ready for the first start.")
+              : ""
+        Layout.fillWidth: true
     }
 }
