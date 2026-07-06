@@ -482,6 +482,8 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
     // A stopped session goes away. A failed one stays current so the UI can show its error
     // until the next start(); a replaced one has nobody left to show it.
     connect(session, &VmSession::stateChanged, this, [this, session] {
+        if (!hasEnded(session->state()))
+            return;
         if (session != m_session) {
             session->deleteLater();
         } else if (session->state() == VmSession::Stopped) {
@@ -497,7 +499,8 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
                     return;
                 if (!sinceFirstStats.isValid())
                     sinceFirstStats.start();
-                // TODO: error handling
+                if (sinceFirstStats.elapsed() < MeasureDelayMs)
+                    return;
                 saveMeasurement(session->distroId(), session->guestRamUsedMb());
                 measured = true;
                 emit measurementsChanged();
