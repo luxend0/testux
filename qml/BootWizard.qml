@@ -27,6 +27,8 @@ PageScroll {
     readonly property bool working: BareMetal.state === BareMetal.Working
     readonly property int shrinkGb: Math.ceil(HardwareCheck.requiredBytes(distro, reservedGb) / 1e9)
 
+    maximumContentWidth: 820
+
     Connections {
         target: BareMetal
 
