@@ -244,6 +244,7 @@ QString windowTitle(const Distro &distro)
     return VmManager::tr("%1 in Testux").arg(parts.join(' '));
 }
 
+// Test disks and measurements
 
 QString testDiskFile(const QString &distroId, const QString &suffix)
 {
