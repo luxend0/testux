@@ -248,6 +248,8 @@ void IsoDownload::complete(const QString &actualSha256, const QString &expectedS
 
 void IsoDownload::setState(State state, const QString &error)
 {
+    if (m_state == state && m_error == error)
+        return;
     m_state = state;
     m_error = error;
     emit stateChanged();
