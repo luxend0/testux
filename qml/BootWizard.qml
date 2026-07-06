@@ -12,6 +12,8 @@ PageScroll {
 
     signal backRequested()
 
+    enum Step { Check, Space, Confirm, Prepare, Restart }
+
     property int step: BootWizard.Step.Check
     property bool makeRoom: true
     property bool backupConfirmed: false
