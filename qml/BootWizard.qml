@@ -58,4 +58,44 @@ PageScroll {
         steps: [qsTr("Check"), qsTr("Space"), qsTr("Confirm"), qsTr("Prepare"), qsTr("Restart")]
         current: wizard.step
     }
+
+    Component {
+        id: confirmStep
+
+        ColumnLayout {
+            spacing: Theme.gapL
+
+            Heading {
+                text: qsTr("Before you start")
+                Layout.fillWidth: true
+            }
+
+            DownloadPanel {
+                distro: wizard.distro
+                download: wizard.download
+                Layout.fillWidth: true
+            }
+
+            FactList {
+                labelWidth: 170
+                facts: [
+                    { label: qsTr("Drive C:"), value: wizard.makeRoom
+                        ? qsTr("Shrinks by about %1 GB for the boot files and %2.").arg(wizard.shrinkGb).arg(wizard.name)
+                        : qsTr("Shrinks by about %1 GB for the boot files.").arg(wizard.shrinkGb) },
+                    { label: qsTr("Next restart"), value: qsTr("Starts %1 once. After that Windows starts as usual.").arg(wizard.name) },
+                    { label: qsTr("BitLocker"), value: qsTr("Paused for that one restart if it is on. Keep your recovery key at hand anyway.") },
+                    { label: qsTr("Undo"), value: qsTr("Back in Windows, Testux removes the boot files again.") }
+                ]
+                Layout.fillWidth: true
+            }
+
+            AppCheckBox {
+                text: qsTr("I have a backup of my important files")
+                detail: qsTr("Changing partitions is safe in almost every case. A backup covers the rest.")
+                checked: wizard.backupConfirmed
+                onToggled: wizard.backupConfirmed = checked
+                Layout.fillWidth: true
+            }
+        }
+    }
 }
