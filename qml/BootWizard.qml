@@ -59,6 +59,114 @@ PageScroll {
         current: wizard.step
     }
 
+    Panel {
+        Layout.fillWidth: true
+
+        Loader {
+            anchors.fill: parent
+            sourceComponent: [checkStep, spaceStep, confirmStep, prepareStep, restartStep][wizard.step]
+        }
+    }
+
+    RowLayout {
+        visible: wizard.step < BootWizard.Step.Prepare
+        spacing: Theme.gapS
+        Layout.fillWidth: true
+
+        AppButton {
+            text: qsTr("Back")
+            visible: wizard.step > BootWizard.Step.Check
+            onClicked: --wizard.step
+        }
+
+        Item {
+            Layout.fillWidth: true
+        }
+
+        AppButton {
+            kind: "primary"
+            visible: wizard.step < BootWizard.Step.Confirm
+            text: qsTr("Next")
+            enabled: wizard.canBoot
+            onClicked: ++wizard.step
+        }
+
+        AppButton {
+            kind: "primary"
+            visible: wizard.step === BootWizard.Step.Confirm
+            text: qsTr("Prepare boot")
+            enabled: wizard.canBoot && wizard.download.state === IsoDownload.Ready && wizard.backupConfirmed
+            onClicked: BareMetal.prepare(wizard.distro, wizard.download.path, wizard.reservedGb)
+        }
+    }
+
+    Component {
+        id: spaceStep
+
+        ColumnLayout {
+            spacing: Theme.gapL
+
+            Heading {
+                text: qsTr("Do you want to install it later?")
+                Layout.fillWidth: true
+            }
+
+            ButtonGroup {
+                id: roomChoice
+            }
+
+            AppRadioButton {
+                text: qsTr("Just try it")
+                detail: qsTr("Only the boot files go on your drive. You can still install later.")
+                checked: !wizard.makeRoom
+                ButtonGroup.group: roomChoice
+                onToggled: if (checked) wizard.makeRoom = false
+                Layout.fillWidth: true
+            }
+
+            AppRadioButton {
+                text: qsTr("Make room to install it next to Windows")
+                detail: qsTr("Testux shrinks drive C: and leaves the space free. In the live system, pick \"install alongside Windows\".")
+                checked: wizard.makeRoom
+                ButtonGroup.group: roomChoice
+                onToggled: if (checked) wizard.makeRoom = true
+                Layout.fillWidth: true
+            }
+
+            ColumnLayout {
+                visible: wizard.makeRoom
+                spacing: Theme.gapXs
+                Layout.leftMargin: 32
+                Layout.fillWidth: true
+
+                Label {
+                    text: qsTr("Space for %1: %2 GB").arg(wizard.name).arg(wizard.linuxSpaceGb)
+                    font.weight: Font.DemiBold
+                }
+
+                AppSlider {
+                    from: 20
+                    to: 200
+                    stepSize: 10
+                    value: wizard.linuxSpaceGb
+                    onMoved: wizard.linuxSpaceGb = value
+                    Layout.fillWidth: true
+                }
+
+                Label {
+                    text: qsTr("40 GB is plenty for the system, apps and some files.")
+                    color: Theme.textFaint
+                    font.pixelSize: Theme.fontSmall
+                }
+            }
+
+            ReadinessList {
+                results: wizard.results.filter(result => result.id === "space")
+                Layout.fillWidth: true
+            }
+        }
+    }
+
     Component {
         id: confirmStep
 
