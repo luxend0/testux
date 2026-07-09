@@ -31,6 +31,8 @@ CheckResult blocker(const QString &id, const QString &title, const QString &deta
 
 QString displayName(const Distro &distro)
 {
+    if (distro.edition.isEmpty())
+        return distro.name;
     return distro.name + u' ' + distro.edition;
 }
 
@@ -55,6 +57,8 @@ public:
 
     static CheckResult firmware(const HardwareReport &hw)
     {
+        if (hw.uefi)
+            return ok("uefi", tr("Starts in UEFI mode"));
         return blocker("uefi", tr("Legacy BIOS mode"),
                        tr("This PC starts Windows in legacy BIOS mode. Booting a live system "
                           "from the drive needs UEFI mode. Try the distro in a window instead."));
@@ -121,6 +125,8 @@ public:
     static CheckResult memory(const HardwareReport &hw, const Distro &distro)
     {
         const QString installed = gib(qint64(hw.ramMb) << 20);
+        if (hw.ramMb >= distro.minRamMb)
+            return ok("ram", tr("Enough memory"), tr("%1 GB RAM.").arg(installed));
         return warning(
             "ram", tr("Little memory"),
             tr("%1 recommends %2 GB of RAM, this PC has %3 GB. It runs, but may "
