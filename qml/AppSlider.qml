@@ -21,4 +21,20 @@ Slider {
             color: Theme.accent
         }
     }
+
+    handle: Rectangle {
+        x: control.leftPadding + control.visualPosition * (control.availableWidth - width)
+        y: control.topPadding + (control.availableHeight - height) / 2
+        implicitWidth: 22
+        implicitHeight: 22
+        radius: 11
+        color: Theme.surface
+        border.width: 2
+        border.color: Theme.accent
+
+        FocusRing {
+            baseRadius: 11
+            visible: control.visualFocus
+        }
+    }
 }
