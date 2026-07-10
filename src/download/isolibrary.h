@@ -10,6 +10,8 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 
+// One ISO in the local cache. Downloads resume from a ".part" file and the SHA-256 is
+// checked before the file is renamed into place, so `path` only ever holds a verified ISO.
 class IsoDownload : public QObject
 {
     Q_OBJECT
