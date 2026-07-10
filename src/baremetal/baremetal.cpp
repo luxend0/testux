@@ -66,6 +66,11 @@ QString partitionUntouchedMessage(const QString &details)
     return message;
 }
 
+QString dataFile(const QString &name)
+{
+    return QDir(BareMetalPlatform::dataDir()).filePath(name);
+}
+
 QString scriptPath(const QString &name)
 {
     return QDir(QCoreApplication::applicationDirPath()).filePath("scripts/" + name);
