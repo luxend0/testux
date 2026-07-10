@@ -33,6 +33,37 @@ ColumnLayout {
         }
     }
 
+    ColumnLayout {
+        spacing: Theme.gapS
+        visible: panel.download.state === IsoDownload.Downloading || panel.download.state === IsoDownload.Verifying
+        Layout.fillWidth: true
+
+        RowLayout {
+            Layout.fillWidth: true
+
+            Label {
+                text: panel.download.state === IsoDownload.Verifying
+                      ? qsTr("Checking the download")
+                      : qsTr("Downloading %1 of %2").arg(Format.bytes(panel.download.received)).arg(Format.bytes(panel.total))
+                color: Theme.textMuted
+                Layout.fillWidth: true
+            }
+
+            AppButton {
+                kind: "quiet"
+                text: qsTr("Pause")
+                visible: panel.download.state === IsoDownload.Downloading
+                onClicked: panel.download.cancel()
+            }
+        }
+
+        AppProgressBar {
+            value: panel.total > 0 ? panel.download.received / panel.total : 0
+            indeterminate: panel.download.state === IsoDownload.Verifying
+            Layout.fillWidth: true
+        }
+    }
+
     RowLayout {
         spacing: Theme.gapS
         visible: panel.download.state === IsoDownload.Ready
