@@ -15,7 +15,7 @@ param(
     [Parameter(Mandatory)]
     [string] $Destination,
 
-    # Keeps the downloaded installer bteween runs.
+    # Keeps the downloaded installer between runs.
     [string] $CacheDir = (Join-Path ([IO.Path]::GetTempPath()) 'testux-qemu')
 )
 
