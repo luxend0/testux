@@ -19,6 +19,10 @@ param(
     [string] $CacheDir = (Join-Path ([IO.Path]::GetTempPath()) 'testux-qemu')
 )
 
+$ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue' # the progress bar slows Invoke-WebRequest down a lot
+Set-StrictMode -Version Latest
+
 # QEMU 11.1.0 by Stefan Weil. The hash is the one published next to the installer.
 $InstallerUrl = 'https://qemu.weilnetz.de/w64/2026/qemu-w64-setup-20260811.exe'
 $InstallerSha512 = '5bcf9eed634e8575a37b74f445af41a2fe4106da512d0c30c368301d4c105037fdfab40a5287367a28a957624cddebbc8c07e16c88ab6634f554cdf3d16bf543'
