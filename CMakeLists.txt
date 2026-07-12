@@ -72,7 +72,8 @@ qt_add_qml_module(testux
 if(WIN32)
     target_sources(testux PRIVATE
         src/hw/hardwareprobe_win.cpp
-        src/baremetal/baremetal_win.cpp)
+        src/baremetal/baremetal_win.cpp
+        packaging/windows/testux.rc)
     target_link_libraries(testux PRIVATE setupapi ole32 shell32 propsys)
 else()
     target_sources(testux PRIVATE
