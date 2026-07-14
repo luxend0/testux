@@ -46,6 +46,18 @@ $ShareFiles = @(
 # keymaps for -k, locale for translated GTK menus, icons for the GTK window.
 $ShareDirs = @('keymaps', 'locale', 'icons\hicolor', 'icons\Adwaita')
 
+function Test-Installer([string] $Path) {
+    (Test-Path $Path) -and (Get-FileHash $Path -Algorithm SHA512).Hash -eq $InstallerSha512
+}
+
+function Get-SevenZip {
+    $command = Get-Command 7z -ErrorAction SilentlyContinue
+    if ($command) { return $command.Source }
+    $default = Join-Path $env:ProgramFiles '7-Zip\7z.exe'
+    if (Test-Path $default) { return $default }
+    throw '7-Zip (7z.exe) is required to unpack the QEMU installer.'
+}
+
 New-Item -ItemType Directory -Force $CacheDir | Out-Null
 $installer = Join-Path $CacheDir (Split-Path $InstallerUrl -Leaf)
 if (-not (Test-Installer $installer)) {
@@ -61,6 +73,11 @@ $unpacked = Join-Path $CacheDir 'unpacked'
 if (Test-Path $unpacked) { Remove-Item -Recurse -Force $unpacked }
 & (Get-SevenZip) x -y "-o$unpacked" $installer | Out-Null
 if ($LASTEXITCODE -ne 0) { throw "7-Zip failed to unpack $installer (exit code $LASTEXITCODE)" }
+
+$target = Join-Path $Destination 'qemu'
+$targetShare = Join-Path $target 'share'
+if (Test-Path $target) { Remove-Item -Recurse -Force $target }
+New-Item -ItemType Directory -Force $targetShare | Out-Null
 
 $bytes = (Get-ChildItem $target -Recurse -File | Measure-Object Length -Sum).Sum
 Write-Host ('QEMU {0} in {1}: {2:N0} MB' -f
