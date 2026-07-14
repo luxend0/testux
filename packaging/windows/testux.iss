@@ -1,4 +1,9 @@
 ﻿; Testux installer.
+;
+;   iscc /DAppVersion=0.1.0 packaging\windows\testux.iss
+;
+; Expects the deployed app in deploy\ (testux.exe + Qt from windeployqt, scripts\, qemu\)
+; and writes dist\TestuxSetup-<version>.exe. Both paths are relative to the repository root.
 
 #ifndef AppVersion
   #define AppVersion "0.0.0"
@@ -25,6 +30,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=admin
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
+; Windows 10 1809, the first release with a usable Windows Hypervisor Platform API
 MinVersion=10.0.17763
 Compression=lzma2/max
 SolidCompression=yes
