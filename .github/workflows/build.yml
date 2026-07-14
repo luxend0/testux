@@ -80,7 +80,7 @@ jobs:
       run:
         # Stop on the first failing cmdlet or native command, not only at the end.
         # No braces besides {0}: GitHub formats this string and rejects literal ones.
-        shell: pwsh -NoProfile -Command "& { $ErrorActionPreference = 'Stop'; $PSNativeCommandUseErrorActionPreference = $true; . '{0}' }"
+        shell: pwsh -NoProfile -Command "$ErrorActionPreference = 'Stop'; $PSNativeCommandUseErrorActionPreference = $true; . '{0}'"
     steps:
       - uses: actions/checkout@v7
 
