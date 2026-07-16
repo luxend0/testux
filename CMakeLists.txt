@@ -64,6 +64,7 @@ qt_add_qml_module(testux
         qml/Theme.qml
         qml/ThisPcPage.qml
         qml/TryPanel.qml
+        qml/WelcomeBackDialog.qml
     RESOURCES
         catalog/catalog.json
         assets/testux.svg
