@@ -13,4 +13,20 @@ RadioButton {
     HoverHandler {
         cursorShape: Qt.PointingHandCursor
     }
+
+    indicator: Rectangle {
+        implicitWidth: 20
+        implicitHeight: 20
+        x: control.leftPadding
+        y: control.topPadding + 1
+        radius: 10
+        color: Theme.surface
+        border.width: control.checked ? 6 : 1.5
+        border.color: control.checked || control.hovered ? Theme.accent : Theme.borderStrong
+
+        FocusRing {
+            baseRadius: 10
+            visible: control.visualFocus
+        }
+    }
 }
