@@ -57,6 +57,10 @@ if (-not (Test-Installer $installer)) {
     }
 }
 
+$unpacked = Join-Path $CacheDir 'unpacked'
+if (Test-Path $unpacked) { Remove-Item -Recurse -Force $unpacked }
+& (Get-SevenZip) x -y "-o$unpacked" $installer | Out-Null
+
 $bytes = (Get-ChildItem $target -Recurse -File | Measure-Object Length -Sum).Sum
 Write-Host ('QEMU {0} in {1}: {2:N0} MB' -f
     (Get-Content (Join-Path $unpacked 'VERSION')).Trim(), $target, ($bytes / 1MB))
