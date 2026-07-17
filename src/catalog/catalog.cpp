@@ -113,7 +113,8 @@ bool Catalog::apply(const QByteArray &json)
 
 void Catalog::setLoading(bool loading)
 {
-    // TODO check this
+    if (m_loading == loading)
+        return;
     m_loading = loading;
     emit loadingChanged();
 }
