@@ -12,4 +12,30 @@ AppDialog {
 
     title: BareMetal.postBoot ? qsTr("Welcome back") : qsTr("Testux boot files found")
     closePolicy: working ? Popup.NoAutoClose : Popup.CloseOnEscape
+
+    AppCheckBox {
+        id: reclaim
+        checked: true
+        enabled: !dialog.working
+        text: qsTr("Give unused Linux space back to Windows")
+        detail: qsTr("Leave this on unless you installed Linux. Space that Linux uses is never touched.")
+        Layout.fillWidth: true
+    }
+
+    ColumnLayout {
+        visible: dialog.working
+        spacing: Theme.gapS
+        Layout.fillWidth: true
+
+        BodyText {
+            text: BareMetal.step
+            muted: true
+            Layout.fillWidth: true
+        }
+
+        AppProgressBar {
+            value: BareMetal.progress
+            Layout.fillWidth: true
+        }
+    }
 }
