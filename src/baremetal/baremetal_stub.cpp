@@ -6,6 +6,12 @@
 
 namespace {
 
+QString unsupportedMessage()
+{
+    return QCoreApplication::translate("BareMetal",
+                                       "Booting without a USB stick is only available on Windows.");
+}
+
 } // namespace
 
 QString BareMetalPlatform::dataDir()
@@ -19,3 +25,11 @@ bool BareMetalPlatform::runElevatedScript(const QString &, const QStringList &, 
     *error = unsupportedMessage();
     return false;
 }
+
+bool BareMetalPlatform::rebootNow(QString *error)
+{
+    *error = unsupportedMessage();
+    return false;
+}
+
+void BareMetalPlatform::setLaunchAfterReboot(bool) {}
