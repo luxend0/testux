@@ -65,6 +65,7 @@ private:
     QString m_error;
 };
 
+// Owns the IsoDownload objects, one per ISO file, under AppLocalDataLocation/isos.
 class IsoLibrary : public QObject
 {
     Q_OBJECT
