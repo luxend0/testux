@@ -38,4 +38,28 @@ AppDialog {
             Layout.fillWidth: true
         }
     }
+
+    Notice {
+        kind: "error"
+        visible: BareMetal.state === BareMetal.Failed
+        text: BareMetal.error
+        Layout.fillWidth: true
+    }
+
+    actions: [
+        AppButton {
+            text: qsTr("Not now")
+            enabled: !dialog.working
+            onClicked: dialog.close()
+        },
+        AppButton {
+            kind: "primary"
+            text: qsTr("Remove boot files")
+            enabled: !dialog.working
+            onClicked: {
+                dialog.cleaning = true
+                BareMetal.cleanup(reclaim.checked)
+            }
+        }
+    ]
 }
