@@ -49,6 +49,16 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 en.EnablingHypervisor=Enabling the Windows Hypervisor Platform so Linux runs fast in a window...
 de.EnablingHypervisor=Windows-Hypervisorplattform wird aktiviert, damit Linux im Fenster schnell läuft...
 
+[Icons]
+Name: "{autoprograms}\Testux"; Filename: "{app}\testux.exe"
+Name: "{autodesktop}\Testux"; Filename: "{app}\testux.exe"; Tasks: desktopicon
+
+[Run]
+Filename: "{app}\testux.exe"; Description: "{cm:LaunchProgram,Testux}"; Flags: nowait postinstall skipifsilent
+
+; Downloaded ISOs and test disks live in %LOCALAPPDATA%\Testux and are left in place on
+; uninstall, the same as any other user data.
+
 [Code]
 var
   HypervisorNeedsRestart: Boolean;
