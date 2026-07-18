@@ -306,7 +306,7 @@
         "en": "Ubuntu's stability with the KDE Plasma desktop on top."
       },
       "description": {
-        "en": "Kubuntu is the official Ubuntu flavor with KDE Plasma."
+        "en": "Kubuntu is the official Ubuntu flavor with KDE Plasma. You get the taskbar and start menu of Plasma together with Ubuntu's long-term support and its huge amount of guides. Drivers for graphics and Wi-Fi are set up by the Ubuntu driver tools."
       },
       "notes": {
         "en": "Kubuntu cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick."
