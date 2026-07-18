@@ -100,10 +100,13 @@ qt_add_translations(testux
     RESOURCE_PREFIX /i18n
     NO_GENERATE_PLURALS_TS_FILE)
 
-include(GNUInstallDirs)
-install(TARGETS testux BUNDLE DESTINATION . RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 if(WIN32)
+    # Flat layout: testux.exe next to scripts\ and qemu\, where the app looks for them.
+    install(TARGETS testux RUNTIME DESTINATION .)
     install(DIRECTORY scripts/windows/ DESTINATION scripts)
+else()
+    include(GNUInstallDirs)
+    install(TARGETS testux RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif()
 
 include(CTest)
