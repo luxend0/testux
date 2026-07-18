@@ -32,6 +32,7 @@ qt_add_qml_module(testux
     QML_FILES
         qml/AppButton.qml
         qml/AppCheckBox.qml
+        qml/AppDialog.qml
         qml/AppProgressBar.qml
         qml/AppRadioButton.qml
         qml/AppSlider.qml
