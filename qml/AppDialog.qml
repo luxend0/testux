@@ -34,6 +34,12 @@ Dialog {
         wrapMode: Text.Wrap
     }
 
+    ColumnLayout {
+        id: body
+        width: dialog.availableWidth
+        spacing: Theme.gapL
+    }
+
     footer: RowLayout {
         spacing: Theme.gapS
 
