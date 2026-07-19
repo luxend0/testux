@@ -79,6 +79,24 @@ $targetShare = Join-Path $target 'share'
 if (Test-Path $target) { Remove-Item -Recurse -Force $target }
 New-Item -ItemType Directory -Force $targetShare | Out-Null
 
+# All DLLs stay: libepoxy loads the ANGLE/SwiftShader ones at run time, so an import scan
+# would miss them.
+foreach ($pattern in @('qemu-system-x86_64.exe', 'qemu-img.exe', '*.dll', 'COPYING', 'COPYING.LIB')) {
+    Copy-Item (Join-Path $unpacked $pattern) $target
+}
+
+$sourceShare = Join-Path $unpacked 'share'
+foreach ($pattern in $ShareFiles) {
+    $files = @(Get-ChildItem (Join-Path $sourceShare $pattern))
+    if ($files.Count -eq 0) { throw "No file in the QEMU installer matches share\$pattern" }
+    $files | Copy-Item -Destination $targetShare
+}
+foreach ($dir in $ShareDirs) {
+    $destinationDir = Join-Path $targetShare $dir
+    New-Item -ItemType Directory -Force (Split-Path $destinationDir) | Out-Null
+    Copy-Item -Recurse (Join-Path $sourceShare $dir) $destinationDir
+}
+
 $bytes = (Get-ChildItem $target -Recurse -File | Measure-Object Length -Sum).Sum
 Write-Host ('QEMU {0} in {1}: {2:N0} MB' -f
     (Get-Content (Join-Path $unpacked 'VERSION')).Trim(), $target, ($bytes / 1MB))
