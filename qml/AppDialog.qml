@@ -12,6 +12,12 @@ Dialog {
     padding: Theme.gapXl
     topPadding: Theme.gapS
 
+    background: Rectangle {
+        color: Theme.surface
+        radius: Theme.radiusLarge
+        border.color: Theme.border
+    }
+
     Overlay.modal: Rectangle {
         color: "#661b2330"
     }
