@@ -49,6 +49,12 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 en.EnablingHypervisor=Enabling the Windows Hypervisor Platform so Linux runs fast in a window...
 de.EnablingHypervisor=Windows-Hypervisorplattform wird aktiviert, damit Linux im Fenster schnell läuft...
 
+[Tasks]
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+
+[Files]
+Source: "{#SourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+
 [Icons]
 Name: "{autoprograms}\Testux"; Filename: "{app}\testux.exe"
 Name: "{autodesktop}\Testux"; Filename: "{app}\testux.exe"; Tasks: desktopicon
