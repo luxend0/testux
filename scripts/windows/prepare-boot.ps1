@@ -62,6 +62,10 @@ function Send-Step([string] $Step, [double] $Progress) {
     Send-Status @{ step = $Step; progress = [math]::Round($Progress, 3) }
 }
 
+function Save-State($State) {
+    [System.IO.File]::WriteAllText($StateFile, ($State | ConvertTo-Json), $Utf8)
+}
+
 function Invoke-Native([string] $FilePath, [string[]] $Arguments) {
     # Native stderr must not turn into terminating errors; the exit code decides.
     $ErrorActionPreference = 'Continue'
@@ -74,6 +78,14 @@ function Invoke-Native([string] $FilePath, [string[]] $Arguments) {
 
 function Get-AlignedDown([int64] $Bytes) {
     return $Bytes - ($Bytes % 1MB)
+}
+
+function Assert-Administrator {
+    $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+    $principal = New-Object Security.Principal.WindowsPrincipal $identity
+    if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        throw 'Administrator rights are required.'
+    }
 }
 
 function Assert-UefiGpt($SystemPartition) {
