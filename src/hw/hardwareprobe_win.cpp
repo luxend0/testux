@@ -1,4 +1,5 @@
 #include "hw/hardware.h"
+#include "hw/hostinfo.h"
 
 #include <QRegularExpression>
 #include <QStorageInfo>

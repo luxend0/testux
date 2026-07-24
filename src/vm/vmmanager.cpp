@@ -1,5 +1,6 @@
 #include "vm/vmmanager.h"
 
+#include "hw/hostinfo.h"
 #include "vm/qemuargs.h"
 
 #include <QCoreApplication>

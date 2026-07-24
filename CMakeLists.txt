@@ -26,6 +26,7 @@ qt_add_qml_module(testux
         src/vm/qemuargs.h src/vm/qemuargs.cpp
         src/vm/vmmanager.h src/vm/vmmanager.cpp
         src/hw/hardware.h
+        src/hw/hostinfo.h src/hw/hostinfo.cpp
         src/hw/readiness.h src/hw/readiness.cpp
         src/hw/hardwarecheck.h src/hw/hardwarecheck.cpp
         src/baremetal/baremetal.h src/baremetal/baremetal.cpp
