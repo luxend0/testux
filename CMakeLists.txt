@@ -48,6 +48,7 @@ qt_add_qml_module(testux
         qml/DistroTile.qml
         qml/DownloadPanel.qml
         qml/FactList.qml
+        qml/FadeIn.qml
         qml/FadeOut.qml
         qml/Flag.qml
         qml/Format.qml
