@@ -247,6 +247,7 @@ QString windowTitle(const Distro &distro)
 
 // Test disks and measurements
 
+// Catalog ids end up in file names, so anything but a plain slug is refused.
 QString testDiskFile(const QString &distroId, const QString &suffix)
 {
     static const QRegularExpression slug("^[a-z0-9][a-z0-9._-]*$");
@@ -335,6 +336,7 @@ bool hasEnded(VmSession::State state)
 
 } // namespace
 
+// VmSession
 
 VmSession::VmSession(const QString &distroId, const QString &program, const QStringList &arguments,
                      quint16 qmpPort, QObject *parent)

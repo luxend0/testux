@@ -85,6 +85,7 @@ public:
     Q_INVOKABLE VmSession *start(const Distro &distro, const QString &isoPath, bool withTestDisk);
     Q_INVOKABLE bool hasTestDisk(const QString &distroId) const;
     Q_INVOKABLE void removeTestDisk(const QString &distroId);
+    // {"ramUsedMb": int, "measuredAt": QDateTime} or empty when never measured.
     Q_INVOKABLE QVariantMap measurement(const QString &distroId) const;
 
 signals:
