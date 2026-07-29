@@ -86,6 +86,11 @@ BareMetal::BareMetal(QObject *parent)
     connect(m_poll, &QTimer::timeout, this, &BareMetal::pollProgress);
 }
 
+bool BareMetal::supported() const
+{
+    return BareMetalPlatform::supported();
+}
+
 bool BareMetal::pending() const
 {
     return supported() && QFile::exists(dataFile("boot.json"));
