@@ -1,5 +1,6 @@
 #pragma once
 
+// Host facts that both the hardware check and the VM launcher need. Never needs admin rights.
 namespace HostInfo {
 
 int totalRamMb(); // 0 if unknown
