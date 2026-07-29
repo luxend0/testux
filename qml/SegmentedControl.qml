@@ -13,6 +13,12 @@ Rectangle {
 
     signal picked(string value)
 
+    implicitWidth: row.implicitWidth + 8
+    implicitHeight: row.implicitHeight + 8
+    radius: Theme.radius
+    color: Theme.surfaceMuted
+    border.color: Theme.border
+
     Row {
         id: row
         anchors.centerIn: parent
