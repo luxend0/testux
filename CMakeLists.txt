@@ -51,6 +51,7 @@ qt_add_qml_module(testux
         qml/FadeIn.qml
         qml/FadeOut.qml
         qml/Flag.qml
+        qml/FocusRing.qml
         qml/Format.qml
         qml/HardwareListPanel.qml
         qml/Heading.qml
