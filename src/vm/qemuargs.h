@@ -14,7 +14,10 @@ struct QemuConfig
     QString audioDriver;      // -audiodev driver ("pipewire", "pa", "dsound"), "" = no audio
     int ramMb = 4096;
     int cpus = 2;
-    quint16 qmpPort = 0;   // QMP on 127.0.0.1, 0 = disabled
+    // QMP endpoint only this user can reach: a unix socket path, or (Windows) the name of a
+    // pipe QEMU creates as \\.\pipe\<name>. Both "" = no QMP.
+    QString qmpSocketPath;
+    QString qmpPipeName;
     bool gl = false;        // virtio-vga-gl + gtk,gl=on
     bool clipboard = false; // qemu-vdagent, only useful if QEMU's GTK UI has gtk_clipboard
     QString title;          // window title

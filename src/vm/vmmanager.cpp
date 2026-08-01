@@ -12,10 +12,10 @@
 #include <QHash>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QTcpServer>
-#include <QTcpSocket>
+#include <QLocalSocket>
 #include <QProcess>
 #include <QQmlEngine>
+#include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QSettings>
 #include <QStandardPaths>
@@ -229,13 +229,36 @@ bool clipboardSharing(const QString &qemu)
 #endif
 }
 
-// QEMU listens for QMP on this port. Asking the OS for a free one is racy in theory,
-// fine in practice.
-quint16 freeQmpPort()
+#ifndef Q_OS_WIN
+// A directory only this user can enter. Changing permissions only works for the owner, so a
+// directory planted by someone else is refused.
+QString privateRuntimeDir()
 {
-    QTcpServer server;
-    server.listen(QHostAddress::LocalHost, 0);
-    return server.serverPort();
+    const QString runtime = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation);
+    if (runtime.isEmpty())
+        return {};
+    const QString dir = runtime + "/testux";
+    const auto ownerOnly = QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ExeOwner;
+    return QDir().mkpath(dir) && QFile::setPermissions(dir, ownerOnly) ? dir : QString();
+}
+#endif
+
+// Picks the QMP endpoint for `config` and returns what QLocalSocket connects to, "" for none.
+// The random name keeps other processes from guessing the Windows pipe before we connect.
+QString assignQmpEndpoint(QemuConfig &config)
+{
+    const QString name =
+        "testux-qmp-" + QString::number(QRandomGenerator::system()->generate64(), 16);
+#ifdef Q_OS_WIN
+    config.qmpPipeName = name;
+    return name;
+#else
+    const QString dir = privateRuntimeDir();
+    if (dir.isEmpty())
+        return {};
+    config.qmpSocketPath = dir + '/' + name + ".sock";
+    return config.qmpSocketPath;
+#endif
 }
 
 QString windowTitle(const Distro &distro)
@@ -341,9 +364,9 @@ bool hasEnded(VmSession::State state)
 // VmSession
 
 VmSession::VmSession(const QString &distroId, const QString &program, const QStringList &arguments,
-                     quint16 qmpPort, QObject *parent)
+                     const QString &qmpServer, QObject *parent)
     : QObject(parent), m_distroId(distroId), m_process(new QProcess(this)),
-      m_qmp(new QTcpSocket(this)), m_statsTimer(new QTimer(this)), m_qmpPort(qmpPort)
+      m_qmp(new QLocalSocket(this)), m_statsTimer(new QTimer(this)), m_qmpServer(qmpServer)
 {
     m_process->setProgram(program);
     m_process->setArguments(arguments);
@@ -351,11 +374,11 @@ VmSession::VmSession(const QString &distroId, const QString &program, const QStr
 
     m_statsTimer->setInterval(StatsIntervalMs);
     connect(m_statsTimer, &QTimer::timeout, this, [this] {
-        if (m_qmp->state() == QTcpSocket::ConnectedState)
+        if (m_qmp->state() == QLocalSocket::ConnectedState)
             m_qmp->write(balloonStatsCommand());
     });
 
-    connect(m_qmp, &QTcpSocket::readyRead, this, [this] {
+    connect(m_qmp, &QLocalSocket::readyRead, this, [this] {
         while (m_qmp->canReadLine()) {
             const QJsonObject message = QJsonDocument::fromJson(m_qmp->readLine()).object();
             const QString id = message.value("id").toString();
@@ -377,7 +400,7 @@ VmSession::VmSession(const QString &distroId, const QString &program, const QStr
     // QEMU creates the socket or pipe a moment after the process starts, so early refusals
     // are retried. On Windows QEMU waits on the pipe until we connect, so giving up has to
     // end it: it would never open its window.
-    connect(m_qmp, &QTcpSocket::errorOccurred, this, [this, attempts = 0]() mutable {
+    connect(m_qmp, &QLocalSocket::errorOccurred, this, [this, attempts = 0]() mutable {
         if (m_state != Starting || m_process->state() != QProcess::Running)
             return;
         if (++attempts > QmpMaxAttempts) {
@@ -386,7 +409,7 @@ VmSession::VmSession(const QString &distroId, const QString &program, const QStr
             m_process->kill();
             return;
         }
-        QTimer::singleShot(QmpRetryMs, this, [this] { m_qmp->connectToHost(QHostAddress::LocalHost, m_qmpPort); });
+        QTimer::singleShot(QmpRetryMs, this, [this] { m_qmp->connectToServer(m_qmpServer); });
     });
 }
 
@@ -397,15 +420,18 @@ VmSession::~VmSession()
         m_process->kill();
         m_process->waitForFinished(3000);
     }
+    // A Windows pipe vanishes with QEMU, a unix socket file stays behind when QEMU is killed.
+    if (QDir::isAbsolutePath(m_qmpServer))
+        QFile::remove(m_qmpServer);
 }
 
 void VmSession::launch()
 {
     connect(m_process, &QProcess::started, this, [this] {
-        if (m_qmpPort == 0)
+        if (m_qmpServer.isEmpty())
             setState(Running);
         else
-            m_qmp->connectToHost(QHostAddress::LocalHost, m_qmpPort);
+            m_qmp->connectToServer(m_qmpServer);
     });
     connect(m_process, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
         if (error == QProcess::FailedToStart)
@@ -434,7 +460,7 @@ void VmSession::stop()
         setState(Stopped);
     });
 
-    if (m_qmp->state() == QTcpSocket::ConnectedState)
+    if (m_qmp->state() == QLocalSocket::ConnectedState)
         m_qmp->write(qmpCommand("system_powerdown", "powerdown"));
     else
         m_process->kill();
@@ -487,7 +513,7 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
     config.ramMb = guestRamMb(distro.minRamMb);
     config.cpus = guestCpus();
     config.clipboard = clipboardSharing(m_qemu);
-    config.qmpPort = freeQmpPort();
+    const QString qmpServer = assignQmpEndpoint(config);
     if (withTestDisk) {
         config.diskPath = testDiskPath(distro.id);
         if (!config.diskPath.isEmpty() && !QFileInfo::exists(config.diskPath)) {
@@ -496,7 +522,7 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
         }
     }
 
-    auto *session = new VmSession(distro.id, m_qemu, QemuArgs::build(config), config.qmpPort, this);
+    auto *session = new VmSession(distro.id, m_qemu, QemuArgs::build(config), qmpServer, this);
     QQmlEngine::setObjectOwnership(session, QQmlEngine::CppOwnership);
 
     // A stopped session goes away. A failed one stays current so the UI can show its error

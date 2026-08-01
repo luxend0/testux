@@ -117,12 +117,33 @@ private slots:
                               "file=C:/Users/Max,, Jr/mint.iso"));
     }
 
-    void qmpPort()
+    void qmp_data()
     {
+        QTest::addColumn<QString>("socketPath");
+        QTest::addColumn<QString>("pipeName");
+        QTest::addColumn<QStringList>("chardevs");
+        QTest::newRow("none") << "" << "" << QStringList{};
+        QTest::newRow("unix socket")
+            << "/run/user/1000/testux/qmp-1.sock" << ""
+            << QStringList{
+                   "socket,id=qmp,server=on,wait=off,path=/run/user/1000/testux/qmp-1.sock"};
+        QTest::newRow("windows pipe")
+            << "" << "testux-qmp-1" << QStringList{"pipe,id=qmp,path=testux-qmp-1"};
+    }
+
+    void qmp()
+    {
+        QFETCH(QString, socketPath);
+        QFETCH(QString, pipeName);
+        QFETCH(QStringList, chardevs);
         QemuConfig config = baseConfig();
-        config.qmpPort = 4444;
-        QCOMPARE(valuesOf(QemuArgs::build(config), "-qmp"),
-                 QStringList{"tcp:127.0.0.1:4444,server=on,wait=off"});
+        config.qmpSocketPath = socketPath;
+        config.qmpPipeName = pipeName;
+        const QStringList args = QemuArgs::build(config);
+        QCOMPARE(valuesOf(args, "-chardev"), chardevs);
+        QCOMPARE(valuesOf(args, "-mon"),
+                 chardevs.isEmpty() ? QStringList{} : QStringList{"chardev=qmp,mode=control"});
+        QVERIFY(!args.contains("-qmp")); // never a TCP port other local users could reach
     }
 
     void audio()

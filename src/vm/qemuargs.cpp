@@ -65,11 +65,18 @@ QStringList displayArgs(const QemuConfig &config)
     return {"-device", "virtio-vga", "-display", "gtk,zoom-to-fit=on"};
 }
 
+// QMP on a channel other local users cannot open (a TCP port would let anyone on the machine
+// drive QEMU). The Windows pipe makes QEMU wait at startup until Testux connects.
 QStringList qmpArgs(const QemuConfig &config)
 {
-    if (config.qmpPort == 0)
+    QString chardev;
+    if (!config.qmpSocketPath.isEmpty())
+        chardev = "socket,id=qmp,server=on,wait=off,path=" + escaped(config.qmpSocketPath);
+    else if (!config.qmpPipeName.isEmpty())
+        chardev = "pipe,id=qmp,path=" + escaped(config.qmpPipeName);
+    else
         return {};
-    return {"-qmp", QString("tcp:127.0.0.1:%1,server=on,wait=off").arg(config.qmpPort)};
+    return {"-chardev", chardev, "-mon", "chardev=qmp,mode=control"};
 }
 
 QStringList deviceArgs(const QemuConfig &config)
