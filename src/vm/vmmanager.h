@@ -5,11 +5,11 @@
 #include <QObject>
 #include <QVariantMap>
 
-class QTcpSocket;
+class QLocalSocket;
 class QProcess;
 class QTimer;
 
-// One running QEMU process. Talks QMP over TCP on localhost
+// One running QEMU process. Talks QMP over a local socket (Linux) or named pipe (Windows)
 // to read guest RAM from virtio-balloon and to power the guest down gracefully.
 class VmSession : public QObject
 {
@@ -26,8 +26,10 @@ public:
     enum State { Starting, Running, Stopped, Failed };
     Q_ENUM(State)
 
+    // `qmpServer` is what QLocalSocket connects to: the socket path or the pipe name QEMU
+    // was given, "" when QEMU runs without QMP.
     VmSession(const QString &distroId, const QString &program, const QStringList &arguments,
-              quint16 qmpPort, QObject *parent);
+              const QString &qmpServer, QObject *parent);
     ~VmSession() override; // closing Testux ends the VM with it
 
     QString distroId() const { return m_distroId; }
@@ -48,9 +50,9 @@ private:
 
     QString m_distroId;
     QProcess *m_process;
-    QTcpSocket *m_qmp;
+    QLocalSocket *m_qmp;
     QTimer *m_statsTimer;
-    quint16 m_qmpPort;
+    QString m_qmpServer;
     State m_state = Starting;
     QString m_error;
     int m_ramUsedMb = 0;
