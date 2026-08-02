@@ -1,5 +1,6 @@
 import QtQuick
 
+// Keyboard focus outline, placed inside a control's background.
 Rectangle {
     property real baseRadius: Theme.radiusSmall
 
