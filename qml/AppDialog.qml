@@ -5,6 +5,9 @@ import QtQuick.Layouts
 Dialog {
     id: dialog
 
+    default property alias content: body.data
+    property alias actions: actionRow.data
+
     parent: Overlay.overlay
     modal: true
     anchors.centerIn: parent
@@ -29,5 +32,20 @@ Dialog {
         font.pixelSize: Theme.fontTitle
         font.weight: Font.Bold
         wrapMode: Text.Wrap
+    }
+
+    footer: RowLayout {
+        spacing: Theme.gapS
+
+        Item {
+            Layout.fillWidth: true
+        }
+
+        RowLayout {
+            id: actionRow
+            spacing: Theme.gapS
+            Layout.margins: Theme.gapXl
+            Layout.topMargin: 0
+        }
     }
 }
