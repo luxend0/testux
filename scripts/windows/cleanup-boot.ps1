@@ -92,6 +92,16 @@ function Move-BootRecordAside {
     Move-Item -LiteralPath $StateFile -Destination "$StateFile.abandoned-$stamp"
 }
 
+# Turns BitLocker protection back on if this setup paused it and it has not resumed yet.
+function Resume-BitLocker($State) {
+    $volume = Get-CimInstance -Namespace 'root\cimv2\Security\MicrosoftVolumeEncryption' `
+        -ClassName Win32_EncryptableVolume -Filter "DriveLetter = '$($State.systemDriveLetter):'"
+    $result = Invoke-CimMethod -InputObject $volume -MethodName EnableKeyProtectors
+    if ($result.ReturnValue -ne 0) {
+        throw "Turning BitLocker protection back on failed (error $($result.ReturnValue))."
+    }
+}
+
 function Expand-SystemPartition($State) {
     $system = Get-Partition -DriveLetter $State.systemDriveLetter
     if ($system.DiskNumber -ne $State.diskNumber) { return }
