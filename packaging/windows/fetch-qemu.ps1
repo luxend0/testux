@@ -60,6 +60,7 @@ if (-not (Test-Installer $installer)) {
 $unpacked = Join-Path $CacheDir 'unpacked'
 if (Test-Path $unpacked) { Remove-Item -Recurse -Force $unpacked }
 & (Get-SevenZip) x -y "-o$unpacked" $installer | Out-Null
+if ($LASTEXITCODE -ne 0) { throw "7-Zip failed to unpack $installer (exit code $LASTEXITCODE)" }
 
 $bytes = (Get-ChildItem $target -Recurse -File | Measure-Object Length -Sum).Sum
 Write-Host ('QEMU {0} in {1}: {2:N0} MB' -f
