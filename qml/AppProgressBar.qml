@@ -4,6 +4,12 @@ import QtQuick.Controls.Basic
 ProgressBar {
     id: bar
 
+    background: Rectangle {
+        implicitHeight: 8
+        radius: 4
+        color: Theme.border
+    }
+
     contentItem: Item {
         implicitHeight: 8
         clip: true
