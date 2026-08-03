@@ -64,6 +64,7 @@ qt_add_qml_module(testux
         qml/ReadinessList.qml
         qml/SegmentedControl.qml
         qml/SessionView.qml
+        qml/SettingsPage.qml
         qml/Sidebar.qml
         qml/StatusDot.qml
         qml/StepIndicator.qml
