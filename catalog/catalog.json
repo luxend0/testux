@@ -357,6 +357,36 @@
       "minRamMb": 4096
     },
     {
+      "id": "cachyos",
+      "name": "CachyOS",
+      "edition": "Desktop",
+      "version": "2026-08-09",
+      "category": "gaming",
+      "summary": {
+        "en": "Arch Linux tuned for speed, with gaming tools and drivers set up for you."
+      },
+      "description": {
+        "en": "CachyOS builds its packages for modern CPUs and ships a kernel tuned for low latency, which helps in games. The installer detects your graphics card and installs the right driver, NVIDIA included. As an Arch-based rolling release it updates often and you get new software quickly."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start CachyOS on this PC."
+      },
+      "website": "https://cachyos.org",
+      "color": "#2dd4bf",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://cdn77.cachyos.org/ISO/desktop/260809/cachyos-desktop-linux-260809.iso",
+        "sha256Url": "https://cdn77.cachyos.org/ISO/desktop/260809/cachyos-desktop-linux-260809.iso.sha256",
+        "size": 3188850688
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 3072
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
