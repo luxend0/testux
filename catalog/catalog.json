@@ -387,6 +387,37 @@
       "minRamMb": 3072
     },
     {
+      "id": "nobara",
+      "name": "Nobara",
+      "edition": "Official",
+      "version": "44",
+      "category": "gaming",
+      "summary": {
+        "en": "Fedora with the gaming fixes, codecs and drivers already in place."
+      },
+      "description": {
+        "en": "Nobara is put together by GloriousEggroll, who also makes Proton-GE. It takes Fedora and adds what gamers usually install by hand: Steam, video codecs, OBS and the NVIDIA driver. The Nobara Welcome app walks you through the rest."
+      },
+      "notes": {
+        "en": "Nobara does not support Secure Boot. It also cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick."
+      },
+      "website": "https://nobaraproject.org",
+      "color": "#444c5c",
+      "desktop": "KDE Plasma",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://nobara-images.nobaraproject.org/Nobara-44-Official-2026-10-13.iso",
+        "sha256Url": "https://nobara-images.nobaraproject.org/Nobara-44-Official-2026-10-13.iso.sha256sum",
+        "size": 7629307904
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
