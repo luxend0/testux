@@ -29,4 +29,24 @@ RadioButton {
             visible: control.visualFocus
         }
     }
+
+    contentItem: Column {
+        leftPadding: control.indicator.width + control.spacing
+        spacing: 2
+
+        Label {
+            width: parent.width - parent.leftPadding
+            text: control.text
+            font.weight: control.detail !== "" ? Font.DemiBold : Font.Normal
+            wrapMode: Text.Wrap
+        }
+
+        BodyText {
+            width: parent.width - parent.leftPadding
+            visible: control.detail !== ""
+            text: control.detail
+            muted: true
+            font.pixelSize: Theme.fontBase - 1
+        }
+    }
 }
