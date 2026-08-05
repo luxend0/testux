@@ -206,4 +206,90 @@ PageScroll {
             }
         }
     }
+
+    Component {
+        id: prepareStep
+
+        ColumnLayout {
+            spacing: Theme.gapL
+
+            Heading {
+                text: BareMetal.state === BareMetal.Failed ? qsTr("Something went wrong") : qsTr("Preparing your PC")
+                Layout.fillWidth: true
+            }
+
+            BodyText {
+                visible: wizard.working
+                text: BareMetal.step
+                muted: true
+                Layout.fillWidth: true
+            }
+
+            AppProgressBar {
+                visible: wizard.working
+                value: BareMetal.progress
+                Layout.fillWidth: true
+            }
+
+            Notice {
+                kind: "error"
+                visible: BareMetal.state === BareMetal.Failed
+                text: BareMetal.error
+                Layout.fillWidth: true
+
+                AppButton {
+                    visible: BareMetal.pending
+                    text: qsTr("Undo changes")
+                    onClicked: BareMetal.cleanup(true)
+                }
+
+                AppButton {
+                    kind: "quiet"
+                    text: qsTr("Back to the start")
+                    onClicked: wizard.step = BootWizard.Step.Check
+                }
+            }
+        }
+    }
+
+    Component {
+        id: restartStep
+
+        ColumnLayout {
+            spacing: Theme.gapL
+
+            Heading {
+                text: qsTr("Ready to restart")
+                Layout.fillWidth: true
+            }
+
+            BodyText {
+                text: qsTr("Save your work and close your apps. After the restart your PC starts %1. Have fun looking around!").arg(wizard.name)
+                Layout.fillWidth: true
+            }
+
+            BodyText {
+                visible: wizard.makeRoom
+                text: qsTr("To install, open the installer on the desktop and pick \"install alongside Windows\" or the free space.")
+                muted: true
+                Layout.fillWidth: true
+            }
+
+            RowLayout {
+                spacing: Theme.gapS
+
+                AppButton {
+                    kind: "primary"
+                    text: qsTr("Restart now")
+                    onClicked: BareMetal.reboot()
+                }
+
+                AppButton {
+                    kind: "quiet"
+                    text: qsTr("Later")
+                    onClicked: wizard.backRequested()
+                }
+            }
+        }
+    }
 }
