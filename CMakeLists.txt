@@ -42,6 +42,7 @@ qt_add_qml_module(testux
         qml/BootWizard.qml
         qml/ChecklistPanel.qml
         qml/ComparePage.qml
+        qml/CompareRow.qml
         qml/DistroCard.qml
         qml/DistroPage.qml
         qml/DistrosPage.qml
