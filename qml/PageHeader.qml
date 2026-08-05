@@ -6,6 +6,9 @@ ColumnLayout {
     property alias title: titleLabel.text
     property alias subtitle: subtitleLabel.text
 
+    spacing: Theme.gapXs
+    Layout.fillWidth: true
+
     Label {
         id: titleLabel
         font.pixelSize: Theme.fontHeadline
