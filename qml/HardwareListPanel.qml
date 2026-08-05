@@ -10,4 +10,39 @@ Panel {
     property string title
     property list<string> entries
     property string hint
+
+    ColumnLayout {
+        anchors.fill: parent
+        spacing: Theme.gapM
+
+        Heading {
+            text: panel.title
+            Layout.fillWidth: true
+        }
+
+        Repeater {
+            model: panel.entries
+
+            Label {
+                required property string modelData
+
+                text: modelData
+                wrapMode: Text.Wrap
+                Layout.fillWidth: true
+            }
+        }
+
+        Label {
+            visible: panel.entries.length === 0
+            text: qsTr("None found")
+            color: Theme.textFaint
+        }
+
+        Notice {
+            kind: "warning"
+            visible: panel.hint !== ""
+            text: panel.hint
+            Layout.fillWidth: true
+        }
+    }
 }
