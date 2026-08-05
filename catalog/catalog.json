@@ -357,6 +357,37 @@
       "minRamMb": 4096
     },
     {
+      "id": "bazzite",
+      "name": "Bazzite",
+      "edition": "KDE",
+      "version": "44",
+      "category": "gaming",
+      "summary": {
+        "en": "A console-like gaming system with Steam's Game Mode, like on the Steam Deck."
+      },
+      "description": {
+        "en": "Bazzite is built on Fedora and is image based: updates replace the whole system at once and can be rolled back if something breaks."
+      },
+      "notes": {
+        "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around. For NVIDIA graphics, bazzite.gg offers a separate image. With Secure Boot on, enroll the key with the password universalblue when asked after installing."
+      },
+      "website": "https://bazzite.gg",
+      "color": "#5236cc",
+      "desktop": "KDE Plasma",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.bazzite.gg/bazzite-stable-amd64.iso",
+        "sha256Url": "https://download.bazzite.gg/bazzite-stable-amd64.iso-CHECKSUM",
+        "size": 7907770368
+      },
+      "secureBoot": true,
+      "liveSession": false,
+      "nvidiaReady": false,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "cachyos",
       "name": "CachyOS",
       "edition": "Desktop",
