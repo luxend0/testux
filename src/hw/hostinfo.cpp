@@ -44,6 +44,8 @@ bool HostInfo::hardwareVirtualization()
     constexpr int HypervisorPresent = 0;           // WHvCapabilityCodeHypervisorPresent
     alignas(8) unsigned char capability[256] = {}; // fits any WHV_CAPABILITY
     UINT32 written = 0;
+    if (FAILED(getCapability(HypervisorPresent, capability, sizeof(capability), &written)))
+        return false;
     BOOL present = FALSE;
     std::memcpy(&present, capability, sizeof(present));
     return present;
