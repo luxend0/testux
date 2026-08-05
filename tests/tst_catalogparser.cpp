@@ -65,6 +65,21 @@ void TestCatalogParser::resolvesLanguageWithEnglishFallback()
     QCOMPARE(french.summary, u"English"_s);
 }
 
+void TestCatalogParser::acceptsPlainOrLocalizedLabels()
+{
+    QJsonObject plain = entry(u"plain"_s);
+    plain[u"desktop"_s] = u"GNOME"_s;
+    QJsonObject translated = entry(u"translated"_s);
+    translated[u"desktop"_s] =
+        QJsonObject{{u"en"_s, u"Text console"_s}, {u"de"_s, u"Textkonsole"_s}};
+
+    const QList<Distro> distros =
+        CatalogParser::parse(catalogWith({plain, translated}), u"de"_s).distros;
+    QCOMPARE(distros.size(), 2);
+    QCOMPARE(distros.at(0).desktop, u"GNOME"_s);
+    QCOMPARE(distros.at(1).desktop, u"Textkonsole"_s);
+}
+
 void TestCatalogParser::skipsUnusableEntries()
 {
     QJsonObject noUrl = entry(u"no-url"_s);
