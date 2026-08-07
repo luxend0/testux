@@ -10,6 +10,7 @@ struct QemuConfig
     QString isoPath;
     QString diskPath;         // qcow2 test disk, "" = none
     QString firmwarePath;     // UEFI code image (edk2-x86_64-code.fd), "" = SeaBIOS
+    QString firmwareVarsPath; // writable UEFI vars matching the code image, "" = kept in RAM
     QString accelerator;      // "kvm", "whpx" or "tcg"
     QString audioDriver;      // -audiodev driver ("pipewire", "pa", "dsound"), "" = no audio
     int ramMb = 4096;

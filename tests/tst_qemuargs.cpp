@@ -91,6 +91,17 @@ private slots:
         QVERIFY(!anyStartsWith(drives, "if=pflash,format=raw,unit=1"));
     }
 
+    void firmwareVars()
+    {
+        QemuConfig config = baseConfig();
+        config.firmwareVarsPath = "/disks/mint.vars.fd";
+        QVERIFY(!anyStartsWith(valuesOf(QemuArgs::build(config), "-drive"), "if=pflash"));
+
+        config.firmwarePath = "/usr/share/qemu/edk2-x86_64-code.fd";
+        const QStringList drives = valuesOf(QemuArgs::build(config), "-drive");
+        QVERIFY(drives.contains("if=pflash,format=raw,unit=1,file=/disks/mint.vars.fd"));
+    }
+
     void testDiskBootsBeforeIso()
     {
         QemuConfig config = baseConfig();
