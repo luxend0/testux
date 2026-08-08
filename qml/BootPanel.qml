@@ -10,6 +10,12 @@ Panel {
 
     signal setupRequested()
 
+    readonly property list<checkResult> results: HardwareCheck.report.valid ? HardwareCheck.evaluate(distro, 0) : []
+    readonly property int blockers: results.filter(result => result.level === "blocker").length
+    readonly property int warnings: results.filter(result => result.level === "warning").length
+    readonly property bool windowOnly: blockers > 0
+                                       && results.every(result => result.level !== "blocker" || result.id === "baremetal")
+
     ColumnLayout {
         anchors.fill: parent
         spacing: Theme.gapL
