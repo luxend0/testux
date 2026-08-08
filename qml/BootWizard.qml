@@ -101,6 +101,48 @@ PageScroll {
     }
 
     Component {
+        id: checkStep
+
+        ColumnLayout {
+            spacing: Theme.gapL
+
+            Heading {
+                text: qsTr("Is this PC ready?")
+                Layout.fillWidth: true
+            }
+
+            RowLayout {
+                visible: !HardwareCheck.report.valid
+                spacing: Theme.gapM
+
+                BusyIndicator {
+                    running: visible
+                    implicitWidth: 28
+                    implicitHeight: 28
+                }
+
+                Label {
+                    text: qsTr("Checking your PC")
+                    color: Theme.textMuted
+                }
+            }
+
+            ReadinessList {
+                results: wizard.results
+                Layout.fillWidth: true
+            }
+
+            AppButton {
+                kind: "quiet"
+                text: qsTr("Check again")
+                enabled: !HardwareCheck.busy
+                onClicked: HardwareCheck.run()
+                Layout.leftMargin: -Theme.gapM
+            }
+        }
+    }
+
+    Component {
         id: spaceStep
 
         ColumnLayout {
