@@ -60,7 +60,8 @@ private:
 };
 
 // Finds QEMU, picks the accelerator and runs at most one VM at a time. Test disks live in
-// AppLocalDataLocation/disks/<distroId>.qcow2 (30 GiB, thin). The RAM a distro
+// AppLocalDataLocation/disks/<distroId>.qcow2 (30 GiB, thin), each with its own UEFI vars
+// in <distroId>.vars.fd so boot entries an installer writes survive a restart. The RAM a distro
 // uses about two minutes after boot, idle at its desktop, is kept in QSettings for the comparison
 // page.
 class VmManager : public QObject
@@ -99,6 +100,7 @@ private:
     QString m_qemu;
     QString m_qemuImg;
     QString m_firmware;
+    QString m_firmwareVarsTemplate;
     QString m_accelerator;
     QString m_setupHint;
     VmSession *m_session = nullptr;

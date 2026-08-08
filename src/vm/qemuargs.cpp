@@ -38,6 +38,10 @@ QStringList machineArgs(const QemuConfig &config)
     if (!config.firmwarePath.isEmpty()) {
         args << "-drive"
              << "if=pflash,format=raw,unit=0,readonly=on,file=" + escaped(config.firmwarePath);
+        if (!config.firmwareVarsPath.isEmpty()) {
+            args << "-drive"
+                 << "if=pflash,format=raw,unit=1,file=" + escaped(config.firmwareVarsPath);
+        }
     }
     return args;
 }

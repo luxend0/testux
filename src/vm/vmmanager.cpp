@@ -285,6 +285,11 @@ QString testDiskPath(const QString &distroId)
     return testDiskFile(distroId, ".qcow2");
 }
 
+QString testDiskVarsPath(const QString &distroId)
+{
+    return testDiskFile(distroId, ".vars.fd");
+}
+
 // On failure QEMU refuses to open the disk and its message becomes the session error.
 void createTestDisk(const QString &qemuImg, const QString &path)
 {
@@ -293,6 +298,24 @@ void createTestDisk(const QString &qemuImg, const QString &path)
     process.start(qemuImg, {"create", "-q", "-f", "qcow2", path, TestDiskSize});
     if (!process.waitForFinished(30000) || process.exitCode() != 0)
         qWarning("qemu-img failed: %s", process.readAllStandardError().constData());
+}
+
+// Copies the vars template the first time a test disk boots and returns the copy, "" when
+// there is none. A copy from another firmware build has a different size and QEMU would
+// refuse it, so that one starts over.
+QString prepareFirmwareVars(const QString &varsTemplate, const QString &path)
+{
+    if (varsTemplate.isEmpty() || path.isEmpty())
+        return {};
+    if (QFileInfo(path).size() == QFileInfo(varsTemplate).size())
+        return path;
+    QFile::remove(path);
+    const auto ownerReadWrite = QFileDevice::ReadOwner | QFileDevice::WriteOwner;
+    if (!QFile::copy(varsTemplate, path) || !QFile::setPermissions(path, ownerReadWrite)) {
+        qWarning("Could not copy UEFI vars to %s", qPrintable(path));
+        return {};
+    }
+    return path;
 }
 
 void saveMeasurement(const QString &distroId, int ramUsedMb)
@@ -488,6 +511,7 @@ VmManager::VmManager(QObject *parent)
     m_qemuImg = findQemuImg(m_qemu);
     const Firmware firmware = findFirmware(m_qemu);
     m_firmware = firmware.code;
+    m_firmwareVarsTemplate = firmware.varsTemplate;
     if (m_accelerator == "tcg")
         m_setupHint = slowVmHint();
 }
@@ -519,6 +543,10 @@ VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool w
         if (!config.diskPath.isEmpty() && !QFileInfo::exists(config.diskPath)) {
             createTestDisk(m_qemuImg, config.diskPath);
             emit testDisksChanged();
+        }
+        if (!m_firmware.isEmpty()) {
+            config.firmwareVarsPath =
+                prepareFirmwareVars(m_firmwareVarsTemplate, testDiskVarsPath(distro.id));
         }
     }
 
@@ -569,6 +597,7 @@ void VmManager::removeTestDisk(const QString &distroId)
     // QEMU holds the disk open while the VM runs.
     if (m_session && m_session->distroId() == distroId && !hasEnded(m_session->state()))
         return;
+    QFile::remove(testDiskVarsPath(distroId));
     const QString path = testDiskPath(distroId);
     if (!path.isEmpty() && QFile::remove(path))
         emit testDisksChanged();
