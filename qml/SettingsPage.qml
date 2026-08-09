@@ -76,7 +76,7 @@ PageScroll {
 
                 AppButton {
                     kind: "quiet"
-                    text: qsTr("Report a prbolem")
+                    text: qsTr("Report a problem")
                     onClicked: Qt.openUrlExternally(page.repositoryUrl + "/issues")
                 }
             }
