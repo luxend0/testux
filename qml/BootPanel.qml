@@ -13,6 +13,7 @@ Panel {
     readonly property list<checkResult> results: HardwareCheck.report.valid ? HardwareCheck.evaluate(distro, 0) : []
     readonly property int blockers: results.filter(result => result.level === "blocker").length
     readonly property int warnings: results.filter(result => result.level === "warning").length
+    // The ISO itself cannot start from the hard drive; nothing on this PC can change that.
     readonly property bool windowOnly: blockers > 0
                                        && results.every(result => result.level !== "blocker" || result.id === "baremetal")
 
