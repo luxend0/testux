@@ -211,3 +211,10 @@ void BareMetal::finish(State state, const QString &error)
     m_operation = Operation::None;
     setState(state, error);
 }
+
+void BareMetal::setState(State state, const QString &error)
+{
+    m_state = state;
+    m_error = error;
+    emit stateChanged();
+}
