@@ -960,12 +960,12 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="53"/>
         <source>The hardware check has not finished yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Hardwareprüfung ist noch nicht fertig.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="58"/>
         <source>Windows only for now</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorerst nur unter Windows</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="59"/>
@@ -975,37 +975,37 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="66"/>
         <source>Starts in UEFI mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Startet im UEFI-Modus</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="67"/>
         <source>Legacy BIOS mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Legacy-BIOS-Modus</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="68"/>
         <source>This PC starts Windows in legacy BIOS mode. Booting a live system from the drive needs UEFI mode. Try the distro in a window instead.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser PC startet Windows im Legacy-BIOS-Modus. Ein Live-System vom Laufwerk zu starten braucht den UEFI-Modus. Teste die Distro stattdessen im Fenster.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="75"/>
         <source>GPT system disk</source>
-        <translation type="unfinished"></translation>
+        <translation>GPT-Systemdatenträger</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="76"/>
         <source>MBR system disk</source>
-        <translation type="unfinished"></translation>
+        <translation>MBR-Systemdatenträger</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="77"/>
         <source>Windows is installed on an MBR disk. Testux can only add its boot partition to GPT disks. Try the distro in a window instead.</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows ist auf einem MBR-Datenträger installiert. Testux kann seine Startpartition nur auf GPT-Datenträgern anlegen. Teste die Distro stattdessen im Fenster.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="84"/>
         <source>Can start from the hard drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann von der Festplatte starten</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="87"/>
@@ -1015,12 +1015,12 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="90"/>
         <source>Try %1 in a window instead, or put it on a USB stick.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teste %1 stattdessen im Fenster oder schreib die ISO auf einen USB-Stick.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="97"/>
         <source>Secure Boot is off</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot ist aus</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="97"/>
@@ -1036,17 +1036,17 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="101"/>
         <source>%1 is signed for Secure Boot and starts as is.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ist für Secure Boot signiert und startet ohne Änderungen.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="103"/>
         <source>%1 is not signed for Secure Boot. Hold Shift while clicking Restart, then choose Troubleshoot &gt; Advanced options &gt; UEFI Firmware Settings and turn Secure Boot off. You can turn it back on after testing.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ist nicht für Secure Boot signiert. Halte die Umschalttaste gedrückt und klicke auf Neu starten, wähle dann Problembehandlung &gt; Erweiterte Optionen &gt; UEFI-Firmwareeinstellungen und schalte Secure Boot aus. Nach dem Testen kannst du es wieder einschalten.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="112"/>
         <source>Enough free space</source>
-        <translation type="unfinished"></translation>
+        <translation>Genug freier Speicherplatz</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="113"/>
@@ -1056,27 +1056,27 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="114"/>
         <source>Not enough free space</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht genug freier Speicherplatz</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="115"/>
         <source>Testux needs %1 GB on the Windows drive for the live system and the space for Linux, but only %2 GB are free. Free up space or reserve less for Linux.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux braucht %1 GB auf dem Windows-Laufwerk für das Live-System und den Platz für Linux, es sind aber nur %2 GB frei. Schaffe Platz oder reserviere weniger für Linux.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="124"/>
         <source>Drive not encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Laufwerk nicht verschlüsselt</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="125"/>
         <source>BitLocker is on</source>
-        <translation type="unfinished"></translation>
+        <translation>BitLocker ist an</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="126"/>
         <source>Testux pauses BitLocker for one restart so Windows starts normally afterwards. Keep your recovery key at hand: aka.ms/myrecoverykey. Once Linux is installed, starting Windows through the Linux boot menu can make BitLocker ask for it; picking Windows in the firmware boot menu avoids that.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux pausiert BitLocker für einen Neustart, damit Windows danach normal startet. Halte deinen Wiederherstellungsschlüssel bereit: aka.ms/myrecoverykey. Ist Linux installiert und du startest Windows über das Linux-Startmenü, kann BitLocker danach fragen. Wählst du Windows im Startmenü der Firmware, passiert das nicht.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="136"/>
@@ -1086,22 +1086,22 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="137"/>
         <source>Fast Startup is on</source>
-        <translation type="unfinished"></translation>
+        <translation>Schnellstart ist an</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="138"/>
         <source>With Fast Startup Windows never fully shuts down, so Linux can read but not change your Windows files. Turn it off in Control Panel &gt; Power Options &gt; Choose what the power buttons do.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mit Schnellstart fährt Windows nie ganz herunter, deshalb kann Linux deine Windows-Dateien lesen, aber nicht ändern. Schalte ihn aus unter Systemsteuerung &gt; Energieoptionen &gt; Auswählen, was beim Drücken von Netzschaltern geschehen soll.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="147"/>
         <source>Enough memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Genug Arbeitsspeicher</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="147"/>
         <source>%1 GB RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 GB RAM.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="149"/>
@@ -1111,17 +1111,17 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="150"/>
         <source>%1 recommends %2 GB of RAM, this PC has %3 GB. It runs, but may feel slow.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 empfiehlt %2 GB RAM, dieser PC hat %3 GB. Es läuft, kann sich aber langsam anfühlen.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="158"/>
         <source>Graphics</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="159"/>
         <source>Intel and AMD graphics work with the drivers built into Linux.</source>
-        <translation type="unfinished"></translation>
+        <translation>Intel- und AMD-Grafik laufen mit den Treibern, die in Linux eingebaut sind.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="161"/>
@@ -1132,37 +1132,37 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="162"/>
         <source>%1 includes the NVIDIA driver or offers it during setup.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bringt den NVIDIA-Treiber mit oder bietet ihn bei der Installation an.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="165"/>
         <source>%1 starts with the open-source NVIDIA driver, which can be slow. If the screen stays black, pick the safe graphics (nomodeset) entry in the boot menu and install the NVIDIA driver after setup.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 startet mit dem quelloffenen NVIDIA-Treiber, der langsam sein kann. Bleibt der Bildschirm schwarz, wähle im Startmenü den Eintrag mit sicherer Grafik (nomodeset) und installiere den NVIDIA-Treiber nach der Installation.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="174"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzwerk</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="175"/>
         <source>Broadcom Wi-Fi</source>
-        <translation type="unfinished"></translation>
+        <translation>Broadcom-WLAN</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="176"/>
         <source>Broadcom Wi-Fi chips often need an extra driver on Linux. Keep a network cable or USB tethering from your phone ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>Broadcom-WLAN-Chips brauchen unter Linux oft einen extra Treiber. Halte ein Netzwerkkabel oder USB-Tethering vom Handy bereit.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="183"/>
         <source>Live desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Live-Desktop</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="184"/>
         <source>%1 runs from the boot partition and changes nothing until you install it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 läuft von der Startpartition und ändert nichts, bis du es installierst.</translation>
     </message>
     <message>
         <location filename="../src/hw/readiness.cpp" line="187"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../src/hw/readiness.cpp" line="188"/>
         <source>%1 has no live desktop. The ISO starts its installer right away, so you cannot try it before installing.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 hat keinen Live-Desktop. Die ISO startet sofort den Installer, du kannst es also vor dem Installieren nicht ausprobieren.</translation>
     </message>
 </context>
 <context>
