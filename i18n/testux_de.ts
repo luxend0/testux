@@ -11,12 +11,12 @@
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="57"/>
         <source>Making room on drive C:</source>
-        <translation type="unfinished"></translation>
+        <translation>Platz auf Laufwerk C: wird geschaffen</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="59"/>
         <source>Creating the Testux partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux-Partition wird angelegt</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="61"/>
@@ -26,72 +26,72 @@
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="63"/>
         <source>Adjusting the boot configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Startkonfiguration wird angepasst</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="65"/>
         <source>Pausing BitLocker for one restart</source>
-        <translation type="unfinished"></translation>
+        <translation>BitLocker wird für einen Neustart pausiert</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="67"/>
         <source>Adding the boot entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Starteintrag wird hinzugefügt</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="69"/>
         <source>Something went wrong, undoing all changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Etwas ist schiefgelaufen, alle Änderungen werden rückgängig gemacht</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="71"/>
         <source>Removing the boot entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Starteintrag wird entfernt</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="73"/>
         <source>Removing the Testux partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux-Partition wird entfernt</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="75"/>
         <source>Giving the space back to Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Speicherplatz geht an Windows zurück</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="81"/>
         <source>The Testux boot entry was removed, but the Testux partition no longer looks the way Testux created it, so it was left untouched for safety. You can delete it yourself in Disk Management.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Testux-Starteintrag wurde entfernt. Die Testux-Partition sieht aber nicht mehr so aus, wie Testux sie angelegt hat, deshalb bleibt sie zur Sicherheit unangetastet. Du kannst sie selbst in der Datenträgerverwaltung löschen.</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="86"/>
         <source>Details: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Details: %1</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="123"/>
         <source>The ISO file is missing. Download it again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ISO-Datei fehlt. Lade sie erneut herunter.</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="153"/>
         <source>Booting without a USB stick needs Windows on a UEFI PC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Starten ohne USB-Stick braucht Windows auf einem UEFI-PC.</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="158"/>
         <source>%1 is missing. Please reinstall Testux.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 fehlt. Bitte installiere Testux neu.</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal.cpp" line="213"/>
         <source>The setup script stopped unexpectedly (exit code %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Einrichtungsskript wurde unerwartet beendet (Exitcode %1).</translation>
     </message>
     <message>
         <location filename="../src/baremetal/baremetal_stub.cpp" line="11"/>
         <source>Booting without a USB stick is only available on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Starten ohne USB-Stick gibt es nur unter Windows.</translation>
     </message>
 </context>
 <context>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="45"/>
         <source>Back to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurück zu %1</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="53"/>
@@ -157,17 +157,17 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="54"/>
         <source>Your PC starts %1 once, straight from the hard drive. No USB stick needed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC startet %1 einmal direkt von der Festplatte. Kein USB-Stick nötig.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="58"/>
         <source>Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Prüfen</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="58"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Platz</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="58"/>
@@ -177,17 +177,17 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="58"/>
         <source>Prepare</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorbereiten</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="58"/>
         <source>Restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Neustart</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="77"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="89"/>
@@ -197,47 +197,47 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="97"/>
         <source>Prepare boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Start vorbereiten</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="110"/>
         <source>Is this PC ready?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ist dieser PC bereit?</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="125"/>
         <source>Checking your PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC wird geprüft</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="137"/>
         <source>Check again</source>
-        <translation type="unfinished"></translation>
+        <translation>Erneut prüfen</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="152"/>
         <source>Do you want to install it later?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchtest du es später installieren?</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="161"/>
         <source>Just try it</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur ausprobieren</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="162"/>
         <source>Only the boot files go on your drive. You can still install later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur die Startdateien kommen auf dein Laufwerk. Installieren kannst du später immer noch.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="170"/>
         <source>Make room to install it next to Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Platz schaffen, um es neben Windows zu installieren</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="171"/>
         <source>Testux shrinks drive C: and leaves the space free. In the live system, pick &quot;install alongside Windows&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux verkleinert Laufwerk C: und lässt den Platz frei. Wähle im Live-System „Neben Windows installieren“.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="185"/>
@@ -247,32 +247,32 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="199"/>
         <source>40 GB is plenty for the system, apps and some files.</source>
-        <translation type="unfinished"></translation>
+        <translation>40 GB reichen locker für System, Apps und ein paar Dateien.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="219"/>
         <source>Before you start</source>
-        <translation type="unfinished"></translation>
+        <translation>Bevor es losgeht</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="232"/>
         <source>Drive C:</source>
-        <translation type="unfinished"></translation>
+        <translation>Laufwerk C:</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="233"/>
         <source>Shrinks by about %1 GB for the boot files and %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wird um etwa %1 GB verkleinert, für die Startdateien und %2.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="234"/>
         <source>Shrinks by about %1 GB for the boot files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wird um etwa %1 GB verkleinert, für die Startdateien.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="235"/>
         <source>Next restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Nächster Neustart</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="235"/>
@@ -282,17 +282,17 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="236"/>
         <source>BitLocker</source>
-        <translation type="unfinished"></translation>
+        <translation>BitLocker</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="236"/>
         <source>Paused for that one restart if it is on. Keep your recovery key at hand anyway.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wird für diesen einen Neustart pausiert, falls aktiv. Halte deinen Wiederherstellungsschlüssel trotzdem bereit.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="237"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Rückgängig</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="237"/>
@@ -302,47 +302,47 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="243"/>
         <source>I have a backup of my important files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich habe eine Sicherung meiner wichtigen Dateien</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="244"/>
         <source>Changing partitions is safe in almost every case. A backup covers the rest.</source>
-        <translation type="unfinished"></translation>
+        <translation>Partitionen zu ändern ist fast immer sicher. Eine Sicherung deckt den Rest ab.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="259"/>
         <source>Something went wrong</source>
-        <translation type="unfinished"></translation>
+        <translation>Etwas ist schiefgelaufen</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="259"/>
         <source>Preparing your PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC wird vorbereitet</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="284"/>
         <source>Undo changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Änderungen rückgängig machen</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="290"/>
         <source>Back to the start</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurück zum Anfang</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="304"/>
         <source>Ready to restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereit zum Neustart</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="309"/>
         <source>Save your work and close your apps. After the restart your PC starts %1. Have fun looking around!</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichere deine Arbeit und schließe deine Apps. Nach dem Neustart startet dein PC %1. Viel Spaß beim Umschauen!</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="315"/>
         <source>To install, open the installer on the desktop and pick &quot;install alongside Windows&quot; or the free space.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zum Installieren öffne den Installer auf dem Desktop und wähle „Neben Windows installieren“ oder den freien Speicherplatz.</translation>
     </message>
     <message>
         <location filename="../qml/BootWizard.qml" line="325"/>
@@ -352,7 +352,7 @@
     <message>
         <location filename="../qml/BootWizard.qml" line="331"/>
         <source>Later</source>
-        <translation type="unfinished"></translation>
+        <translation>Später</translation>
     </message>
 </context>
 <context>
@@ -937,17 +937,17 @@
     <message>
         <location filename="../qml/Main.qml" line="14"/>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergleich</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="15"/>
         <source>This PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser PC</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="16"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
 </context>
 <context>
@@ -1213,67 +1213,67 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="12"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="23"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="33"/>
         <source>Downloaded ISOs take up %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Heruntergeladene ISOs belegen %1.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="34"/>
         <source>No ISOs downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine ISOs heruntergeladen.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="41"/>
         <source>Delete all ISOs</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle ISOs löschen</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="57"/>
         <source>Distro list</source>
-        <translation type="unfinished"></translation>
+        <translation>Distro-Liste</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="66"/>
         <source>Distros in the list: %1. It updates by itself every time Testux starts.</source>
-        <translation type="unfinished"></translation>
+        <translation>Distros in der Liste: %1. Sie aktualisiert sich bei jedem Start von Testux von selbst.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="72"/>
         <source>Updating</source>
-        <translation type="unfinished"></translation>
+        <translation>Wird aktualisiert</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="72"/>
         <source>Update now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jetzt aktualisieren</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="88"/>
         <source>About Testux</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Testux</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="93"/>
         <source>Version %1. Testux is free software under the GNU General Public License version 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Version %1. Testux ist freie Software unter der GNU General Public License Version 3.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="104"/>
         <source>Source code</source>
-        <translation type="unfinished"></translation>
+        <translation>Quellcode</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="110"/>
         <source>Report a problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem melden</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="120"/>
@@ -1283,17 +1283,17 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="123"/>
         <source>This frees %1. Test disks stay. You can download any ISO again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das gibt %1 frei. Test-Disks bleiben erhalten. Du kannst jede ISO später wieder herunterladen.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="130"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="135"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen</translation>
     </message>
 </context>
 <context>
