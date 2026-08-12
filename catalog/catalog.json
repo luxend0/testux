@@ -4,91 +4,111 @@
     {
       "id": "browser",
       "title": {
-        "en": "Open a website"
+        "en": "Open a website",
+        "de": "Eine Webseite öffnen"
       },
       "detail": {
-        "en": "Start the web browser (usually Firefox) and open a few sites you use every day."
+        "en": "Start the web browser (usually Firefox) and open a few sites you use every day.",
+        "de": "Starte den Browser (meist Firefox) und öffne ein paar Seiten, die du jeden Tag nutzt."
       }
     },
     {
       "id": "video",
       "title": {
-        "en": "Play a video"
+        "en": "Play a video",
+        "de": "Ein Video abspielen"
       },
       "detail": {
-        "en": "Play a YouTube video in full screen. Does it run smoothly and is there sound?"
+        "en": "Play a YouTube video in full screen. Does it run smoothly and is there sound?",
+        "de": "Spiel ein YouTube-Video im Vollbild ab. Läuft es flüssig und kommt Ton?"
       }
     },
     {
       "id": "wifi",
       "title": {
-        "en": "Connect to Wi-Fi"
+        "en": "Connect to Wi-Fi",
+        "de": "Mit dem WLAN verbinden"
       },
       "detail": {
-        "en": "In the window, the VM simply uses your PC's connection. When you boot the live system on this PC, connect through the network icon in the panel."
+        "en": "In the window, the VM simply uses your PC's connection. When you boot the live system on this PC, connect through the network icon in the panel.",
+        "de": "Im Fenster nutzt die VM einfach die Verbindung deines PCs. Wenn du das Live-System direkt auf dem PC startest, verbinde dich über das Netzwerk-Symbol in der Leiste."
       }
     },
     {
       "id": "sound",
       "title": {
-        "en": "Test sound and microphone"
+        "en": "Test sound and microphone",
+        "de": "Ton und Mikrofon testen"
       },
       "detail": {
-        "en": "Open the sound settings, pick your speakers or headset and play the test sound. Speak into the microphone and watch the level move."
+        "en": "Open the sound settings, pick your speakers or headset and play the test sound. Speak into the microphone and watch the level move.",
+        "de": "Öffne die Ton-Einstellungen, wähle Lautsprecher oder Headset und spiel den Testton ab. Sprich ins Mikrofon und schau, ob sich der Pegel bewegt."
       }
     },
     {
       "id": "store",
       "title": {
-        "en": "Install an app"
+        "en": "Install an app",
+        "de": "Eine App installieren"
       },
       "detail": {
-        "en": "Open the software store, search for VLC or GIMP and install it. In a live session the app is gone after a restart, an installed system keeps it."
+        "en": "Open the software store, search for VLC or GIMP and install it. In a live session the app is gone after a restart, an installed system keeps it.",
+        "de": "Öffne den Software-Store, such nach VLC oder GIMP und installiere es. Im Live-System ist die App nach einem Neustart wieder weg, ein installiertes System behält sie."
       }
     },
     {
       "id": "office",
       "title": {
-        "en": "Open an office document"
+        "en": "Open an office document",
+        "de": "Ein Office-Dokument öffnen"
       },
       "detail": {
-        "en": "LibreOffice opens Word and Excel files. Download one of your own documents and check that it looks right."
+        "en": "LibreOffice opens Word and Excel files. Download one of your own documents and check that it looks right.",
+        "de": "LibreOffice öffnet Word- und Excel-Dateien. Lade eines deiner eigenen Dokumente herunter und schau, ob es richtig aussieht."
       }
     },
     {
       "id": "display",
       "title": {
-        "en": "Check scaling and monitors"
+        "en": "Check scaling and monitors",
+        "de": "Skalierung und Bildschirme prüfen"
       },
       "detail": {
-        "en": "In the display settings, set the scaling you use on Windows (for example 125% or 150%). On this PC, also plug in your second monitor."
+        "en": "In the display settings, set the scaling you use on Windows (for example 125% or 150%). On this PC, also plug in your second monitor.",
+        "de": "Stell in den Bildschirm-Einstellungen die Skalierung ein, die du unter Windows nutzt (zum Beispiel 125 % oder 150 %). Direkt auf dem PC kannst du auch deinen zweiten Monitor testen."
       }
     },
     {
       "id": "games",
       "title": {
-        "en": "Check your games"
+        "en": "Check your games",
+        "de": "Deine Spiele prüfen"
       },
       "detail": {
-        "en": "Steam runs most Windows games through Proton. Look up your favorite games on protondb.com, and check whether games with anti-cheat are supported."
+        "en": "Steam runs most Windows games through Proton. Look up your favorite games on protondb.com, and check whether games with anti-cheat are supported.",
+        "de": "Steam startet die meisten Windows-Spiele über Proton. Schau deine Lieblingsspiele auf protondb.com nach und prüfe, ob Spiele mit Anti-Cheat unterstützt werden."
       }
     },
     {
       "id": "printer",
       "title": {
-        "en": "Find your printer"
+        "en": "Find your printer",
+        "de": "Deinen Drucker finden"
       },
       "detail": {
-        "en": "Open the printer settings. Many network printers show up on their own, print a test page."
+        "en": "Open the printer settings. Many network printers show up on their own, print a test page.",
+        "de": "Öffne die Drucker-Einstellungen. Viele Netzwerkdrucker tauchen von selbst auf, druck eine Testseite."
       }
     },
     {
       "id": "settings",
       "title": {
-        "en": "Make it yours"
+        "en": "Make it yours",
+        "de": "Einrichten wie du magst"
       },
       "detail": {
-        "en": "Change the wallpaper, switch to dark mode, set your keyboard layout and see how the taskbar or panel works."
+        "en": "Change the wallpaper, switch to dark mode, set your keyboard layout and see how the taskbar or panel works.",
+        "de": "Ändere das Hintergrundbild, schalte den dunklen Modus ein, stell dein Tastaturlayout ein und schau, wie Taskleiste oder Panel funktionieren."
       }
     }
   ],
@@ -100,10 +120,12 @@
       "version": "22.3",
       "category": "beginner",
       "summary": {
-        "en": "Feels familiar right away: start menu, taskbar, everything where you expect it."
+        "en": "Feels familiar right away: start menu, taskbar, everything where you expect it.",
+        "de": "Fühlt sich sofort vertraut an: Startmenü, Taskleiste, alles da, wo du es erwartest."
       },
       "description": {
-        "en": "Linux Mint is the classic choice for people coming from Windows. The Cinnamon desktop works like the Windows taskbar and start menu, and the Driver Manager and Update Manager keep things simple. It is based on Ubuntu LTS, so it stays stable for years."
+        "en": "Linux Mint is the classic choice for people coming from Windows. The Cinnamon desktop works like the Windows taskbar and start menu, and the Driver Manager and Update Manager keep things simple. It is based on Ubuntu LTS, so it stays stable for years.",
+        "de": "Linux Mint ist die klassische Wahl für alle, die von Windows kommen. Der Cinnamon-Desktop funktioniert wie Taskleiste und Startmenü unter Windows, Treiberverwaltung und Aktualisierungsverwaltung halten alles einfach. Die Basis ist Ubuntu LTS, dadurch bleibt es jahrelang stabil."
       },
       "website": "https://linuxmint.com",
       "color": "#87cf3e",
@@ -123,10 +145,12 @@
         {
           "id": "mint-drivers",
           "title": {
-            "en": "Open the Driver Manager"
+            "en": "Open the Driver Manager",
+            "de": "Die Treiberverwaltung öffnen"
           },
           "detail": {
-            "en": "Menu > Administration > Driver Manager shows which extra drivers (for example NVIDIA) Mint would install for your hardware."
+            "en": "Menu > Administration > Driver Manager shows which extra drivers (for example NVIDIA) Mint would install for your hardware.",
+            "de": "Menü > Systemverwaltung > Treiberverwaltung zeigt, welche zusätzlichen Treiber (zum Beispiel NVIDIA) Mint für deine Hardware installieren würde."
           }
         }
       ]
@@ -138,13 +162,16 @@
       "version": "24.04 LTS",
       "category": "beginner",
       "summary": {
-        "en": "Clean and fast, with the new COSMIC desktop and window tiling built in."
+        "en": "Clean and fast, with the new COSMIC desktop and window tiling built in.",
+        "de": "Aufgeräumt und schnell, mit dem neuen COSMIC-Desktop und eingebautem Fenster-Tiling."
       },
       "description": {
-        "en": "Pop!_OS is made by the PC maker System76 and runs their own COSMIC desktop. Windows can tile themselves side by side automatically, which is handy on big screens. Testux uses the NVIDIA variant, it also works on AMD and Intel graphics."
+        "en": "Pop!_OS is made by the PC maker System76 and runs their own COSMIC desktop. Windows can tile themselves side by side automatically, which is handy on big screens. Testux uses the NVIDIA variant, it also works on AMD and Intel graphics.",
+        "de": "Pop!_OS kommt vom PC-Hersteller System76 und nutzt den eigenen COSMIC-Desktop. Fenster können sich automatisch nebeneinander anordnen, das ist auf großen Bildschirmen praktisch. Testux lädt die NVIDIA-Variante, sie läuft auch mit AMD- und Intel-Grafik."
       },
       "notes": {
-        "en": "Pop!_OS does not support Secure Boot. To boot it on this PC, Secure Boot has to be turned off in the UEFI settings."
+        "en": "Pop!_OS does not support Secure Boot. To boot it on this PC, Secure Boot has to be turned off in the UEFI settings.",
+        "de": "Pop!_OS unterstützt kein Secure Boot. Um es direkt auf dem PC zu starten, muss Secure Boot in den UEFI-Einstellungen aus sein."
       },
       "website": "https://system76.com/pop/",
       "color": "#48b9c7",
@@ -164,10 +191,12 @@
         {
           "id": "pop-tiling",
           "title": {
-            "en": "Try auto-tiling"
+            "en": "Try auto-tiling",
+            "de": "Auto-Tiling ausprobieren"
           },
           "detail": {
-            "en": "Turn on tiling from the workspace menu in the top panel (or press Super+Y), then open three windows and watch them arrange themselves."
+            "en": "Turn on tiling from the workspace menu in the top panel (or press Super+Y), then open three windows and watch them arrange themselves.",
+            "de": "Schalte Tiling im Arbeitsflächen-Menü oben in der Leiste ein (oder drück Super+Y), öffne drei Fenster und schau zu, wie sie sich anordnen."
           }
         }
       ]
@@ -179,10 +208,12 @@
       "version": "26.04 LTS",
       "category": "beginner",
       "summary": {
-        "en": "The best-known Linux, with five years of updates for every LTS release."
+        "en": "The best-known Linux, with five years of updates for every LTS release.",
+        "de": "Das bekannteste Linux, mit fünf Jahren Updates für jede LTS-Version."
       },
       "description": {
-        "en": "Ubuntu is the distro most guides and programs are written for, which makes help easy to find. It uses a customized GNOME desktop with a dock on the left. The installer can set up drivers for graphics and Wi-Fi for you."
+        "en": "Ubuntu is the distro most guides and programs are written for, which makes help easy to find. It uses a customized GNOME desktop with a dock on the left. The installer can set up drivers for graphics and Wi-Fi for you.",
+        "de": "Ubuntu ist die Distro, für die die meisten Anleitungen und Programme gemacht sind, deshalb findest du schnell Hilfe. Es nutzt einen angepassten GNOME-Desktop mit einem Dock links. Der Installer kann Treiber für Grafik und WLAN gleich mit einrichten."
       },
       "website": "https://ubuntu.com/desktop",
       "color": "#e95420",
@@ -206,10 +237,12 @@
       "version": "18.1",
       "category": "beginner",
       "summary": {
-        "en": "Made for Windows switchers, with a desktop layout that looks like Windows."
+        "en": "Made for Windows switchers, with a desktop layout that looks like Windows.",
+        "de": "Für Umsteiger von Windows gemacht, mit einem Desktop-Layout, das wie Windows aussieht."
       },
       "description": {
-        "en": "Zorin OS puts a lot of work into looking and feeling like Windows, down to the start menu. The Zorin Appearance app switches between several layouts. It is based on Ubuntu LTS and comes with NVIDIA drivers on the ISO."
+        "en": "Zorin OS puts a lot of work into looking and feeling like Windows, down to the start menu. The Zorin Appearance app switches between several layouts. It is based on Ubuntu LTS and comes with NVIDIA drivers on the ISO.",
+        "de": "Zorin OS steckt viel Arbeit darein, wie Windows auszusehen und sich so anzufühlen, bis hin zum Startmenü. Mit der App Zorin Appearance wechselst du zwischen mehreren Layouts. Die Basis ist Ubuntu LTS, NVIDIA-Treiber sind schon auf dem ISO."
       },
       "website": "https://zorin.com/os/",
       "color": "#15a6f0",
@@ -229,10 +262,12 @@
         {
           "id": "zorin-layout",
           "title": {
-            "en": "Switch the desktop layout"
+            "en": "Switch the desktop layout",
+            "de": "Das Desktop-Layout wechseln"
           },
           "detail": {
-            "en": "Open Zorin Appearance > Layout and try the Windows-like layout next to the others."
+            "en": "Open Zorin Appearance > Layout and try the Windows-like layout next to the others.",
+            "de": "Öffne Zorin Appearance > Layout und probier das Windows-ähnliche Layout neben den anderen aus."
           }
         }
       ]
@@ -244,13 +279,16 @@
       "version": "44",
       "category": "kde",
       "summary": {
-        "en": "Fedora with KDE Plasma: a familiar taskbar and lots of settings to tweak."
+        "en": "Fedora with KDE Plasma: a familiar taskbar and lots of settings to tweak.",
+        "de": "Fedora mit KDE Plasma: eine vertraute Taskleiste und viele Einstellungen zum Anpassen."
       },
       "description": {
-        "en": "This is the same Fedora base with the KDE Plasma desktop, which has a taskbar and start menu like Windows. Plasma lets you change almost everything, from the panel to window behavior. You get new Plasma versions soon after they are released."
+        "en": "This is the same Fedora base with the KDE Plasma desktop, which has a taskbar and start menu like Windows. Plasma lets you change almost everything, from the panel to window behavior. You get new Plasma versions soon after they are released.",
+        "de": "Das ist dieselbe Fedora-Basis mit dem KDE-Plasma-Desktop, der Taskleiste und Startmenü wie unter Windows hat. Bei Plasma kannst du fast alles ändern, von der Leiste bis zum Fensterverhalten. Neue Plasma-Versionen kommen kurz nach ihrer Veröffentlichung."
       },
       "notes": {
-        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository."
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
       },
       "website": "https://fedoraproject.org/kde/",
       "color": "#294172",
@@ -274,13 +312,16 @@
       "version": "2026-10-16",
       "category": "kde",
       "summary": {
-        "en": "The newest KDE Plasma, straight from the KDE team, on an Ubuntu LTS base."
+        "en": "The newest KDE Plasma, straight from the KDE team, on an Ubuntu LTS base.",
+        "de": "Das neueste KDE Plasma, direkt vom KDE-Team, auf einer Ubuntu-LTS-Basis."
       },
       "description": {
-        "en": "KDE neon is built by the KDE developers themselves and gets every new Plasma and KDE app version within days. The system underneath is Ubuntu LTS and changes rarely. It is the place to see what KDE looks like right now."
+        "en": "KDE neon is built by the KDE developers themselves and gets every new Plasma and KDE app version within days. The system underneath is Ubuntu LTS and changes rarely. It is the place to see what KDE looks like right now.",
+        "de": "KDE neon wird von den KDE-Entwicklern selbst gebaut und bekommt jede neue Plasma- und KDE-App-Version innerhalb weniger Tage. Das System darunter ist Ubuntu LTS und ändert sich selten. Hier siehst du, wie KDE gerade aktuell aussieht."
       },
       "notes": {
-        "en": "Testux always downloads the latest neon build, so the version can change between two downloads."
+        "en": "Testux always downloads the latest neon build, so the version can change between two downloads.",
+        "de": "Testux lädt immer den neuesten neon-Build, die Version kann sich also zwischen zwei Downloads ändern."
       },
       "website": "https://neon.kde.org",
       "color": "#1d99f3",
@@ -303,13 +344,16 @@
       "version": "26.04 LTS",
       "category": "kde",
       "summary": {
-        "en": "Ubuntu's stability with the KDE Plasma desktop on top."
+        "en": "Ubuntu's stability with the KDE Plasma desktop on top.",
+        "de": "Die Stabilität von Ubuntu mit dem KDE-Plasma-Desktop obendrauf."
       },
       "description": {
-        "en": "Kubuntu is the official Ubuntu flavor with KDE Plasma. You get the taskbar and start menu of Plasma together with Ubuntu's long-term support and its huge amount of guides. Drivers for graphics and Wi-Fi are set up by the Ubuntu driver tools."
+        "en": "Kubuntu is the official Ubuntu flavor with KDE Plasma. You get the taskbar and start menu of Plasma together with Ubuntu's long-term support and its huge amount of guides. Drivers for graphics and Wi-Fi are set up by the Ubuntu driver tools.",
+        "de": "Kubuntu ist die offizielle Ubuntu-Variante mit KDE Plasma. Du bekommst Taskleiste und Startmenü von Plasma zusammen mit der Langzeit-Unterstützung von Ubuntu und den unzähligen Anleitungen dafür. Treiber für Grafik und WLAN richten die Ubuntu-Treiberwerkzeuge ein."
       },
       "notes": {
-        "en": "Kubuntu cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick."
+        "en": "Kubuntu cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick.",
+        "de": "Kubuntu lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick."
       },
       "website": "https://kubuntu.org",
       "color": "#0079c1",
@@ -333,13 +377,16 @@
       "version": "26.1.0",
       "category": "kde",
       "summary": {
-        "en": "Arch based, but updates arrive in tested batches instead of one by one."
+        "en": "Arch based, but updates arrive in tested batches instead of one by one.",
+        "de": "Basiert auf Arch, aber Updates kommen in getesteten Paketen statt einzeln."
       },
       "description": {
-        "en": "Manjaro holds Arch packages back for a short test phase and releases them together, which makes updates calmer. It has its own graphical tools for drivers and kernels. The live system can start with proprietary drivers right from the boot menu."
+        "en": "Manjaro holds Arch packages back for a short test phase and releases them together, which makes updates calmer. It has its own graphical tools for drivers and kernels. The live system can start with proprietary drivers right from the boot menu.",
+        "de": "Manjaro hält Arch-Pakete für eine kurze Testphase zurück und gibt sie gesammelt frei, dadurch laufen Updates ruhiger. Es hat eigene grafische Werkzeuge für Treiber und Kernel. Das Live-System kann direkt aus dem Startmenü mit proprietären Treibern starten."
       },
       "notes": {
-        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Manjaro on this PC."
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Manjaro on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Manjaro direkt auf dem PC zu starten."
       },
       "website": "https://manjaro.org",
       "color": "#35bf5c",
@@ -363,13 +410,15 @@
       "version": "44",
       "category": "gaming",
       "summary": {
-        "en": "A console-like gaming system with Steam's Game Mode, like on the Steam Deck."
+        "en": "A console-like gaming system with Steam's Game Mode, like on the Steam Deck.",
+        "de": "Ein Gaming-System wie eine Konsole, mit dem Spielmodus von Steam wie auf dem Steam Deck."
       },
       "description": {
         "en": "Bazzite is built on Fedora and is image based: updates replace the whole system at once and can be rolled back if something breaks."
       },
       "notes": {
-        "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around. For NVIDIA graphics, bazzite.gg offers a separate image. With Secure Boot on, enroll the key with the password universalblue when asked after installing."
+        "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around. For NVIDIA graphics, bazzite.gg offers a separate image. With Secure Boot on, enroll the key with the password universalblue when asked after installing.",
+        "de": "Das ISO enthält nur den Installer, es gibt keinen Live-Desktop zum Ausprobieren. Installier es auf die Testux-Testplatte, um dich umzuschauen. Für NVIDIA-Grafik gibt es auf bazzite.gg ein eigenes Image. Mit eingeschaltetem Secure Boot trägst du nach der Installation den Schlüssel mit dem Passwort universalblue ein, wenn danach gefragt wird."
       },
       "website": "https://bazzite.gg",
       "color": "#5236cc",
@@ -394,13 +443,16 @@
       "version": "2026-08-09",
       "category": "gaming",
       "summary": {
-        "en": "Arch Linux tuned for speed, with gaming tools and drivers set up for you."
+        "en": "Arch Linux tuned for speed, with gaming tools and drivers set up for you.",
+        "de": "Auf Tempo getrimmtes Arch Linux, mit Gaming-Tools und Treibern schon eingerichtet."
       },
       "description": {
-        "en": "CachyOS builds its packages for modern CPUs and ships a kernel tuned for low latency, which helps in games. The installer detects your graphics card and installs the right driver, NVIDIA included. As an Arch-based rolling release it updates often and you get new software quickly."
+        "en": "CachyOS builds its packages for modern CPUs and ships a kernel tuned for low latency, which helps in games. The installer detects your graphics card and installs the right driver, NVIDIA included. As an Arch-based rolling release it updates often and you get new software quickly.",
+        "de": "CachyOS baut seine Pakete für moderne CPUs und liefert einen auf niedrige Latenz getrimmten Kernel, das hilft in Spielen. Der Installer erkennt deine Grafikkarte und installiert den passenden Treiber, auch für NVIDIA. Als Arch-basiertes Rolling Release gibt es oft Updates und neue Software kommt schnell."
       },
       "notes": {
-        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start CachyOS on this PC."
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start CachyOS on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um CachyOS direkt auf dem PC zu starten."
       },
       "website": "https://cachyos.org",
       "color": "#2dd4bf",
@@ -424,13 +476,16 @@
       "version": "44",
       "category": "gaming",
       "summary": {
-        "en": "Fedora with the gaming fixes, codecs and drivers already in place."
+        "en": "Fedora with the gaming fixes, codecs and drivers already in place.",
+        "de": "Fedora mit Gaming-Anpassungen, Codecs und Treibern schon an Bord."
       },
       "description": {
-        "en": "Nobara is put together by GloriousEggroll, who also makes Proton-GE. It takes Fedora and adds what gamers usually install by hand: Steam, video codecs, OBS and the NVIDIA driver. The Nobara Welcome app walks you through the rest."
+        "en": "Nobara is put together by GloriousEggroll, who also makes Proton-GE. It takes Fedora and adds what gamers usually install by hand: Steam, video codecs, OBS and the NVIDIA driver. The Nobara Welcome app walks you through the rest.",
+        "de": "Nobara wird von GloriousEggroll zusammengestellt, der auch Proton-GE macht. Es nimmt Fedora und ergänzt, was Spieler sonst von Hand installieren: Steam, Video-Codecs, OBS und den NVIDIA-Treiber. Die App Nobara Welcome führt dich durch den Rest."
       },
       "notes": {
-        "en": "Nobara does not support Secure Boot. It also cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick."
+        "en": "Nobara does not support Secure Boot. It also cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick.",
+        "de": "Nobara unterstützt kein Secure Boot. Außerdem lässt es sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick."
       },
       "website": "https://nobaraproject.org",
       "color": "#444c5c",
@@ -455,13 +510,16 @@
       "version": "44",
       "category": "other",
       "summary": {
-        "en": "Up-to-date GNOME exactly as its developers intended, without extra changes."
+        "en": "Up-to-date GNOME exactly as its developers intended, without extra changes.",
+        "de": "Aktuelles GNOME genau so, wie die Entwickler es gedacht haben, ohne Extra-Änderungen."
       },
       "description": {
-        "en": "Fedora brings new versions of the desktop and kernel early, but still goes through careful testing. GNOME works differently from Windows: press the Super key for an overview of everything. A new release comes out every six months."
+        "en": "Fedora brings new versions of the desktop and kernel early, but still goes through careful testing. GNOME works differently from Windows: press the Super key for an overview of everything. A new release comes out every six months.",
+        "de": "Fedora bringt neue Versionen von Desktop und Kernel früh, testet sie aber trotzdem sorgfältig. GNOME funktioniert anders als Windows: Drück die Super-Taste für eine Übersicht über alles. Alle sechs Monate erscheint eine neue Version."
       },
       "notes": {
-        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository."
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
       },
       "website": "https://fedoraproject.org/workstation/",
       "color": "#51a2da",
@@ -481,10 +539,12 @@
         {
           "id": "fedora-overview",
           "title": {
-            "en": "Use the Activities overview"
+            "en": "Use the Activities overview",
+            "de": "Die Aktivitäten-Übersicht nutzen"
           },
           "detail": {
-            "en": "Press the Super (Windows) key: you see all open windows and workspaces, and you can start typing to search for apps."
+            "en": "Press the Super (Windows) key: you see all open windows and workspaces, and you can start typing to search for apps.",
+            "de": "Drück die Super-Taste (Windows-Taste): Du siehst alle offenen Fenster und Arbeitsflächen und kannst direkt lostippen, um Apps zu suchen."
           }
         }
       ]
