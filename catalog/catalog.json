@@ -330,7 +330,7 @@
       "id": "manjaro-kde",
       "name": "Manjaro",
       "edition": "KDE Plasma",
-      "version": "26.0.4",
+      "version": "26.1.0",
       "category": "kde",
       "summary": {
         "en": "Arch based, but updates arrive in tested batches instead of one by one."
@@ -347,9 +347,9 @@
       "base": "Arch",
       "releaseModel": "rolling",
       "iso": {
-        "url": "https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso",
-        "sha256Url": "https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso.sha256",
-        "size": 5669099520
+        "url": "https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso",
+        "sha256Url": "https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso.sha256",
+        "size": 5534201856
       },
       "secureBoot": false,
       "liveSession": true,
