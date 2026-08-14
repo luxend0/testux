@@ -768,22 +768,22 @@
     <message>
         <location filename="../qml/DownloadPanel.qml" line="23"/>
         <source>Download paused at %1 of %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Download bei %1 von %2 pausiert.</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="24"/>
         <source>First Testux downloads the official ISO (%1) and checks it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zuerst lädt Testux die offizielle ISO (%1) herunter und prüft sie.</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="31"/>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortsetzen</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="31"/>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Herunterladen</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="46"/>
@@ -793,32 +793,32 @@
     <message>
         <location filename="../qml/DownloadPanel.qml" line="47"/>
         <source>Downloading %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 von %2 heruntergeladen</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="54"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pausieren</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="75"/>
         <source>ISO downloaded and verified (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO heruntergeladen und geprüft (%1)</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="82"/>
         <source>Delete ISO</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO löschen</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="90"/>
         <source>The download did not work</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Download hat nicht geklappt</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="95"/>
         <source>Try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Erneut versuchen</translation>
     </message>
 </context>
 <context>
