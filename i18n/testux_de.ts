@@ -104,22 +104,22 @@
     <message>
         <location filename="../qml/BootPanel.qml" line="34"/>
         <source>Starts %1 directly on your hardware, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation>Startet %1 direkt auf deiner Hardware, ganz ohne USB-Stick. Es läuft mit voller Geschwindigkeit und du kannst es von dort aus installieren. Windows bleibt und startet danach wie gewohnt.</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="42"/>
         <source>This works on Windows PCs for now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das geht vorerst nur auf Windows-PCs.</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="60"/>
         <source>Checking your PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC wird geprüft</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="62"/>
         <source>This distro can only be tried in a window</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Distro kannst du nur im Fenster ausprobieren</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="64"/>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../qml/BootPanel.qml" line="67"/>
         <source>Your PC is ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC ist bereit</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="74"/>
         <source>Set up boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Start einrichten</translation>
     </message>
 </context>
 <context>
@@ -541,27 +541,27 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="58"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Website</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="84"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Über %1</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="128"/>
         <source>At a glance</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf einen Blick</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="134"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="135"/>
         <source>Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Desktop</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="136"/>
@@ -571,7 +571,7 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="137"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Updates</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="138"/>
@@ -581,32 +581,32 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="139"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeitsspeicher</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="139"/>
         <source>%1 or more</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 oder mehr</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="140"/>
         <source>Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="140"/>
         <source>Works with Secure Boot on</source>
-        <translation type="unfinished"></translation>
+        <translation>Läuft mit aktivem Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="140"/>
         <source>Secure Boot must be off</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot muss aus sein</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
         <source>Live session</source>
-        <translation type="unfinished"></translation>
+        <translation>Live-System</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
@@ -616,17 +616,17 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
         <source>No, installer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, nur Installer</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
         <source>NVIDIA driver</source>
-        <translation type="unfinished"></translation>
+        <translation>NVIDIA-Treiber</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
         <source>Included or offered</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabei oder wird angeboten</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
@@ -1524,37 +1524,37 @@
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="144"/>
         <source>QEMU is missing from the Testux folder. Reinstall Testux to fix it.</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU fehlt im Testux-Ordner. Installiere Testux neu, um das zu beheben.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="148"/>
         <source>QEMU is not installed. Install qemu-system-x86_64 and qemu-img with your package manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU ist nicht installiert. Installiere qemu-system-x86_64 und qemu-img mit deinem Paketmanager.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="150"/>
         <source>QEMU is not installed. Install it with: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU ist nicht installiert. Installiere es mit: %1</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="157"/>
         <source>The Windows Hypervisor Platform is off, so VMs run very slowly. Run this in an administrator terminal, then restart: dism /online /enable-feature /featurename:HypervisorPlatform /all</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Windows-Hypervisorplattform ist aus, deshalb laufen VMs sehr langsam. Führe das in einem Terminal als Administrator aus und starte dann neu: dism /online /enable-feature /featurename:HypervisorPlatform /all</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="162"/>
         <source>Your user may not use KVM, so VMs run very slowly. Run: sudo usermod -aG kvm $USER, then log out and back in.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein Benutzer darf KVM nicht nutzen, deshalb laufen VMs sehr langsam. Führe sudo usermod -aG kvm $USER aus, melde dich dann ab und wieder an.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="164"/>
         <source>KVM is not available, so VMs run very slowly. Enable virtualization (Intel VT-x or AMD-V/SVM) in your firmware settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>KVM ist nicht verfügbar, deshalb laufen VMs sehr langsam. Aktiviere die Virtualisierung (Intel VT-x oder AMD-V/SVM) in deinen Firmware-Einstellungen.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="268"/>
         <source>%1 in Testux</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 in Testux</translation>
     </message>
 </context>
 <context>
