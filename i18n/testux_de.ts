@@ -104,22 +104,22 @@
     <message>
         <location filename="../qml/BootPanel.qml" line="34"/>
         <source>Starts %1 directly on your hardware, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation>Startet %1 direkt auf deiner Hardware, ganz ohne USB-Stick. Es läuft mit voller Geschwindigkeit und du kannst es von dort aus installieren. Windows bleibt und startet danach wie gewohnt.</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="42"/>
         <source>This works on Windows PCs for now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das geht vorerst nur auf Windows-PCs.</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="60"/>
         <source>Checking your PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC wird geprüft</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="62"/>
         <source>This distro can only be tried in a window</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Distro kannst du nur im Fenster ausprobieren</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="64"/>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../qml/BootPanel.qml" line="67"/>
         <source>Your PC is ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC ist bereit</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="74"/>
         <source>Set up boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Start einrichten</translation>
     </message>
 </context>
 <context>
@@ -360,12 +360,12 @@
     <message>
         <location filename="../src/catalog/catalog.cpp" line="110"/>
         <source>Could not update the catalog: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste konnte nicht aktualisiert werden: %1</translation>
     </message>
     <message>
         <location filename="../src/catalog/catalog.cpp" line="126"/>
         <source>The catalog lists no usable distros.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste enthält keine nutzbaren Distros.</translation>
     </message>
 </context>
 <context>
@@ -541,27 +541,27 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="58"/>
         <source>Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Website</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="84"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Über %1</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="128"/>
         <source>At a glance</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf einen Blick</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="134"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="135"/>
         <source>Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Desktop</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="136"/>
@@ -571,7 +571,7 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="137"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Updates</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="138"/>
@@ -581,32 +581,32 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="139"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeitsspeicher</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="139"/>
         <source>%1 or more</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 oder mehr</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="140"/>
         <source>Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="140"/>
         <source>Works with Secure Boot on</source>
-        <translation type="unfinished"></translation>
+        <translation>Läuft mit aktivem Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="140"/>
         <source>Secure Boot must be off</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot muss aus sein</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
         <source>Live session</source>
-        <translation type="unfinished"></translation>
+        <translation>Live-System</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
@@ -616,17 +616,17 @@
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
         <source>No, installer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, nur Installer</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
         <source>NVIDIA driver</source>
-        <translation type="unfinished"></translation>
+        <translation>NVIDIA-Treiber</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
         <source>Included or offered</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabei oder wird angeboten</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
@@ -1180,32 +1180,32 @@
     <message>
         <location filename="../qml/SessionView.qml" line="39"/>
         <source>Shutting down %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 wird heruntergefahren</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="41"/>
         <source>%1 is running in its own window</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 läuft in einem eigenen Fenster</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="42"/>
         <source>Starting %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 wird gestartet</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="49"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="64"/>
         <source>Uses %1 of %2 memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutzt %1 von %2 Arbeitsspeicher</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="76"/>
         <source>Memory use shows up once the system has booted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der RAM-Verbrauch erscheint, sobald das System hochgefahren ist.</translation>
     </message>
 </context>
 <context>
@@ -1580,17 +1580,17 @@
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="13"/>
         <source>Welcome back</source>
-        <translation type="unfinished"></translation>
+        <translation>Willkommen zurück</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="13"/>
         <source>Testux boot files found</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux-Startdateien gefunden</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="27"/>
         <source>Hope you enjoyed the test drive. Testux can now remove the temporary boot files from your drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoffentlich hat dir die Testfahrt gefallen. Testux kann jetzt die temporären Startdateien von deinem Laufwerk entfernen.</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="28"/>
@@ -1600,22 +1600,22 @@
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="36"/>
         <source>Give unused Linux space back to Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungenutzten Linux-Platz an Windows zurückgeben</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="37"/>
         <source>Leave this on unless you installed Linux. Space that Linux uses is never touched.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass das an, außer du hast Linux installiert. Platz, den Linux nutzt, wird nie angefasst.</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="67"/>
         <source>Not now</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht jetzt</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="73"/>
         <source>Remove boot files</source>
-        <translation type="unfinished"></translation>
+        <translation>Startdateien entfernen</translation>
     </message>
 </context>
 </TS>
