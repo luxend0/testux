@@ -1301,7 +1301,7 @@
     <message>
         <location filename="../qml/Sidebar.qml" line="93"/>
         <source>Running: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Läuft: %1</translation>
     </message>
     <message>
         <location filename="../qml/Sidebar.qml" line="100"/>
@@ -1311,7 +1311,7 @@
     <message>
         <location filename="../qml/Sidebar.qml" line="108"/>
         <source>Version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Version %1</translation>
     </message>
 </context>
 <context>
