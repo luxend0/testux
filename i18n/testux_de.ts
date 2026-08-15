@@ -884,27 +884,27 @@
     <message>
         <location filename="../src/download/isolibrary.cpp" line="93"/>
         <source>Not enough free disk space. The download needs %1 more.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht genug freier Speicherplatz. Der Download braucht noch %1 mehr.</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="107"/>
         <source>Cannot write %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kann nicht geschrieben werden.</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="131"/>
         <source>Could not delete the ISO. Is a VM still using it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ISO konnte nicht gelöscht werden. Benutzt eine VM sie noch?</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="178"/>
         <source>Writing the ISO failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Schreiben der ISO fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="194"/>
         <source>Download failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Download fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="219"/>
@@ -914,17 +914,17 @@
     <message>
         <location filename="../src/download/isolibrary.cpp" line="233"/>
         <source>The checksum list does not mention %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Prüfsummenliste enthält %1 nicht.</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="240"/>
         <source>The download is damaged (checksum mismatch). Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Download ist beschädigt (Prüfsumme stimmt nicht). Bitte versuche es noch einmal.</translation>
     </message>
     <message>
         <location filename="../src/download/isolibrary.cpp" line="244"/>
         <source>Could not move the ISO to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ISO konnte nicht nach %1 verschoben werden.</translation>
     </message>
 </context>
 <context>
