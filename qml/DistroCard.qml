@@ -35,6 +35,7 @@ AbstractButton {
             DistroTile {
                 name: card.distro.name
                 tint: card.distro.color
+                logo: card.distro.logo
             }
 
             ColumnLayout {

@@ -37,6 +37,7 @@ struct Distro
     Q_PROPERTY(QString notes MEMBER notes)
     Q_PROPERTY(QString website MEMBER website)
     Q_PROPERTY(QString color MEMBER color)
+    Q_PROPERTY(QString logo MEMBER logo)
     Q_PROPERTY(QString desktop MEMBER desktop)
     Q_PROPERTY(QString base MEMBER base)
     Q_PROPERTY(QString releaseModel MEMBER releaseModel)
@@ -61,6 +62,7 @@ public:
     QString notes;        // caveats such as "no live session", may be empty
     QString website;
     QString color;        // brand-ish accent, "#rrggbb"
+    QString logo;         // image URL, set by Catalog (not part of catalog.json)
     QString desktop;      // "KDE Plasma"
     QString base;         // "Ubuntu", "Arch", "independent", ...
     QString releaseModel; // "fixed" or "rolling"
