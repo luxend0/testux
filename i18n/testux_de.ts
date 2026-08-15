@@ -373,17 +373,17 @@
     <message>
         <location filename="../src/catalog/catalogparser.cpp" line="102"/>
         <source>The catalog is not valid JSON: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste ist kein gültiges JSON: %1</translation>
     </message>
     <message>
         <location filename="../src/catalog/catalogparser.cpp" line="109"/>
         <source>The catalog contains no distro list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste enthält keine Distros.</translation>
     </message>
     <message>
         <location filename="../src/catalog/catalogparser.cpp" line="115"/>
         <source>The catalog defines no categories.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste enthält keine Kategorien.</translation>
     </message>
 </context>
 <context>
@@ -391,12 +391,12 @@
     <message>
         <location filename="../qml/ChecklistPanel.qml" line="40"/>
         <source>Things to try</source>
-        <translation type="unfinished"></translation>
+        <translation>Zum Ausprobieren</translation>
     </message>
     <message>
         <location filename="../qml/ChecklistPanel.qml" line="45"/>
         <source>%1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 von %2</translation>
     </message>
 </context>
 <context>
@@ -523,12 +523,12 @@
     <message>
         <location filename="../qml/DistroCard.qml" line="89"/>
         <source>Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistroCard.qml" line="94"/>
         <source>Live session</source>
-        <translation type="unfinished"></translation>
+        <translation>Live-System</translation>
     </message>
 </context>
 <context>
@@ -827,7 +827,7 @@
         <location filename="../qml/Format.qml" line="14"/>
         <location filename="../qml/Format.qml" line="20"/>
         <source>%1 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 GB</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="15"/>
@@ -838,17 +838,17 @@
     <message>
         <location filename="../qml/Format.qml" line="25"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="25"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="34"/>
         <source>%1 desktop, independent</source>
-        <translation type="unfinished"></translation>
+        <translation>%1-Desktop, eigenständig</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="35"/>
@@ -858,17 +858,17 @@
     <message>
         <location filename="../qml/Format.qml" line="39"/>
         <source>Independent</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenständig</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="43"/>
         <source>Rolling release</source>
-        <translation type="unfinished"></translation>
+        <translation>Rolling Release</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="43"/>
         <source>Fixed releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Feste Versionen</translation>
     </message>
 </context>
 <context>
