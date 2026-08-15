@@ -1324,32 +1324,32 @@
     <message>
         <location filename="../qml/ThisPcPage.qml" line="14"/>
         <source>What Testux found out about your hardware. None of it leaves your PC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das hat Testux über deine Hardware herausgefunden. Nichts davon verlässt deinen PC.</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="28"/>
         <source>Checking your PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein PC wird geprüft</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="45"/>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation>System</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="51"/>
         <source>Check again</source>
-        <translation type="unfinished"></translation>
+        <translation>Erneut prüfen</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="62"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeitsspeicher</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="63"/>
         <source>Processor threads</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozessor-Threads</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="64"/>
@@ -1359,7 +1359,7 @@
     <message>
         <location filename="../qml/ThisPcPage.qml" line="65"/>
         <source>Fast virtual machines</source>
-        <translation type="unfinished"></translation>
+        <translation>Schnelle virtuelle Maschinen</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="65"/>
@@ -1379,61 +1379,61 @@
     <message>
         <location filename="../qml/ThisPcPage.qml" line="66"/>
         <source>UEFI</source>
-        <translation type="unfinished"></translation>
+        <translation>UEFI</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="66"/>
         <source>Legacy BIOS</source>
-        <translation type="unfinished"></translation>
+        <translation>Legacy-BIOS</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="67"/>
         <source>Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="67"/>
         <location filename="../qml/ThisPcPage.qml" line="71"/>
         <location filename="../qml/ThisPcPage.qml" line="72"/>
         <source>On</source>
-        <translation type="unfinished"></translation>
+        <translation>An</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="67"/>
         <location filename="../qml/ThisPcPage.qml" line="71"/>
         <location filename="../qml/ThisPcPage.qml" line="72"/>
         <source>Off</source>
-        <translation type="unfinished"></translation>
+        <translation>Aus</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="70"/>
         <source>Partition style</source>
-        <translation type="unfinished"></translation>
+        <translation>Partitionsstil</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="70"/>
         <source>GPT</source>
-        <translation type="unfinished"></translation>
+        <translation>GPT</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="70"/>
         <source>MBR</source>
-        <translation type="unfinished"></translation>
+        <translation>MBR</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="71"/>
         <source>BitLocker</source>
-        <translation type="unfinished"></translation>
+        <translation>BitLocker</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="72"/>
         <source>Fast Startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Schnellstart</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="83"/>
         <source>Graphics</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="86"/>
@@ -1443,7 +1443,7 @@
     <message>
         <location filename="../qml/ThisPcPage.qml" line="93"/>
         <source>Wi-Fi</source>
-        <translation type="unfinished"></translation>
+        <translation>WLAN</translation>
     </message>
     <message>
         <location filename="../qml/ThisPcPage.qml" line="96"/>
@@ -1524,37 +1524,37 @@
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="144"/>
         <source>QEMU is missing from the Testux folder. Reinstall Testux to fix it.</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU fehlt im Testux-Ordner. Installiere Testux neu, um das zu beheben.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="148"/>
         <source>QEMU is not installed. Install qemu-system-x86_64 and qemu-img with your package manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU ist nicht installiert. Installiere qemu-system-x86_64 und qemu-img mit deinem Paketmanager.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="150"/>
         <source>QEMU is not installed. Install it with: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU ist nicht installiert. Installiere es mit: %1</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="157"/>
         <source>The Windows Hypervisor Platform is off, so VMs run very slowly. Run this in an administrator terminal, then restart: dism /online /enable-feature /featurename:HypervisorPlatform /all</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Windows-Hypervisorplattform ist aus, deshalb laufen VMs sehr langsam. Führe das in einem Terminal als Administrator aus und starte dann neu: dism /online /enable-feature /featurename:HypervisorPlatform /all</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="162"/>
         <source>Your user may not use KVM, so VMs run very slowly. Run: sudo usermod -aG kvm $USER, then log out and back in.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein Benutzer darf KVM nicht nutzen, deshalb laufen VMs sehr langsam. Führe sudo usermod -aG kvm $USER aus, melde dich dann ab und wieder an.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="164"/>
         <source>KVM is not available, so VMs run very slowly. Enable virtualization (Intel VT-x or AMD-V/SVM) in your firmware settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>KVM ist nicht verfügbar, deshalb laufen VMs sehr langsam. Aktiviere die Virtualisierung (Intel VT-x oder AMD-V/SVM) in deinen Firmware-Einstellungen.</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="268"/>
         <source>%1 in Testux</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 in Testux</translation>
     </message>
 </context>
 <context>
