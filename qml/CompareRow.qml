@@ -74,6 +74,7 @@ AbstractButton {
                     visible: !row.header && cell.index === 0
                     name: row.distro.name
                     tint: row.distro.color
+                    logo: row.distro.logo
                     size: 24
                 }
 

@@ -17,6 +17,7 @@ using namespace Qt::StringLiterals;
 namespace {
 
 constexpr auto EmbeddedPath = ":/qt/qml/Testux/catalog/catalog.json";
+constexpr auto EmbeddedLogos = ":/qt/qml/Testux/catalog/logos/";
 constexpr int TransferTimeoutMs = 15'000;
 
 QString cachePath()
@@ -44,6 +45,32 @@ void writeCache(const QByteArray &json)
         file.write(json);
         file.commit();
     }
+}
+
+// Ids of the catalog built into this binary; every logo that exists for them is built in too.
+const QSet<QString> &builtInIds()
+{
+    static const QSet<QString> ids = [] {
+        QSet<QString> result;
+        for (const Distro &distro :
+             CatalogParser::parse(readFile(QString::fromLatin1(EmbeddedPath)), u"en"_s).distros)
+            result.insert(distro.id);
+        return result;
+    }();
+    return ids;
+}
+
+// Logos live next to the catalog as catalog/logos/<id>.svg. Built-in ones load instantly; a
+// distro added to the remote catalog after this release gets its logo from the repository.
+// "" = no logo, the tile shows the initial.
+QString logoUrl(const QString &id)
+{
+    const QString file = id + u".svg"_s;
+    if (QFile::exists(QString::fromLatin1(EmbeddedLogos) + file))
+        return u"qrc"_s + QString::fromLatin1(EmbeddedLogos) + file;
+    if (builtInIds().contains(id))
+        return {};
+    return QUrl(QString::fromLatin1(Catalog::RemoteUrl)).resolved(u"logos/"_s + file).toString();
 }
 
 } // namespace
@@ -103,6 +130,7 @@ bool Catalog::apply(const QByteArray &json)
 
     m_distros = std::move(result.distros);
     for (Distro &distro : m_distros)
+        distro.logo = logoUrl(distro.id);
     m_checklist = std::move(result.checklist);
     m_latestAppVersion = result.latestAppVersion;
     m_latestAppUrl = result.latestAppUrl;

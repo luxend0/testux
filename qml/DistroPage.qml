@@ -28,6 +28,7 @@ PageScroll {
         DistroTile {
             name: page.distro.name
             tint: page.distro.color
+            logo: page.distro.logo
             size: 72
         }
 
