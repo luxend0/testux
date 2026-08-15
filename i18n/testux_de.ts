@@ -1580,17 +1580,17 @@
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="13"/>
         <source>Welcome back</source>
-        <translation type="unfinished"></translation>
+        <translation>Willkommen zurück</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="13"/>
         <source>Testux boot files found</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux-Startdateien gefunden</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="27"/>
         <source>Hope you enjoyed the test drive. Testux can now remove the temporary boot files from your drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoffentlich hat dir die Testfahrt gefallen. Testux kann jetzt die temporären Startdateien von deinem Laufwerk entfernen.</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="28"/>
@@ -1600,22 +1600,22 @@
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="36"/>
         <source>Give unused Linux space back to Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungenutzten Linux-Platz an Windows zurückgeben</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="37"/>
         <source>Leave this on unless you installed Linux. Space that Linux uses is never touched.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass das an, außer du hast Linux installiert. Platz, den Linux nutzt, wird nie angefasst.</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="67"/>
         <source>Not now</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht jetzt</translation>
     </message>
     <message>
         <location filename="../qml/WelcomeBackDialog.qml" line="73"/>
         <source>Remove boot files</source>
-        <translation type="unfinished"></translation>
+        <translation>Startdateien entfernen</translation>
     </message>
 </context>
 </TS>
