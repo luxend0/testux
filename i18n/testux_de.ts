@@ -1562,7 +1562,7 @@
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="376"/>
         <source>QEMU stopped unexpectedly (exit code %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>QEMU wurde unerwartet beendet (Exitcode %1).</translation>
     </message>
     <message>
         <location filename="../src/vm/vmmanager.cpp" line="431"/>
