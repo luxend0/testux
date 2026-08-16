@@ -1456,12 +1456,12 @@
     <message>
         <location filename="../qml/TryPanel.qml" line="41"/>
         <source>Try it in a window</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Fenster ausprobieren</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="46"/>
         <source>%1 runs in a window next to your apps. Your PC stays exactly as it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 läuft in einem Fenster neben deinen Apps. Dein PC bleibt genau so, wie er ist.</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="55"/>
@@ -1471,37 +1471,37 @@
     <message>
         <location filename="../qml/TryPanel.qml" line="63"/>
         <source>This will run slowly</source>
-        <translation type="unfinished"></translation>
+        <translation>Das wird langsam laufen</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="70"/>
         <source>%1 has no live desktop. The window opens its installer, so use a test disk to see the system.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 hat keinen Live-Desktop. Im Fenster öffnet sich der Installer, nimm also eine Test-Disk, um das System zu sehen.</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="94"/>
         <source>The VM stopped with an error</source>
-        <translation type="unfinished"></translation>
+        <translation>Die VM wurde mit einem Fehler beendet</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="107"/>
         <source>Use my test disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Meine Test-Disk verwenden</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="107"/>
         <source>Add a test disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Test-Disk hinzufügen</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="109"/>
         <source>Your test install from last time is kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deine Testinstallation vom letzten Mal bleibt erhalten.</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="110"/>
         <source>Lets you run the installer for a real test install. Takes up to 30 GB, only what is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Damit kannst du den Installer für eine echte Testinstallation nutzen. Belegt bis zu 30 GB, nur so viel wie gebraucht wird.</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="120"/>
@@ -1511,12 +1511,12 @@
     <message>
         <location filename="../qml/TryPanel.qml" line="128"/>
         <source>Delete test disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Test-Disk löschen</translation>
     </message>
     <message>
         <location filename="../qml/TryPanel.qml" line="139"/>
         <source>Another distro is running. Starting this one stops it first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine andere Distro läuft gerade. Wenn du diese startest, wird die andere zuerst beendet.</translation>
     </message>
 </context>
 <context>
