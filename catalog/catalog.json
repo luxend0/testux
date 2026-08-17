@@ -414,7 +414,8 @@
         "de": "Ein Gaming-System wie eine Konsole, mit dem Spielmodus von Steam wie auf dem Steam Deck."
       },
       "description": {
-        "en": "Bazzite is built on Fedora and is image based: updates replace the whole system at once and can be rolled back if something breaks."
+        "en": "Bazzite is built on Fedora and is image based: updates replace the whole system at once and can be rolled back if something breaks. Steam, Lutris and controller support are ready out of the box. It works well on gaming PCs, handhelds and living room PCs.",
+        "de": "Bazzite basiert auf Fedora und ist image-basiert: Updates tauschen das ganze System auf einmal aus und lassen sich zurückrollen, wenn etwas kaputtgeht. Steam, Lutris und Controller-Unterstützung sind sofort einsatzbereit. Es eignet sich für Gaming-PCs, Handhelds und Wohnzimmer-PCs."
       },
       "notes": {
         "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around. For NVIDIA graphics, bazzite.gg offers a separate image. With Secure Boot on, enroll the key with the password universalblue when asked after installing.",
