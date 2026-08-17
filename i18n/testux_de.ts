@@ -373,17 +373,17 @@
     <message>
         <location filename="../src/catalog/catalogparser.cpp" line="102"/>
         <source>The catalog is not valid JSON: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste ist kein gültiges JSON: %1</translation>
     </message>
     <message>
         <location filename="../src/catalog/catalogparser.cpp" line="109"/>
         <source>The catalog contains no distro list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste enthält keine Distros.</translation>
     </message>
     <message>
         <location filename="../src/catalog/catalogparser.cpp" line="115"/>
         <source>The catalog defines no categories.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste enthält keine Kategorien.</translation>
     </message>
 </context>
 <context>
@@ -523,12 +523,12 @@
     <message>
         <location filename="../qml/DistroCard.qml" line="89"/>
         <source>Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistroCard.qml" line="94"/>
         <source>Live session</source>
-        <translation type="unfinished"></translation>
+        <translation>Live-System</translation>
     </message>
 </context>
 <context>
