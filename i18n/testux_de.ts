@@ -360,12 +360,12 @@
     <message>
         <location filename="../src/catalog/catalog.cpp" line="110"/>
         <source>Could not update the catalog: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste konnte nicht aktualisiert werden: %1</translation>
     </message>
     <message>
         <location filename="../src/catalog/catalog.cpp" line="126"/>
         <source>The catalog lists no usable distros.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Distro-Liste enthält keine nutzbaren Distros.</translation>
     </message>
 </context>
 <context>
