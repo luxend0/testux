@@ -827,7 +827,7 @@
         <location filename="../qml/Format.qml" line="14"/>
         <location filename="../qml/Format.qml" line="20"/>
         <source>%1 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 GB</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="15"/>
@@ -838,17 +838,17 @@
     <message>
         <location filename="../qml/Format.qml" line="25"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="25"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="34"/>
         <source>%1 desktop, independent</source>
-        <translation type="unfinished"></translation>
+        <translation>%1-Desktop, eigenständig</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="35"/>
@@ -858,17 +858,17 @@
     <message>
         <location filename="../qml/Format.qml" line="39"/>
         <source>Independent</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenständig</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="43"/>
         <source>Rolling release</source>
-        <translation type="unfinished"></translation>
+        <translation>Rolling Release</translation>
     </message>
     <message>
         <location filename="../qml/Format.qml" line="43"/>
         <source>Fixed releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Feste Versionen</translation>
     </message>
 </context>
 <context>
