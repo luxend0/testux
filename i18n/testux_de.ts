@@ -391,12 +391,12 @@
     <message>
         <location filename="../qml/ChecklistPanel.qml" line="40"/>
         <source>Things to try</source>
-        <translation type="unfinished"></translation>
+        <translation>Zum Ausprobieren</translation>
     </message>
     <message>
         <location filename="../qml/ChecklistPanel.qml" line="45"/>
         <source>%1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 von %2</translation>
     </message>
 </context>
 <context>
@@ -1180,32 +1180,32 @@
     <message>
         <location filename="../qml/SessionView.qml" line="39"/>
         <source>Shutting down %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 wird heruntergefahren</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="41"/>
         <source>%1 is running in its own window</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 läuft in einem eigenen Fenster</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="42"/>
         <source>Starting %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 wird gestartet</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="49"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="64"/>
         <source>Uses %1 of %2 memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutzt %1 von %2 Arbeitsspeicher</translation>
     </message>
     <message>
         <location filename="../qml/SessionView.qml" line="76"/>
         <source>Memory use shows up once the system has booted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der RAM-Verbrauch erscheint, sobald das System hochgefahren ist.</translation>
     </message>
 </context>
 <context>
