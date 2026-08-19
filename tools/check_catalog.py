@@ -18,6 +18,10 @@ USER_AGENT = "testux-catalog-check/1 (+https://github.com/luxend0/testux)"
 
 
 def localized_errors(value, where, required=True):
+    if value is None and not required:
+        return []
+    if not isinstance(value, dict) or not str(value.get("en", "")).strip():
+        return [f"{where}: needs a non-empty 'en' text"]
     return [f"{where}.{lang}: must be a string" for lang, text in value.items()
             if not isinstance(text, str)]
 
@@ -53,6 +57,8 @@ def category_errors(categories):
 
 def listed_categories(catalog):
     categories = catalog.get("categories")
+    if not isinstance(categories, list):
+        return set()
     return {c.get("id") for c in categories if isinstance(c, dict)}
 
 
@@ -123,6 +129,8 @@ def request(url, method="GET", headers=None):
         except urllib.error.HTTPError:
             raise  # a real answer from the server, retrying will not change it
         except (urllib.error.URLError, OSError):
+            if attempt == ATTEMPTS:
+                raise
             time.sleep(2 * attempt)
 
 
