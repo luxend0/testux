@@ -505,6 +505,35 @@
       "checklist": []
     },
     {
+      "id": "debian-gnome",
+      "name": "Debian",
+      "edition": "GNOME",
+      "version": "13.6",
+      "category": "other",
+      "summary": {
+        "en": "Rock solid and community run, the base that Ubuntu and Mint build on.",
+        "de": "Grundsolide und von der Community getragen, die Basis, auf der Ubuntu und Mint aufbauen."
+      },
+      "description": {
+        "en": "Debian is one of the oldest distros and is run by volunteers, not a company. It focuses on stability, so software versions are a bit older but very well tested. This live image comes with the GNOME desktop and includes firmware for most Wi-Fi chips.",
+        "de": "Debian ist eine der ältesten Distros und wird von Freiwilligen getragen, nicht von einer Firma. Der Fokus liegt auf Stabilität, deshalb sind die Programmversionen etwas älter, aber sehr gut getestet. Dieses Live-Image kommt mit dem GNOME-Desktop und enthält Firmware für die meisten WLAN-Chips."
+      },
+      "website": "https://www.debian.org",
+      "color": "#d70a53",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-kde.iso",
+        "sha256Url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS",
+        "size": 4186112000
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
