@@ -502,7 +502,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "nobara-welcome",
+          "title": {
+            "en": "Open Nobara Welcome",
+            "de": "Nobara Welcome öffnen"
+          },
+          "detail": {
+            "en": "The welcome app installs drivers, codecs and launchers like Steam, Lutris or Heroic with one click each.",
+            "de": "Die Willkommens-App installiert Treiber, Codecs und Launcher wie Steam, Lutris oder Heroic mit jeweils einem Klick."
+          }
+        }
+      ]
     },
     {
       "id": "endeavouros",
