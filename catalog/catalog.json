@@ -505,6 +505,71 @@
       "checklist": []
     },
     {
+      "id": "endeavouros",
+      "name": "EndeavourOS",
+      "edition": "Titan Nova",
+      "version": "2026-08-15",
+      "category": "other",
+      "summary": {
+        "en": "Arch Linux with a friendly installer and a very helpful community.",
+        "de": "Arch Linux mit einem freundlichen Installer und einer sehr hilfsbereiten Community."
+      },
+      "description": {
+        "en": "EndeavourOS gives you plain Arch Linux without the manual setup."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start EndeavourOS on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um EndeavourOS direkt auf dem PC zu starten."
+      },
+      "website": "https://endeavouros.com",
+      "color": "#7f3fbf",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://mirror.moson.org/endeavouros/iso/EndeavourOS_Titan-Nova-2026.08.15.iso",
+        "sha256": "0487f46fe29e0ab2ed153ba874568cc542a0507fb6029f29ad552b36ba447393",
+        "size": 3898638336
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
+      "id": "opensuse-tumbleweed",
+      "name": "openSUSE Tumbleweed",
+      "edition": "KDE Live",
+      "version": "Current",
+      "category": "other",
+      "summary": {
+        "en": "Always up to date, with every snapshot tested by an automated test system.",
+        "de": "Immer aktuell, jeder Snapshot wird vorher von einem automatischen Testsystem geprüft."
+      },
+      "description": {
+        "en": "Tumbleweed delivers new software continuously, but every snapshot first goes through openQA, openSUSE's automated testing. YaST and the system snapshots let you go back if an update causes trouble. This live image runs KDE Plasma.",
+        "de": "Tumbleweed liefert laufend neue Software, aber jeder Snapshot läuft vorher durch openQA, das automatische Testsystem von openSUSE. Mit YaST und System-Snapshots gehst du zurück, falls ein Update Probleme macht. Dieses Live-Image läuft mit KDE Plasma."
+      },
+      "notes": {
+        "en": "Testux always downloads the latest snapshot, so the version can change between two downloads.",
+        "de": "Testux lädt immer den neuesten Snapshot, die Version kann sich also zwischen zwei Downloads ändern."
+      },
+      "website": "https://get.opensuse.org/tumbleweed/",
+      "color": "#73ba25",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso",
+        "sha256Url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256",
+        "size": 1276409856
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "debian-gnome",
       "name": "Debian",
       "edition": "GNOME",
