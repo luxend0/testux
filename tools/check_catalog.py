@@ -164,6 +164,7 @@ def find_sha256(listing, file_name):
     for sha256, name in entries:
         if name is not None and name.removeprefix("./") == file_name:
             return sha256
+    # A bare hash, or a "current" link whose listing names the dated file it points to.
     return entries[0][0] if len(entries) == 1 else ""
 
 
