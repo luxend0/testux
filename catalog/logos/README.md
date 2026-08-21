@@ -24,4 +24,6 @@ Other changes are listed per file.
 | nobara.svg | [Nobara-Project/nobara-core-packages](https://github.com/Nobara-Project/nobara-core-packages/blob/HEAD/nobara-logos/icons/hicolor/scalable/apps/nobara-logo-icon.svg) | No license stated for the mark | Invert filters removed, filled with the blue of the nobaraproject.org icon (#3b3fc4) |
 | bazzite.svg | [Commons: Bazzite Logo](https://commons.wikimedia.org/wiki/File:Bazzite_Logo.svg) | CC BY-SA 4.0 | |
 | debian-gnome.svg | [Commons: Openlogo-debianV2](https://commons.wikimedia.org/wiki/File:Openlogo-debianV2.svg) | Public domain on Commons; Debian publishes the Open Use Logo under LGPLv3+ or CC BY-SA 3.0 | |
+| opensuse-tumbleweed.svg | [Commons: OpenSUSE Button](https://commons.wikimedia.org/wiki/File:OpenSUSE_Button.svg) | CC BY-SA 3.0 | |
+| endeavouros.svg | [Commons: EndeavourOS Logo](https://commons.wikimedia.org/wiki/File:EndeavourOS_Logo.svg) | GPLv3 | Wordmark removed, mark only |
 | manjaro-kde.svg | [Commons: Icon manjaro rounded 2022](https://commons.wikimedia.org/wiki/File:Icon_manjaro_rounded_2022.svg) | Public domain | |
