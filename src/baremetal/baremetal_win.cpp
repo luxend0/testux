@@ -132,5 +132,11 @@ bool BareMetalPlatform::rebootNow(QString *error)
 
 void BareMetalPlatform::setLaunchAfterReboot(bool enabled)
 {
-    // TODO
+    QSettings runOnce(RunOnceKey, QSettings::NativeFormat);
+    if (enabled) {
+        const QString exe = QDir::toNativeSeparators(QCoreApplication::applicationFilePath());
+        runOnce.setValue(RunOnceValue, quoteArgument(exe) + " --post-boot");
+    } else {
+        runOnce.remove(RunOnceValue);
+    }
 }
