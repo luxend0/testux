@@ -41,6 +41,14 @@ QString quoteArgument(const QString &argument)
     return quoted;
 }
 
+QString commandLine(const QStringList &arguments)
+{
+    QStringList quoted;
+    for (const QString &argument : arguments)
+        quoted << quoteArgument(argument);
+    return quoted.join(' ');
+}
+
 // Full path, so a powershell.exe earlier in PATH is never picked up with admin rights.
 std::wstring powerShellPath()
 {
@@ -120,4 +128,9 @@ bool BareMetalPlatform::rebootNow(QString *error)
     *error = QCoreApplication::translate("BareMetal",
                                          "Windows refused to restart. Please restart manually.");
     return false;
+}
+
+void BareMetalPlatform::setLaunchAfterReboot(bool enabled)
+{
+    // TODO
 }
