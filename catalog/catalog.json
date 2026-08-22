@@ -435,7 +435,30 @@
       "liveSession": false,
       "nvidiaReady": false,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "bazzite-install",
+          "title": {
+            "en": "Install to the test disk first",
+            "de": "Zuerst auf die Testplatte installieren"
+          },
+          "detail": {
+            "en": "Start Bazzite with the test disk and run the installer. Everything else on this list works in the installed system.",
+            "de": "Starte Bazzite mit der Testplatte und führe den Installer aus. Alles andere auf dieser Liste klappt dann im installierten System."
+          }
+        },
+        {
+          "id": "bazzite-gamemode",
+          "title": {
+            "en": "Switch to Game Mode",
+            "de": "In den Spielmodus wechseln"
+          },
+          "detail": {
+            "en": "Use the Return to Gaming Mode icon on the desktop to get Steam's full screen interface, made for controllers.",
+            "de": "Über das Symbol Return to Gaming Mode auf dem Desktop kommst du in die Vollbild-Oberfläche von Steam, gemacht für Controller."
+          }
+        }
+      ]
     },
     {
       "id": "cachyos",
