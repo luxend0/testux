@@ -13,6 +13,22 @@ AppDialog {
     title: BareMetal.postBoot ? qsTr("Welcome back") : qsTr("Testux boot files found")
     closePolicy: working ? Popup.NoAutoClose : Popup.CloseOnEscape
 
+    Connections {
+        target: BareMetal
+
+        function onStateChanged() {
+            if (dialog.cleaning && BareMetal.state === BareMetal.Idle && !BareMetal.pending)
+                dialog.close()
+        }
+    }
+
+    BodyText {
+        text: BareMetal.postBoot
+              ? qsTr("Hope you enjoyed the test drive. Testux can now remove the temporary boot files from your drive.")
+              : qsTr("The temporary boot files from an earlier test are still on your drive. Testux can remove them now.")
+        Layout.fillWidth: true
+    }
+
     AppCheckBox {
         id: reclaim
         checked: true
