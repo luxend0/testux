@@ -6,6 +6,8 @@ PageScroll {
 
     readonly property string repositoryUrl: "https://github.com/luxend0/testux"
 
+    maximumContentWidth: 820
+
     PageHeader {
         title: qsTr("Settings")
     }
@@ -39,6 +41,43 @@ PageScroll {
                     text: qsTr("Delete all ISOs")
                     enabled: IsoLibrary.usedBytes > 0
                     onClicked: confirmRemoval.open()
+                }
+            }
+        }
+    }
+
+    Panel {
+        Layout.fillWidth: true
+
+        ColumnLayout {
+            anchors.fill: parent
+            spacing: Theme.gapM
+
+            Heading {
+                text: qsTr("About Testux")
+                Layout.fillWidth: true
+            }
+
+            BodyText {
+                text: qsTr("Version %1. Testux is free software under the GNU General Public License version 3.").arg(Qt.application.version)
+                muted: true
+                Layout.fillWidth: true
+            }
+
+            RowLayout {
+                spacing: Theme.gapS
+                Layout.leftMargin: -Theme.gapM
+
+                AppButton {
+                    kind: "quiet"
+                    text: qsTr("Source code")
+                    onClicked: Qt.openUrlExternally(page.repositoryUrl)
+                }
+
+                AppButton {
+                    kind: "quiet"
+                    text: qsTr("Report a prbolem")
+                    onClicked: Qt.openUrlExternally(page.repositoryUrl + "/issues")
                 }
             }
         }
