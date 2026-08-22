@@ -54,6 +54,37 @@ PageScroll {
             spacing: Theme.gapM
 
             Heading {
+                text: qsTr("Distro list")
+                Layout.fillWidth: true
+            }
+
+            RowLayout {
+                spacing: Theme.gapM
+                Layout.fillWidth: true
+
+                BodyText {
+                    text: qsTr("Distros in the list: %1. It updates by itself every time Testux starts.").arg(Catalog.distros.length)
+                    muted: true
+                    Layout.fillWidth: true
+                }
+
+                AppButton {
+                    text: Catalog.loading ? qsTr("Updating") : qsTr("Update now")
+                    enabled: !Catalog.loading
+                    onClicked: Catalog.refresh()
+                }
+            }
+        }
+    }
+
+    Panel {
+        Layout.fillWidth: true
+
+        ColumnLayout {
+            anchors.fill: parent
+            spacing: Theme.gapM
+
+            Heading {
                 text: qsTr("About Testux")
                 Layout.fillWidth: true
             }
@@ -81,5 +112,32 @@ PageScroll {
                 }
             }
         }
+    }
+
+    AppDialog {
+        id: confirmRemoval
+
+        title: qsTr("Delete all ISOs?")
+
+        BodyText {
+            text: qsTr("This frees %1. Test disks stay. You can download any ISO again later.").arg(Format.bytes(IsoLibrary.usedBytes))
+            muted: true
+            Layout.fillWidth: true
+        }
+
+        actions: [
+            AppButton {
+                text: qsTr("Cancel")
+                onClicked: confirmRemoval.reject()
+            },
+            AppButton {
+                kind: "danger"
+                text: qsTr("Delete")
+                onClicked: {
+                    IsoLibrary.removeAll()
+                    confirmRemoval.accept()
+                }
+            }
+        ]
     }
 }
