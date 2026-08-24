@@ -1,0 +1,16 @@
+name: Catalog
+
+on:
+  push:
+    paths:
+      - "catalog/**"
+      - "tools/check_catalog.py"
+      - ".github/workflows/catalog.yml"
+  pull_request:
+    paths:
+      - "catalog/**"
+      - "tools/check_catalog.py"
+      - ".github/workflows/catalog.yml"
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
