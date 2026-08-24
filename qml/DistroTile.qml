@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls.Basic
 
+// The distro's logo on a white tile. While the logo loads, or if it cannot be loaded, a tile
+// in the distro color with the name's initial stands in.
 Rectangle {
     id: tile
 
