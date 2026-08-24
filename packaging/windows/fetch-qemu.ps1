@@ -97,6 +97,14 @@ foreach ($dir in $ShareDirs) {
     Copy-Item -Recurse (Join-Path $sourceShare $dir) $destinationDir
 }
 
+# QEMU is GPL-2.0: say where the matching source and build scripts are.
+@"
+This folder holds QEMU 11.1.0 for Windows, built by Stefan Weil ($InstallerUrl),
+trimmed to what Testux needs. QEMU is licensed under the GPL-2.0, see COPYING.
+Source code: https://download.qemu.org/qemu-11.1.0.tar.xz
+Build scripts and sources of this build: https://qemu.weilnetz.de/
+"@ | Set-Content -Encoding ascii (Join-Path $target 'README.txt')
+
 $bytes = (Get-ChildItem $target -Recurse -File | Measure-Object Length -Sum).Sum
 Write-Host ('QEMU {0} in {1}: {2:N0} MB' -f
     (Get-Content (Join-Path $unpacked 'VERSION')).Trim(), $target, ($bytes / 1MB))
