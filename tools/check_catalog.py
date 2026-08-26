@@ -97,6 +97,10 @@ def distro_errors(distro, category_ids):
     for key in ("secureBoot", "liveSession", "nvidiaReady"):
         if not isinstance(distro.get(key), bool):
             errors.append(f"{where}: '{key}' must be true or false")
+    if not isinstance(distro.get("bareMetal", True), bool):
+        errors.append(f"{where}: 'bareMetal' must be true or false when present")
+    elif distro.get("bareMetal") is False and not distro.get("notes"):
+        errors.append(f"{where}: 'bareMetal': false needs notes explaining why")
     if not isinstance(distro.get("minRamMb"), int) or distro["minRamMb"] <= 0:
         errors.append(f"{where}: minRamMb must be a positive integer")
 

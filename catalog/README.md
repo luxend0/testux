@@ -44,6 +44,7 @@ built into the binary is only the offline fallback.
       "secureBoot": true,              // boots with Secure Boot enabled
       "liveSession": true,             // false = installer only, no desktop to try
       "nvidiaReady": true,             // proprietary NVIDIA driver on the ISO or offered
+      "bareMetal": true,               // optional, false = cannot boot from the hard drive
       "minRamMb": 4096,
       "checklist": []                  // optional extras, same shape as above
     }
@@ -59,6 +60,13 @@ different file but holds exactly one entry, that entry is used: "current" links 
 KDE neon's and openSUSE Tumbleweed's publish a listing that names the dated file the link
 points to. Every text field that users read is localized; `en` is required, other
 languages fall back to it.
+
+Bare-metal boot copies the ISO contents to a FAT32 partition and starts
+`\EFI\BOOT\BOOTX64.EFI` from it. Set `"bareMetal": false` when that cannot work and say
+why in `notes` (the readiness check shows them): a file of 4 GiB or more, a boot loader that
+only exists inside the El Torito image, or a system that only boots from removable media.
+`tools/iso_large_files.py` finds large files through HTTP range requests without
+downloading the image.
 
 `tools/check_catalog.py` verifies every URL and checksum listing. CI runs it weekly and on
 every change to this directory.

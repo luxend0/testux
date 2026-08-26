@@ -368,6 +368,7 @@
       "secureBoot": true,
       "liveSession": true,
       "nvidiaReady": true,
+      "bareMetal": false,
       "minRamMb": 4096
     },
     {
@@ -524,6 +525,7 @@
       "secureBoot": false,
       "liveSession": true,
       "nvidiaReady": true,
+      "bareMetal": false,
       "minRamMb": 4096,
       "checklist": [
         {

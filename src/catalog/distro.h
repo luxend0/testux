@@ -48,6 +48,7 @@ struct Distro
     Q_PROPERTY(bool secureBoot MEMBER secureBoot)
     Q_PROPERTY(bool liveSession MEMBER liveSession)
     Q_PROPERTY(bool nvidiaReady MEMBER nvidiaReady)
+    Q_PROPERTY(bool bareMetal MEMBER bareMetal)
     Q_PROPERTY(int minRamMb MEMBER minRamMb)
     Q_PROPERTY(QList<ChecklistItem> checklist MEMBER checklist)
 
@@ -73,6 +74,7 @@ public:
     bool secureBoot = false;  // boots with Secure Boot on (signed shim)
     bool liveSession = true;  // false = the ISO only runs an installer
     bool nvidiaReady = false; // ISO ships or offers the proprietary NVIDIA driver
+    bool bareMetal = true;    // false = cannot start from a FAT32 partition, reason in notes
     int minRamMb = 2048;
     QList<ChecklistItem> checklist; // distro specific extras on top of the shared list
 

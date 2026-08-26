@@ -78,6 +78,19 @@ public:
                           "partition to GPT disks. Try the distro in a window instead."));
     }
 
+    static CheckResult bootMedium(const Distro &distro)
+    {
+        if (distro.bareMetal)
+            return ok("baremetal", tr("Can start from the hard drive"));
+        // The catalog notes say why (a file over 4 GB, no copyable UEFI loader, USB only)
+        // and what to do instead; the generic advice is only for entries without notes.
+        return blocker("baremetal", tr("This ISO cannot start from the hard drive"),
+                       !distro.notes.isEmpty()
+                           ? distro.notes
+                           : tr("Try %1 in a window instead, or put it on a USB stick.")
+                                 .arg(displayName(distro)));
+    }
+
     static CheckResult secureBoot(const HardwareReport &hw, const Distro &distro)
     {
         if (!hw.secureBoot)
@@ -197,6 +210,7 @@ QList<CheckResult> evaluate(const HardwareReport &hardware, const Distro &distro
     return {
         Checks::firmware(hardware),
         Checks::partitionStyle(hardware),
+        Checks::bootMedium(distro),
         Checks::secureBoot(hardware, distro),
         Checks::space(hardware, requiredBytes(distro, linuxSpaceGb)),
         Checks::bitLocker(hardware),

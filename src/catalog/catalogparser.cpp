@@ -68,6 +68,7 @@ std::optional<Distro> parseDistro(const QJsonObject &object, const QString &lang
     distro.secureBoot = object.value(u"secureBoot").toBool();
     distro.liveSession = object.value(u"liveSession").toBool(true);
     distro.nvidiaReady = object.value(u"nvidiaReady").toBool();
+    distro.bareMetal = object.value(u"bareMetal").toBool(true);
     distro.minRamMb = object.value(u"minRamMb").toInt(distro.minRamMb);
     distro.checklist = parseChecklist(object.value(u"checklist"), language);
 
