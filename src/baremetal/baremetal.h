@@ -6,6 +6,8 @@
 
 #include <functional>
 
+class QTimer;
+
 // Boots a live ISO on this PC without a USB stick (Windows, UEFI, GPT only).
 //
 // prepare() runs scripts/prepare-boot.ps1 elevated. The script shrinks C:, creates a FAT32
@@ -83,6 +85,12 @@ namespace BareMetalPlatform {
 
 bool supported();  // Windows booted in UEFI mode
 QString dataDir(); // %ProgramData%\Testux, "" where unsupported
+
+// Starts the script in an elevated, hidden powershell.exe (UAC prompt) without waiting.
+// `finished` is called with the exit code on `context`'s thread once the script ends.
+// Returns false and sets `error` if the user declined the prompt or nothing started.
+bool runElevatedScript(const QString &scriptPath, const QStringList &arguments, QObject *context,
+                       std::function<void(int exitCode)> finished, QString *error);
 
 bool rebootNow(QString *error);
 
