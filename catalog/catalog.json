@@ -205,7 +205,7 @@
       "id": "ubuntu",
       "name": "Ubuntu",
       "edition": "Desktop",
-      "version": "26.04 LTS",
+      "version": "26.04.1 LTS",
       "category": "beginner",
       "summary": {
         "en": "The best-known Linux, with five years of updates for every LTS release.",
@@ -221,9 +221,9 @@
       "base": "Debian",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso",
+        "url": "https://releases.ubuntu.com/26.04/ubuntu-26.04.1-desktop-amd64.iso",
         "sha256Url": "https://releases.ubuntu.com/26.04/SHA256SUMS",
-        "size": 6518974464
+        "size": 6482409472
       },
       "secureBoot": true,
       "liveSession": true,
@@ -341,7 +341,7 @@
     {
       "id": "kubuntu",
       "name": "Kubuntu",
-      "version": "26.04 LTS",
+      "version": "26.04.1 LTS",
       "category": "kde",
       "summary": {
         "en": "Ubuntu's stability with the KDE Plasma desktop on top.",
@@ -361,9 +361,9 @@
       "base": "Ubuntu",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso",
+        "url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04.1-desktop-amd64.iso",
         "sha256Url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/SHA256SUMS",
-        "size": 5068847104
+        "size": 5072990208
       },
       "secureBoot": true,
       "liveSession": true,
