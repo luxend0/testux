@@ -82,6 +82,8 @@ def large_files(image):
     seen, found = set(), []
     while pending:
         path, extent, size = pending.pop()
+        if extent in seen:
+            continue
         seen.add(extent)
         files, continued = [], False
         for name, child_extent, child_size, is_dir, more in records(image.read(extent * SECTOR, size)):
@@ -121,3 +123,5 @@ def main():
     return 1 if failed else 0
 
 
+if __name__ == "__main__":
+    sys.exit(main())
