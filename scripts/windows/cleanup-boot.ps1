@@ -125,6 +125,39 @@ function Expand-SystemPartition($State) {
     }
 }
 
+# Returns why TESTUX was left untouched, '' when everything was undone.
+function Invoke-Cleanup {
+    $state = Get-Content -LiteralPath $StateFile -Raw -Encoding UTF8 | ConvertFrom-Json
+    if ($state.version -ne 1) {
+        throw "Unknown Testux boot record version $($state.version)."
+    }
+
+    Send-Step 'removeentry' 0.1
+    Remove-BootEntry $state.bootEntry
+
+    Send-Step 'removepartition' 0.4
+    $untouched = Remove-TestuxPartition $state
+    Resume-BitLocker $state
+    if ($untouched) {
+        Move-BootRecordAside
+        return "$untouched It was left untouched for safety."
+    }
+
+    if ($ReclaimSpace) {
+        Send-Step 'reclaim' 0.7
+        Expand-SystemPartition $state
+    }
+
+    Remove-Item -LiteralPath $StateFile
+    return ''
+}
+
+if ($Quiet) {
+    $untouched = Invoke-Cleanup
+    if ($untouched) { throw $untouched }
+    return
+}
+
 $exitCode = 0
 try {
     New-Item -ItemType Directory -Force -Path $DataDir | Out-Null
