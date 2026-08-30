@@ -11,6 +11,7 @@ qt_policy(SET QTP0004 NEW)
 
 qt_add_executable(testux WIN32 src/main.cpp)
 
+# Logos come and go with catalog entries, so they are picked up from the folder.
 file(GLOB distro_logos RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} CONFIGURE_DEPENDS catalog/logos/*.svg)
 
 set_source_files_properties(qml/Theme.qml qml/Format.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
