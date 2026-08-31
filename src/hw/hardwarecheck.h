@@ -5,6 +5,7 @@
 
 #include <QObject>
 
+// Runs probeHardware() on a worker thread and evaluates the report per distro.
 class HardwareCheck : public QObject
 {
     Q_OBJECT
