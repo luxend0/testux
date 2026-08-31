@@ -127,6 +127,7 @@ function Expand-SystemPartition($State) {
 
 # Returns why TESTUX was left untouched, '' when everything was undone.
 function Invoke-Cleanup {
+    if (-not (Test-Path -LiteralPath $StateFile)) { return '' }
     $state = Get-Content -LiteralPath $StateFile -Raw -Encoding UTF8 | ConvertFrom-Json
     if ($state.version -ne 1) {
         throw "Unknown Testux boot record version $($state.version)."
