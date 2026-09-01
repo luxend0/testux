@@ -12,6 +12,7 @@ namespace CatalogParser {
 
 struct Result
 {
+    QList<Category> categories; // display order
     QList<Distro> distros;
     QList<ChecklistItem> checklist; // shared checklist for every distro
     QString latestAppVersion;       // newest released Testux, "" if absent

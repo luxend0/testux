@@ -22,10 +22,21 @@ QString localized(const QJsonValue &value, const QString &language)
     return text.isEmpty() ? texts.value(u"en").toString() : text;
 }
 
-bool isKnownCategory(const QString &category)
+QList<Category> parseCategories(const QJsonValue &value, const QString &language)
 {
-    static const QSet<QString> categories{u"beginner"_s, u"kde"_s, u"gaming"_s, u"other"_s};
-    return categories.contains(category);
+    QList<Category> categories;
+    QSet<QString> seen;
+    for (const QJsonValue &entry : value.toArray()) {
+        const QJsonObject object = entry.toObject();
+        Category category;
+        category.id = object.value(u"id").toString();
+        category.title = localized(object.value(u"title"), language);
+        if (!category.id.isEmpty() && !category.title.isEmpty() && !seen.contains(category.id)) {
+            seen.insert(category.id);
+            categories.append(category);
+        }
+    }
+    return categories;
 }
 
 QList<ChecklistItem> parseChecklist(const QJsonValue &value, const QString &language)
@@ -98,16 +109,26 @@ CatalogParser::Result CatalogParser::parse(const QByteArray &json, const QString
             QCoreApplication::translate("CatalogParser", "The catalog contains no distro list.");
         return result;
     }
+    result.categories = parseCategories(root.value(u"categories"), language);
+    if (result.categories.isEmpty()) {
+        result.error =
+            QCoreApplication::translate("CatalogParser", "The catalog defines no categories.");
+        return result;
+    }
 
     const QJsonObject app = root.value(u"app").toObject();
     result.latestAppVersion = app.value(u"latest").toString();
     result.latestAppUrl = app.value(u"url").toString();
     result.checklist = parseChecklist(root.value(u"checklist"), language);
 
+    QSet<QString> categoryIds;
+    for (const Category &category : std::as_const(result.categories))
+        categoryIds.insert(category.id);
+
     QSet<QString> seen;
     for (const QJsonValue &entry : root.value(u"distros").toArray()) {
         const std::optional<Distro> distro = parseDistro(entry.toObject(), language);
-        if (distro && isKnownCategory(distro->category) && !seen.contains(distro->id)) {
+        if (distro && categoryIds.contains(distro->category) && !seen.contains(distro->id)) {
             seen.insert(distro->id);
             result.distros.append(*distro);
         }

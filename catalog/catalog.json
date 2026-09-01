@@ -1,5 +1,63 @@
 {
   "version": 1,
+  "categories": [
+    {
+      "id": "beginner",
+      "title": {
+        "en": "Beginner",
+        "de": "Einsteiger"
+      }
+    },
+    {
+      "id": "kde",
+      "title": {
+        "en": "KDE Plasma",
+        "de": "KDE Plasma"
+      }
+    },
+    {
+      "id": "gaming",
+      "title": {
+        "en": "Gaming",
+        "de": "Gaming"
+      }
+    },
+    {
+      "id": "lightweight",
+      "title": {
+        "en": "For older PCs",
+        "de": "Für ältere PCs"
+      }
+    },
+    {
+      "id": "privacy",
+      "title": {
+        "en": "Privacy & security",
+        "de": "Privatsphäre & Sicherheit"
+      }
+    },
+    {
+      "id": "creative",
+      "title": {
+        "en": "Creative & education",
+        "de": "Kreativ & Bildung"
+      }
+    },
+    {
+      "id": "advanced",
+      "title": {
+        "en": "For experienced users",
+        "de": "Für Fortgeschrittene"
+      }
+    },
+    {
+      "id": "other",
+      "title": {
+        "en": "More",
+        "de": "Weitere"
+      }
+    }
+  ],
   "checklist": [
     {
       "id": "browser",
@@ -546,7 +604,7 @@
       "name": "EndeavourOS",
       "edition": "Titan Nova",
       "version": "2026-08-15",
-      "category": "other",
+      "category": "advanced",
       "summary": {
         "en": "Arch Linux with a friendly installer and a very helpful community.",
         "de": "Arch Linux mit einem freundlichen Installer und einer sehr hilfsbereiten Community."
@@ -578,7 +636,7 @@
       "name": "openSUSE Tumbleweed",
       "edition": "KDE Live",
       "version": "Current",
-      "category": "other",
+      "category": "advanced",
       "summary": {
         "en": "Always up to date, with every snapshot tested by an automated test system.",
         "de": "Immer aktuell, jeder Snapshot wird vorher von einem automatischen Testsystem geprüft."

@@ -128,6 +128,7 @@ bool Catalog::apply(const QByteArray &json)
         return false;
     }
 
+    m_categories = std::move(result.categories);
     m_distros = std::move(result.distros);
     for (Distro &distro : m_distros)
         distro.logo = logoUrl(distro.id);

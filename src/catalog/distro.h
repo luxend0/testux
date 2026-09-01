@@ -22,6 +22,21 @@ public:
     bool operator==(const ChecklistItem &) const = default;
 };
 
+// A catalog section such as "Beginner", in display order, title resolved to the UI language.
+struct Category
+{
+    Q_GADGET
+    QML_VALUE_TYPE(category)
+    Q_PROPERTY(QString id MEMBER id)
+    Q_PROPERTY(QString title MEMBER title)
+
+public:
+    QString id;
+    QString title;
+
+    bool operator==(const Category &) const = default;
+};
+
 // A catalog entry. Text fields are already resolved to the UI language.
 struct Distro
 {
