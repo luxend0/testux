@@ -15,6 +15,7 @@ class Catalog : public QObject
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
+    Q_PROPERTY(QList<Category> categories READ categories NOTIFY changed)
     Q_PROPERTY(QList<Distro> distros READ distros NOTIFY changed)
     Q_PROPERTY(QList<ChecklistItem> checklist READ checklist NOTIFY changed)
     Q_PROPERTY(QString latestAppVersion READ latestAppVersion NOTIFY changed)
@@ -28,6 +29,7 @@ public:
 
     explicit Catalog(QObject *parent = nullptr);
 
+    QList<Category> categories() const { return m_categories; }
     QList<Distro> distros() const { return m_distros; }
     QList<ChecklistItem> checklist() const { return m_checklist; }
     QString latestAppVersion() const { return m_latestAppVersion; }
@@ -47,6 +49,7 @@ private:
     void setLoading(bool loading);
 
     QNetworkAccessManager *m_network;
+    QList<Category> m_categories;
     QList<Distro> m_distros;
     QList<ChecklistItem> m_checklist;
     QString m_latestAppVersion;
