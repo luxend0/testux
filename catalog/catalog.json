@@ -610,7 +610,8 @@
         "de": "Arch Linux mit einem freundlichen Installer und einer sehr hilfsbereiten Community."
       },
       "description": {
-        "en": "EndeavourOS gives you plain Arch Linux without the manual setup."
+        "en": "EndeavourOS gives you plain Arch Linux without the manual setup. The live system starts with KDE Plasma and the installer lets you pick other desktops too. You get new software quickly, and the Arch Wiki answers almost every question.",
+        "de": "EndeavourOS gibt dir ein schlichtes Arch Linux ohne die Handarbeit bei der Einrichtung. Das Live-System startet mit KDE Plasma, im Installer kannst du auch andere Desktops wählen. Neue Software kommt schnell, und das Arch Wiki beantwortet fast jede Frage."
       },
       "notes": {
         "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start EndeavourOS on this PC.",
