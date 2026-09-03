@@ -4,6 +4,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
 
+// One line of the comparison table. The header row has no distro and is not clickable.
 AbstractButton {
     id: row
 
