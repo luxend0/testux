@@ -16,6 +16,7 @@ private slots:
     void resolvesLanguageWithEnglishFallback();
     void acceptsPlainOrLocalizedLabels();
     void skipsUnusableEntries();
+    void bareMetalDefaultsToTrue();
     void parsesCategoriesInOrder();
     void requiresCategories();
     void reportsBrokenJson();
@@ -97,6 +98,18 @@ void TestCatalogParser::skipsUnusableEntries()
     QCOMPARE(result.distros.size(), 2);
     QCOMPARE(result.distros.at(0).id, u"good"_s);
     QCOMPARE(result.distros.at(1).id, u"also-good"_s);
+}
+
+void TestCatalogParser::bareMetalDefaultsToTrue()
+{
+    QJsonObject tooBig = entry(u"too-big"_s);
+    tooBig[u"bareMetal"_s] = false;
+
+    const QList<Distro> distros =
+        CatalogParser::parse(catalogWith({entry(u"plain"_s), tooBig}), u"en"_s).distros;
+    QCOMPARE(distros.size(), 2);
+    QVERIFY(distros.at(0).bareMetal);
+    QVERIFY(!distros.at(1).bareMetal);
 }
 
 void TestCatalogParser::parsesCategoriesInOrder()

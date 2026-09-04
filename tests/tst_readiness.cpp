@@ -107,6 +107,17 @@ private slots:
         QVERIFY(Readiness::hasBlocker(results));
     }
 
+    void isoTooBigForFat32Blocks()
+    {
+        Distro distro = signedDistro();
+        QCOMPARE(levelOf(Readiness::evaluate(readyWindowsPc(), distro, 20), "baremetal"), "ok");
+
+        distro.bareMetal = false;
+        const auto results = Readiness::evaluate(readyWindowsPc(), distro, 20);
+        QCOMPARE(levelOf(results, "baremetal"), "blocker");
+        QVERIFY(Readiness::hasBlocker(results));
+    }
+
     void spaceBlocksBelowRequirement()
     {
         HardwareReport hw = readyWindowsPc();
