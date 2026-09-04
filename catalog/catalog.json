@@ -600,6 +600,67 @@
       ]
     },
     {
+      "id": "ubuntu-mate",
+      "name": "Ubuntu MATE",
+      "version": "26.10",
+      "category": "lightweight",
+      "summary": {
+        "en": "A calm, traditional desktop that runs well on modest hardware.",
+        "de": "Ein ruhiger, klassischer Desktop, der auch auf bescheidener Hardware gut läuft."
+      },
+      "description": {
+        "en": "Ubuntu MATE keeps the traditional desktop with panels and menus that many people know from older systems. The MATE Tweak tool can switch the layout to look like Windows with one click. It is light on resources and easy to understand.",
+        "de": "Ubuntu MATE behält den klassischen Desktop mit Leisten und Menüs, den viele von älteren Systemen kennen. Mit MATE Tweak stellst du das Layout mit einem Klick auf eine Windows-ähnliche Ansicht um. Es ist sparsam und leicht zu verstehen."
+      },
+      "notes": {
+        "en": "Ubuntu MATE skipped the 26.04 LTS release. This is 26.10, a regular release with 9 months of updates, so plan to upgrade to the next version.",
+        "de": "Ubuntu MATE hat die Version 26.04 LTS ausgelassen. Das hier ist 26.10, eine normale Version mit 9 Monaten Updates, du solltest also später auf die nächste Version aktualisieren."
+      },
+      "website": "https://ubuntu-mate.org",
+      "color": "#87a556",
+      "desktop": "MATE",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/ubuntu-mate-26.10-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/SHA256SUMS",
+        "size": 4361039872
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048,
+      "checklist": []
+    },
+    {
+      "id": "ubuntu-studio",
+      "name": "Ubuntu Studio",
+      "version": "26.04.1 LTS",
+      "category": "creative",
+      "summary": {
+        "en": "Ready for music, video, photos and graphics right after install.",
+        "de": "Direkt nach der Installation bereit für Musik, Video, Fotos und Grafik."
+      },
+      "description": {
+        "en": "Ubuntu Studio is the official Ubuntu flavor for creative work."
+      },
+      "website": "https://ubuntustudio.org",
+      "color": "#009bf9",
+      "desktop": "KDE Plasma",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/SHA256SUMS",
+        "size": 7127195648
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "endeavouros",
       "name": "EndeavourOS",
       "edition": "Titan Nova",
@@ -664,6 +725,39 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048
+    },
+    {
+      "id": "rhino-linux",
+      "name": "Rhino Linux",
+      "version": "2026.1",
+      "category": "advanced",
+      "summary": {
+        "en": "Ubuntu as a rolling release, always on the newest packages.",
+        "de": "Ubuntu als Rolling Release, immer mit den neuesten Paketen."
+      },
+      "description": {
+        "en": "Rhino Linux follows Ubuntu's development branch, so it updates continuously instead of every few years. Its Unicorn desktop is based on Xfce, and the rhino-pkg tool installs software from apt, Flatpak, Snap and Pacstall with one command. It is meant for people who like to tinker.",
+        "de": "Rhino Linux folgt dem Entwicklungszweig von Ubuntu und wird deshalb laufend aktualisiert statt alle paar Jahre. Der Unicorn-Desktop basiert auf Xfce, und das Werkzeug rhino-pkg installiert Software aus apt, Flatpak, Snap und Pacstall mit einem Befehl. Es ist für Leute gedacht, die gern basteln."
+      },
+      "notes": {
+        "en": "Rhino Linux cannot start straight from the hard drive: its UEFI boot loader only sits inside the ISO's boot image, not in its regular files. Try it in the window or use a USB stick. Secure Boot is not confirmed to work.",
+        "de": "Rhino Linux lässt sich nicht direkt von der Festplatte starten: Sein UEFI-Bootloader steckt nur im Boot-Image der ISO, nicht in den normalen Dateien. Probier es im Fenster aus oder nimm einen USB-Stick. Ob Secure Boot funktioniert, ist nicht bestätigt."
+      },
+      "website": "https://rhinolinux.org",
+      "color": "#8b00e7",
+      "desktop": "Xfce",
+      "base": "Ubuntu",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/rhino-linux-builder/2026.1/Rhino-Linux-2026.1-amd64.iso",
+        "sha256Url": "https://downloads.sourceforge.net/project/rhino-linux-builder/2026.1/Rhino-Linux-2026.1-amd64.iso.sha256",
+        "size": 2916384768
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
     },
     {
       "id": "debian-gnome",
@@ -739,6 +833,34 @@
           }
         }
       ]
+    },
+    {
+      "id": "ubuntu-budgie",
+      "name": "Ubuntu Budgie",
+      "version": "26.04.1 LTS",
+      "category": "other",
+      "summary": {
+        "en": "A clean, modern desktop that stays out of your way.",
+        "de": "Ein aufgeräumter, moderner Desktop, der dir nicht im Weg steht."
+      },
+      "description": {
+        "en": "Ubuntu Budgie pairs Ubuntu's long-term support with the Budgie desktop: a dock at the bottom, a panel at the top and a side panel for notifications and widgets. It feels tidy and modern without needing much setup.",
+        "de": "Ubuntu Budgie verbindet die Langzeit-Unterstützung von Ubuntu mit dem Budgie-Desktop: ein Dock unten, eine Leiste oben und eine Seitenleiste für Benachrichtigungen und Widgets. Es wirkt aufgeräumt und modern, ohne dass du viel einstellen musst."
+      },
+      "website": "https://ubuntubudgie.org",
+      "color": "#404552",
+      "desktop": "Budgie",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/SHA256SUMS",
+        "size": 4127838208
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
     },
     {
       "id": "elementary",
