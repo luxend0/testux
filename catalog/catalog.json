@@ -666,6 +666,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "rhino-linux",
+      "name": "Rhino Linux",
+      "version": "2026.1",
+      "category": "advanced",
+      "summary": {
+        "en": "Ubuntu as a rolling release, always on the newest packages.",
+        "de": "Ubuntu als Rolling Release, immer mit den neuesten Paketen."
+      },
+      "description": {
+        "en": "Rhino Linux follows Ubuntu's development branch, so it updates continuously instead of every few years. Its Unicorn desktop is based on Xfce, and the rhino-pkg tool installs software from apt, Flatpak, Snap and Pacstall with one command. It is meant for people who like to tinker.",
+        "de": "Rhino Linux folgt dem Entwicklungszweig von Ubuntu und wird deshalb laufend aktualisiert statt alle paar Jahre. Der Unicorn-Desktop basiert auf Xfce, und das Werkzeug rhino-pkg installiert Software aus apt, Flatpak, Snap und Pacstall mit einem Befehl. Es ist für Leute gedacht, die gern basteln."
+      },
+      "notes": {
+        "en": "Rhino Linux cannot start straight from the hard drive: its UEFI boot loader only sits inside the ISO's boot image, not in its regular files. Try it in the window or use a USB stick. Secure Boot is not confirmed to work.",
+        "de": "Rhino Linux lässt sich nicht direkt von der Festplatte starten: Sein UEFI-Bootloader steckt nur im Boot-Image der ISO, nicht in den normalen Dateien. Probier es im Fenster aus oder nimm einen USB-Stick. Ob Secure Boot funktioniert, ist nicht bestätigt."
+      },
+      "website": "https://rhinolinux.org",
+      "color": "#8b00e7",
+      "desktop": "Xfce",
+      "base": "Ubuntu",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/rhino-linux-builder/2026.1/Rhino-Linux-2026.1-amd64.iso",
+        "sha256Url": "https://downloads.sourceforge.net/project/rhino-linux-builder/2026.1/Rhino-Linux-2026.1-amd64.iso.sha256",
+        "size": 2916384768
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "debian-gnome",
       "name": "Debian",
       "edition": "GNOME",
@@ -739,6 +772,34 @@
           }
         }
       ]
+    },
+    {
+      "id": "ubuntu-budgie",
+      "name": "Ubuntu Budgie",
+      "version": "26.04.1 LTS",
+      "category": "other",
+      "summary": {
+        "en": "A clean, modern desktop that stays out of your way.",
+        "de": "Ein aufgeräumter, moderner Desktop, der dir nicht im Weg steht."
+      },
+      "description": {
+        "en": "Ubuntu Budgie pairs Ubuntu's long-term support with the Budgie desktop: a dock at the bottom, a panel at the top and a side panel for notifications and widgets. It feels tidy and modern without needing much setup.",
+        "de": "Ubuntu Budgie verbindet die Langzeit-Unterstützung von Ubuntu mit dem Budgie-Desktop: ein Dock unten, eine Leiste oben und eine Seitenleiste für Benachrichtigungen und Widgets. Es wirkt aufgeräumt und modern, ohne dass du viel einstellen musst."
+      },
+      "website": "https://ubuntubudgie.org",
+      "color": "#404552",
+      "desktop": "Budgie",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/SHA256SUMS",
+        "size": 4127838208
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
     },
     {
       "id": "elementary",
