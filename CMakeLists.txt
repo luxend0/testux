@@ -43,9 +43,11 @@ qt_add_qml_module(testux
         qml/BootPanel.qml
         qml/BootWizard.qml
         qml/ChecklistPanel.qml
+        qml/ChoiceMenu.qml
         qml/ComparePage.qml
         qml/CompareRow.qml
         qml/DistroCard.qml
+        qml/DistroFilter.qml
         qml/DistroPage.qml
         qml/DistrosPage.qml
         qml/DistroTile.qml
@@ -53,18 +55,22 @@ qt_add_qml_module(testux
         qml/FactList.qml
         qml/FadeIn.qml
         qml/FadeOut.qml
+        qml/FilterChip.qml
+        qml/FilterMenu.qml
         qml/Flag.qml
         qml/FocusRing.qml
         qml/Format.qml
         qml/HardwareListPanel.qml
         qml/Heading.qml
         qml/Main.qml
+        qml/MenuButton.qml
         qml/NavItem.qml
         qml/Notice.qml
         qml/PageHeader.qml
         qml/PageScroll.qml
         qml/Panel.qml
         qml/ReadinessList.qml
+        qml/SearchBox.qml
         qml/SegmentedControl.qml
         qml/SessionView.qml
         qml/SettingsPage.qml

@@ -400,6 +400,14 @@
     </message>
 </context>
 <context>
+    <name>ChoiceMenu</name>
+    <message>
+        <location filename="../qml/ChoiceMenu.qml" line="21"/>
+        <source>%1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ComparePage</name>
     <message>
         <location filename="../qml/ComparePage.qml" line="53"/>
@@ -819,6 +827,14 @@
         <location filename="../qml/DownloadPanel.qml" line="95"/>
         <source>Try again</source>
         <translation>Erneut versuchen</translation>
+    </message>
+</context>
+<context>
+    <name>FilterMenu</name>
+    <message>
+        <location filename="../qml/FilterMenu.qml" line="17"/>
+        <source>%1 (%2)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
