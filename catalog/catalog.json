@@ -600,6 +600,39 @@
       ]
     },
     {
+      "id": "ubuntu-mate",
+      "name": "Ubuntu MATE",
+      "version": "26.10",
+      "category": "lightweight",
+      "summary": {
+        "en": "A calm, traditional desktop that runs well on modest hardware.",
+        "de": "Ein ruhiger, klassischer Desktop, der auch auf bescheidener Hardware gut läuft."
+      },
+      "description": {
+        "en": "Ubuntu MATE keeps the traditional desktop with panels and menus that many people know from older systems. The MATE Tweak tool can switch the layout to look like Windows with one click. It is light on resources and easy to understand.",
+        "de": "Ubuntu MATE behält den klassischen Desktop mit Leisten und Menüs, den viele von älteren Systemen kennen. Mit MATE Tweak stellst du das Layout mit einem Klick auf eine Windows-ähnliche Ansicht um. Es ist sparsam und leicht zu verstehen."
+      },
+      "notes": {
+        "en": "Ubuntu MATE skipped the 26.04 LTS release. This is 26.10, a regular release with 9 months of updates, so plan to upgrade to the next version.",
+        "de": "Ubuntu MATE hat die Version 26.04 LTS ausgelassen. Das hier ist 26.10, eine normale Version mit 9 Monaten Updates, du solltest also später auf die nächste Version aktualisieren."
+      },
+      "website": "https://ubuntu-mate.org",
+      "color": "#87a556",
+      "desktop": "MATE",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/ubuntu-mate-26.10-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/SHA256SUMS",
+        "size": 4361039872
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048,
+      "checklist": []
+    },
+    {
       "id": "endeavouros",
       "name": "EndeavourOS",
       "edition": "Titan Nova",
