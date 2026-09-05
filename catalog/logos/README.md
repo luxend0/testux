@@ -29,4 +29,6 @@ Other changes are listed per file.
 | manjaro-kde.svg | [Commons: Icon manjaro rounded 2022](https://commons.wikimedia.org/wiki/File:Icon_manjaro_rounded_2022.svg) | Public domain | |
 | ubuntu-mate | [Commons: Ubuntu MATE rondel logo.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_MATE_rondel_logo.svg) | CC BY-SA 4.0; Ubuntu MATE trademark of Canonical Ltd. |
 | ubuntu-budgie | [Commons: Ubuntu Budgie No Wordmark.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_Budgie_No_Wordmark.svg) | CC BY-SA 4.0 (HEXcube, Joshua Fogg, Yuri Henrique); Ubuntu Budgie trademark of Canonical Ltd. |
+| ubuntu-studio | [Commons: Ubuntustudio v3 logo only.svg](https://commons.wikimedia.org/wiki/File:Ubuntustudio_v3_logo_only.svg) | Public domain on Commons; Ubuntu Studio trademark of Canonical Ltd. |
+| edubuntu | [Commons: Edubuntu icon.svg](https://commons.wikimedia.org/wiki/File:Edubuntu_icon.svg) | GPL; Edubuntu trademark of Canonical Ltd. |
 | rhino-linux | [rhino-linux/branding logo.svg](https://github.com/rhino-linux/branding/blob/main/logo.svg) | Official logo from the project's branding repository, no license stated; trademark of the Rhino Linux project |

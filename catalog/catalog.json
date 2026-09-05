@@ -633,6 +633,63 @@
       "checklist": []
     },
     {
+      "id": "edubuntu",
+      "name": "Edubuntu",
+      "version": "26.04.1 LTS",
+      "category": "creative",
+      "summary": {
+        "en": "Ubuntu for schools and families, with learning apps for all ages.",
+        "de": "Ubuntu für Schule und Familie, mit Lernprogrammen für jedes Alter."
+      },
+      "description": {
+        "en": "Edubuntu is the official Ubuntu flavor for education. It adds a large set of learning apps, from GCompris for young children to science and math tools for older students, and lets you choose which age groups to install. Underneath it is the regular Ubuntu desktop.",
+        "de": "Edubuntu ist die offizielle Ubuntu-Variante für Bildung. Sie bringt viele Lernprogramme mit, von GCompris für kleine Kinder bis zu Mathe- und Naturwissenschafts-Werkzeugen für Ältere, und du wählst bei der Installation die Altersgruppen aus. Darunter steckt der normale Ubuntu-Desktop."
+      },
+      "website": "https://www.edubuntu.org",
+      "color": "#a01b1b",
+      "desktop": "GNOME",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/SHA256SUMS",
+        "size": 7943991296
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 6144,
+      "checklist": []
+    },
+    {
+      "id": "ubuntu-studio",
+      "name": "Ubuntu Studio",
+      "version": "26.04.1 LTS",
+      "category": "creative",
+      "summary": {
+        "en": "Ready for music, video, photos and graphics right after install.",
+        "de": "Direkt nach der Installation bereit für Musik, Video, Fotos und Grafik."
+      },
+      "description": {
+        "en": "Ubuntu Studio is the official Ubuntu flavor for creative work."
+      },
+      "website": "https://ubuntustudio.org",
+      "color": "#009bf9",
+      "desktop": "KDE Plasma",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/SHA256SUMS",
+        "size": 7127195648
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "endeavouros",
       "name": "EndeavourOS",
       "edition": "Titan Nova",
