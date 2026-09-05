@@ -1,6 +1,7 @@
 #include "download/isolibrary.h"
 
 #include "download/checksum.h"
+#include "download/useragent.h"
 
 #include <QCryptographicHash>
 #include <QDir>
@@ -142,6 +143,7 @@ void IsoDownload::download()
 {
     QNetworkRequest request{QUrl(m_distro.isoUrl)};
     request.setTransferTimeout(TransferTimeoutMs);
+    request.setHeader(QNetworkRequest::UserAgentHeader, userAgent());
     const qint64 offset = m_part->file.size();
     if (offset > 0)
         request.setRawHeader("Range", "bytes=" + QByteArray::number(offset) + '-');
@@ -208,6 +210,7 @@ void IsoDownload::verify(const QString &actualSha256)
 
     QNetworkRequest request{QUrl(m_distro.isoSha256Url)};
     request.setTransferTimeout(TransferTimeoutMs);
+    request.setHeader(QNetworkRequest::UserAgentHeader, userAgent());
     m_reply = m_network->get(request);
     connect(m_reply, &QNetworkReply::finished, this, [this, actualSha256] {
         QNetworkReply *reply = std::exchange(m_reply, nullptr);
