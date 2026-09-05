@@ -652,32 +652,32 @@
     <message>
         <location filename="../qml/DistrosPage.qml" line="71"/>
         <source>Every distro runs in a window first, so nothing on your PC changes until you decide.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jede Distro läuft zuerst in einem Fenster. An deinem PC ändert sich nichts, bis du dich entscheidest.</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="76"/>
         <source>Testux %1 is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testux %1 ist verfügbar.</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="81"/>
         <source>Get the update</source>
-        <translation type="unfinished"></translation>
+        <translation>Update holen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="88"/>
         <source>The online list could not be loaded, showing the list built into Testux.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Online-Liste konnte nicht geladen werden, du siehst die in Testux eingebaute Liste.</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="24"/>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="30"/>
         <source>Works with Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Läuft mit Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="31"/>
@@ -687,7 +687,7 @@
     <message>
         <location filename="../qml/DistrosPage.qml" line="32"/>
         <source>NVIDIA driver included</source>
-        <translation type="unfinished"></translation>
+        <translation>NVIDIA-Treiber dabei</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="33"/>
@@ -697,78 +697,78 @@
     <message>
         <location filename="../qml/DistrosPage.qml" line="34"/>
         <source>Fixed releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Feste Versionen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="35"/>
         <source>Fits my PC</source>
-        <translation type="unfinished"></translation>
+        <translation>Passt zu meinem PC</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="99"/>
         <source>Search by name, desktop or base</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Name, Desktop oder Basis suchen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="120"/>
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="127"/>
         <source>Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Desktop</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="134"/>
         <source>Based on</source>
-        <translation type="unfinished"></translation>
+        <translation>Basiert auf</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="155"/>
         <source>More</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehr</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="168"/>
         <source>%1 of %2 distros</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 von %2 Distros</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="169"/>
         <source>%1 distros</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Distros</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="176"/>
         <location filename="../qml/DistrosPage.qml" line="234"/>
         <source>Clear filters</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter zurücksetzen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="193"/>
         <source>Loading the distro list</source>
-        <translation type="unfinished"></translation>
+        <translation>Distro-Liste wird geladen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="201"/>
         <source>No distros to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Distros zum Anzeigen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="206"/>
         <source>Try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Erneut versuchen</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="220"/>
         <source>No distro matches</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Distro passt</translation>
     </message>
     <message>
         <location filename="../qml/DistrosPage.qml" line="226"/>
         <source>Try fewer filters or another search word.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimm weniger Filter oder ein anderes Suchwort.</translation>
     </message>
 </context>
 <context>
