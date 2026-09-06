@@ -27,8 +27,10 @@ Other changes are listed per file.
 | opensuse-tumbleweed.svg | [Commons: OpenSUSE Button](https://commons.wikimedia.org/wiki/File:OpenSUSE_Button.svg) | CC BY-SA 3.0 | |
 | endeavouros.svg | [Commons: EndeavourOS Logo](https://commons.wikimedia.org/wiki/File:EndeavourOS_Logo.svg) | GPLv3 | Wordmark removed, mark only |
 | manjaro-kde.svg | [Commons: Icon manjaro rounded 2022](https://commons.wikimedia.org/wiki/File:Icon_manjaro_rounded_2022.svg) | Public domain | |
+| lubuntu | [Commons: Lubuntu logo only.svg](https://commons.wikimedia.org/wiki/File:Lubuntu_logo_only.svg) | Public domain on Commons; Lubuntu trademark of Canonical Ltd. |
 | ubuntu-mate | [Commons: Ubuntu MATE rondel logo.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_MATE_rondel_logo.svg) | CC BY-SA 4.0; Ubuntu MATE trademark of Canonical Ltd. |
 | ubuntu-budgie | [Commons: Ubuntu Budgie No Wordmark.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_Budgie_No_Wordmark.svg) | CC BY-SA 4.0 (HEXcube, Joshua Fogg, Yuri Henrique); Ubuntu Budgie trademark of Canonical Ltd. |
 | ubuntu-studio | [Commons: Ubuntustudio v3 logo only.svg](https://commons.wikimedia.org/wiki/File:Ubuntustudio_v3_logo_only.svg) | Public domain on Commons; Ubuntu Studio trademark of Canonical Ltd. |
 | edubuntu | [Commons: Edubuntu icon.svg](https://commons.wikimedia.org/wiki/File:Edubuntu_icon.svg) | GPL; Edubuntu trademark of Canonical Ltd. |
+| linuxmint-xfce | same as linuxmint-mate | CC BY 3.0 |
 | rhino-linux | [rhino-linux/branding logo.svg](https://github.com/rhino-linux/branding/blob/main/logo.svg) | Official logo from the project's branding repository, no license stated; trademark of the Rhino Linux project |

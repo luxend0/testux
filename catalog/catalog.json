@@ -629,6 +629,63 @@
       "minRamMb": 1024
     },
     {
+      "id": "linuxmint-xfce",
+      "name": "Linux Mint",
+      "edition": "Xfce",
+      "version": "22.3",
+      "category": "lightweight",
+      "summary": {
+        "en": "The lightest Linux Mint, quick on modest hardware.",
+        "de": "Das leichteste Linux Mint, flott auf bescheidener Hardware."
+      },
+      "description": {
+        "en": "Linux Mint Xfce brings Mint's friendly tools to the lightweight Xfce desktop. It is a good pick for older laptops or PCs with little memory and still looks and works like a classic Windows desktop.",
+        "de": "Linux Mint Xfce bringt die freundlichen Mint-Werkzeuge auf den leichten Xfce-Desktop. Es ist eine gute Wahl für ältere Laptops oder PCs mit wenig Arbeitsspeicher und sieht trotzdem aus und funktioniert wie ein klassischer Windows-Desktop."
+      },
+      "website": "https://linuxmint.com",
+      "color": "#87cf3e",
+      "desktop": "Xfce",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-xfce-64bit.iso",
+        "sha256Url": "https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt",
+        "size": 3033710592
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
+      "id": "lubuntu",
+      "name": "Lubuntu",
+      "version": "26.04.1 LTS",
+      "category": "lightweight",
+      "summary": {
+        "en": "The lightest official Ubuntu, made for old and low-end PCs.",
+        "de": "Das leichteste offizielle Ubuntu, gemacht für alte und schwache PCs."
+      },
+      "description": {
+        "en": "Lubuntu uses the LXQt desktop, which needs very little memory and keeps a familiar layout with a taskbar and start menu. It is a good way to give an old Windows PC a second life while keeping Ubuntu's long-term support.",
+        "de": "Lubuntu nutzt den LXQt-Desktop, der sehr wenig Arbeitsspeicher braucht und trotzdem das gewohnte Layout mit Taskleiste und Startmenü bietet. Damit bekommt ein alter Windows-PC ein zweites Leben, mit der Langzeit-Unterstützung von Ubuntu."
+      },
+      "website": "https://lubuntu.me",
+      "color": "#0068c8",
+      "desktop": "LXQt",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/SHA256SUMS",
+        "size": 3927552000
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 1024
+    },
+    {
       "id": "ubuntu-mate",
       "name": "Ubuntu MATE",
       "version": "26.10",
