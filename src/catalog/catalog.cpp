@@ -1,6 +1,7 @@
 #include "catalog/catalog.h"
 
 #include "catalog/catalogparser.h"
+#include "download/useragent.h"
 
 #include <QDir>
 #include <QFile>
@@ -100,6 +101,7 @@ void Catalog::refresh()
 
     QNetworkRequest request(QUrl(QString::fromLatin1(RemoteUrl)));
     request.setTransferTimeout(TransferTimeoutMs);
+    request.setHeader(QNetworkRequest::UserAgentHeader, userAgent());
     QNetworkReply *reply = m_network->get(request);
     connect(reply, &QNetworkReply::finished, this, [this, reply] {
         reply->deleteLater();

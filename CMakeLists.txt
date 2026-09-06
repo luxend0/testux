@@ -24,6 +24,7 @@ qt_add_qml_module(testux
         src/catalog/catalogparser.h src/catalog/catalogparser.cpp
         src/catalog/catalog.h src/catalog/catalog.cpp
         src/download/checksum.h src/download/checksum.cpp
+        src/download/useragent.h
         src/download/isolibrary.h src/download/isolibrary.cpp
         src/vm/qemuargs.h src/vm/qemuargs.cpp
         src/vm/vmmanager.h src/vm/vmmanager.cpp
