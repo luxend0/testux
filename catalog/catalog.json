@@ -289,6 +289,34 @@
       "minRamMb": 6144
     },
     {
+      "id": "ubuntu-cinnamon",
+      "name": "Ubuntu Cinnamon",
+      "version": "26.04.1 LTS",
+      "category": "beginner",
+      "summary": {
+        "en": "Ubuntu with a Windows-like taskbar and start menu.",
+        "de": "Ubuntu mit Taskleiste und Startmenü wie bei Windows."
+      },
+      "description": {
+        "en": "Ubuntu Cinnamon is the official Ubuntu flavor with the Cinnamon desktop known from Linux Mint. You get a taskbar, a start menu and a system tray where you expect them, on top of Ubuntu's long-term support and software.",
+        "de": "Ubuntu Cinnamon ist die offizielle Ubuntu-Variante mit dem Cinnamon-Desktop, den du von Linux Mint kennst. Taskleiste, Startmenü und Infobereich sind da, wo du sie erwartest, dazu die Langzeit-Unterstützung und Software von Ubuntu."
+      },
+      "website": "https://ubuntucinnamon.org",
+      "color": "#db5c24",
+      "desktop": "Cinnamon",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04/release/ubuntucinnamon-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04/release/SHA256SUMS",
+        "size": 5667256320
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
       "id": "zorin-core",
       "name": "Zorin OS",
       "edition": "Core",
@@ -717,6 +745,34 @@
       "nvidiaReady": true,
       "minRamMb": 2048,
       "checklist": []
+    },
+    {
+      "id": "xubuntu",
+      "name": "Xubuntu",
+      "version": "26.04.1 LTS",
+      "category": "lightweight",
+      "summary": {
+        "en": "Ubuntu with the light Xfce desktop, quick even on older laptops.",
+        "de": "Ubuntu mit dem leichten Xfce-Desktop, flott auch auf älteren Laptops."
+      },
+      "description": {
+        "en": "Xubuntu is the official Ubuntu flavor with Xfce. It looks classic, with a panel and an application menu, and uses less memory than the standard Ubuntu desktop. You get the same LTS updates and the same software as Ubuntu.",
+        "de": "Xubuntu ist die offizielle Ubuntu-Variante mit Xfce. Sie sieht klassisch aus, mit Leiste und Anwendungsmenü, und braucht weniger Arbeitsspeicher als der normale Ubuntu-Desktop. Du bekommst dieselben LTS-Updates und dieselbe Software wie bei Ubuntu."
+      },
+      "website": "https://xubuntu.org",
+      "color": "#2a5ca8",
+      "desktop": "Xfce",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04.1-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/SHA256SUMS",
+        "size": 5186390016
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
     },
     {
       "id": "edubuntu",
