@@ -581,6 +581,39 @@
       "minRamMb": 3072
     },
     {
+      "id": "drauger",
+      "name": "Drauger OS",
+      "version": "7.8",
+      "category": "gaming",
+      "summary": {
+        "en": "An Ubuntu based gaming distro with KDE Plasma and game launchers ready.",
+        "de": "Eine Gaming-Distro auf Ubuntu-Basis mit KDE Plasma und fertigen Spiele-Launchern."
+      },
+      "description": {
+        "en": "Drauger OS 7.8 builds on Ubuntu 26.04 LTS and adds a gaming tuned kernel, KDE Plasma on Wayland with VRR and HDR support, and preinstalled game launchers. The Edamame installer keeps your Wi-Fi settings from the live system. Being Ubuntu based, most Linux guides and apps work as usual.",
+        "de": "Drauger OS 7.8 baut auf Ubuntu 26.04 LTS auf und ergänzt einen fürs Spielen getrimmten Kernel, KDE Plasma auf Wayland mit VRR- und HDR-Unterstützung und vorinstallierte Spiele-Launcher. Der Installer Edamame übernimmt deine WLAN-Einstellungen aus dem Live-System. Weil es auf Ubuntu basiert, funktionieren die meisten Linux-Anleitungen und Apps wie gewohnt."
+      },
+      "notes": {
+        "en": "Try it in a window or use a USB stick: this ISO starts in UEFI mode only through an embedded boot image, which Testux cannot copy to the hard drive. Secure Boot support is not confirmed, so turn it off if the USB stick does not start.",
+        "de": "Probier es im Fenster aus oder nimm einen USB-Stick: Dieses ISO startet im UEFI-Modus nur über ein eingebettetes Boot-Abbild, das Testux nicht auf die Festplatte kopieren kann. Secure-Boot-Unterstützung ist nicht bestätigt, schalte es also aus, falls der USB-Stick nicht startet."
+      },
+      "website": "https://draugeros.org",
+      "color": "#e53935",
+      "desktop": "KDE Plasma",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.8-AMD64.iso",
+        "sha256Url": "https://download.draugeros.org/hash_files/Drauger_OS-7.8/SHA256.txt",
+        "size": 4812365824
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "nobara",
       "name": "Nobara",
       "edition": "Official",

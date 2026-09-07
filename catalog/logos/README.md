@@ -37,3 +37,4 @@ Other changes are listed per file.
 | linuxmint-mate | same file as linuxmint-cinnamon.svg ([Commons: Linux Mint logo without wordmark](https://commons.wikimedia.org/wiki/File:Linux_Mint_logo_without_wordmark.svg)) | CC BY 3.0; Linux Mint trademark of the Linux Mint project |
 | linuxmint-xfce | same as linuxmint-mate | CC BY 3.0 |
 | rhino-linux | [rhino-linux/branding logo.svg](https://github.com/rhino-linux/branding/blob/main/logo.svg) | Official logo from the project's branding repository, no license stated; trademark of the Rhino Linux project |
+| drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
