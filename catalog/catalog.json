@@ -657,6 +657,35 @@
       "minRamMb": 1024
     },
     {
+      "id": "linuxmint-mate",
+      "name": "Linux Mint",
+      "edition": "MATE",
+      "version": "22.3",
+      "category": "lightweight",
+      "summary": {
+        "en": "Linux Mint with the light MATE desktop, for older PCs.",
+        "de": "Linux Mint mit dem leichten MATE-Desktop, für ältere PCs."
+      },
+      "description": {
+        "en": "This edition has the same tools as Linux Mint Cinnamon, like the Driver Manager and Update Manager, but uses the MATE desktop, which needs less memory and graphics power. The layout with taskbar and start menu feels familiar right away.",
+        "de": "Diese Edition hat dieselben Werkzeuge wie Linux Mint Cinnamon, etwa Treiberverwaltung und Aktualisierungsverwaltung, nutzt aber den MATE-Desktop, der weniger Arbeitsspeicher und Grafikleistung braucht. Das Layout mit Taskleiste und Startmenü fühlt sich sofort vertraut an."
+      },
+      "website": "https://linuxmint.com",
+      "color": "#87cf3e",
+      "desktop": "MATE",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-mate-64bit.iso",
+        "sha256Url": "https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt",
+        "size": 3134275584
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "linuxmint-xfce",
       "name": "Linux Mint",
       "edition": "Xfce",
