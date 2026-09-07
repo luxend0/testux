@@ -744,7 +744,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "mate-tweak",
+          "title": {
+            "en": "Try MATE Tweak",
+            "de": "MATE Tweak ausprobieren"
+          },
+          "detail": {
+            "en": "Control Center > MATE Tweak > Panel lets you pick a layout. \"Redmond\" looks like Windows.",
+            "de": "Kontrollzentrum > MATE Tweak > Leiste lässt dich ein Layout wählen. \"Redmond\" sieht aus wie Windows."
+          }
+        }
+      ]
     },
     {
       "id": "xubuntu",
