@@ -600,6 +600,35 @@
       ]
     },
     {
+      "id": "bodhi",
+      "name": "Bodhi Linux",
+      "edition": "HWE",
+      "version": "7.0.0",
+      "category": "lightweight",
+      "summary": {
+        "en": "A light Ubuntu based system with the elegant, animated Moksha desktop.",
+        "de": "Ein leichtes Ubuntu-basiertes System mit dem eleganten, animierten Moksha-Desktop."
+      },
+      "description": {
+        "en": "Bodhi Linux ships only the essentials and lets you add what you need, which keeps it small and fast. Its Moksha desktop looks polished and still runs on old hardware. This HWE edition has a newer kernel for better support of recent PCs.",
+        "de": "Bodhi Linux bringt nur das Nötigste mit und lässt dich hinzufügen, was du brauchst, das hält es klein und schnell. Der Moksha-Desktop sieht gepflegt aus und läuft trotzdem auf alter Hardware. Diese HWE-Ausgabe hat einen neueren Kernel für bessere Unterstützung aktueller PCs."
+      },
+      "website": "https://www.bodhilinux.com",
+      "color": "#7fa129",
+      "desktop": "Moksha",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://master.dl.sourceforge.net/project/bodhilinux/7.0.0/bodhi-7.0.0-64-hwe.iso",
+        "sha256Url": "https://master.dl.sourceforge.net/project/bodhilinux/7.0.0/bodhi-7.0.0-64-hwe.iso.sha256",
+        "size": 1335623680
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 1024
+    },
+    {
       "id": "ubuntu-mate",
       "name": "Ubuntu MATE",
       "version": "26.10",
