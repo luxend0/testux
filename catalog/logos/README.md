@@ -31,4 +31,5 @@ Other changes are listed per file.
 | ubuntu-budgie | [Commons: Ubuntu Budgie No Wordmark.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_Budgie_No_Wordmark.svg) | CC BY-SA 4.0 (HEXcube, Joshua Fogg, Yuri Henrique); Ubuntu Budgie trademark of Canonical Ltd. |
 | ubuntu-studio | [Commons: Ubuntustudio v3 logo only.svg](https://commons.wikimedia.org/wiki/File:Ubuntustudio_v3_logo_only.svg) | Public domain on Commons; Ubuntu Studio trademark of Canonical Ltd. |
 | edubuntu | [Commons: Edubuntu icon.svg](https://commons.wikimedia.org/wiki/File:Edubuntu_icon.svg) | GPL; Edubuntu trademark of Canonical Ltd. |
+| linuxmint-xfce | same as linuxmint-mate | CC BY 3.0 |
 | rhino-linux | [rhino-linux/branding logo.svg](https://github.com/rhino-linux/branding/blob/main/logo.svg) | Official logo from the project's branding repository, no license stated; trademark of the Rhino Linux project |
