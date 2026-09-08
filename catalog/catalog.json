@@ -690,6 +690,39 @@
       "minRamMb": 1024
     },
     {
+      "id": "linux-lite",
+      "name": "Linux Lite",
+      "version": "8.0",
+      "category": "lightweight",
+      "summary": {
+        "en": "Made for people leaving Windows, with simple tools and a familiar layout.",
+        "de": "Gemacht für Windows-Umsteiger, mit einfachen Werkzeugen und gewohntem Layout."
+      },
+      "description": {
+        "en": "Linux Lite targets Windows users directly: a start menu, a taskbar and its own Lite tools for updates, software and settings that explain themselves. It is based on Ubuntu 26.04 LTS with the Xfce desktop.",
+        "de": "Linux Lite richtet sich direkt an Windows-Nutzer: Startmenü, Taskleiste und eigene Lite-Werkzeuge für Updates, Software und Einstellungen, die sich selbst erklären. Die Basis ist Ubuntu 26.04 LTS mit dem Xfce-Desktop."
+      },
+      "notes": {
+        "en": "Linux Lite does not support Secure Boot. Turn it off in your firmware settings before booting it on this PC.",
+        "de": "Linux Lite unterstützt kein Secure Boot. Schalte es in den Firmware-Einstellungen aus, bevor du es auf diesem PC startest."
+      },
+      "website": "https://www.linuxliteos.com",
+      "color": "#e8a200",
+      "desktop": "Xfce",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/linux-lite/8.0/linux-lite-8.0-64bit.iso",
+        "sha256Url": "https://downloads.sourceforge.net/project/linux-lite/8.0/linux-lite-8.0-64bit.iso.sha256",
+        "size": 2533359616
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "linuxmint-mate",
       "name": "Linux Mint",
       "edition": "MATE",
