@@ -875,7 +875,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 6144,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "edu-apps",
+          "title": {
+            "en": "Try a learning app",
+            "de": "Ein Lernprogramm ausprobieren"
+          },
+          "detail": {
+            "en": "Open GCompris for the little ones or GeoGebra for math and see how they feel.",
+            "de": "Öffne GCompris für die Kleinen oder GeoGebra für Mathe und schau, wie sie sich anfühlen."
+          }
+        }
+      ]
     },
     {
       "id": "ubuntu-studio",
