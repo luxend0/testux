@@ -102,6 +102,7 @@ PageScroll {
             Layout.fillWidth: true
         }
 
+        // Tabs while they fit, otherwise the category moves into a menu in the filter row.
         SegmentedControl {
             id: categoryTabs
             visible: implicitWidth <= page.contentColumnWidth
@@ -240,6 +241,7 @@ PageScroll {
     GridLayout {
         id: grid
 
+        // Fixed card width, so a short result list keeps the same card size.
         readonly property real cardWidth: (page.contentColumnWidth - (columns - 1) * columnSpacing) / columns
 
         columns: Math.max(1, Math.floor((page.contentColumnWidth + columnSpacing) / (250 + columnSpacing)))

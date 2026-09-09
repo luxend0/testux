@@ -35,6 +35,7 @@ AbstractButton {
             popup.close()
             return
         }
+        // Opened from the keyboard: start on the first option, with its focus ring.
         popup.focusFirstOption = visualFocus
         popup.open()
     }
