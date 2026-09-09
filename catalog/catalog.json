@@ -948,7 +948,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "studio-apps",
+          "title": {
+            "en": "Open a creative app",
+            "de": "Ein Kreativ-Programm öffnen"
+          },
+          "detail": {
+            "en": "Try Kdenlive for a quick video cut, Krita for drawing or Ardour for recording. All of them are free and already installed.",
+            "de": "Probier Kdenlive für einen schnellen Videoschnitt, Krita zum Zeichnen oder Ardour zum Aufnehmen. Alle sind kostenlos und schon installiert."
+          }
+        }
+      ]
     },
     {
       "id": "endeavouros",
