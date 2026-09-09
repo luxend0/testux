@@ -1153,6 +1153,39 @@
       "minRamMb": 4096
     },
     {
+      "id": "ubuntu-unity",
+      "name": "Ubuntu Unity",
+      "version": "26.10",
+      "category": "other",
+      "summary": {
+        "en": "The classic Ubuntu look with the launcher on the left.",
+        "de": "Der klassische Ubuntu-Look mit der Startleiste links."
+      },
+      "description": {
+        "en": "Ubuntu Unity brings back the Unity desktop that Ubuntu used for many years: a launcher on the left, a global menu bar at the top and a search-driven app overview. It suits people who like keyboard shortcuts and a focused screen.",
+        "de": "Ubuntu Unity bringt den Unity-Desktop zurück, den Ubuntu viele Jahre genutzt hat: eine Startleiste links, eine globale Menüleiste oben und eine Programmübersicht mit Suche. Es passt zu allen, die Tastenkürzel und einen aufgeräumten Bildschirm mögen."
+      },
+      "notes": {
+        "en": "This is 26.10, a regular release with 9 months of updates, because Ubuntu Unity has no 26.04 LTS. It cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick.",
+        "de": "Das hier ist 26.10, eine normale Version mit 9 Monaten Updates, weil es Ubuntu Unity nicht als 26.04 LTS gibt. Es lässt sich nicht direkt von der Festplatte starten: Das System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick."
+      },
+      "website": "https://ubuntuunity.org",
+      "color": "#6f1fb3",
+      "desktop": "Unity",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.10/release/ubuntu-unity-26.10-desktop-amd64.iso",
+        "sha256Url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.10/release/SHA256SUMS",
+        "size": 4680099840
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "elementary",
       "name": "elementary OS",
       "version": "8.1.1",
