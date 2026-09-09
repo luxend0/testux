@@ -744,7 +744,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "mate-tweak",
+          "title": {
+            "en": "Try MATE Tweak",
+            "de": "MATE Tweak ausprobieren"
+          },
+          "detail": {
+            "en": "Control Center > MATE Tweak > Panel lets you pick a layout. \"Redmond\" looks like Windows.",
+            "de": "Kontrollzentrum > MATE Tweak > Leiste lässt dich ein Layout wählen. \"Redmond\" sieht aus wie Windows."
+          }
+        }
+      ]
     },
     {
       "id": "xubuntu",
@@ -801,7 +813,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 6144,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "edu-apps",
+          "title": {
+            "en": "Try a learning app",
+            "de": "Ein Lernprogramm ausprobieren"
+          },
+          "detail": {
+            "en": "Open GCompris for the little ones or GeoGebra for math and see how they feel.",
+            "de": "Öffne GCompris für die Kleinen oder GeoGebra für Mathe und schau, wie sie sich anfühlen."
+          }
+        }
+      ]
     },
     {
       "id": "ubuntu-studio",
