@@ -392,6 +392,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "aurora",
+      "name": "Aurora",
+      "version": "Stable",
+      "category": "kde",
+      "summary": {
+        "en": "Bluefin's KDE Plasma sibling: an atomic desktop that looks after itself.",
+        "de": "Das KDE-Plasma-Geschwister von Bluefin: ein atomarer Desktop, der sich selbst pflegt."
+      },
+      "description": {
+        "en": "Aurora combines KDE Plasma with Universal Blue's atomic Fedora base: updates arrive automatically in the background and can be rolled back at boot. Codecs and handy tools are preinstalled, apps come from Flathub through Discover. A low-maintenance desktop with a familiar taskbar.",
+        "de": "Aurora verbindet KDE Plasma mit der atomaren Fedora-Basis von Universal Blue: Updates kommen automatisch im Hintergrund und lassen sich beim Start zurückrollen. Codecs und praktische Werkzeuge sind vorinstalliert, Apps kommen über Discover von Flathub. Ein pflegeleichter Desktop mit vertrauter Taskleiste."
+      },
+      "notes": {
+        "en": "Aurora cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick. With an NVIDIA graphics card, download the NVIDIA image from getaurora.dev instead. With Secure Boot on, enroll the Universal Blue key with the password universalblue when the installer asks.",
+        "de": "Aurora lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick. Mit einer NVIDIA-Grafikkarte lädst du stattdessen das NVIDIA-Image von getaurora.dev. Mit eingeschaltetem Secure Boot trägst du den Universal-Blue-Schlüssel mit dem Passwort universalblue ein, wenn der Installer danach fragt."
+      },
+      "website": "https://getaurora.dev/",
+      "color": "#6d4793",
+      "desktop": "KDE Plasma",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://dl.getaurora.dev/aurora-stable-x86_64.iso",
+        "sha256Url": "https://dl.getaurora.dev/aurora-stable-x86_64.iso-CHECKSUM",
+        "size": 7133960192
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "fedora-kde",
       "name": "Fedora",
       "edition": "KDE Plasma",
