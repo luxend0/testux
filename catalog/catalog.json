@@ -359,6 +359,39 @@
       ]
     },
     {
+      "id": "almalinux-kde",
+      "name": "AlmaLinux",
+      "edition": "KDE Plasma",
+      "version": "10",
+      "category": "kde",
+      "summary": {
+        "en": "AlmaLinux with KDE Plasma: enterprise stability with a familiar taskbar.",
+        "de": "AlmaLinux mit KDE Plasma: Enterprise-Stabilität mit vertrauter Taskleiste."
+      },
+      "description": {
+        "en": "The same long-term stable AlmaLinux base, here with the KDE Plasma desktop from the EPEL repository, which has a taskbar and start menu like Windows. Security updates keep coming for about ten years per major version. A good fit for office and work machines that should stay the same for years.",
+        "de": "Dieselbe langzeitstabile AlmaLinux-Basis, hier mit dem KDE-Plasma-Desktop aus der EPEL-Paketquelle, der Taskleiste und Startmenü wie Windows hat. Sicherheitsupdates gibt es pro Hauptversion rund zehn Jahre lang. Das passt gut zu Büro- und Arbeitsrechnern, die jahrelang gleich bleiben sollen."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn aus NVIDIAs eigener Paketquelle oder aus ELRepo hinzu."
+      },
+      "website": "https://almalinux.org/",
+      "color": "#0069da",
+      "desktop": "KDE Plasma",
+      "base": "RHEL",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://repo.almalinux.org/almalinux/10/live/x86_64/AlmaLinux-10-latest-x86_64-Live-KDE.iso",
+        "sha256Url": "https://repo.almalinux.org/almalinux/10/live/x86_64/CHECKSUM",
+        "size": 2644930560
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "fedora-kde",
       "name": "Fedora",
       "edition": "KDE Plasma",
