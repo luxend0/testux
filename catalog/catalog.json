@@ -756,6 +756,39 @@
       "minRamMb": 1024
     },
     {
+      "id": "fedora-lxqt",
+      "name": "Fedora",
+      "edition": "LXQt",
+      "version": "44",
+      "category": "lightweight",
+      "summary": {
+        "en": "Fedora with LXQt: very light and simple, for older hardware.",
+        "de": "Fedora mit LXQt: sehr leicht und schlicht, für ältere Hardware."
+      },
+      "description": {
+        "en": "LXQt is one of the lightest full desktops and runs well on PCs that are ten years old or more. The layout is familiar: a menu button, a taskbar and a system tray. It uses the same Qt toolkit as KDE apps, so those fit in visually.",
+        "de": "LXQt gehört zu den leichtesten vollständigen Desktops und läuft gut auf PCs, die zehn Jahre oder älter sind. Der Aufbau ist vertraut: ein Menüknopf, eine Taskleiste und ein Infobereich. Es nutzt dasselbe Qt-Toolkit wie KDE-Programme, die deshalb optisch gut dazu passen."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/lxqt/",
+      "color": "#0192d3",
+      "desktop": "LXQt",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-LXQt-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2443081728
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "linuxmint-mate",
       "name": "Linux Mint",
       "edition": "MATE",
@@ -1014,6 +1047,39 @@
       "secureBoot": false,
       "liveSession": true,
       "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
+      "id": "fedora-i3",
+      "name": "Fedora",
+      "edition": "i3",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora with i3: a minimal tiling window manager controlled by keyboard.",
+        "de": "Fedora mit i3: ein minimaler Kachel-Fenstermanager, gesteuert per Tastatur."
+      },
+      "description": {
+        "en": "i3 is the X11 counterpart to Sway: windows tile next to each other and keyboard shortcuts do the rest. It uses very little memory and suits experienced users who want full control. Newcomers from Windows should try a classic desktop first.",
+        "de": "i3 ist das X11-Gegenstück zu Sway: Fenster werden nebeneinander gekachelt, Tastenkürzel erledigen den Rest. Es braucht sehr wenig Arbeitsspeicher und passt zu erfahrenen Nutzern, die volle Kontrolle wollen. Wer von Windows kommt, probiert besser zuerst einen klassischen Desktop."
+      },
+      "notes": {
+        "en": "There is no start menu: windows and apps are opened with keyboard shortcuts. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Es gibt kein Startmenü: Fenster und Apps öffnest du mit Tastenkürzeln. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/i3/",
+      "color": "#285577",
+      "desktop": "i3",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-i3-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2450966528
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
       "minRamMb": 2048
     },
     {
