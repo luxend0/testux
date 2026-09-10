@@ -789,6 +789,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "linux-lite",
+      "name": "Linux Lite",
+      "version": "8.0",
+      "category": "lightweight",
+      "summary": {
+        "en": "Made for people leaving Windows, with simple tools and a familiar layout.",
+        "de": "Gemacht für Windows-Umsteiger, mit einfachen Werkzeugen und gewohntem Layout."
+      },
+      "description": {
+        "en": "Linux Lite targets Windows users directly: a start menu, a taskbar and its own Lite tools for updates, software and settings that explain themselves. It is based on Ubuntu 26.04 LTS with the Xfce desktop.",
+        "de": "Linux Lite richtet sich direkt an Windows-Nutzer: Startmenü, Taskleiste und eigene Lite-Werkzeuge für Updates, Software und Einstellungen, die sich selbst erklären. Die Basis ist Ubuntu 26.04 LTS mit dem Xfce-Desktop."
+      },
+      "notes": {
+        "en": "Linux Lite does not support Secure Boot. Turn it off in your firmware settings before booting it on this PC.",
+        "de": "Linux Lite unterstützt kein Secure Boot. Schalte es in den Firmware-Einstellungen aus, bevor du es auf diesem PC startest."
+      },
+      "website": "https://www.linuxliteos.com",
+      "color": "#e8a200",
+      "desktop": "Xfce",
+      "base": "Ubuntu",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/linux-lite/8.0/linux-lite-8.0-64bit.iso",
+        "sha256Url": "https://downloads.sourceforge.net/project/linux-lite/8.0/linux-lite-8.0-64bit.iso.sha256",
+        "size": 2533359616
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "linuxmint-mate",
       "name": "Linux Mint",
       "edition": "MATE",
@@ -1222,6 +1255,38 @@
           }
         }
       ]
+    },
+    {
+      "id": "rocky-workstation",
+      "name": "Rocky Linux",
+      "edition": "Workstation",
+      "version": "10",
+      "category": "other",
+      "summary": {
+        "en": "Community rebuild of Red Hat Enterprise Linux with GNOME, built for stability.",
+        "de": "Community-Nachbau von Red Hat Enterprise Linux mit GNOME, gebaut für Stabilität."
+      },
+      "description": {
+        "en": "Rocky Linux was started by one of the original CentOS founders and stays closely compatible with Red Hat Enterprise Linux."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn aus NVIDIAs eigener Paketquelle oder aus ELRepo hinzu."
+      },
+      "website": "https://rockylinux.org/",
+      "color": "#10b981",
+      "desktop": "GNOME",
+      "base": "RHEL",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/Rocky-10-Workstation-x86_64-latest.iso",
+        "sha256Url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/CHECKSUM",
+        "size": 1815683072
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
     },
     {
       "id": "ubuntu-budgie",
