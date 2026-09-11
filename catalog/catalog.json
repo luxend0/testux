@@ -1095,6 +1095,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-i3",
+      "name": "Fedora",
+      "edition": "i3",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora with i3: a minimal tiling window manager controlled by keyboard.",
+        "de": "Fedora mit i3: ein minimaler Kachel-Fenstermanager, gesteuert per Tastatur."
+      },
+      "description": {
+        "en": "i3 is the X11 counterpart to Sway: windows tile next to each other and keyboard shortcuts do the rest. It uses very little memory and suits experienced users who want full control. Newcomers from Windows should try a classic desktop first.",
+        "de": "i3 ist das X11-Gegenstück zu Sway: Fenster werden nebeneinander gekachelt, Tastenkürzel erledigen den Rest. Es braucht sehr wenig Arbeitsspeicher und passt zu erfahrenen Nutzern, die volle Kontrolle wollen. Wer von Windows kommt, probiert besser zuerst einen klassischen Desktop."
+      },
+      "notes": {
+        "en": "There is no start menu: windows and apps are opened with keyboard shortcuts. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Es gibt kein Startmenü: Fenster und Apps öffnest du mit Tastenkürzeln. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/i3/",
+      "color": "#285577",
+      "desktop": "i3",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-i3-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2450966528
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "opensuse-tumbleweed",
       "name": "openSUSE Tumbleweed",
       "edition": "KDE Live",
@@ -1155,6 +1188,39 @@
         "size": 2916384768
       },
       "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
+      "id": "bluefin",
+      "name": "Bluefin",
+      "version": "Stable",
+      "category": "other",
+      "summary": {
+        "en": "A polished atomic GNOME desktop that keeps itself up to date in the background.",
+        "de": "Ein ausgefeilter, atomarer GNOME-Desktop, der sich im Hintergrund selbst aktuell hält."
+      },
+      "description": {
+        "en": "Bluefin builds on Fedora's atomic technology: the system updates itself as a whole and can be rolled back, apps come as Flatpaks. It adds codecs, useful tools and a strong setup for developers. There is hardly anything to maintain, it simply stays current.",
+        "de": "Bluefin baut auf Fedoras atomarer Technik auf: Das System aktualisiert sich als Ganzes selbst und lässt sich zurückrollen, Apps kommen als Flatpaks. Dazu kommen Codecs, nützliche Werkzeuge und eine starke Ausstattung für Entwickler. Zu pflegen gibt es kaum etwas, es bleibt einfach aktuell."
+      },
+      "notes": {
+        "en": "Bluefin cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick. With an NVIDIA graphics card, download the NVIDIA image from projectbluefin.io instead. With Secure Boot on, enroll the Universal Blue key with the password universalblue when the installer asks.",
+        "de": "Bluefin lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick. Mit einer NVIDIA-Grafikkarte lädst du stattdessen das NVIDIA-Image von projectbluefin.io. Mit eingeschaltetem Secure Boot trägst du den Universal-Blue-Schlüssel mit dem Passwort universalblue ein, wenn der Installer danach fragt."
+      },
+      "website": "https://projectbluefin.io/",
+      "color": "#6c7ae9",
+      "desktop": "GNOME",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.projectbluefin.io/bluefin-stable-x86_64.iso",
+        "sha256Url": "https://download.projectbluefin.io/bluefin-stable-x86_64.iso-CHECKSUM",
+        "size": 5572845568
+      },
+      "secureBoot": true,
       "liveSession": true,
       "nvidiaReady": false,
       "bareMetal": false,
@@ -1234,6 +1300,38 @@
           }
         }
       ]
+    },
+    {
+      "id": "rocky-workstation",
+      "name": "Rocky Linux",
+      "edition": "Workstation",
+      "version": "10",
+      "category": "other",
+      "summary": {
+        "en": "Community rebuild of Red Hat Enterprise Linux with GNOME, built for stability.",
+        "de": "Community-Nachbau von Red Hat Enterprise Linux mit GNOME, gebaut für Stabilität."
+      },
+      "description": {
+        "en": "Rocky Linux was started by one of the original CentOS founders and stays closely compatible with Red Hat Enterprise Linux."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn aus NVIDIAs eigener Paketquelle oder aus ELRepo hinzu."
+      },
+      "website": "https://rockylinux.org/",
+      "color": "#10b981",
+      "desktop": "GNOME",
+      "base": "RHEL",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/Rocky-10-Workstation-x86_64-latest.iso",
+        "sha256Url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/CHECKSUM",
+        "size": 1815683072
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
     },
     {
       "id": "ubuntu-budgie",
