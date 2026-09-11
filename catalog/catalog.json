@@ -756,6 +756,39 @@
       "minRamMb": 1024
     },
     {
+      "id": "fedora-lxqt",
+      "name": "Fedora",
+      "edition": "LXQt",
+      "version": "44",
+      "category": "lightweight",
+      "summary": {
+        "en": "Fedora with LXQt: very light and simple, for older hardware.",
+        "de": "Fedora mit LXQt: sehr leicht und schlicht, für ältere Hardware."
+      },
+      "description": {
+        "en": "LXQt is one of the lightest full desktops and runs well on PCs that are ten years old or more. The layout is familiar: a menu button, a taskbar and a system tray. It uses the same Qt toolkit as KDE apps, so those fit in visually.",
+        "de": "LXQt gehört zu den leichtesten vollständigen Desktops und läuft gut auf PCs, die zehn Jahre oder älter sind. Der Aufbau ist vertraut: ein Menüknopf, eine Taskleiste und ein Infobereich. Es nutzt dasselbe Qt-Toolkit wie KDE-Programme, die deshalb optisch gut dazu passen."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/lxqt/",
+      "color": "#0192d3",
+      "desktop": "LXQt",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-LXQt-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2443081728
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "linux-lite",
       "name": "Linux Lite",
       "version": "8.0",
