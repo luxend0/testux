@@ -1022,6 +1022,40 @@
       ]
     },
     {
+      "id": "fedora-jam",
+      "name": "Fedora",
+      "edition": "Jam",
+      "version": "44",
+      "category": "creative",
+      "summary": {
+        "en": "Fedora for music and audio production, set up for low latency.",
+        "de": "Fedora für Musik- und Audioproduktion, eingerichtet für geringe Latenz."
+      },
+      "description": {
+        "en": "Jam brings a full audio studio: Ardour for recording and mixing, synthesizers, effects and MIDI tools. The audio system is tuned for low latency, which matters when you play live through your PC. Check whether your audio interface works before you think about switching.",
+        "de": "Jam bringt ein komplettes Tonstudio mit: Ardour zum Aufnehmen und Mischen, Synthesizer, Effekte und MIDI-Werkzeuge. Das Audiosystem ist auf geringe Latenz eingestellt, was wichtig ist, wenn du live über den PC spielst. Prüf, ob dein Audio-Interface funktioniert, bevor du über einen Umstieg nachdenkst."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/labs/jam/",
+      "color": "#d9534f",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Jam_KDE-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Labs-44-1.7-x86_64-CHECKSUM",
+        "size": 4304001024
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048,
+      "checklist": []
+    },
+    {
       "id": "ubuntu-studio",
       "name": "Ubuntu Studio",
       "version": "26.04.1 LTS",
