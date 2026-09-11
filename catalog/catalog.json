@@ -1162,6 +1162,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-kinoite",
+      "name": "Fedora",
+      "edition": "Kinoite",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora KDE Plasma as an atomic system that updates as a whole.",
+        "de": "Fedora KDE Plasma als atomares System, das sich als Ganzes aktualisiert."
+      },
+      "description": {
+        "en": "Kinoite is the KDE Plasma sibling of Silverblue: the base system is read-only, updates are applied in one piece and can be rolled back at boot. Apps are installed as Flatpaks through Discover. It suits people who want a desktop that is hard to break.",
+        "de": "Kinoite ist das KDE-Plasma-Geschwister von Silverblue: Das Grundsystem ist schreibgeschützt, Updates werden in einem Stück eingespielt und lassen sich beim Start zurückrollen. Apps installierst du als Flatpaks über Discover. Es passt zu Leuten, die einen Desktop wollen, der sich schwer kaputt machen lässt."
+      },
+      "notes": {
+        "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around, or try Fedora KDE Plasma first, which has the same desktop. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Das ISO enthält nur den Installer, es gibt keinen Live-Desktop zum Ausprobieren. Installier es auf die Testux-Testplatte, um dich umzuschauen, oder probier zuerst Fedora KDE Plasma aus, das denselben Desktop hat. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/atomic-desktops/kinoite/",
+      "color": "#2f8fd8",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Kinoite/x86_64/iso/Fedora-Kinoite-ostree-x86_64-44-1.7.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Kinoite/x86_64/iso/Fedora-Kinoite-44-1.7-x86_64-CHECKSUM",
+        "size": 4092461056
+      },
+      "secureBoot": true,
+      "liveSession": false,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "opensuse-tumbleweed",
       "name": "openSUSE Tumbleweed",
       "edition": "KDE Live",
