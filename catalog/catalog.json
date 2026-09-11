@@ -1182,6 +1182,39 @@
       "minRamMb": 4096
     },
     {
+      "id": "bluefin",
+      "name": "Bluefin",
+      "version": "Stable",
+      "category": "other",
+      "summary": {
+        "en": "A polished atomic GNOME desktop that keeps itself up to date in the background.",
+        "de": "Ein ausgefeilter, atomarer GNOME-Desktop, der sich im Hintergrund selbst aktuell hält."
+      },
+      "description": {
+        "en": "Bluefin builds on Fedora's atomic technology: the system updates itself as a whole and can be rolled back, apps come as Flatpaks. It adds codecs, useful tools and a strong setup for developers. There is hardly anything to maintain, it simply stays current.",
+        "de": "Bluefin baut auf Fedoras atomarer Technik auf: Das System aktualisiert sich als Ganzes selbst und lässt sich zurückrollen, Apps kommen als Flatpaks. Dazu kommen Codecs, nützliche Werkzeuge und eine starke Ausstattung für Entwickler. Zu pflegen gibt es kaum etwas, es bleibt einfach aktuell."
+      },
+      "notes": {
+        "en": "Bluefin cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick. With an NVIDIA graphics card, download the NVIDIA image from projectbluefin.io instead. With Secure Boot on, enroll the Universal Blue key with the password universalblue when the installer asks.",
+        "de": "Bluefin lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick. Mit einer NVIDIA-Grafikkarte lädst du stattdessen das NVIDIA-Image von projectbluefin.io. Mit eingeschaltetem Secure Boot trägst du den Universal-Blue-Schlüssel mit dem Passwort universalblue ein, wenn der Installer danach fragt."
+      },
+      "website": "https://projectbluefin.io/",
+      "color": "#6c7ae9",
+      "desktop": "GNOME",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.projectbluefin.io/bluefin-stable-x86_64.iso",
+        "sha256Url": "https://download.projectbluefin.io/bluefin-stable-x86_64.iso-CHECKSUM",
+        "size": 5572845568
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "debian-gnome",
       "name": "Debian",
       "edition": "GNOME",
