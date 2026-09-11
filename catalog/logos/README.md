@@ -32,6 +32,7 @@ Other changes are listed per file.
 | ubuntu-mate | [Commons: Ubuntu MATE rondel logo.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_MATE_rondel_logo.svg) | CC BY-SA 4.0; Ubuntu MATE trademark of Canonical Ltd. |
 | ubuntu-budgie | [Commons: Ubuntu Budgie No Wordmark.svg](https://commons.wikimedia.org/wiki/File:Ubuntu_Budgie_No_Wordmark.svg) | CC BY-SA 4.0 (HEXcube, Joshua Fogg, Yuri Henrique); Ubuntu Budgie trademark of Canonical Ltd. |
 | ubuntu-cinnamon | [Commons: UbuntuCinnamon.svg](https://commons.wikimedia.org/wiki/File:UbuntuCinnamon.svg) | GPLv3; Ubuntu Cinnamon trademark of Canonical Ltd. |
+| ubuntu-unity | [Commons: Unity desktop environment logo 2022.svg](https://commons.wikimedia.org/wiki/File:Unity_desktop_environment_logo_2022.svg) | Public domain on Commons; the Unity desktop mark used by Ubuntu Unity |
 | ubuntu-studio | [Commons: Ubuntustudio v3 logo only.svg](https://commons.wikimedia.org/wiki/File:Ubuntustudio_v3_logo_only.svg) | Public domain on Commons; Ubuntu Studio trademark of Canonical Ltd. |
 | edubuntu | [Commons: Edubuntu icon.svg](https://commons.wikimedia.org/wiki/File:Edubuntu_icon.svg) | GPL; Edubuntu trademark of Canonical Ltd. |
 | linuxmint-mate | same file as linuxmint-cinnamon.svg ([Commons: Linux Mint logo without wordmark](https://commons.wikimedia.org/wiki/File:Linux_Mint_logo_without_wordmark.svg)) | CC BY 3.0; Linux Mint trademark of the Linux Mint project |
