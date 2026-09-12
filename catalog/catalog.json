@@ -205,6 +205,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-cinnamon",
+      "name": "Fedora",
+      "edition": "Cinnamon",
+      "version": "44",
+      "category": "beginner",
+      "summary": {
+        "en": "Fedora with Cinnamon, the Windows-like desktop known from Linux Mint.",
+        "de": "Fedora mit Cinnamon, dem Windows-ähnlichen Desktop aus Linux Mint."
+      },
+      "description": {
+        "en": "Cinnamon has a start menu at the bottom left, a taskbar and a clock on the right, so finding your way around takes minutes. This edition combines it with Fedora's newer software and fast updates. A good pick if you like Mint's look but want more current packages.",
+        "de": "Cinnamon hat ein Startmenü unten links, eine Taskleiste und rechts die Uhr, du findest dich also in Minuten zurecht. Diese Ausgabe kombiniert es mit Fedoras neuerer Software und schnellen Updates. Eine gute Wahl, wenn dir der Look von Mint gefällt, du aber aktuellere Pakete willst."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/cinnamon/",
+      "color": "#c5622f",
+      "desktop": "Cinnamon",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Cinnamon-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 3263983616
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "linuxmint-cinnamon",
       "name": "Linux Mint",
       "edition": "Cinnamon",
