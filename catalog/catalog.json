@@ -789,6 +789,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-mate-compiz",
+      "name": "Fedora",
+      "edition": "MATE-Compiz",
+      "version": "44",
+      "category": "lightweight",
+      "summary": {
+        "en": "Fedora with MATE: the traditional two-panel desktop, light and dependable.",
+        "de": "Fedora mit MATE: der traditionelle Desktop mit zwei Leisten, leicht und zuverlässig."
+      },
+      "description": {
+        "en": "MATE continues the classic GNOME 2 layout with a menu panel at the top and a window list at the bottom. It is light, stable and changes little over the years. Compiz adds optional window effects, which you can switch off on slower PCs.",
+        "de": "MATE führt das klassische GNOME-2-Layout fort, mit einer Menüleiste oben und einer Fensterliste unten. Es ist leicht, stabil und ändert sich über die Jahre kaum. Compiz bringt optionale Fenstereffekte mit, die du auf langsameren PCs abschalten kannst."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/mate/",
+      "color": "#87a556",
+      "desktop": "MATE",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 3252639744
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "linux-lite",
       "name": "Linux Lite",
       "version": "8.0",
