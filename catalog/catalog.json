@@ -172,6 +172,39 @@
   ],
   "distros": [
     {
+      "id": "fedora-budgie",
+      "name": "Fedora",
+      "edition": "Budgie",
+      "version": "44",
+      "category": "beginner",
+      "summary": {
+        "en": "Fedora with Budgie: clean and modern, with a simple menu and a side panel.",
+        "de": "Fedora mit Budgie: aufgeräumt und modern, mit einfachem Menü und Seitenleiste."
+      },
+      "description": {
+        "en": "Budgie keeps things simple: an app menu, a panel with your open windows and a side bar called Raven for notifications and quick settings. It feels modern without hiding the controls you know from Windows. Fedora provides the current base underneath.",
+        "de": "Budgie hält es einfach: ein App-Menü, eine Leiste mit deinen offenen Fenstern und eine Seitenleiste namens Raven für Benachrichtigungen und Schnelleinstellungen. Es wirkt modern, ohne die Bedienelemente zu verstecken, die du von Windows kennst. Darunter sorgt Fedora für eine aktuelle Basis."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/budgie/",
+      "color": "#5b7fd6",
+      "desktop": "Budgie",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Budgie-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 3084500992
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "linuxmint-cinnamon",
       "name": "Linux Mint",
       "edition": "Cinnamon",
