@@ -1330,7 +1330,7 @@
       "id": "debian-gnome",
       "name": "Debian",
       "edition": "GNOME",
-      "version": "13.6",
+      "version": "13.7",
       "category": "other",
       "summary": {
         "en": "Rock solid and community run, the base that Ubuntu and Mint build on.",
@@ -1346,9 +1346,9 @@
       "base": "independent",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-kde.iso",
+        "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-gnome.iso",
         "sha256Url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS",
-        "size": 4186112000
+        "size": 3804708864
       },
       "secureBoot": true,
       "liveSession": true,
