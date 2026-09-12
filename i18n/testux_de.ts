@@ -412,22 +412,22 @@
     <message>
         <location filename="../qml/ComparePage.qml" line="53"/>
         <source>Rolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Rolling</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="53"/>
         <source>Fixed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fest</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="58"/>
         <source>Included</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabei</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="58"/>
         <source>Later</source>
-        <translation type="unfinished"></translation>
+        <translation>Später</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="59"/>
@@ -437,12 +437,12 @@
     <message>
         <location filename="../qml/ComparePage.qml" line="64"/>
         <source>Distro</source>
-        <translation type="unfinished"></translation>
+        <translation>Distro</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="65"/>
         <source>Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Desktop</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="66"/>
@@ -452,78 +452,78 @@
     <message>
         <location filename="../qml/ComparePage.qml" line="67"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Updates</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="68"/>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Download</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="69"/>
         <source>Min. memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Min. RAM</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="70"/>
         <source>Secure Boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="71"/>
         <source>Live</source>
-        <translation type="unfinished"></translation>
+        <translation>Live</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="72"/>
         <source>NVIDIA</source>
-        <translation type="unfinished"></translation>
+        <translation>NVIDIA</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="108"/>
         <source>Sort by</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortieren nach</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="116"/>
         <source>%1 distros</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Distros</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="31"/>
         <location filename="../qml/ComparePage.qml" line="73"/>
         <source>Your memory use</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein RAM</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="28"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="29"/>
         <source>Download size</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadgröße</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="30"/>
         <source>Minimum memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindest-RAM</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="93"/>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergleich</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="94"/>
         <source>The facts side by side. Memory use is measured on your PC while a distro runs in a window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Fakten nebeneinander. Der RAM-Verbrauch wird auf deinem PC gemessen, während eine Distro im Fenster läuft.</translation>
     </message>
     <message>
         <location filename="../qml/ComparePage.qml" line="99"/>
         <source>&quot;Your memory use&quot; fills in as you try distros. Start one in a window and look at it for a minute.</source>
-        <translation type="unfinished"></translation>
+        <translation>„Dein RAM“ füllt sich, während du Distros testest. Starte eine im Fenster und schau sie dir eine Minute lang an.</translation>
     </message>
 </context>
 <context>
