@@ -1561,6 +1561,38 @@
       "minRamMb": 4096
     },
     {
+      "id": "ultramarine-gnome",
+      "name": "Ultramarine Linux",
+      "edition": "GNOME",
+      "version": "44",
+      "category": "other",
+      "summary": {
+        "en": "Ultramarine with GNOME: Fedora plus codecs and drivers, on a calm modern desktop.",
+        "de": "Ultramarine mit GNOME: Fedora plus Codecs und Treiber, auf einem ruhigen, modernen Desktop."
+      },
+      "description": {
+        "en": "This edition pairs Ultramarine's ready-made extras with the GNOME desktop: codecs, extra repositories and automatic NVIDIA setup are included."
+      },
+      "notes": {
+        "en": "Turn off Secure Boot for now: the Ultramarine guide recommends setting it up again after installing. NVIDIA drivers are installed automatically if you are online during the installation.",
+        "de": "Schalte Secure Boot vorerst aus: Die Anleitung von Ultramarine empfiehlt, es nach der Installation wieder einzurichten. NVIDIA-Treiber werden automatisch installiert, wenn du während der Installation online bist."
+      },
+      "website": "https://ultramarine-linux.org/",
+      "color": "#00078f",
+      "desktop": "GNOME",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://images.fyralabs.com/isos/ultramarine/44/ultramarine-gnome-44-live-anaconda-x86_64.iso",
+        "sha256Url": "https://images.fyralabs.com/isos/ultramarine/44/ultramarine-gnome-44-live-anaconda-x86_64.iso.sha256sum",
+        "size": 3601850368
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "elementary",
       "name": "elementary OS",
       "version": "8.1.1",
