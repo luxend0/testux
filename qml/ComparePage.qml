@@ -4,7 +4,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
 
-PageScroll {
+Item {
     id: page
 
     signal distroSelected(string id)
@@ -22,6 +22,27 @@ PageScroll {
         return result
     }
     readonly property bool anyMeasured: Object.keys(measured).length > 0
+
+    property string sortKey: "name"
+    readonly property list<var> sortOptions: [
+        { value: "name", label: qsTr("Name") },
+        { value: "size", label: qsTr("Download size") },
+        { value: "ram", label: qsTr("Minimum meomry") },
+        { value: "measured", label: qsTr("Your memory use") }
+    ]
+    readonly property list<distro> sorted: sortedDistros(Catalog.distros, sortKey, measured)
+
+    function sortedDistros(distros: list<distro>, key: string, ram: var): list<distro> {
+        const byName = (a, b) => Format.fullName(a).localeCompare(Format.fullName(b))
+        const compare = {
+            name: byName,
+            size: (a, b) => a.isoSize - b.isoSize || byName(a, b),
+            ram: (a, b) => a.minRamMb - b.minRamMb || byName(a, b),
+            // Measured distros first, lightest first. Infinity - Infinity is NaN, so name decides.
+            measured: (a, b) => (ram[a.id] ?? Infinity) - (ram[b.id] ?? Infinity) || byName(a, b)
+        }[key]
+        return [...distros].sort(compare)
+    }
 
     function cellsFor(d: distro): list<string> {
         const ram = measured[d.id]
@@ -61,43 +82,97 @@ PageScroll {
         }
     }
 
-    PageHeader {
-        title: qsTr("Compare")
-        subtitle: qsTr("The facts side by side. Memory use is measured on your PC while a distro runs in a window.")
-    }
+    ColumnLayout {
+        x: Math.round((page.width - width) / 2)
+        y: Theme.gapXxl
+        width: Math.min(page.width - 2 * Theme.gapXxl, 1180)
+        height: page.height - 2 * Theme.gapXxl
+        spacing: Theme.gapXl
 
-    Notice {
-        visible: !page.anyMeasured
-        text: qsTr("\"Your memory use\" fills in as you try distros. Start one in a window and look at it for a minute.")
-        Layout.fillWidth: true
-    }
+        PageHeader {
+            title: qsTr("Compare")
+            subtitle: qsTr("The facts side by side. Memory use is measured on your PC while a distro runs in a window.")
+        }
 
-    Panel {
-        padding: 0
-        Layout.fillWidth: true
+        Notice {
+            visible: !page.anyMeasured
+            text: qsTr("\"Your memory use\" fills in as you try distros. Start one in a window and look at it for a minute.")
+            Layout.fillWidth: true
+        }
 
-        Column {
-            width: parent.width
+        RowLayout {
+            spacing: Theme.gapM
+            Layout.fillWidth: true
 
-            CompareRow {
-                width: parent.width
-                header: true
-                columns: page.columns
-                cells: page.columns.map(column => column.title)
+            ChoiceMenu {
+                title: qsTr("Sort by")
+                options: page.sortOptions
+                current: page.sortKey
+                highlighted: false
+                onPicked: value => page.sortKey = value
             }
 
-            Repeater {
-                model: Catalog.distros
+            Label {
+                text: qsTr("%1 distros").arg(Catalog.distros.length)
+                color: Theme.textFaint
+            }
+        }
 
-                CompareRow {
-                    required property distro modelData
+        Panel {
+            id: tablePanel
 
-                    width: parent.width
-                    columns: page.columns
-                    distro: modelData
-                    cells: page.cellsFor(modelData)
-                    lastCellFaded: !page.measured[modelData.id]
-                    onClicked: page.distroSelected(modelData.id)
+            padding: 0
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            Flickable {
+                anchors.fill: parent
+                contentWidth: rows.width
+                flickableDirection: Flickable.HorizontalFlick
+                boundsBehavior: Flickable.StopAtBounds
+                clip: true
+
+                ScrollBar.horizontal: ScrollBar {}
+
+                ListView {
+                    id: rows
+
+                    width: Math.max(tablePanel.availableWidth, page.tableWidth)
+                    height: parent.height
+                    clip: true
+                    model: page.sorted
+                    boundsBehavior: Flickable.StopAtBounds
+                    headerPositioning: ListView.OverlayHeader
+
+                    ScrollBar.vertical: ScrollBar {
+                        parent: tablePanel
+                        anchors {
+                            top: parent.top
+                            right: parent.right
+                            bottom: parent.bottom
+                            topMargin: Theme.gapS
+                            bottomMargin: Theme.gapS
+                        }
+                    }
+
+                    header: CompareRow {
+                        z: 2
+                        width: ListView.view.width
+                        header: true
+                        columns: page.columns
+                        cells: page.columns.map(column => column.title)
+                    }
+
+                    delegate: CompareRow {
+                        required property distro modelData
+
+                        width: ListView.view.width
+                        columns: page.columns
+                        distro: modelData
+                        cells: page.cellsFor(modelData)
+                        lastCellFaded: !page.measured[modelData.id]
+                        onClicked: page.distroSelected(modelData.id)
+                    }
                 }
             }
         }
