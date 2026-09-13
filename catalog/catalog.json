@@ -1306,6 +1306,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-silverblue",
+      "name": "Fedora",
+      "edition": "Silverblue",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora Workstation as an atomic system: updates as a whole, apps as Flatpaks.",
+        "de": "Fedora Workstation als atomares System: Updates als Ganzes, Apps als Flatpaks."
+      },
+      "description": {
+        "en": "Silverblue keeps the core system read-only and replaces it as a whole on every update, so a broken update is undone by picking the previous version at boot. Apps come as Flatpaks from Flathub. It is very robust, but installing system tools works differently than on classic Linux.",
+        "de": "Silverblue hält das Grundsystem schreibgeschützt und tauscht es bei jedem Update als Ganzes aus, ein kaputtes Update machst du rückgängig, indem du beim Start die vorherige Version wählst. Apps kommen als Flatpaks von Flathub. Das ist sehr robust, aber Systemwerkzeuge installierst du anders als bei klassischem Linux."
+      },
+      "notes": {
+        "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around, or try Fedora Workstation first, which has the same desktop. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Das ISO enthält nur den Installer, es gibt keinen Live-Desktop zum Ausprobieren. Installier es auf die Testux-Testplatte, um dich umzuschauen, oder probier zuerst Fedora Workstation aus, das denselben Desktop hat. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/atomic-desktops/silverblue/",
+      "color": "#4a86cf",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Silverblue/x86_64/iso/Fedora-Silverblue-ostree-x86_64-44-1.7.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Silverblue/x86_64/iso/Fedora-Silverblue-44-1.7-x86_64-CHECKSUM",
+        "size": 3331284992
+      },
+      "secureBoot": true,
+      "liveSession": false,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "opensuse-tumbleweed",
       "name": "openSUSE Tumbleweed",
       "edition": "KDE Live",
