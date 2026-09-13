@@ -918,7 +918,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "lite-welcome",
+          "title": {
+            "en": "Open Lite Welcome",
+            "de": "Lite Welcome öffnen"
+          },
+          "detail": {
+            "en": "The welcome screen links to updates, drivers and the Lite Software tool for popular apps like Steam, Zoom or Spotify.",
+            "de": "Der Willkommensbildschirm verlinkt Updates, Treiber und Lite Software für beliebte Programme wie Steam, Zoom oder Spotify."
+          }
+        }
+      ]
     },
     {
       "id": "linuxmint-mate",
