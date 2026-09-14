@@ -1339,6 +1339,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-sway",
+      "name": "Fedora",
+      "edition": "Sway",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora with Sway: a keyboard-driven tiling desktop for people who like to tinker.",
+        "de": "Fedora mit Sway: ein per Tastatur gesteuerter Kachel-Desktop für Leute, die gern basteln."
+      },
+      "description": {
+        "en": "Sway arranges windows side by side automatically instead of letting them overlap, and you control almost everything with keyboard shortcuts. It is fast and very efficient once learned, but it works nothing like Windows. Configuration happens in a text file.",
+        "de": "Sway ordnet Fenster automatisch nebeneinander an, statt sie überlappen zu lassen, und fast alles steuerst du mit Tastenkürzeln. Wenn man es einmal gelernt hat, ist es schnell und sehr effizient, funktioniert aber ganz anders als Windows. Eingestellt wird es über eine Textdatei."
+      },
+      "notes": {
+        "en": "There is no start menu: by default Super+Enter opens a terminal and Super+D the app launcher. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Es gibt kein Startmenü: Standardmäßig öffnet Super+Enter ein Terminal und Super+D den App-Starter. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/sway/",
+      "color": "#68751c",
+      "desktop": "Sway",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Sway-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2397937664
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "opensuse-tumbleweed",
       "name": "openSUSE Tumbleweed",
       "edition": "KDE Live",
