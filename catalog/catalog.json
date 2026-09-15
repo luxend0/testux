@@ -623,6 +623,39 @@
       "minRamMb": 4096
     },
     {
+      "id": "rocky-kde",
+      "name": "Rocky Linux",
+      "edition": "KDE Plasma",
+      "version": "10",
+      "category": "kde",
+      "summary": {
+        "en": "Rocky Linux with KDE Plasma: long support and a familiar desktop.",
+        "de": "Rocky Linux mit KDE Plasma: lange Unterstützung und ein vertrauter Desktop."
+      },
+      "description": {
+        "en": "This edition puts the KDE Plasma desktop on top of Rocky Linux, with a taskbar and start menu that feel familiar coming from Windows. The base gets about ten years of updates per major version. A steady choice for PCs that should simply keep working.",
+        "de": "Diese Ausgabe setzt den KDE-Plasma-Desktop auf Rocky Linux, mit Taskleiste und Startmenü, die sich nach Windows vertraut anfühlen. Die Basis bekommt pro Hauptversion rund zehn Jahre Updates. Eine beständige Wahl für PCs, die einfach weiterlaufen sollen."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn aus NVIDIAs eigener Paketquelle oder aus ELRepo hinzu."
+      },
+      "website": "https://rockylinux.org/",
+      "color": "#10b981",
+      "desktop": "KDE Plasma",
+      "base": "RHEL",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/Rocky-10-KDE-x86_64-latest.iso",
+        "sha256Url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/CHECKSUM",
+        "size": 3470096384
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "bazzite",
       "name": "Bazzite",
       "edition": "KDE",
