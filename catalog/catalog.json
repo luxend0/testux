@@ -1197,7 +1197,19 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "jam-interface",
+          "title": {
+            "en": "Plug in your audio interface",
+            "de": "Dein Audio-Interface anschließen"
+          },
+          "detail": {
+            "en": "Connect your USB audio interface or MIDI keyboard and check that Ardour sees its inputs and outputs. In the window VM, USB devices are not passed through, so this test needs the live boot.",
+            "de": "Schließ dein USB-Audio-Interface oder MIDI-Keyboard an und prüf, ob Ardour die Ein- und Ausgänge sieht. In der Fenster-VM werden USB-Geräte nicht durchgereicht, für diesen Test brauchst du also den Live-Start."
+          }
+        }
+      ]
     },
     {
       "id": "ubuntu-studio",
