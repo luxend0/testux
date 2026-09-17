@@ -921,6 +921,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "fedora-xfce",
+      "name": "Fedora",
+      "edition": "Xfce",
+      "version": "44",
+      "category": "lightweight",
+      "summary": {
+        "en": "Fedora with Xfce: a classic desktop with a taskbar that stays quick on older PCs.",
+        "de": "Fedora mit Xfce: ein klassischer Desktop mit Taskleiste, der auch auf älteren PCs flott bleibt."
+      },
+      "description": {
+        "en": "Xfce looks and works much like older Windows versions: a panel with an application menu, a taskbar and a tray. It needs little memory, so it suits laptops and PCs that feel slow with heavier desktops. Underneath you get the same current Fedora as the main edition.",
+        "de": "Xfce sieht aus und funktioniert ähnlich wie ältere Windows-Versionen: eine Leiste mit Anwendungsmenü, Taskleiste und Infobereich. Es braucht wenig Arbeitsspeicher und passt deshalb zu Laptops und PCs, die mit schwereren Desktops träge wirken. Darunter steckt dasselbe aktuelle Fedora wie in der Hauptausgabe."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/xfce/",
+      "color": "#2284f2",
+      "desktop": "Xfce",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Xfce-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2928986112
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "linux-lite",
       "name": "Linux Lite",
       "version": "8.0",
