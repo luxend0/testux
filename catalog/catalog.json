@@ -812,6 +812,40 @@
       "minRamMb": 3072
     },
     {
+      "id": "cachyos-handheld",
+      "name": "CachyOS",
+      "edition": "Handheld",
+      "version": "2026-06-28",
+      "category": "gaming",
+      "summary": {
+        "en": "A SteamOS like console experience for handhelds and living room PCs.",
+        "de": "Ein Konsolen-Erlebnis wie bei SteamOS, für Handhelds und Wohnzimmer-PCs."
+      },
+      "description": {
+        "en": "The handheld edition turns CachyOS into a game console: after installing it starts straight into Steam's Game Mode and switches to a KDE Plasma desktop when you need one. It is made for devices like the Steam Deck, ROG Ally and Legion Go, but works on a normal PC with a controller too.",
+        "de": "Die Handheld-Edition macht aus CachyOS eine Spielkonsole: Nach der Installation startet sie direkt in den Game Mode von Steam und wechselt bei Bedarf zu einem KDE-Plasma-Desktop. Sie ist für Geräte wie Steam Deck, ROG Ally und Legion Go gedacht, läuft aber auch auf einem normalen PC mit Controller."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start CachyOS on this PC. Installing needs an internet connection, the installer downloads the system.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um CachyOS direkt auf dem PC zu starten. Für die Installation brauchst du eine Internetverbindung, der Installer lädt das System herunter."
+      },
+      "website": "https://cachyos.org",
+      "color": "#2dd4bf",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://cdn77.cachyos.org/ISO/handheld/260628/cachyos-handheld-linux-260628.iso",
+        "sha256Url": "https://cdn77.cachyos.org/ISO/handheld/260628/cachyos-handheld-linux-260628.iso.sha256",
+        "size": 2664595456
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "drauger",
       "name": "Drauger OS",
       "version": "7.8",
