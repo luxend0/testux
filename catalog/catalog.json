@@ -2026,6 +2026,38 @@
       "minRamMb": 4096
     },
     {
+      "id": "rebornos",
+      "name": "RebornOS",
+      "version": "2026.01.22",
+      "category": "other",
+      "summary": {
+        "en": "Arch with an installer that lets you pick from many desktops.",
+        "de": "Arch mit einem Installer, in dem du aus vielen Desktops wählst."
+      },
+      "description": {
+        "en": "RebornOS boots into a light Xfce live desktop and its installer lets you choose your desktop, kernel and apps before installing, from KDE Plasma and GNOME to tiling window managers. Underneath it is Arch Linux with fast updates. A welcome app helps with drivers and first steps.",
+        "de": "RebornOS startet in einen leichten Xfce-Live-Desktop, und im Installer wählst du vor der Installation Desktop, Kernel und Apps, von KDE Plasma und GNOME bis zu Tiling-Fenstermanagern. Darunter steckt Arch Linux mit schnellen Updates. Eine Willkommens-App hilft bei Treibern und den ersten Schritten."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start RebornOS on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um RebornOS direkt auf dem PC zu starten."
+      },
+      "website": "https://rebornos.org",
+      "color": "#0088aa",
+      "desktop": "Xfce",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://cdn.soulharsh007.dev/RebornOS-ISO/rebornos_iso-2026.01.22-x86_64.iso",
+        "sha256": "8042bbd81b0f6ad30b0ad328f4c8c7480fbbfa6dbe0f6924b35c726fa4f99b40",
+        "size": 4065820672
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "rocky-workstation",
       "name": "Rocky Linux",
       "edition": "Workstation",
