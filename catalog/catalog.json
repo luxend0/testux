@@ -1516,6 +1516,39 @@
       "minRamMb": 4096
     },
     {
+      "id": "almalinux-gnome",
+      "name": "AlmaLinux",
+      "edition": "GNOME",
+      "version": "10",
+      "category": "other",
+      "summary": {
+        "en": "A free rebuild of Red Hat Enterprise Linux: very stable, with ten years of updates.",
+        "de": "Ein freier Nachbau von Red Hat Enterprise Linux: sehr stabil, mit zehn Jahren Updates."
+      },
+      "description": {
+        "en": "AlmaLinux is compatible with Red Hat Enterprise Linux and gets security updates for about ten years per major version. Its software is deliberately older and changes rarely, which suits work PCs that simply have to keep running. For gaming or the newest apps, Fedora or a distro based on it fits better.",
+        "de": "AlmaLinux ist kompatibel zu Red Hat Enterprise Linux und bekommt pro Hauptversion rund zehn Jahre Sicherheitsupdates. Die Software ist bewusst älter und ändert sich selten, das passt zu Arbeits-PCs, die einfach laufen müssen. Für Spiele oder die neuesten Apps passt Fedora oder eine darauf aufbauende Distro besser."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn aus NVIDIAs eigener Paketquelle oder aus ELRepo hinzu."
+      },
+      "website": "https://almalinux.org/",
+      "color": "#0069da",
+      "desktop": "GNOME",
+      "base": "RHEL",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://repo.almalinux.org/almalinux/10/live/x86_64/AlmaLinux-10-latest-x86_64-Live-GNOME.iso",
+        "sha256Url": "https://repo.almalinux.org/almalinux/10/live/x86_64/CHECKSUM",
+        "size": 1930422272
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "bluefin",
       "name": "Bluefin",
       "version": "Stable",
