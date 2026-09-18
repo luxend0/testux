@@ -1185,6 +1185,38 @@
       "minRamMb": 1024
     },
     {
+      "id": "mabox",
+      "name": "Mabox Linux",
+      "version": "26.09",
+      "category": "lightweight",
+      "summary": {
+        "en": "A light, fast Openbox desktop on top of Manjaro, great for older PCs.",
+        "de": "Ein leichter, flotter Openbox-Desktop auf Manjaro-Basis, ideal für ältere PCs."
+      },
+      "description": {
+        "en": "Mabox combines Manjaro's tested updates with Openbox, a window manager that needs very little memory. Handy menus on the desktop edges and a control center make it easy to use without learning shortcuts. It is a good choice to give an older laptop a second life.",
+        "de": "Mabox verbindet Manjaros getestete Updates mit Openbox, einem Fenstermanager, der sehr wenig Speicher braucht. Praktische Menüs an den Bildschirmrändern und ein Kontrollzentrum machen die Bedienung leicht, ohne Tastenkürzel lernen zu müssen. Eine gute Wahl, um einem älteren Laptop ein zweites Leben zu geben."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Mabox Linux on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Mabox Linux direkt auf dem PC zu starten."
+      },
+      "website": "https://maboxlinux.org",
+      "color": "#3d8fd1",
+      "desktop": "Openbox",
+      "base": "Manjaro",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/mabox-linux/26.09/mabox-linux-26.09-Istredd-260911-linux618.iso",
+        "sha256": "8fba01109f083c714884d2bbe0e959785659aa7fd3998b4dd7a726eb3fb34607",
+        "size": 3548446720
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "ubuntu-mate",
       "name": "Ubuntu MATE",
       "version": "26.10",
