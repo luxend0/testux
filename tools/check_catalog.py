@@ -7,6 +7,17 @@ Exits non-zero when the schema is broken, an ISO URL does not answer with 200, o
 checksum listing does not name the ISO. Size drift above 10 % is only a warning.
 """
 
+import argparse
+import json
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+from urllib.parse import unquote, urlparse
+
 RELEASE_MODELS = {"fixed", "rolling"}
 REQUIRED_TEXT = ("id", "name", "version", "website", "base")
 COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
