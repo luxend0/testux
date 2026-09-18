@@ -17,3 +17,14 @@ on:
 
 permissions:
   contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check catalog links and checksums
+        run: python3 tools/check_catalog.py
