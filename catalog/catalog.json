@@ -623,6 +623,39 @@
       "minRamMb": 4096
     },
     {
+      "id": "rocky-kde",
+      "name": "Rocky Linux",
+      "edition": "KDE Plasma",
+      "version": "10",
+      "category": "kde",
+      "summary": {
+        "en": "Rocky Linux with KDE Plasma: long support and a familiar desktop.",
+        "de": "Rocky Linux mit KDE Plasma: lange Unterstützung und ein vertrauter Desktop."
+      },
+      "description": {
+        "en": "This edition puts the KDE Plasma desktop on top of Rocky Linux, with a taskbar and start menu that feel familiar coming from Windows. The base gets about ten years of updates per major version. A steady choice for PCs that should simply keep working.",
+        "de": "Diese Ausgabe setzt den KDE-Plasma-Desktop auf Rocky Linux, mit Taskleiste und Startmenü, die sich nach Windows vertraut anfühlen. Die Basis bekommt pro Hauptversion rund zehn Jahre Updates. Eine beständige Wahl für PCs, die einfach weiterlaufen sollen."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn aus NVIDIAs eigener Paketquelle oder aus ELRepo hinzu."
+      },
+      "website": "https://rockylinux.org/",
+      "color": "#10b981",
+      "desktop": "KDE Plasma",
+      "base": "RHEL",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/Rocky-10-KDE-x86_64-latest.iso",
+        "sha256Url": "https://download.rockylinux.org/pub/rocky/10/live/x86_64/CHECKSUM",
+        "size": 3470096384
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "bazzite",
       "name": "Bazzite",
       "edition": "KDE",
@@ -881,6 +914,39 @@
         "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso",
         "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
         "size": 3252639744
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
+      "id": "fedora-xfce",
+      "name": "Fedora",
+      "edition": "Xfce",
+      "version": "44",
+      "category": "lightweight",
+      "summary": {
+        "en": "Fedora with Xfce: a classic desktop with a taskbar that stays quick on older PCs.",
+        "de": "Fedora mit Xfce: ein klassischer Desktop mit Taskleiste, der auch auf älteren PCs flott bleibt."
+      },
+      "description": {
+        "en": "Xfce looks and works much like older Windows versions: a panel with an application menu, a taskbar and a tray. It needs little memory, so it suits laptops and PCs that feel slow with heavier desktops. Underneath you get the same current Fedora as the main edition.",
+        "de": "Xfce sieht aus und funktioniert ähnlich wie ältere Windows-Versionen: eine Leiste mit Anwendungsmenü, Taskleiste und Infobereich. Es braucht wenig Arbeitsspeicher und passt deshalb zu Laptops und PCs, die mit schwereren Desktops träge wirken. Darunter steckt dasselbe aktuelle Fedora wie in der Hauptausgabe."
+      },
+      "notes": {
+        "en": "The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/xfce/",
+      "color": "#2284f2",
+      "desktop": "Xfce",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Xfce-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2928986112
       },
       "secureBoot": true,
       "liveSession": true,
@@ -1314,6 +1380,72 @@
       },
       "secureBoot": true,
       "liveSession": false,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
+      "id": "fedora-silverblue",
+      "name": "Fedora",
+      "edition": "Silverblue",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora Workstation as an atomic system: updates as a whole, apps as Flatpaks.",
+        "de": "Fedora Workstation als atomares System: Updates als Ganzes, Apps als Flatpaks."
+      },
+      "description": {
+        "en": "Silverblue keeps the core system read-only and replaces it as a whole on every update, so a broken update is undone by picking the previous version at boot. Apps come as Flatpaks from Flathub. It is very robust, but installing system tools works differently than on classic Linux.",
+        "de": "Silverblue hält das Grundsystem schreibgeschützt und tauscht es bei jedem Update als Ganzes aus, ein kaputtes Update machst du rückgängig, indem du beim Start die vorherige Version wählst. Apps kommen als Flatpaks von Flathub. Das ist sehr robust, aber Systemwerkzeuge installierst du anders als bei klassischem Linux."
+      },
+      "notes": {
+        "en": "The ISO only contains the installer, there is no live desktop to try. Install it to the Testux test disk to look around, or try Fedora Workstation first, which has the same desktop. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Das ISO enthält nur den Installer, es gibt keinen Live-Desktop zum Ausprobieren. Installier es auf die Testux-Testplatte, um dich umzuschauen, oder probier zuerst Fedora Workstation aus, das denselben Desktop hat. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/atomic-desktops/silverblue/",
+      "color": "#4a86cf",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Silverblue/x86_64/iso/Fedora-Silverblue-ostree-x86_64-44-1.7.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Silverblue/x86_64/iso/Fedora-Silverblue-44-1.7-x86_64-CHECKSUM",
+        "size": 3331284992
+      },
+      "secureBoot": true,
+      "liveSession": false,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
+      "id": "fedora-sway",
+      "name": "Fedora",
+      "edition": "Sway",
+      "version": "44",
+      "category": "advanced",
+      "summary": {
+        "en": "Fedora with Sway: a keyboard-driven tiling desktop for people who like to tinker.",
+        "de": "Fedora mit Sway: ein per Tastatur gesteuerter Kachel-Desktop für Leute, die gern basteln."
+      },
+      "description": {
+        "en": "Sway arranges windows side by side automatically instead of letting them overlap, and you control almost everything with keyboard shortcuts. It is fast and very efficient once learned, but it works nothing like Windows. Configuration happens in a text file.",
+        "de": "Sway ordnet Fenster automatisch nebeneinander an, statt sie überlappen zu lassen, und fast alles steuerst du mit Tastenkürzeln. Wenn man es einmal gelernt hat, ist es schnell und sehr effizient, funktioniert aber ganz anders als Windows. Eingestellt wird es über eine Textdatei."
+      },
+      "notes": {
+        "en": "There is no start menu: by default Super+Enter opens a terminal and Super+D the app launcher. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Es gibt kein Startmenü: Standardmäßig öffnet Super+Enter ein Terminal und Super+D den App-Starter. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/spins/sway/",
+      "color": "#68751c",
+      "desktop": "Sway",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Sway-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Spins-44-1.7-x86_64-CHECKSUM",
+        "size": 2397937664
+      },
+      "secureBoot": true,
+      "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048
     },
