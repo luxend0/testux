@@ -845,6 +845,40 @@
       "minRamMb": 4096
     },
     {
+      "id": "fedora-games",
+      "name": "Fedora",
+      "edition": "Games",
+      "version": "44",
+      "category": "gaming",
+      "summary": {
+        "en": "A showcase of open source games on Fedora with KDE Plasma.",
+        "de": "Ein Schaufenster für Open-Source-Spiele auf Fedora mit KDE Plasma."
+      },
+      "description": {
+        "en": "The Games Lab comes with a selection of free games, from strategy like Battle for Wesnoth and Freeciv to racing and puzzles. It is a quick way to see how smoothly games run on Linux before you set up Steam. Since Fedora 44 it uses the KDE Plasma desktop.",
+        "de": "Das Games Lab bringt eine Auswahl freier Spiele mit, von Strategie wie Battle for Wesnoth und Freeciv bis zu Rennspielen und Puzzles. So siehst du schnell, wie flüssig Spiele unter Linux laufen, bevor du Steam einrichtest. Seit Fedora 44 nutzt es den Desktop KDE Plasma."
+      },
+      "notes": {
+        "en": "Fedora Games cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick. Steam is not included; after installing you get it through the RPM Fusion repository. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Fedora Games lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick. Steam ist nicht dabei; nach der Installation bekommst du es über die RPM-Fusion-Paketquelle. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/labs/games/",
+      "color": "#3c6eb4",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Games-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Labs-44-1.7-x86_64-CHECKSUM",
+        "size": 8691677184
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "garuda-gaming",
       "name": "Garuda Linux",
       "edition": "Dr460nized Gaming",
