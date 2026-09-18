@@ -1,5 +1,6 @@
 import QtQuick
 
+// Search text and filter choices of the distro list, plus the matching logic.
 QtObject {
     property string query: ""
     property string category: ""     // "" = every category

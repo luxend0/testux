@@ -10,6 +10,7 @@ AbstractButton {
     default property alias menuContent: menuGrid.data
     property bool highlighted: false
     property int optionCount: 0
+    // Long lists get two columns, filled top to bottom so alphabetical order reads down.
     readonly property int menuColumns: optionCount > 10 ? 2 : 1
     readonly property bool menuOpen: popup.opened
 

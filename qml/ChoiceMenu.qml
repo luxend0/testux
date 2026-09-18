@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 
+// Single choice from a popup list, e.g. "Category: Gaming".
 MenuButton {
     id: menu
 
