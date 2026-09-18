@@ -689,6 +689,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "ultramarine-plasma",
+      "name": "Ultramarine Linux",
+      "edition": "Plasma",
+      "version": "44",
+      "category": "kde",
+      "summary": {
+        "en": "Fedora made easier: codecs, extra repositories and NVIDIA drivers set up for you.",
+        "de": "Fedora, einfacher gemacht: Codecs, zusätzliche Paketquellen und NVIDIA-Treiber sind schon eingerichtet."
+      },
+      "description": {
+        "en": "Ultramarine takes Fedora and adds what most people install right after: multimedia codecs, the RPM Fusion and Terra repositories and automatic driver setup. The Plasma edition is the recommended one, with a familiar taskbar and start menu. Releases follow Fedora's cycle.",
+        "de": "Ultramarine nimmt Fedora und ergänzt, was die meisten direkt danach installieren: Multimedia-Codecs, die Paketquellen RPM Fusion und Terra sowie eine automatische Treibereinrichtung. Die Plasma-Ausgabe ist die empfohlene, mit vertrauter Taskleiste und Startmenü. Neue Versionen folgen dem Zyklus von Fedora."
+      },
+      "notes": {
+        "en": "Turn off Secure Boot for now: the Ultramarine guide recommends setting it up again after installing. NVIDIA drivers are installed automatically if you are online during the installation.",
+        "de": "Schalte Secure Boot vorerst aus: Die Anleitung von Ultramarine empfiehlt, es nach der Installation wieder einzurichten. NVIDIA-Treiber werden automatisch installiert, wenn du während der Installation online bist."
+      },
+      "website": "https://ultramarine-linux.org/",
+      "color": "#00078f",
+      "desktop": "KDE Plasma",
+      "base": "Fedora",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://images.fyralabs.com/isos/ultramarine/44/ultramarine-plasma-44-live-anaconda-x86_64.iso",
+        "sha256Url": "https://images.fyralabs.com/isos/ultramarine/44/ultramarine-plasma-44-live-anaconda-x86_64.iso.sha256sum",
+        "size": 4064980992
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "bazzite",
       "name": "Bazzite",
       "edition": "KDE",
