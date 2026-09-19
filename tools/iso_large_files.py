@@ -82,6 +82,8 @@ def large_files(image):
     seen, found = set(), []
     while pending:
         path, extent, size = pending.pop()
+        if extent in seen:
+            continue
         seen.add(extent)
         files, continued = [], False
         for name, child_extent, child_size, is_dir, more in records(image.read(extent * SECTOR, size)):
