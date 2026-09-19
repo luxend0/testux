@@ -812,6 +812,40 @@
       "minRamMb": 4096
     },
     {
+      "id": "garuda-gaming",
+      "name": "Garuda Linux",
+      "edition": "Dr460nized Gaming",
+      "version": "2026-08-19",
+      "category": "gaming",
+      "summary": {
+        "en": "Garuda with Steam, Lutris, Heroic and gaming tools already installed.",
+        "de": "Garuda mit Steam, Lutris, Heroic und Gaming-Tools schon vorinstalliert."
+      },
+      "description": {
+        "en": "The gaming edition is Garuda Dr460nized plus a big bundle of game launchers, Wine tools and controller support. The Garuda Gamer app installs more with one click. Drivers for NVIDIA and AMD are set up for you, so you can log in to Steam and start playing.",
+        "de": "Die Gaming-Edition ist Garuda Dr460nized plus ein großes Paket aus Spiele-Launchern, Wine-Tools und Controller-Unterstützung. Mit der App Garuda Gamer installierst du per Klick noch mehr. Treiber für NVIDIA und AMD werden für dich eingerichtet, du kannst dich also bei Steam anmelden und loslegen."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Garuda on this PC. Garuda is tuned for real hardware and can feel slow in a window.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Garuda direkt auf dem PC zu starten. Garuda ist auf echte Hardware abgestimmt und kann sich im Fenster langsam anfühlen."
+      },
+      "website": "https://garudalinux.org",
+      "color": "#c04ff5",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://iso.builds.garudalinux.org/iso/garuda/dr460nized-gaming/260819/garuda-dr460nized-gaming-linux-garuda-260819.iso",
+        "sha256Url": "https://iso.builds.garudalinux.org/iso/garuda/dr460nized-gaming/260819/garuda-dr460nized-gaming-linux-garuda-260819.iso.sha256",
+        "size": 4979345408
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "nobara",
       "name": "Nobara",
       "edition": "Official",
