@@ -524,6 +524,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "garuda-dr460nized",
+      "name": "Garuda Linux",
+      "edition": "Dr460nized",
+      "version": "2026-08-19",
+      "category": "kde",
+      "summary": {
+        "en": "Arch with a bold, ready styled KDE Plasma and snapshots you can roll back to.",
+        "de": "Arch mit einem auffällig gestylten KDE Plasma und Snapshots, zu denen du zurückkehren kannst."
+      },
+      "description": {
+        "en": "Garuda takes Arch Linux and adds a striking KDE Plasma look, many graphical tools and automatic Btrfs snapshots before every update. If an update goes wrong, you pick an older snapshot in the boot menu and are back where you were. The Garuda Assistant handles drivers, updates and system settings with a click.",
+        "de": "Garuda nimmt Arch Linux und ergänzt ein auffälliges KDE-Plasma-Design, viele grafische Werkzeuge und automatische Btrfs-Snapshots vor jedem Update. Geht ein Update schief, wählst du im Startmenü einen älteren Snapshot und bist wieder da, wo du warst. Der Garuda Assistant erledigt Treiber, Updates und Systemeinstellungen per Klick."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Garuda on this PC. Garuda is tuned for real hardware and can feel slow in a window.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Garuda direkt auf dem PC zu starten. Garuda ist auf echte Hardware abgestimmt und kann sich im Fenster langsam anfühlen."
+      },
+      "website": "https://garudalinux.org",
+      "color": "#8f5cf7",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://iso.builds.garudalinux.org/iso/garuda/dr460nized/260819/garuda-dr460nized-linux-garuda-260819.iso",
+        "sha256Url": "https://iso.builds.garudalinux.org/iso/garuda/dr460nized/260819/garuda-dr460nized-linux-garuda-260819.iso.sha256",
+        "size": 3559471104
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
       "id": "kde-neon",
       "name": "KDE neon",
       "edition": "User Edition",
