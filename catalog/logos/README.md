@@ -47,3 +47,4 @@ Other changes are listed per file.
 | garuda-dr460nized | [Commons: Garuda-purple.svg](https://commons.wikimedia.org/wiki/File:Garuda-purple.svg) | CC BY-SA 4.0 |
 | garuda-gaming | same file as garuda-dr460nized | CC BY-SA 4.0 |
 | drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
+| mabox | none: no official SVG found (only PNG on maboxlinux.org), the app shows the initial tile | |
