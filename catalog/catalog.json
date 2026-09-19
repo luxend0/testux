@@ -1199,6 +1199,41 @@
       ]
     },
     {
+      "id": "fedora-design-suite",
+      "name": "Fedora",
+      "edition": "Design Suite",
+      "version": "44",
+      "category": "creative",
+      "summary": {
+        "en": "Fedora with GIMP, Inkscape, Blender, Krita and more creative tools ready to go.",
+        "de": "Fedora mit GIMP, Inkscape, Blender, Krita und weiteren Kreativprogrammen, sofort einsatzbereit."
+      },
+      "description": {
+        "en": "The Design Suite is a Fedora made by designers for designers: photo editing, vector graphics, 3D, painting, page layout and video editing are installed out of the box. Try whether the open source tools cover what you do with Photoshop, Illustrator or Premiere. Everything else is regular Fedora with GNOME.",
+        "de": "Die Design Suite ist ein Fedora von Designern für Designer: Fotobearbeitung, Vektorgrafik, 3D, Malen, Seitenlayout und Videoschnitt sind schon installiert. Probier aus, ob die Open-Source-Programme abdecken, was du mit Photoshop, Illustrator oder Premiere machst. Alles andere ist normales Fedora mit GNOME."
+      },
+      "notes": {
+        "en": "Fedora Design Suite cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Fedora Design Suite lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/labs/design-suite/",
+      "color": "#a3488f",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Design_suite-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Labs-44-1.7-x86_64-CHECKSUM",
+        "size": 5223985152
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048,
+      "checklist": []
+    },
+    {
       "id": "fedora-jam",
       "name": "Fedora",
       "edition": "Jam",
@@ -1243,6 +1278,40 @@
           }
         }
       ]
+    },
+    {
+      "id": "fedora-scientific",
+      "name": "Fedora",
+      "edition": "Scientific",
+      "version": "44",
+      "category": "creative",
+      "summary": {
+        "en": "Fedora with tools for science, data and teaching: Python, R, Octave, LaTeX and more.",
+        "de": "Fedora mit Werkzeugen für Wissenschaft, Daten und Lehre: Python, R, Octave, LaTeX und mehr."
+      },
+      "description": {
+        "en": "The Scientific lab collects software for numerical work and research: Python with scientific libraries, R, GNU Octave as a MATLAB alternative, LaTeX for papers and tools for plots and statistics. It suits students and researchers who want everything in one place. The desktop is KDE Plasma.",
+        "de": "Das Scientific Lab bündelt Software für Numerik und Forschung: Python mit wissenschaftlichen Bibliotheken, R, GNU Octave als MATLAB-Alternative, LaTeX für Arbeiten sowie Werkzeuge für Plots und Statistik. Es passt zu Studierenden und Forschenden, die alles an einem Ort wollen. Der Desktop ist KDE Plasma."
+      },
+      "notes": {
+        "en": "Fedora Scientific cannot start straight from the hard drive: its system image is larger than 4 GB, which the FAT32 boot partition cannot hold. Try it in the window or use a USB stick. The NVIDIA driver is not on the ISO. After installing, you add it in a few clicks through the RPM Fusion repository.",
+        "de": "Fedora Scientific lässt sich nicht direkt von der Festplatte starten: Sein System-Image ist größer als 4 GB, das passt nicht auf die FAT32-Startpartition. Probier es im Fenster aus oder nimm einen USB-Stick. Der NVIDIA-Treiber ist nicht auf dem ISO. Nach der Installation fügst du ihn mit ein paar Klicks über die RPM-Fusion-Paketquelle hinzu."
+      },
+      "website": "https://fedoraproject.org/labs/scientific/",
+      "color": "#00838f",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Scientific_KDE-Live-44-1.7.x86_64.iso",
+        "sha256Url": "https://download.fedoraproject.org/pub/alt/releases/44/Labs/x86_64/iso/Fedora-Labs-44-1.7-x86_64-CHECKSUM",
+        "size": 6217959424
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
     },
     {
       "id": "ubuntu-studio",
