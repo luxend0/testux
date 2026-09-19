@@ -8,6 +8,7 @@ MenuButton {
     id: menu
 
     property string title
+    // [{ value: string, label: string }]
     property list<var> options
     property string current
     // Value that counts as "nothing chosen", shown without highlight.
