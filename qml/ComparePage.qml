@@ -125,6 +125,8 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
+            // Horizontal scrolling for narrow windows; the list inside scrolls vertically and
+            // keeps the header row on top.
             Flickable {
                 anchors.fill: parent
                 contentWidth: rows.width
