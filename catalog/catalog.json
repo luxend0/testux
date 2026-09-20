@@ -1297,6 +1297,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "manjaro-xfce",
+      "name": "Manjaro",
+      "edition": "Xfce",
+      "version": "26.1.0",
+      "category": "lightweight",
+      "summary": {
+        "en": "Arch based, light and classic: a fast Xfce desktop for older PCs.",
+        "de": "Basiert auf Arch, leicht und klassisch: ein flotter Xfce-Desktop für ältere PCs."
+      },
+      "description": {
+        "en": "The Xfce edition is Manjaro's lightest flagship: a classic desktop with a panel and start menu that stays quick on older hardware. Updates arrive in tested batches instead of one by one. Drivers and kernels are managed with Manjaro's graphical tools.",
+        "de": "Die Xfce-Edition ist Manjaros leichteste Hauptausgabe: ein klassischer Desktop mit Leiste und Startmenü, der auch auf älterer Hardware flott bleibt. Updates kommen in getesteten Paketen statt einzeln. Treiber und Kernel verwaltest du mit Manjaros grafischen Werkzeugen."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Manjaro on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Manjaro direkt auf dem PC zu starten."
+      },
+      "website": "https://manjaro.org",
+      "color": "#35bf5c",
+      "desktop": "Xfce",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://download.manjaro.org/xfce/26.1.0/manjaro-xfce-26.1.0-260812-linux71.iso",
+        "sha256Url": "https://download.manjaro.org/xfce/26.1.0/manjaro-xfce-26.1.0-260812-linux71.iso.sha256",
+        "size": 5142491136
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "ubuntu-mate",
       "name": "Ubuntu MATE",
       "version": "26.10",

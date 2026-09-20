@@ -46,6 +46,7 @@ Other changes are listed per file.
 | aurora | [ublue-os/aurora-docs `static/img/aurora-logo.svg`](https://github.com/ublue-os/aurora-docs/blob/main/static/img/aurora-logo.svg) | Repository licensed Apache-2.0; no separate trademark policy found; viewBox padded from 375x300 to square |
 | garuda-dr460nized | [Commons: Garuda-purple.svg](https://commons.wikimedia.org/wiki/File:Garuda-purple.svg) | CC BY-SA 4.0 |
 | garuda-gaming | same file as garuda-dr460nized | CC BY-SA 4.0 |
+| manjaro-xfce | copy of manjaro-kde.svg (see README.md) | Public domain |
 | artix-plasma | [Commons: Artix logo.svg](https://commons.wikimedia.org/wiki/File:Artix_logo.svg) | CC BY-SA 4.0 |
 | drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
 | cachyos-handheld | copy of cachyos.svg (see README.md) | GPL |
