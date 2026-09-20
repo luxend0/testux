@@ -1578,6 +1578,39 @@
       ]
     },
     {
+      "id": "artix-plasma",
+      "name": "Artix Linux",
+      "edition": "Plasma (OpenRC)",
+      "version": "2026-08-13",
+      "category": "advanced",
+      "summary": {
+        "en": "Arch Linux without systemd, for people who care about the init system.",
+        "de": "Arch Linux ohne systemd, für alle, denen das Init-System wichtig ist."
+      },
+      "description": {
+        "en": "Artix is Arch Linux with a different init system: instead of systemd it uses OpenRC, runit, s6 or dinit. This edition comes with KDE Plasma and OpenRC. It feels much like Arch, but some guides written for systemd need small changes, so it suits people who already know their way around Linux.",
+        "de": "Artix ist Arch Linux mit einem anderen Init-System: Statt systemd nutzt es OpenRC, runit, s6 oder dinit. Diese Edition kommt mit KDE Plasma und OpenRC. Es fühlt sich sehr nach Arch an, aber manche Anleitungen für systemd brauchen kleine Anpassungen, daher passt es zu Leuten, die sich schon mit Linux auskennen."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Artix Linux on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Artix Linux direkt auf dem PC zu starten."
+      },
+      "website": "https://artixlinux.org",
+      "color": "#10a0cc",
+      "desktop": "KDE Plasma",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://download.artixlinux.org/iso/artix-plasma-openrc-20260813-x86_64.iso",
+        "sha256Url": "https://download.artixlinux.org/iso/sha256sums",
+        "size": 2387892224
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "endeavouros",
       "name": "EndeavourOS",
       "edition": "Titan Nova",
