@@ -944,7 +944,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "garuda-gamer",
+          "title": {
+            "en": "Open Garuda Gamer",
+            "de": "Garuda Gamer öffnen"
+          },
+          "detail": {
+            "en": "It lists launchers and gaming tools with an install button next to each.",
+            "de": "Die App zeigt Launcher und Gaming-Tools mit einem Installieren-Knopf daneben."
+          }
+        }
+      ]
     },
     {
       "id": "nobara",
