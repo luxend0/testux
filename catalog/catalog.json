@@ -1431,7 +1431,19 @@
       "nvidiaReady": false,
       "bareMetal": false,
       "minRamMb": 2048,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "design-files",
+          "title": {
+            "en": "Open your own files",
+            "de": "Eigene Dateien öffnen"
+          },
+          "detail": {
+            "en": "Open a PSD in GIMP or Krita and an SVG or PDF in Inkscape to see how well your existing work comes across.",
+            "de": "Öffne eine PSD in GIMP oder Krita und eine SVG oder PDF in Inkscape, um zu sehen, wie gut deine bisherigen Arbeiten übernommen werden."
+          }
+        }
+      ]
     },
     {
       "id": "fedora-jam",
