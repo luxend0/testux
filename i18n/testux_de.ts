@@ -404,7 +404,7 @@
     <message>
         <location filename="../qml/ChoiceMenu.qml" line="21"/>
         <source>%1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2</translation>
     </message>
 </context>
 <context>
