@@ -1580,7 +1580,8 @@
         "de": "Direkt nach der Installation bereit für Musik, Video, Fotos und Grafik."
       },
       "description": {
-        "en": "Ubuntu Studio is the official Ubuntu flavor for creative work."
+        "en": "Ubuntu Studio is the official Ubuntu flavor for creative work. It comes with apps like Ardour for audio, Kdenlive for video, Krita for drawing and darktable for photos, and its system is tuned for low audio latency. The desktop is KDE Plasma.",
+        "de": "Ubuntu Studio ist die offizielle Ubuntu-Variante für kreatives Arbeiten. Programme wie Ardour für Audio, Kdenlive für Video, Krita zum Zeichnen und darktable für Fotos sind schon dabei, und das System ist auf geringe Audio-Latenz eingestellt. Der Desktop ist KDE Plasma."
       },
       "website": "https://ubuntustudio.org",
       "color": "#009bf9",
