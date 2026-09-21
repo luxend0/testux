@@ -2016,6 +2016,71 @@
       ]
     },
     {
+      "id": "manjaro-gnome",
+      "name": "Manjaro",
+      "edition": "GNOME",
+      "version": "26.1.0",
+      "category": "other",
+      "summary": {
+        "en": "Arch based with a clean GNOME desktop and calmer, tested updates.",
+        "de": "Basiert auf Arch, mit einem aufgeräumten GNOME-Desktop und ruhigeren, getesteten Updates."
+      },
+      "description": {
+        "en": "This edition pairs Manjaro's tested update batches with GNOME, a modern desktop built around a simple overview of your windows and apps. Manjaro's own tools install drivers and kernels with a click. The live system can start with proprietary drivers right from the boot menu.",
+        "de": "Diese Edition verbindet Manjaros getestete Update-Pakete mit GNOME, einem modernen Desktop rund um eine einfache Übersicht deiner Fenster und Apps. Manjaros eigene Werkzeuge installieren Treiber und Kernel per Klick. Das Live-System kann direkt aus dem Startmenü mit proprietären Treibern starten."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Manjaro on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Manjaro direkt auf dem PC zu starten."
+      },
+      "website": "https://manjaro.org",
+      "color": "#35bf5c",
+      "desktop": "GNOME",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://download.manjaro.org/gnome/26.1.0/manjaro-gnome-26.1.0-260812-linux71.iso",
+        "sha256Url": "https://download.manjaro.org/gnome/26.1.0/manjaro-gnome-26.1.0-260812-linux71.iso.sha256",
+        "size": 5299992576
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
+      "id": "rebornos",
+      "name": "RebornOS",
+      "version": "2026.01.22",
+      "category": "other",
+      "summary": {
+        "en": "Arch with an installer that lets you pick from many desktops.",
+        "de": "Arch mit einem Installer, in dem du aus vielen Desktops wählst."
+      },
+      "description": {
+        "en": "RebornOS boots into a light Xfce live desktop and its installer lets you choose your desktop, kernel and apps before installing, from KDE Plasma and GNOME to tiling window managers. Underneath it is Arch Linux with fast updates. A welcome app helps with drivers and first steps.",
+        "de": "RebornOS startet in einen leichten Xfce-Live-Desktop, und im Installer wählst du vor der Installation Desktop, Kernel und Apps, von KDE Plasma und GNOME bis zu Tiling-Fenstermanagern. Darunter steckt Arch Linux mit schnellen Updates. Eine Willkommens-App hilft bei Treibern und den ersten Schritten."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start RebornOS on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um RebornOS direkt auf dem PC zu starten."
+      },
+      "website": "https://rebornos.org",
+      "color": "#0088aa",
+      "desktop": "Xfce",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://cdn.soulharsh007.dev/RebornOS-ISO/rebornos_iso-2026.01.22-x86_64.iso",
+        "sha256": "8042bbd81b0f6ad30b0ad328f4c8c7480fbbfa6dbe0f6924b35c726fa4f99b40",
+        "size": 4065820672
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "rocky-workstation",
       "name": "Rocky Linux",
       "edition": "Workstation",
