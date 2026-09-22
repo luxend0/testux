@@ -843,7 +843,19 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "game-mode",
+          "title": {
+            "en": "Try it with a controller",
+            "de": "Mit einem Controller ausprobieren"
+          },
+          "detail": {
+            "en": "Connect a gamepad and open Steam in Big Picture mode to get a feel for the console mode.",
+            "de": "Schließ ein Gamepad an und öffne Steam im Big-Picture-Modus, um ein Gefühl für den Konsolenmodus zu bekommen."
+          }
+        }
+      ]
     },
     {
       "id": "drauger",
