@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Shapes
 
+// Text field with a magnifier and a clear button. Escape clears it.
 TextField {
     id: field
 
