@@ -49,6 +49,7 @@ Other changes are listed per file.
 | manjaro-gnome | copy of manjaro-kde.svg (see README.md) | Public domain |
 | manjaro-xfce | copy of manjaro-kde.svg (see README.md) | Public domain |
 | rebornos | [RebornOS-Team/rebornos-welcome, media/branding/RebornOS_Logo_4.svg](https://github.com/RebornOS-Team/rebornos-welcome/blob/HEAD/media/branding/RebornOS_Logo_4.svg) | Official project artwork; no separate license stated for the logo |
+| archcraft | [Commons: Archcraft-logo.svg](https://commons.wikimedia.org/wiki/File:Archcraft-logo.svg) | CC BY-SA 4.0 |
 | artix-plasma | [Commons: Artix logo.svg](https://commons.wikimedia.org/wiki/File:Artix_logo.svg) | CC BY-SA 4.0 |
 | drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
 | cachyos-handheld | copy of cachyos.svg (see README.md) | GPL |

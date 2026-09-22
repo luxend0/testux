@@ -1018,6 +1018,38 @@
       ]
     },
     {
+      "id": "archcraft",
+      "name": "Archcraft",
+      "version": "2026.08.01",
+      "category": "lightweight",
+      "summary": {
+        "en": "A tiny, stylish Arch setup with window managers instead of a big desktop.",
+        "de": "Ein winziges, schickes Arch-System mit Fenstermanagern statt großem Desktop."
+      },
+      "description": {
+        "en": "Archcraft uses lightweight window managers such as Openbox and bspwm with polished themes, so it stays fast with under 1 GB of memory in use. Everything is controlled with menus and keyboard shortcuts. It is a nice way to see how minimal and beautiful a Linux desktop can be.",
+        "de": "Archcraft nutzt leichte Fenstermanager wie Openbox und bspwm mit durchdachten Themes und bleibt so mit unter 1 GB Speicherverbrauch flott. Gesteuert wird über Menüs und Tastenkürzel. Ein schöner Weg zu sehen, wie minimal und hübsch ein Linux-Desktop sein kann."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Archcraft on this PC. Many actions use keyboard shortcuts; right click the desktop for the menu.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Archcraft direkt auf dem PC zu starten. Vieles läuft über Tastenkürzel; ein Rechtsklick auf den Desktop öffnet das Menü."
+      },
+      "website": "https://archcraft.io",
+      "color": "#5fb985",
+      "desktop": "Openbox",
+      "base": "Arch",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/archcraft/v26.08/archcraft-2026.08.01-x86_64.iso",
+        "sha256Url": "https://downloads.sourceforge.net/project/archcraft/v26.08/archcraft-2026.08.01-x86_64.iso.sha256sum",
+        "size": 3734601728
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 1024
+    },
+    {
       "id": "bodhi",
       "name": "Bodhi Linux",
       "edition": "HWE",
