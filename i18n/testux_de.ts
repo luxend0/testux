@@ -834,7 +834,7 @@
     <message>
         <location filename="../qml/FilterMenu.qml" line="17"/>
         <source>%1 (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (%2)</translation>
     </message>
 </context>
 <context>
