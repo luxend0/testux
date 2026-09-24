@@ -22,6 +22,7 @@ QtObject {
         features = []
     }
 
+    // Rolling and fixed releases exclude each other.
     function setFeature(key: string, on: bool) {
         const opposite = { rolling: "fixed", fixed: "rolling" }[key] ?? ""
         const rest = features.filter(f => f !== key && !(on && f === opposite))
