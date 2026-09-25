@@ -55,4 +55,5 @@ Other changes are listed per file.
 | drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
 | cachyos-handheld | copy of cachyos.svg (see README.md) | GPL |
 | mabox | none: no official SVG found (only PNG on maboxlinux.org), the app shows the initial tile | |
+| mx-xfce, mx-kde, mx-fluxbox | https://commons.wikimedia.org/wiki/File:MX_Linux_logo.svg | Public domain as published on Commons; MX Linux trademark of the MX Linux project |
 | puppy-bookwormpup | https://commons.wikimedia.org/wiki/File:Puppy_logo.svg | Attribution as published on Commons |

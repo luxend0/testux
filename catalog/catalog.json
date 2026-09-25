@@ -689,6 +689,35 @@
       "minRamMb": 4096
     },
     {
+      "id": "mx-kde",
+      "name": "MX Linux",
+      "edition": "KDE Plasma",
+      "version": "25.3",
+      "category": "kde",
+      "summary": {
+        "en": "MX Linux with KDE Plasma and newer graphics drivers for recent hardware.",
+        "de": "MX Linux mit KDE Plasma und neueren Grafiktreibern für aktuelle Hardware."
+      },
+      "description": {
+        "en": "This edition combines the practical MX Tools with the KDE Plasma desktop. It ships the newer graphics stack of MX's AHS line, so it suits PCs from the last few years. Plasma feels familiar to Windows users and can be customised in almost every detail.",
+        "de": "Diese Ausgabe verbindet die praktischen MX Tools mit dem KDE-Plasma-Desktop. Sie bringt den neueren Grafikunterbau der AHS-Reihe von MX mit und passt deshalb zu PCs aus den letzten Jahren. Plasma fühlt sich für Windows-Nutzer vertraut an und lässt sich in fast jedem Detail anpassen."
+      },
+      "website": "https://mxlinux.org",
+      "color": "#3a3a3a",
+      "desktop": "KDE Plasma",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/KDE/MX-25.3_KDE_x64.iso",
+        "sha256Url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/KDE/MX-25.3_KDE_x64.iso.sha256",
+        "size": 3646947328
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 2048
+    },
+    {
       "id": "rocky-kde",
       "name": "Rocky Linux",
       "edition": "KDE Plasma",
