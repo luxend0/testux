@@ -1374,6 +1374,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "puppy-bookwormpup",
+      "name": "Puppy Linux",
+      "edition": "BookwormPup64",
+      "version": "10.0.12",
+      "category": "lightweight",
+      "summary": {
+        "en": "Tiny and runs entirely from memory, so even very old PCs feel quick.",
+        "de": "Winzig und läuft komplett im Arbeitsspeicher, dadurch fühlen sich selbst sehr alte PCs flott an."
+      },
+      "description": {
+        "en": "Puppy Linux loads itself into memory at boot and runs from there, which makes it surprisingly fast on old machines. BookwormPup64 is built from Debian packages and comes with a browser, office tools and many small utilities. It works differently from a normal installation, so expect to read a little.",
+        "de": "Puppy Linux lädt sich beim Start in den Arbeitsspeicher und läuft von dort, das macht es auf alten Rechnern überraschend schnell. BookwormPup64 ist aus Debian-Paketen gebaut und bringt einen Browser, Office-Werkzeuge und viele kleine Helfer mit. Es funktioniert anders als eine normale Installation, rechne also mit etwas Lesen."
+      },
+      "notes": {
+        "en": "Changes are only kept if you save the session when you shut down. Booting it on your PC needs Secure Boot turned off.",
+        "de": "Änderungen bleiben nur erhalten, wenn du beim Herunterfahren die Sitzung speicherst. Zum Starten auf deinem PC muss Secure Boot ausgeschaltet sein."
+      },
+      "website": "https://puppylinux-woof-ce.github.io",
+      "color": "#454545",
+      "desktop": "JWM",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirror.lug.umbc.edu/puppylinux/puppy-bookwormpup/BookwormPup64/10.0.12/BookwormPup64_10.0.12.iso",
+        "sha256Url": "https://mirror.lug.umbc.edu/puppylinux/puppy-bookwormpup/BookwormPup64/10.0.12/BookwormPup64_10.0.12.iso-checksum.txt",
+        "size": 829423616
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 1024,
+      "checklist": []
+    },
+    {
       "id": "ubuntu-mate",
       "name": "Ubuntu MATE",
       "version": "26.10",
