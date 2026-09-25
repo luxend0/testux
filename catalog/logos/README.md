@@ -37,6 +37,7 @@ Other changes are listed per file.
 | edubuntu | [Commons: Edubuntu icon.svg](https://commons.wikimedia.org/wiki/File:Edubuntu_icon.svg) | GPL; Edubuntu trademark of Canonical Ltd. |
 | linuxmint-mate | same file as linuxmint-cinnamon.svg ([Commons: Linux Mint logo without wordmark](https://commons.wikimedia.org/wiki/File:Linux_Mint_logo_without_wordmark.svg)) | CC BY 3.0; Linux Mint trademark of the Linux Mint project |
 | linuxmint-xfce | same as linuxmint-mate | CC BY 3.0 |
+| lmde | same as linuxmint-mate (LMDE uses the Linux Mint mark) | CC BY 3.0 |
 | rhino-linux | [rhino-linux/branding logo.svg](https://github.com/rhino-linux/branding/blob/main/logo.svg) | Official logo from the project's branding repository, no license stated; trademark of the Rhino Linux project |
 | fedora-xfce, fedora-cinnamon, fedora-lxqt, fedora-budgie, fedora-mate-compiz, fedora-sway, fedora-i3, fedora-design-suite, fedora-games, fedora-jam, fedora-scientific, fedora-silverblue, fedora-kinoite | Copy of `fedora-workstation.svg`, from [Commons: Fedora logo (2021)](https://commons.wikimedia.org/wiki/File:Fedora_logo_(2021).svg) | Public domain on Commons; the Fedora logo is a trademark of Red Hat, Inc., see the [Fedora trademark guidelines](https://docs.fedoraproject.org/en-US/legal/trademark-guidelines/) |
 | ultramarine-plasma, ultramarine-gnome | [Commons: Ultramarine-Linux-Logo](https://commons.wikimedia.org/wiki/File:Ultramarine-Linux-Logo.svg) | Public domain on Commons (Fyra Labs) |

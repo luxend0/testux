@@ -280,6 +280,39 @@
       ]
     },
     {
+      "id": "lmde",
+      "name": "LMDE",
+      "edition": "Cinnamon",
+      "version": "7",
+      "category": "beginner",
+      "summary": {
+        "en": "Linux Mint built on Debian instead of Ubuntu.",
+        "de": "Linux Mint auf Debian-Basis statt Ubuntu."
+      },
+      "description": {
+        "en": "LMDE (Linux Mint Debian Edition) looks and works like Linux Mint Cinnamon, but it is built directly on Debian. It is Mint's backup plan in case Ubuntu ever changes course, and it suits people who want the Mint experience on a pure Debian base.",
+        "de": "LMDE (Linux Mint Debian Edition) sieht aus und funktioniert wie Linux Mint Cinnamon, ist aber direkt auf Debian aufgebaut. Es ist Mints Plan B, falls Ubuntu einmal eine andere Richtung einschlägt, und passt zu allen, die Mint auf einer reinen Debian-Basis möchten."
+      },
+      "notes": {
+        "en": "LMDE has no Driver Manager. Proprietary NVIDIA drivers have to be installed by hand from Debian's non-free repository.",
+        "de": "LMDE hat keine Treiberverwaltung. Proprietäre NVIDIA-Treiber musst du selbst aus dem Non-free-Bereich von Debian installieren."
+      },
+      "website": "https://linuxmint.com/download_lmde.php",
+      "color": "#87cf3e",
+      "desktop": "Cinnamon",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.edge.kernel.org/linuxmint/debian/lmde-7-cinnamon-64bit.iso",
+        "sha256Url": "https://mirrors.edge.kernel.org/linuxmint/debian/sha256sum.txt",
+        "size": 2960867328
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "popos",
       "name": "Pop!_OS",
       "edition": "NVIDIA",
