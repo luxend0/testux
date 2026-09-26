@@ -58,3 +58,4 @@ Other changes are listed per file.
 | mx-xfce, mx-kde, mx-fluxbox | https://commons.wikimedia.org/wiki/File:MX_Linux_logo.svg | Public domain as published on Commons; MX Linux trademark of the MX Linux project |
 | sparky-xfce, sparky-kde | Traced from https://commons.wikimedia.org/wiki/File:SparkyLinux-logo-200px.png | GPL as published on Commons; silhouette trace, colour #424040 |
 | puppy-bookwormpup | https://commons.wikimedia.org/wiki/File:Puppy_logo.svg | Attribution as published on Commons |
+| vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |

@@ -2376,6 +2376,38 @@
       "minRamMb": 2048
     },
     {
+      "id": "vanilla-os",
+      "name": "Vanilla OS",
+      "version": "3.0",
+      "category": "other",
+      "summary": {
+        "en": "An immutable GNOME system that updates as a whole and can always roll back.",
+        "de": "Ein unveränderliches GNOME-System, das sich als Ganzes aktualisiert und immer zurückrollen kann."
+      },
+      "description": {
+        "en": "Vanilla OS keeps its core read-only and updates it in one piece, so an update either works completely or is undone. Apps come as Flatpaks, and programs from other distributions run in containers. It is based on Debian and uses a clean GNOME desktop.",
+        "de": "Vanilla OS hält den Systemkern schreibgeschützt und aktualisiert ihn in einem Stück: Ein Update klappt also ganz oder wird zurückgenommen. Apps kommen als Flatpaks, Programme anderer Distributionen laufen in Containern. Es basiert auf Debian und nutzt einen schlichten GNOME-Desktop."
+      },
+      "notes": {
+        "en": "The ISO only starts the installer, there is no desktop to try first. Tick the test disk to install it in the window.",
+        "de": "Die ISO startet nur den Installer, einen Desktop zum Ausprobieren gibt es vorher nicht. Hake die Test-Disk an, um es im Fenster zu installieren."
+      },
+      "website": "https://vanillaos.org",
+      "color": "#f7c03f",
+      "desktop": "GNOME",
+      "base": "Debian",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://github.com/Vanilla-OS/live-iso/releases/download/3.0/Vanilla-OS-3-stable-amd64.20260828.iso",
+        "sha256Url": "https://github.com/Vanilla-OS/live-iso/releases/download/3.0/Vanilla-OS-3-stable-amd64.20260828.sha256.txt",
+        "size": 2088960000
+      },
+      "secureBoot": true,
+      "liveSession": false,
+      "nvidiaReady": true,
+      "minRamMb": 4096
+    },
+    {
       "id": "elementary",
       "name": "elementary OS",
       "version": "8.1.1",
