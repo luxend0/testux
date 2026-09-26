@@ -1814,6 +1814,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "devuan",
+      "name": "Devuan",
+      "edition": "Desktop live",
+      "version": "6.1.1",
+      "category": "advanced",
+      "summary": {
+        "en": "Debian without systemd, for people who prefer a classic init system.",
+        "de": "Debian ohne systemd, für alle, die ein klassisches Init-System bevorzugen."
+      },
+      "description": {
+        "en": "Devuan follows Debian closely but replaces systemd with sysvinit and other classic init systems. Day to day it feels like Debian with an Xfce desktop. It mainly appeals to people who already know why they want to avoid systemd.",
+        "de": "Devuan folgt Debian sehr eng, ersetzt systemd aber durch sysvinit und andere klassische Init-Systeme. Im Alltag fühlt es sich an wie Debian mit Xfce-Desktop. Es richtet sich vor allem an Leute, die schon wissen, warum sie systemd meiden möchten."
+      },
+      "notes": {
+        "en": "Its boot loader is not signed, so booting it on your PC needs Secure Boot turned off.",
+        "de": "Der Bootloader ist nicht signiert, deshalb muss Secure Boot zum Starten auf deinem PC ausgeschaltet sein."
+      },
+      "website": "https://www.devuan.org",
+      "color": "#5e4b8b",
+      "desktop": "Xfce",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://files.devuan.org/devuan_excalibur/desktop-live/devuan_excalibur_6.1.1_amd64_desktop-live.iso",
+        "sha256Url": "https://files.devuan.org/devuan_excalibur/desktop-live/devuan_excalibur_6.1.1_amd64_desktop-live.iso.sha256",
+        "size": 1801322496
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 1024
+    },
+    {
       "id": "endeavouros",
       "name": "EndeavourOS",
       "edition": "Titan Nova",
