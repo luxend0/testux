@@ -1436,6 +1436,35 @@
       "minRamMb": 2048
     },
     {
+      "id": "mx-fluxbox",
+      "name": "MX Linux",
+      "edition": "Fluxbox",
+      "version": "25.3",
+      "category": "lightweight",
+      "summary": {
+        "en": "The leanest MX edition, a very light window manager for old laptops.",
+        "de": "Die schlankeste MX-Ausgabe, ein sehr leichter Fenstermanager für alte Laptops."
+      },
+      "description": {
+        "en": "MX Fluxbox uses the Fluxbox window manager instead of a full desktop, so it starts fast and leaves most of the memory to your programs. It still has the MX Tools and a clickable dock, but it looks plainer and takes a little getting used to.",
+        "de": "MX Fluxbox nutzt den Fenstermanager Fluxbox statt eines vollen Desktops, startet deshalb schnell und lässt den meisten Arbeitsspeicher deinen Programmen. Die MX Tools und ein klickbares Dock sind trotzdem dabei, es sieht aber schlichter aus und braucht etwas Eingewöhnung."
+      },
+      "website": "https://mxlinux.org",
+      "color": "#3a3a3a",
+      "desktop": "Fluxbox",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/Fluxbox/MX-25.3_fluxbox_x64.iso",
+        "sha256Url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/Fluxbox/MX-25.3_fluxbox_x64.iso.sha256",
+        "size": 2302672896
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 1024
+    },
+    {
       "id": "puppy-bookwormpup",
       "name": "Puppy Linux",
       "edition": "BookwormPup64",
