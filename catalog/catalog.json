@@ -751,6 +751,35 @@
       "minRamMb": 2048
     },
     {
+      "id": "sparky-kde",
+      "name": "SparkyLinux",
+      "edition": "KDE Plasma",
+      "version": "8.4",
+      "category": "kde",
+      "summary": {
+        "en": "SparkyLinux with the KDE Plasma desktop on a stable Debian base.",
+        "de": "SparkyLinux mit dem KDE-Plasma-Desktop auf einer stabilen Debian-Basis."
+      },
+      "description": {
+        "en": "This edition of SparkyLinux uses KDE Plasma, with a start menu and taskbar that feel familiar after Windows. Sparky's own tools help with installing apps and drivers, while Debian underneath keeps the system steady.",
+        "de": "Diese Ausgabe von SparkyLinux nutzt KDE Plasma, mit Startmenü und Taskleiste, die sich nach Windows vertraut anfühlen. Sparkys eigene Werkzeuge helfen beim Installieren von Apps und Treibern, während Debian darunter das System stabil hält."
+      },
+      "website": "https://sparkylinux.org",
+      "color": "#424040",
+      "desktop": "KDE Plasma",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://archive.org/download/sparkylinux/sparkylinux-8.4-x86_64-kde.iso",
+        "sha256": "020e2cd34a10e90bca94fdeb59fce4654ece32bdc5d43e9b545881437bcc5ace",
+        "size": 2535456768
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "ultramarine-plasma",
       "name": "Ultramarine Linux",
       "edition": "Plasma",
