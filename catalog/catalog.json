@@ -1109,6 +1109,38 @@
       ]
     },
     {
+      "id": "antix",
+      "name": "antiX",
+      "edition": "Full",
+      "version": "26.1",
+      "category": "lightweight",
+      "summary": {
+        "en": "Extremely light and fast, still useful on PCs that are well over ten years old.",
+        "de": "Extrem leicht und schnell, sogar auf PCs nützlich, die deutlich über zehn Jahre alt sind."
+      },
+      "description": {
+        "en": "antiX is a Debian based system built to run on very little memory."
+      },
+      "notes": {
+        "en": "antiX does not use systemd, and its kernel is not signed, so booting it on your PC needs Secure Boot turned off.",
+        "de": "antiX nutzt kein systemd und sein Kernel ist nicht signiert, deshalb muss Secure Boot zum Starten auf deinem PC ausgeschaltet sein."
+      },
+      "website": "https://antixlinux.com",
+      "color": "#6b6b6b",
+      "desktop": "IceWM",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.dotsrc.org/mx-isos/ANTIX/Final/antiX-26.1/antiX-26.1_x64-full.iso",
+        "sha256Url": "https://mirrors.dotsrc.org/mx-isos/ANTIX/Final/antiX-26.1/antiX-26.1_x64-full.iso.sha256",
+        "size": 2452619264
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 256
+    },
+    {
       "id": "archcraft",
       "name": "Archcraft",
       "version": "2026.08.01",
