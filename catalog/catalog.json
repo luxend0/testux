@@ -1470,6 +1470,35 @@
       "checklist": []
     },
     {
+      "id": "sparky-xfce",
+      "name": "SparkyLinux",
+      "edition": "Xfce",
+      "version": "8.4",
+      "category": "lightweight",
+      "summary": {
+        "en": "A light Debian based desktop that is ready to use out of the box.",
+        "de": "Ein leichter Debian-basierter Desktop, der sofort einsatzbereit ist."
+      },
+      "description": {
+        "en": "SparkyLinux takes Debian and adds a friendly setup, its own tools for installing apps and a ready made Xfce desktop. It runs well on older and newer PCs alike and keeps Debian's reliable package base underneath.",
+        "de": "SparkyLinux nimmt Debian und ergänzt eine freundliche Einrichtung, eigene Werkzeuge zum Installieren von Apps und einen fertig eingerichteten Xfce-Desktop. Es läuft auf älteren wie neueren PCs gut und behält darunter die zuverlässige Paketbasis von Debian."
+      },
+      "website": "https://sparkylinux.org",
+      "color": "#424040",
+      "desktop": "Xfce",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://archive.org/download/sparkylinux/sparkylinux-8.4-x86_64-xfce.iso",
+        "sha256": "7103af4d18741842202fca3cbe838855c51724d66563931c24522c0437796537",
+        "size": 2089811968
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 1024
+    },
+    {
       "id": "ubuntu-mate",
       "name": "Ubuntu MATE",
       "version": "26.10",

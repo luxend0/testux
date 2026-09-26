@@ -56,4 +56,5 @@ Other changes are listed per file.
 | cachyos-handheld | copy of cachyos.svg (see README.md) | GPL |
 | mabox | none: no official SVG found (only PNG on maboxlinux.org), the app shows the initial tile | |
 | mx-xfce, mx-kde, mx-fluxbox | https://commons.wikimedia.org/wiki/File:MX_Linux_logo.svg | Public domain as published on Commons; MX Linux trademark of the MX Linux project |
+| sparky-xfce, sparky-kde | Traced from https://commons.wikimedia.org/wiki/File:SparkyLinux-logo-200px.png | GPL as published on Commons; silhouette trace, colour #424040 |
 | puppy-bookwormpup | https://commons.wikimedia.org/wiki/File:Puppy_logo.svg | Attribution as published on Commons |
