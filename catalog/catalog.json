@@ -1202,6 +1202,35 @@
       "minRamMb": 1024
     },
     {
+      "id": "bunsenlabs",
+      "name": "BunsenLabs",
+      "edition": "Carbon",
+      "version": "Carbon",
+      "category": "lightweight",
+      "summary": {
+        "en": "A dark, minimal Openbox desktop on Debian, light enough for older laptops.",
+        "de": "Ein dunkler, minimalistischer Openbox-Desktop auf Debian, leicht genug für ältere Laptops."
+      },
+      "description": {
+        "en": "BunsenLabs continues the spirit of CrunchBang: a fast Openbox desktop with a right click menu, a simple panel and system info on the wallpaper. It is light on resources and nice to tinker with, but less point and click than Mint or Zorin.",
+        "de": "BunsenLabs führt den Geist von CrunchBang fort: ein schneller Openbox-Desktop mit Rechtsklick-Menü, einfacher Leiste und Systeminfos auf dem Hintergrundbild. Es braucht wenig Ressourcen und lädt zum Basteln ein, ist aber weniger Klick-und-fertig als Mint oder Zorin."
+      },
+      "website": "https://www.bunsenlabs.org",
+      "color": "#2f2f2f",
+      "desktop": "Openbox",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://ddl.bunsenlabs.org/ddl/carbon-1-260211-amd64.hybrid.iso",
+        "sha256Url": "https://ddl.bunsenlabs.org/ddl/release.sha256.txt",
+        "size": 2279473152
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 1024
+    },
+    {
       "id": "fedora-lxqt",
       "name": "Fedora",
       "edition": "LXQt",
@@ -1524,6 +1553,40 @@
       "liveSession": true,
       "nvidiaReady": true,
       "minRamMb": 1024
+    },
+    {
+      "id": "mx-xfce",
+      "name": "MX Linux",
+      "edition": "Xfce",
+      "version": "25.3",
+      "category": "lightweight",
+      "summary": {
+        "en": "Quick and practical, with handy MX Tools for drivers, updates and backups.",
+        "de": "Flott und praktisch, mit den MX Tools für Treiber, Updates und Sicherungen."
+      },
+      "description": {
+        "en": "MX Linux is built on Debian and is one of the most popular distros for good reason: it runs fast on modest hardware and the MX Tools make common jobs easy, from installing the NVIDIA driver to making a bootable backup of your system. The Xfce desktop has a panel and a menu that are easy to rearrange.",
+        "de": "MX Linux baut auf Debian auf und gehört aus gutem Grund zu den beliebtesten Distros: Es läuft schnell auf bescheidener Hardware, und die MX Tools machen häufige Aufgaben einfach, vom Installieren des NVIDIA-Treibers bis zur bootfähigen Sicherung deines Systems. Der Xfce-Desktop hat eine Leiste und ein Menü, die sich leicht umstellen lassen."
+      },
+      "notes": {
+        "en": "For very new hardware MX also offers an \"AHS\" edition with newer graphics drivers; this entry is the standard edition, which boots with Secure Boot on.",
+        "de": "Für sehr neue Hardware gibt es von MX zusätzlich eine \"AHS\"-Ausgabe mit neueren Grafiktreibern; dieser Eintrag ist die Standardausgabe, die mit eingeschaltetem Secure Boot startet."
+      },
+      "website": "https://mxlinux.org",
+      "color": "#3a3a3a",
+      "desktop": "Xfce",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/Xfce/MX-25.3_Xfce_x64.iso",
+        "sha256Url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/Xfce/MX-25.3_Xfce_x64.iso.sha256",
+        "size": 2927624192
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 1024,
+      "checklist": []
     },
     {
       "id": "puppy-bookwormpup",

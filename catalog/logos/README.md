@@ -57,6 +57,7 @@ Other changes are listed per file.
 | mabox | none: no official SVG found (only PNG on maboxlinux.org), the app shows the initial tile | |
 | mx-xfce, mx-kde, mx-fluxbox | https://commons.wikimedia.org/wiki/File:MX_Linux_logo.svg | Public domain as published on Commons; MX Linux trademark of the MX Linux project |
 | sparky-xfce, sparky-kde | Traced from https://commons.wikimedia.org/wiki/File:SparkyLinux-logo-200px.png | GPL as published on Commons; silhouette trace, colour #424040 |
+| bunsenlabs | Flame mark from https://commons.wikimedia.org/wiki/File:Bunsenlabs-text-flame.svg, wordmark removed | GPLv3 as published on Commons |
 | puppy-bookwormpup | https://commons.wikimedia.org/wiki/File:Puppy_logo.svg | Attribution as published on Commons |
 | devuan | https://commons.wikimedia.org/wiki/File:Devuan-emblem.svg | Public domain as published on Commons; Devuan is a trademark of the Dyne.org foundation |
 | vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |
