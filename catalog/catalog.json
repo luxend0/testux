@@ -1202,6 +1202,35 @@
       "minRamMb": 1024
     },
     {
+      "id": "bunsenlabs",
+      "name": "BunsenLabs",
+      "edition": "Carbon",
+      "version": "Carbon",
+      "category": "lightweight",
+      "summary": {
+        "en": "A dark, minimal Openbox desktop on Debian, light enough for older laptops.",
+        "de": "Ein dunkler, minimalistischer Openbox-Desktop auf Debian, leicht genug für ältere Laptops."
+      },
+      "description": {
+        "en": "BunsenLabs continues the spirit of CrunchBang: a fast Openbox desktop with a right click menu, a simple panel and system info on the wallpaper. It is light on resources and nice to tinker with, but less point and click than Mint or Zorin.",
+        "de": "BunsenLabs führt den Geist von CrunchBang fort: ein schneller Openbox-Desktop mit Rechtsklick-Menü, einfacher Leiste und Systeminfos auf dem Hintergrundbild. Es braucht wenig Ressourcen und lädt zum Basteln ein, ist aber weniger Klick-und-fertig als Mint oder Zorin."
+      },
+      "website": "https://www.bunsenlabs.org",
+      "color": "#2f2f2f",
+      "desktop": "Openbox",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://ddl.bunsenlabs.org/ddl/carbon-1-260211-amd64.hybrid.iso",
+        "sha256Url": "https://ddl.bunsenlabs.org/ddl/release.sha256.txt",
+        "size": 2279473152
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 1024
+    },
+    {
       "id": "fedora-lxqt",
       "name": "Fedora",
       "edition": "LXQt",
