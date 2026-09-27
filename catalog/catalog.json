@@ -1586,7 +1586,19 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 1024,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "puppy-save",
+          "title": {
+            "en": "Save your session",
+            "de": "Deine Sitzung speichern"
+          },
+          "detail": {
+            "en": "Shut down once and let Puppy create a save file, then start again and see your changes are still there.",
+            "de": "Fahr einmal herunter und lass Puppy eine Speicherdatei anlegen, starte dann neu und schau, ob deine Änderungen noch da sind."
+          }
+        }
+      ]
     },
     {
       "id": "sparky-xfce",
