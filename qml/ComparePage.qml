@@ -27,7 +27,7 @@ Item {
     readonly property list<var> sortOptions: [
         { value: "name", label: qsTr("Name") },
         { value: "size", label: qsTr("Download size") },
-        { value: "ram", label: qsTr("Minimum meomry") },
+        { value: "ram", label: qsTr("Minimum memory") },
         { value: "measured", label: qsTr("Your memory use") }
     ]
     readonly property list<distro> sorted: sortedDistros(Catalog.distros, sortKey, measured)
