@@ -1555,6 +1555,40 @@
       "minRamMb": 1024
     },
     {
+      "id": "mx-xfce",
+      "name": "MX Linux",
+      "edition": "Xfce",
+      "version": "25.3",
+      "category": "lightweight",
+      "summary": {
+        "en": "Quick and practical, with handy MX Tools for drivers, updates and backups.",
+        "de": "Flott und praktisch, mit den MX Tools für Treiber, Updates und Sicherungen."
+      },
+      "description": {
+        "en": "MX Linux is built on Debian and is one of the most popular distros for good reason: it runs fast on modest hardware and the MX Tools make common jobs easy, from installing the NVIDIA driver to making a bootable backup of your system. The Xfce desktop has a panel and a menu that are easy to rearrange.",
+        "de": "MX Linux baut auf Debian auf und gehört aus gutem Grund zu den beliebtesten Distros: Es läuft schnell auf bescheidener Hardware, und die MX Tools machen häufige Aufgaben einfach, vom Installieren des NVIDIA-Treibers bis zur bootfähigen Sicherung deines Systems. Der Xfce-Desktop hat eine Leiste und ein Menü, die sich leicht umstellen lassen."
+      },
+      "notes": {
+        "en": "For very new hardware MX also offers an \"AHS\" edition with newer graphics drivers; this entry is the standard edition, which boots with Secure Boot on.",
+        "de": "Für sehr neue Hardware gibt es von MX zusätzlich eine \"AHS\"-Ausgabe mit neueren Grafiktreibern; dieser Eintrag ist die Standardausgabe, die mit eingeschaltetem Secure Boot startet."
+      },
+      "website": "https://mxlinux.org",
+      "color": "#3a3a3a",
+      "desktop": "Xfce",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/Xfce/MX-25.3_Xfce_x64.iso",
+        "sha256Url": "https://mirrors.dotsrc.org/mx-isos/MX/Final/Xfce/MX-25.3_Xfce_x64.iso.sha256",
+        "size": 2927624192
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": true,
+      "minRamMb": 1024,
+      "checklist": []
+    },
+    {
       "id": "puppy-bookwormpup",
       "name": "Puppy Linux",
       "edition": "BookwormPup64",
