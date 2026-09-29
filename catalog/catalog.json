@@ -2459,7 +2459,8 @@
         "de": "Community-Nachbau von Red Hat Enterprise Linux mit GNOME, gebaut für Stabilität."
       },
       "description": {
-        "en": "Rocky Linux was started by one of the original CentOS founders and stays closely compatible with Red Hat Enterprise Linux."
+        "en": "Rocky Linux was started by one of the original CentOS founders and stays closely compatible with Red Hat Enterprise Linux. Each major version is supported for about ten years, so the system barely changes once it is set up. Well suited for work machines, less so for gaming or the newest software.",
+        "de": "Rocky Linux wurde von einem der ursprünglichen CentOS-Gründer gestartet und bleibt eng kompatibel zu Red Hat Enterprise Linux. Jede Hauptversion wird rund zehn Jahre gepflegt, das System ändert sich nach der Einrichtung also kaum. Gut für Arbeitsrechner, weniger für Spiele oder die neueste Software."
       },
       "notes": {
         "en": "The NVIDIA driver is not on the ISO. After installing, you add it from NVIDIA's own repository or from ELRepo.",
