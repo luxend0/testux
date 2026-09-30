@@ -2553,7 +2553,8 @@
         "de": "Ultramarine mit GNOME: Fedora plus Codecs und Treiber, auf einem ruhigen, modernen Desktop."
       },
       "description": {
-        "en": "This edition pairs Ultramarine's ready-made extras with the GNOME desktop: codecs, extra repositories and automatic NVIDIA setup are included."
+        "en": "This edition pairs Ultramarine's ready-made extras with the GNOME desktop: codecs, extra repositories and automatic NVIDIA setup are included. GNOME works differently from Windows: the Super key opens an overview of windows and apps. Choose it if you like a minimal desktop.",
+        "de": "Diese Ausgabe kombiniert die fertigen Extras von Ultramarine mit dem GNOME-Desktop: Codecs, zusätzliche Paketquellen und automatische NVIDIA-Einrichtung sind dabei. GNOME funktioniert anders als Windows: Die Super-Taste öffnet eine Übersicht über Fenster und Apps. Nimm es, wenn du einen minimalistischen Desktop magst."
       },
       "notes": {
         "en": "Turn off Secure Boot for now: the Ultramarine guide recommends setting it up again after installing. NVIDIA drivers are installed automatically if you are online during the installation.",
