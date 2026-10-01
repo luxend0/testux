@@ -8,7 +8,20 @@ Testux lets you try Linux distributions in a window on your current system, and 
 found one you like, boot its live ISO directly on your PC and install it from there. No
 USB stick needed.
 
-<!-- screenshot: catalog page -->
+![The Testux distro catalog: a grid of distros with their logos, category tabs, search and filters](assets/screenshots/distros.png)
+
+<table>
+  <tr>
+    <td width="33%"><a href="assets/screenshots/filters.png"><img src="assets/screenshots/filters.png" alt="Distro list filtered to KDE Plasma desktops that work with Secure Boot"></a><br><sub>Search and filters</sub></td>
+    <td width="33%"><a href="assets/screenshots/detail.png"><img src="assets/screenshots/detail.png" alt="Linux Mint detail page with the Try it in a window panel, the facts at a glance and the checklist of things to try"></a><br><sub>Try a distro in a window</sub></td>
+    <td width="33%"><a href="assets/screenshots/boot.png"><img src="assets/screenshots/boot.png" alt="Boot wizard for Fedora KDE Plasma, first step: a traffic light of checks such as UEFI, Secure Boot, free space, BitLocker and Fast Startup"></a><br><sub>Boot it on this PC (Windows)</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="assets/screenshots/compare.png"><img src="assets/screenshots/compare.png" alt="Compare page: a table of all distros with desktop, base, release model, download size, minimum memory, Secure Boot, live session and NVIDIA support"></a><br><sub>Compare distros side by side</sub></td>
+    <td width="33%"><a href="assets/screenshots/this-pc.png"><img src="assets/screenshots/this-pc.png" alt="This PC page showing memory, processor threads, free space, virtualization, boot mode, Secure Boot, graphics and Wi-Fi"></a><br><sub>What Testux found out about your PC</sub></td>
+    <td width="33%"></td>
+  </tr>
+</table>
 
 ## Who it is for
 
