@@ -55,6 +55,7 @@ Other changes are listed per file.
 | drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
 | cachyos-handheld | copy of cachyos.svg (see README.md) | GPL |
 | mabox | none: no official SVG found (only PNG on maboxlinux.org), the app shows the initial tile | |
+| debian-kde, debian-xfce | Copy of `debian-gnome.svg` (Commons: Openlogo-debianV2) | Public domain on Commons; Debian's own terms: LGPLv3+ or CC BY-SA 3.0. Debian is a trademark of Software in the Public Interest |
 | mx-xfce, mx-kde, mx-fluxbox | https://commons.wikimedia.org/wiki/File:MX_Linux_logo.svg | Public domain as published on Commons; MX Linux trademark of the MX Linux project |
 | sparky-xfce, sparky-kde | Traced from https://commons.wikimedia.org/wiki/File:SparkyLinux-logo-200px.png | GPL as published on Commons; silhouette trace, colour #424040 |
 | bunsenlabs | Flame mark from https://commons.wikimedia.org/wiki/File:Bunsenlabs-text-flame.svg, wordmark removed | GPLv3 as published on Commons |
@@ -62,5 +63,7 @@ Other changes are listed per file.
 | puppy-bookwormpup | https://commons.wikimedia.org/wiki/File:Puppy_logo.svg | Attribution as published on Commons |
 | devuan | https://commons.wikimedia.org/wiki/File:Devuan-emblem.svg | Public domain as published on Commons; Devuan is a trademark of the Dyne.org foundation |
 | porteus | `porteus-logo.svg` as shipped in Porteus' 002-xorg module, from https://github.com/myPorteus/Porteus (x86_64/porteus/base/002-xorg/usr/share/pixmaps/porteus/) | No license stated; part of the Porteus distribution |
+| tails | [Commons: Tails-logo-flat-notagline.svg](https://commons.wikimedia.org/wiki/File:Tails-logo-flat-notagline.svg) | GPLv3 on Commons; Tails name and logo belong to the Tails project. Wordmark removed. |
 | kali | [Commons: Kali-dragon-icon.svg](https://commons.wikimedia.org/wiki/File:Kali-dragon-icon.svg) | CC BY-SA 4.0 on Commons; Kali Linux is a trademark of OffSec Services Limited. |
+| nixos | [Commons: NixOS rainbow snowflake 01.svg](https://commons.wikimedia.org/wiki/File:NixOS_rainbow_snowflake_01.svg) | CC BY 4.0 on Commons (NixOS branding); NixOS name and logo belong to the NixOS Foundation. |
 | vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |

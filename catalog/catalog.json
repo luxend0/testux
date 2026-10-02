@@ -1231,6 +1231,35 @@
       "minRamMb": 1024
     },
     {
+      "id": "debian-xfce",
+      "name": "Debian",
+      "edition": "Xfce",
+      "version": "13.7",
+      "category": "lightweight",
+      "summary": {
+        "en": "Rock solid Debian with the light Xfce desktop, good for PCs that are a few years old.",
+        "de": "Grundsolides Debian mit dem leichten Xfce-Desktop, gut für PCs, die ein paar Jahre alt sind."
+      },
+      "description": {
+        "en": "Debian with Xfce is a calm, classic desktop with a panel and an application menu. Xfce needs much less memory than GNOME or Plasma, so it stays quick on older hardware. Underneath it is the same well tested Debian that many other distros are built on.",
+        "de": "Debian mit Xfce ist ein ruhiger, klassischer Desktop mit Leiste und Anwendungsmenü. Xfce braucht deutlich weniger Arbeitsspeicher als GNOME oder Plasma und bleibt deshalb auch auf älterer Hardware flott. Darunter steckt dasselbe gut getestete Debian, auf dem viele andere Distros aufbauen."
+      },
+      "website": "https://www.debian.org",
+      "color": "#d70a53",
+      "desktop": "Xfce",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-xfce.iso",
+        "sha256Url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS",
+        "size": 3826974720
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "fedora-lxqt",
       "name": "Fedora",
       "edition": "LXQt",
@@ -1804,6 +1833,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "tails",
+      "name": "Tails",
+      "version": "7.15",
+      "category": "privacy",
+      "summary": {
+        "en": "A portable system that sends everything through Tor and forgets everything when you shut it down.",
+        "de": "Ein mobiles System, das alles über Tor schickt und beim Herunterfahren alles vergisst."
+      },
+      "description": {
+        "en": "Tails is made for privacy: every connection goes through the Tor network, nothing is written to the computer, and after a shutdown no trace remains. It comes with the Tor Browser, an encrypted messenger and tools to remove metadata from files. It is meant to be carried on a USB stick, not installed.",
+        "de": "Tails ist für Privatsphäre gebaut: Jede Verbindung läuft über das Tor-Netzwerk, nichts wird auf dem Computer gespeichert, und nach dem Herunterfahren bleibt keine Spur. Dabei sind der Tor Browser, ein verschlüsselter Messenger und Werkzeuge, die Metadaten aus Dateien entfernen. Tails ist für einen USB-Stick gedacht, nicht zum Installieren."
+      },
+      "notes": {
+        "en": "Tails only starts from a USB stick or DVD on purpose, so Testux runs it in a window only. Inside a window it is fine for a look around, but for real anonymity use it from a USB stick as the Tails team recommends. NVIDIA and some AMD Radeon graphics often do not work.",
+        "de": "Tails startet absichtlich nur von einem USB-Stick oder einer DVD, deshalb startet Testux es nur im Fenster. Zum Ausprobieren reicht das, für echte Anonymität nutzt du Tails vom USB-Stick, so wie es das Tails-Team empfiehlt. NVIDIA und manche AMD-Radeon-Grafikkarten laufen oft nicht."
+      },
+      "website": "https://tails.net",
+      "color": "#56347c",
+      "desktop": "GNOME",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.tails.net/tails/stable/tails-amd64-7.15/tails-amd64-7.15.iso",
+        "sha256": "48fc76cd04b92b0c7b91ff29d1cfd11569b7cd464ae0063b3eae4e5f96139825",
+        "size": 1879158784
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 3072,
+      "checklist": []
+    },
+    {
       "id": "edubuntu",
       "name": "Edubuntu",
       "version": "26.04.1 LTS",
@@ -2242,6 +2305,44 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048
+    },
+    {
+      "id": "nixos",
+      "name": "NixOS",
+      "edition": {
+        "en": "GNOME or Plasma",
+        "de": "GNOME oder Plasma"
+      },
+      "version": "26.05",
+      "category": "advanced",
+      "summary": {
+        "en": "The whole system described in one configuration file, with every change undoable.",
+        "de": "Das ganze System in einer Konfigurationsdatei beschrieben, und jede Änderung lässt sich zurücknehmen."
+      },
+      "description": {
+        "en": "On NixOS you write down which programs and settings you want, and the system builds itself from that. Every update creates a new generation you can boot back into, so a broken update is one restart away from fixed. The live image lets you pick GNOME or KDE Plasma in its boot menu.",
+        "de": "Bei NixOS schreibst du auf, welche Programme und Einstellungen du willst, und das System baut sich daraus selbst. Jedes Update erzeugt eine neue Generation, in die du zurückstarten kannst, ein kaputtes Update ist also nur einen Neustart von der Lösung entfernt. Im Bootmenü des Live-Images wählst du GNOME oder KDE Plasma."
+      },
+      "notes": {
+        "en": "Testux does not start NixOS from the hard drive: its live system expects to run straight from the ISO image. Try it in a window, or install it from a USB stick.",
+        "de": "Testux startet NixOS nicht von der Festplatte: Das Live-System erwartet, direkt aus dem ISO-Image zu laufen. Probier es im Fenster aus oder installiere es von einem USB-Stick."
+      },
+      "website": "https://nixos.org",
+      "color": "#5277c3",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
+        "sha256Url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso.sha256",
+        "size": 3880910848
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096,
+      "checklist": []
     },
     {
       "id": "opensuse-tumbleweed",
