@@ -1109,6 +1109,38 @@
       ]
     },
     {
+      "id": "regataos",
+      "name": "Regata OS",
+      "version": "26.0.5",
+      "category": "gaming",
+      "summary": {
+        "en": "openSUSE based, with its own game store and launcher for Windows games.",
+        "de": "Basiert auf openSUSE, mit eigenem Spiele-Store und Launcher für Windows-Spiele."
+      },
+      "description": {
+        "en": "Regata OS is a Brazilian distro built on openSUSE with KDE Plasma and a focus on gaming and creators. Its Game Access launcher and app store install games and apps with a click, including Windows games through Wine. Hybrid graphics in laptops are set up for you.",
+        "de": "Regata OS ist eine brasilianische Distro auf Basis von openSUSE mit KDE Plasma und Fokus auf Gaming und Content Creator. Der Launcher Game Access und der App-Store installieren Spiele und Apps per Klick, auch Windows-Spiele über Wine. Hybridgrafik in Laptops wird für dich eingerichtet."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start Regata OS on this PC. With an NVIDIA graphics card, take the NVIDIA edition from the Regata OS website instead. The live system's administrator password is regata.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um Regata OS direkt auf dem PC zu starten. Mit einer NVIDIA-Grafikkarte nimm stattdessen die NVIDIA-Edition von der Regata-OS-Webseite. Das Administrator-Passwort im Live-System ist regata."
+      },
+      "website": "https://www.regataos.com.br",
+      "color": "#1e88e5",
+      "desktop": "KDE Plasma",
+      "base": "openSUSE",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/regataos/regataos-26/Regata_OS_26_en-US.x86_64-26.0.5.iso",
+        "sha256": "d9231534a6533d423959bccf83f4b386e974c4712c309bba96af93dd54f77b07",
+        "size": 3588704256
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "antix",
       "name": "antiX",
       "edition": "Full",
