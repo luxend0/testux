@@ -2338,6 +2338,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "deepin",
+      "name": "deepin",
+      "edition": "Community",
+      "version": "25.2.0",
+      "category": "other",
+      "summary": {
+        "en": "A polished desktop with its own design, apps and a modern control center.",
+        "de": "Ein ausgefeilter Desktop mit eigenem Design, eigenen Apps und modernem Kontrollzentrum."
+      },
+      "description": {
+        "en": "deepin is developed in China and is known for its good looking DDE desktop with a dock, smooth animations and a clean control center. It brings its own apps for music, video and files. It needs a bit more memory than most and its app store focuses on its own repositories.",
+        "de": "deepin wird in China entwickelt und ist für seinen schicken DDE-Desktop mit Dock, flüssigen Animationen und einem aufgeräumten Kontrollzentrum bekannt. Es bringt eigene Apps für Musik, Video und Dateien mit. Es braucht etwas mehr Arbeitsspeicher als die meisten und sein App Store konzentriert sich auf die eigenen Paketquellen."
+      },
+      "notes": {
+        "en": "The live session starts in Chinese. Switch the language in the control center, or pick it during installation.",
+        "de": "Die Live-Sitzung startet auf Chinesisch. Stell die Sprache im Kontrollzentrum um oder wähle sie bei der Installation."
+      },
+      "website": "https://www.deepin.org",
+      "color": "#00b7ff",
+      "desktop": "DDE",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.deepin.com/releases/25.2.0/amd64/deepin-desktop-community-25.2.0-amd64.iso",
+        "sha256Url": "https://cdimage.deepin.com/releases/25.2.0/amd64/SHA256SUMS",
+        "size": 6976131072
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "fedora-workstation",
       "name": "Fedora",
       "edition": "Workstation",
