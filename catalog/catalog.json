@@ -1231,6 +1231,35 @@
       "minRamMb": 1024
     },
     {
+      "id": "debian-xfce",
+      "name": "Debian",
+      "edition": "Xfce",
+      "version": "13.7",
+      "category": "lightweight",
+      "summary": {
+        "en": "Rock solid Debian with the light Xfce desktop, good for PCs that are a few years old.",
+        "de": "Grundsolides Debian mit dem leichten Xfce-Desktop, gut für PCs, die ein paar Jahre alt sind."
+      },
+      "description": {
+        "en": "Debian with Xfce is a calm, classic desktop with a panel and an application menu. Xfce needs much less memory than GNOME or Plasma, so it stays quick on older hardware. Underneath it is the same well tested Debian that many other distros are built on.",
+        "de": "Debian mit Xfce ist ein ruhiger, klassischer Desktop mit Leiste und Anwendungsmenü. Xfce braucht deutlich weniger Arbeitsspeicher als GNOME oder Plasma und bleibt deshalb auch auf älterer Hardware flott. Darunter steckt dasselbe gut getestete Debian, auf dem viele andere Distros aufbauen."
+      },
+      "website": "https://www.debian.org",
+      "color": "#d70a53",
+      "desktop": "Xfce",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-xfce.iso",
+        "sha256Url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS",
+        "size": 3826974720
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "fedora-lxqt",
       "name": "Fedora",
       "edition": "LXQt",

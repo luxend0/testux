@@ -55,6 +55,7 @@ Other changes are listed per file.
 | drauger | [drauger-os-development/drauger-icons, drauger_os-logo.svg](https://github.com/drauger-os-development/drauger-icons/blob/HEAD/usr/share/icons/Drauger/scalable/menus/drauger_os-logo.svg) | Official project artwork (icon theme repo); no separate license stated for the logo |
 | cachyos-handheld | copy of cachyos.svg (see README.md) | GPL |
 | mabox | none: no official SVG found (only PNG on maboxlinux.org), the app shows the initial tile | |
+| debian-kde, debian-xfce | Copy of `debian-gnome.svg` (Commons: Openlogo-debianV2) | Public domain on Commons; Debian's own terms: LGPLv3+ or CC BY-SA 3.0. Debian is a trademark of Software in the Public Interest |
 | mx-xfce, mx-kde, mx-fluxbox | https://commons.wikimedia.org/wiki/File:MX_Linux_logo.svg | Public domain as published on Commons; MX Linux trademark of the MX Linux project |
 | sparky-xfce, sparky-kde | Traced from https://commons.wikimedia.org/wiki/File:SparkyLinux-logo-200px.png | GPL as published on Commons; silhouette trace, colour #424040 |
 | bunsenlabs | Flame mark from https://commons.wikimedia.org/wiki/File:Bunsenlabs-text-flame.svg, wordmark removed | GPLv3 as published on Commons |
