@@ -1589,6 +1589,39 @@
       "checklist": []
     },
     {
+      "id": "porteus",
+      "name": "Porteus",
+      "edition": "Xfce",
+      "version": "5.01",
+      "category": "lightweight",
+      "summary": {
+        "en": "A small, modular live system that boots in seconds and fits on any stick.",
+        "de": "Ein kleines, modulares Live-System, das in Sekunden startet und auf jeden Stick passt."
+      },
+      "description": {
+        "en": "Porteus is based on Slackware and is built to run portable from a USB stick or straight from memory. Extra software comes as modules you switch on and off. It is very quick and light, but it is more of a tool for tinkerers than an everyday desktop for beginners.",
+        "de": "Porteus basiert auf Slackware und ist dafür gebaut, portabel vom USB-Stick oder direkt aus dem Arbeitsspeicher zu laufen. Zusätzliche Software kommt als Module, die du an- und ausschaltest. Es ist sehr schnell und leicht, aber eher ein Werkzeug für Bastler als ein Alltags-Desktop für Einsteiger."
+      },
+      "notes": {
+        "en": "Version 5.01 is from 2023 and Porteus updates rarely. Booting it on your PC needs Secure Boot turned off.",
+        "de": "Version 5.01 ist von 2023 und Porteus wird selten aktualisiert. Zum Starten auf deinem PC muss Secure Boot ausgeschaltet sein."
+      },
+      "website": "https://www.porteus.org",
+      "color": "#1f3b8c",
+      "desktop": "Xfce",
+      "base": "Slackware",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://ftp.nluug.nl/os/Linux/distr/porteus/x86_64/current/Porteus-XFCE-v5.01-x86_64.iso",
+        "sha256Url": "https://ftp.nluug.nl/os/Linux/distr/porteus/x86_64/current/sha256sums.txt",
+        "size": 544210944
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 512
+    },
+    {
       "id": "puppy-bookwormpup",
       "name": "Puppy Linux",
       "edition": "BookwormPup64",
