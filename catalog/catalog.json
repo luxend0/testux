@@ -2339,6 +2339,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "gentoo-livegui",
+      "name": "Gentoo",
+      "edition": "LiveGUI",
+      "version": "20260913",
+      "category": "advanced",
+      "summary": {
+        "en": "The system you compile and tune yourself, down to every single feature.",
+        "de": "Das System, das du selbst kompilierst und bis ins letzte Detail einstellst."
+      },
+      "description": {
+        "en": "Gentoo builds its programs from source with exactly the features you choose, which makes it very flexible and a great way to learn how Linux works. Installing it is done by hand following the excellent Gentoo Handbook. The LiveGUI image gives you a KDE Plasma desktop to look around first.",
+        "de": "Gentoo baut seine Programme aus dem Quellcode, mit genau den Funktionen, die du auswählst. Das macht es sehr flexibel und ist ein toller Weg zu lernen, wie Linux funktioniert. Installiert wird von Hand mit dem ausgezeichneten Gentoo Handbook. Das LiveGUI-Image zeigt dir vorher einen KDE-Plasma-Desktop."
+      },
+      "notes": {
+        "en": "There is no click-through installer: you install Gentoo by following the Gentoo Handbook, which takes a few hours.",
+        "de": "Es gibt keinen Installer zum Durchklicken: Du installierst Gentoo nach dem Gentoo Handbook, das dauert ein paar Stunden."
+      },
+      "website": "https://www.gentoo.org",
+      "color": "#54487a",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/20260913T163055Z/livegui-amd64-20260913T163055Z.iso",
+        "sha256Url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/20260913T163055Z/livegui-amd64-20260913T163055Z.iso.sha256",
+        "size": 4319342592
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "nixos",
       "name": "NixOS",
       "edition": {
