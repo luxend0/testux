@@ -2436,7 +2436,19 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "deepin-language",
+          "title": {
+            "en": "Switch the language",
+            "de": "Die Sprache umstellen"
+          },
+          "detail": {
+            "en": "Open the control center, go to the language settings and add English or German.",
+            "de": "Öffne das Kontrollzentrum, geh zu den Spracheinstellungen und füge Deutsch hinzu."
+          }
+        }
+      ]
     },
     {
       "id": "fedora-workstation",
