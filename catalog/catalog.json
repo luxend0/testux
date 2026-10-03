@@ -1804,6 +1804,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "tails",
+      "name": "Tails",
+      "version": "7.15",
+      "category": "privacy",
+      "summary": {
+        "en": "A portable system that sends everything through Tor and forgets everything when you shut it down.",
+        "de": "Ein mobiles System, das alles über Tor schickt und beim Herunterfahren alles vergisst."
+      },
+      "description": {
+        "en": "Tails is made for privacy: every connection goes through the Tor network, nothing is written to the computer, and after a shutdown no trace remains. It comes with the Tor Browser, an encrypted messenger and tools to remove metadata from files. It is meant to be carried on a USB stick, not installed.",
+        "de": "Tails ist für Privatsphäre gebaut: Jede Verbindung läuft über das Tor-Netzwerk, nichts wird auf dem Computer gespeichert, und nach dem Herunterfahren bleibt keine Spur. Dabei sind der Tor Browser, ein verschlüsselter Messenger und Werkzeuge, die Metadaten aus Dateien entfernen. Tails ist für einen USB-Stick gedacht, nicht zum Installieren."
+      },
+      "notes": {
+        "en": "Tails only starts from a USB stick or DVD on purpose, so Testux runs it in a window only. Inside a window it is fine for a look around, but for real anonymity use it from a USB stick as the Tails team recommends. NVIDIA and some AMD Radeon graphics often do not work.",
+        "de": "Tails startet absichtlich nur von einem USB-Stick oder einer DVD, deshalb startet Testux es nur im Fenster. Zum Ausprobieren reicht das, für echte Anonymität nutzt du Tails vom USB-Stick, so wie es das Tails-Team empfiehlt. NVIDIA und manche AMD-Radeon-Grafikkarten laufen oft nicht."
+      },
+      "website": "https://tails.net",
+      "color": "#56347c",
+      "desktop": "GNOME",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.tails.net/tails/stable/tails-amd64-7.15/tails-amd64-7.15.iso",
+        "sha256": "48fc76cd04b92b0c7b91ff29d1cfd11569b7cd464ae0063b3eae4e5f96139825",
+        "size": 1879158784
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 3072,
+      "checklist": []
+    },
+    {
       "id": "edubuntu",
       "name": "Edubuntu",
       "version": "26.04.1 LTS",
