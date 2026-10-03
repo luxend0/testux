@@ -2244,6 +2244,44 @@
       "minRamMb": 2048
     },
     {
+      "id": "nixos",
+      "name": "NixOS",
+      "edition": {
+        "en": "GNOME or Plasma",
+        "de": "GNOME oder Plasma"
+      },
+      "version": "26.05",
+      "category": "advanced",
+      "summary": {
+        "en": "The whole system described in one configuration file, with every change undoable.",
+        "de": "Das ganze System in einer Konfigurationsdatei beschrieben, und jede Änderung lässt sich zurücknehmen."
+      },
+      "description": {
+        "en": "On NixOS you write down which programs and settings you want, and the system builds itself from that. Every update creates a new generation you can boot back into, so a broken update is one restart away from fixed. The live image lets you pick GNOME or KDE Plasma in its boot menu.",
+        "de": "Bei NixOS schreibst du auf, welche Programme und Einstellungen du willst, und das System baut sich daraus selbst. Jedes Update erzeugt eine neue Generation, in die du zurückstarten kannst, ein kaputtes Update ist also nur einen Neustart von der Lösung entfernt. Im Bootmenü des Live-Images wählst du GNOME oder KDE Plasma."
+      },
+      "notes": {
+        "en": "Testux does not start NixOS from the hard drive: its live system expects to run straight from the ISO image. Try it in a window, or install it from a USB stick.",
+        "de": "Testux startet NixOS nicht von der Festplatte: Das Live-System erwartet, direkt aus dem ISO-Image zu laufen. Probier es im Fenster aus oder installiere es von einem USB-Stick."
+      },
+      "website": "https://nixos.org",
+      "color": "#5277c3",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
+        "sha256Url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso.sha256",
+        "size": 3880910848
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096,
+      "checklist": []
+    },
+    {
       "id": "opensuse-tumbleweed",
       "name": "openSUSE Tumbleweed",
       "edition": "KDE Live",
