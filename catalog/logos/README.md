@@ -45,10 +45,12 @@ Other changes are listed per file.
 | rocky-workstation, rocky-kde | [Commons: Rocky Linux logo](https://commons.wikimedia.org/wiki/File:Rocky_Linux_logo.svg) | CC BY-SA 4.0 (Josh Urbain, Hayden Young, Rocky Enterprise Software Foundation); trademark of the RESF |
 | bluefin | [ublue-os/bluefin-docs `static/img/logo.svg`](https://github.com/ublue-os/bluefin-docs/blob/main/static/img/logo.svg) | Repository licensed Apache-2.0; no separate trademark policy found |
 | aurora | [ublue-os/aurora-docs `static/img/aurora-logo.svg`](https://github.com/ublue-os/aurora-docs/blob/main/static/img/aurora-logo.svg) | Repository licensed Apache-2.0; no separate trademark policy found; viewBox padded from 375x300 to square |
+| archlinux | [Commons: Arch Linux "Crystal" icon](https://commons.wikimedia.org/wiki/File:Arch_Linux_%22Crystal%22_icon.svg) | GPL; Arch Linux logo is a trademark of the Arch Linux project |
 | garuda-dr460nized | [Commons: Garuda-purple.svg](https://commons.wikimedia.org/wiki/File:Garuda-purple.svg) | CC BY-SA 4.0 |
 | garuda-gaming | same file as garuda-dr460nized | CC BY-SA 4.0 |
 | manjaro-gnome | copy of manjaro-kde.svg (see README.md) | Public domain |
 | manjaro-xfce | copy of manjaro-kde.svg (see README.md) | Public domain |
+| kaos | [Commons: KaOS logo 2015](https://commons.wikimedia.org/wiki/File:KaOS_logo_2015.svg) | GPL; trademark of the KaOS project |
 | rebornos | [RebornOS-Team/rebornos-welcome, media/branding/RebornOS_Logo_4.svg](https://github.com/RebornOS-Team/rebornos-welcome/blob/HEAD/media/branding/RebornOS_Logo_4.svg) | Official project artwork; no separate license stated for the logo |
 | archcraft | [Commons: Archcraft-logo.svg](https://commons.wikimedia.org/wiki/File:Archcraft-logo.svg) | CC BY-SA 4.0 |
 | artix-plasma | [Commons: Artix logo.svg](https://commons.wikimedia.org/wiki/File:Artix_logo.svg) | CC BY-SA 4.0 |
@@ -68,6 +70,7 @@ Other changes are listed per file.
 | kali | [Commons: Kali-dragon-icon.svg](https://commons.wikimedia.org/wiki/File:Kali-dragon-icon.svg) | CC BY-SA 4.0 on Commons; Kali Linux is a trademark of OffSec Services Limited. |
 | parrot-home, parrot-security | [Commons: Parrot OS logo, 2023.svg](https://commons.wikimedia.org/wiki/File:Parrot_OS_logo,_2023.svg) | GPL on Commons; Parrot name and logo belong to Parrot Security. Same file for both editions. |
 | nixos | [Commons: NixOS rainbow snowflake 01.svg](https://commons.wikimedia.org/wiki/File:NixOS_rainbow_snowflake_01.svg) | CC BY 4.0 on Commons (NixOS branding); NixOS name and logo belong to the NixOS Foundation. |
+| void-xfce | [Commons: Void Linux logo.svg](https://commons.wikimedia.org/wiki/File:Void_Linux_logo.svg) | Public domain on Commons; the official mark includes the VOID lettering. |
 | gentoo-livegui | [Commons: Gentoo Linux Signet.svg](https://commons.wikimedia.org/wiki/File:Gentoo_Linux_Signet.svg) | CC BY-SA 2.5 on Commons; Gentoo is a trademark of the Gentoo Foundation. |
 | solus-budgie, solus-plasma, solus-gnome | [Commons: Solus.svg](https://commons.wikimedia.org/wiki/File:Solus.svg) | CC BY-SA 4.0 on Commons; Solus name and logo belong to the Solus project. Same file for all editions. |
 | vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |

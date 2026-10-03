@@ -359,6 +359,40 @@
       ]
     },
     {
+      "id": "solus-budgie",
+      "name": "Solus",
+      "edition": "Budgie",
+      "version": "4.9",
+      "category": "beginner",
+      "summary": {
+        "en": "A polished, independent system with its own Budgie desktop and carefully tested updates.",
+        "de": "Ein ausgereiftes, unabhängiges System mit dem eigenen Budgie-Desktop und sorgfältig getesteten Updates."
+      },
+      "description": {
+        "en": "Solus is built from scratch for home computers and gets tested updates every week. Budgie, the desktop the Solus team started, is clean and easy to understand: a panel, a menu and a sidebar for notifications.",
+        "de": "Solus ist von Grund auf für Heimcomputer gebaut und bekommt jede Woche getestete Updates. Budgie, der Desktop, den das Solus-Team gestartet hat, ist aufgeräumt und leicht zu verstehen: eine Leiste, ein Menü und eine Seitenleiste für Benachrichtigungen."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Solus deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://getsol.us",
+      "color": "#5294e2",
+      "desktop": "Budgie",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Budgie-Release-2026-04-18.iso",
+        "sha256Url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Budgie-Release-2026-04-18.iso.sha256sum",
+        "size": 4338690048
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "ubuntu",
       "name": "Ubuntu",
       "edition": "Desktop",
@@ -590,6 +624,38 @@
       "minRamMb": 4096
     },
     {
+      "id": "kaos",
+      "name": "KaOS",
+      "version": "2026.09",
+      "category": "kde",
+      "summary": {
+        "en": "An independent distro built only for KDE Plasma and Qt apps.",
+        "de": "Eine unabhängige Distro, die ganz auf KDE Plasma und Qt-Apps ausgerichtet ist."
+      },
+      "description": {
+        "en": "KaOS is not based on another distro and focuses on one desktop: KDE Plasma, with apps chosen to fit it. The result is a very consistent system with the newest Plasma soon after release. The repositories are smaller and hand picked, so it suits people who like a tidy, focused setup.",
+        "de": "KaOS basiert auf keiner anderen Distro und konzentriert sich auf einen Desktop: KDE Plasma, mit passend ausgewählten Apps. Das Ergebnis ist ein sehr einheitliches System mit dem neuesten Plasma kurz nach Erscheinen. Die Paketquellen sind kleiner und handverlesen, das passt zu Leuten, die ein aufgeräumtes, fokussiertes System mögen."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start KaOS on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um KaOS direkt auf dem PC zu starten."
+      },
+      "website": "https://kaosx.us",
+      "color": "#3498db",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/kaosx/ISO/KaOS-2026.09-x86_64.iso",
+        "sha256": "2db97d2ed70db995b2b40d40f22ce4af804c1bcdede4ce72f7f889f579886a50",
+        "size": 4461391872
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "kde-neon",
       "name": "KDE neon",
       "edition": "User Edition",
@@ -749,6 +815,40 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 2048
+    },
+    {
+      "id": "solus-plasma",
+      "name": "Solus",
+      "edition": "Plasma",
+      "version": "4.9",
+      "category": "kde",
+      "summary": {
+        "en": "Solus with KDE Plasma: an independent system with a desktop you can shape any way you like.",
+        "de": "Solus mit KDE Plasma: ein unabhängiges System mit einem Desktop, den du ganz nach deinem Geschmack formst."
+      },
+      "description": {
+        "en": "The same independent Solus base with weekly tested updates, combined with KDE Plasma and its many settings. A good fit if you like a familiar taskbar and want to tweak things.",
+        "de": "Dieselbe unabhängige Solus-Basis mit wöchentlich getesteten Updates, kombiniert mit KDE Plasma und seinen vielen Einstellungen. Passt gut, wenn du eine vertraute Taskleiste magst und gern an Details drehst."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Solus deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://getsol.us",
+      "color": "#5294e2",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Plasma-Release-2026-04-18.iso",
+        "sha256Url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Plasma-Release-2026-04-18.iso.sha256sum",
+        "size": 4056121344
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
     },
     {
       "id": "sparky-kde",
@@ -1865,6 +1965,34 @@
       "minRamMb": 2048
     },
     {
+      "id": "parrot-home",
+      "name": "Parrot OS",
+      "edition": "Home",
+      "version": "7.4",
+      "category": "privacy",
+      "summary": {
+        "en": "A Debian system with privacy tools built in, for everyday use without the hacking toolkit.",
+        "de": "Ein Debian-System mit eingebauten Privatsphäre-Werkzeugen, für den Alltag ohne Hacking-Werkzeugkasten."
+      },
+      "description": {
+        "en": "The Home edition is Parrot without the penetration testing tools: a KDE Plasma desktop on Debian 13 with privacy helpers such as Tor and encryption tools ready to use."
+      },
+      "website": "https://parrotsec.org",
+      "color": "#15e0ed",
+      "desktop": "KDE Plasma",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://deb.parrot.sh/parrot/iso/7.4/Parrot-home-7.4_amd64.iso",
+        "sha256Url": "https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt",
+        "size": 4165287936
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "parrot-security",
       "name": "Parrot OS",
       "edition": "Security",
@@ -2139,6 +2267,41 @@
           }
         }
       ]
+    },
+    {
+      "id": "archlinux",
+      "name": "Arch Linux",
+      "version": "2026.10.01",
+      "category": "advanced",
+      "summary": {
+        "en": "The simple, do-it-yourself base many other distros build on.",
+        "de": "Die schlichte Grundlage zum Selberbauen, auf der viele andere Distros aufsetzen."
+      },
+      "description": {
+        "en": "Arch Linux gives you a minimal system and lets you decide every piece yourself, from the desktop to each app."
+      },
+      "notes": {
+        "en": "There is no desktop to try: the live system is a text console. Type archinstall to start the guided installer. The ISO does not boot with Secure Boot on, so turn it off in the UEFI settings to start Arch Linux on this PC.",
+        "de": "Es gibt keinen Desktop zum Ausprobieren: Das Live-System ist eine Textkonsole. Tippe archinstall, um den geführten Installer zu starten. Das ISO startet nicht mit eingeschaltetem Secure Boot, schalte es also in den UEFI-Einstellungen aus, um Arch Linux direkt auf dem PC zu starten."
+      },
+      "website": "https://archlinux.org",
+      "color": "#1793d1",
+      "desktop": {
+        "en": "Text console",
+        "de": "Textkonsole"
+      },
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso",
+        "sha256Url": "https://geo.mirror.pkgbuild.com/iso/latest/sha256sums.txt",
+        "size": 1640497152
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 512,
+      "checklist": []
     },
     {
       "id": "artix-plasma",
@@ -2507,6 +2670,40 @@
       "nvidiaReady": false,
       "bareMetal": false,
       "minRamMb": 4096
+    },
+    {
+      "id": "void-xfce",
+      "name": "Void Linux",
+      "edition": "Xfce",
+      "version": "20250202",
+      "category": "advanced",
+      "summary": {
+        "en": "An independent, fast rolling system with its own package manager and no systemd.",
+        "de": "Ein unabhängiges, schnelles Rolling-System mit eigenem Paketmanager und ohne systemd."
+      },
+      "description": {
+        "en": "Void is built from scratch: it uses runit instead of systemd, its own xbps package manager and gets updates continuously. It is small, starts quickly and leaves most decisions to you. This live image runs the light Xfce desktop.",
+        "de": "Void ist von Grund auf selbst gebaut: Es nutzt runit statt systemd, den eigenen Paketmanager xbps und bekommt laufend Updates. Es ist schlank, startet schnell und überlässt dir die meisten Entscheidungen. Dieses Live-Image läuft mit dem leichten Xfce-Desktop."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Void deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://voidlinux.org",
+      "color": "#478061",
+      "desktop": "Xfce",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://repo-default.voidlinux.org/live/20250202/void-live-x86_64-20250202-xfce.iso",
+        "sha256Url": "https://repo-default.voidlinux.org/live/20250202/sha256sum.txt",
+        "size": 1446789120
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
     },
     {
       "id": "almalinux-gnome",
