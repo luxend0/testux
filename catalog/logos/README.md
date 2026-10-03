@@ -66,6 +66,7 @@ Other changes are listed per file.
 | porteus | `porteus-logo.svg` as shipped in Porteus' 002-xorg module, from https://github.com/myPorteus/Porteus (x86_64/porteus/base/002-xorg/usr/share/pixmaps/porteus/) | No license stated; part of the Porteus distribution |
 | tails | [Commons: Tails-logo-flat-notagline.svg](https://commons.wikimedia.org/wiki/File:Tails-logo-flat-notagline.svg) | GPLv3 on Commons; Tails name and logo belong to the Tails project. Wordmark removed. |
 | kali | [Commons: Kali-dragon-icon.svg](https://commons.wikimedia.org/wiki/File:Kali-dragon-icon.svg) | CC BY-SA 4.0 on Commons; Kali Linux is a trademark of OffSec Services Limited. |
+| parrot-home, parrot-security | [Commons: Parrot OS logo, 2023.svg](https://commons.wikimedia.org/wiki/File:Parrot_OS_logo,_2023.svg) | GPL on Commons; Parrot name and logo belong to Parrot Security. Same file for both editions. |
 | nixos | [Commons: NixOS rainbow snowflake 01.svg](https://commons.wikimedia.org/wiki/File:NixOS_rainbow_snowflake_01.svg) | CC BY 4.0 on Commons (NixOS branding); NixOS name and logo belong to the NixOS Foundation. |
 | gentoo-livegui | [Commons: Gentoo Linux Signet.svg](https://commons.wikimedia.org/wiki/File:Gentoo_Linux_Signet.svg) | CC BY-SA 2.5 on Commons; Gentoo is a trademark of the Gentoo Foundation. |
 | solus-budgie, solus-plasma, solus-gnome | [Commons: Solus.svg](https://commons.wikimedia.org/wiki/File:Solus.svg) | CC BY-SA 4.0 on Commons; Solus name and logo belong to the Solus project. Same file for all editions. |

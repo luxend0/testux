@@ -1865,6 +1865,39 @@
       "minRamMb": 2048
     },
     {
+      "id": "parrot-security",
+      "name": "Parrot OS",
+      "edition": "Security",
+      "version": "7.4",
+      "category": "privacy",
+      "summary": {
+        "en": "Parrot with its full toolkit for penetration testing and digital forensics.",
+        "de": "Parrot mit dem kompletten Werkzeugkasten für Penetrationstests und digitale Forensik."
+      },
+      "description": {
+        "en": "The Security edition adds hundreds of tools for penetration testing, forensics and reverse engineering to the Parrot desktop."
+      },
+      "notes": {
+        "en": "A toolkit for security professionals, not a daily system for beginners; for everyday use pick Parrot Home. Its system image is larger than 4 GB, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Ein Werkzeugkasten für Sicherheitsprofis, kein Alltagssystem für Einsteiger. Für den Alltag nimm Parrot Home. Das System-Image ist größer als 4 GB, deshalb kann Testux es nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://parrotsec.org",
+      "color": "#15e0ed",
+      "desktop": "KDE Plasma",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://deb.parrot.sh/parrot/iso/7.4/Parrot-security-7.4_amd64.iso",
+        "sha256Url": "https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt",
+        "size": 8682078208
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "tails",
       "name": "Tails",
       "version": "7.15",
