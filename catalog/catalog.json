@@ -1737,6 +1737,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "kali",
+      "name": "Kali Linux",
+      "edition": "Installer",
+      "version": "2026.2",
+      "category": "privacy",
+      "summary": {
+        "en": "The best-known toolkit for penetration testing, with hundreds of security tools.",
+        "de": "Der bekannteste Werkzeugkasten für Penetrationstests, mit Hunderten Sicherheitstools."
+      },
+      "description": {
+        "en": "Kali bundles hundreds of tools for testing networks, websites and passwords, used by security professionals and in courses. It is a rolling release based on Debian testing with the Xfce desktop by default.",
+        "de": "Kali bündelt Hunderte Werkzeuge, um Netzwerke, Webseiten und Passwörter zu testen. Es wird von Sicherheitsprofis und in Kursen genutzt. Kali ist ein Rolling Release auf Basis von Debian Testing und nutzt standardmäßig den Xfce-Desktop."
+      },
+      "notes": {
+        "en": "A toolkit for security professionals, not a daily system for beginners. Kali publishes its live image only via BitTorrent, so Testux uses the installer: tick the test disk and install Kali into it. Only use the tools on systems you are allowed to test.",
+        "de": "Ein Werkzeugkasten für Sicherheitsprofis, kein Alltagssystem für Einsteiger. Kali veröffentlicht sein Live-Image nur über BitTorrent, deshalb nutzt Testux den Installer: Hake die Test-Disk an und installiere Kali dort hinein. Nutze die Werkzeuge nur auf Systemen, die du testen darfst."
+      },
+      "website": "https://www.kali.org",
+      "color": "#367bf0",
+      "desktop": "Xfce",
+      "base": "Debian",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-amd64.iso",
+        "sha256Url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS",
+        "size": 4802531328
+      },
+      "secureBoot": false,
+      "liveSession": false,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "edubuntu",
       "name": "Edubuntu",
       "version": "26.04.1 LTS",

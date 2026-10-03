@@ -61,4 +61,5 @@ Other changes are listed per file.
 | deepin | https://commons.wikimedia.org/wiki/File:Deepin_logo.svg | GPLv3 as published on Commons; deepin is a trademark of UnionTech |
 | puppy-bookwormpup | https://commons.wikimedia.org/wiki/File:Puppy_logo.svg | Attribution as published on Commons |
 | devuan | https://commons.wikimedia.org/wiki/File:Devuan-emblem.svg | Public domain as published on Commons; Devuan is a trademark of the Dyne.org foundation |
+| kali | [Commons: Kali-dragon-icon.svg](https://commons.wikimedia.org/wiki/File:Kali-dragon-icon.svg) | CC BY-SA 4.0 on Commons; Kali Linux is a trademark of OffSec Services Limited. |
 | vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |
