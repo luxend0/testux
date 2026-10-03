@@ -66,4 +66,5 @@ Other changes are listed per file.
 | tails | [Commons: Tails-logo-flat-notagline.svg](https://commons.wikimedia.org/wiki/File:Tails-logo-flat-notagline.svg) | GPLv3 on Commons; Tails name and logo belong to the Tails project. Wordmark removed. |
 | kali | [Commons: Kali-dragon-icon.svg](https://commons.wikimedia.org/wiki/File:Kali-dragon-icon.svg) | CC BY-SA 4.0 on Commons; Kali Linux is a trademark of OffSec Services Limited. |
 | nixos | [Commons: NixOS rainbow snowflake 01.svg](https://commons.wikimedia.org/wiki/File:NixOS_rainbow_snowflake_01.svg) | CC BY 4.0 on Commons (NixOS branding); NixOS name and logo belong to the NixOS Foundation. |
+| solus-budgie, solus-plasma, solus-gnome | [Commons: Solus.svg](https://commons.wikimedia.org/wiki/File:Solus.svg) | CC BY-SA 4.0 on Commons; Solus name and logo belong to the Solus project. Same file for all editions. |
 | vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |

@@ -2696,6 +2696,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "solus-gnome",
+      "name": "Solus",
+      "edition": "GNOME",
+      "version": "4.9",
+      "category": "other",
+      "summary": {
+        "en": "Solus with GNOME: a calm, modern desktop on an independent base.",
+        "de": "Solus mit GNOME: ein ruhiger, moderner Desktop auf einer unabhängigen Basis."
+      },
+      "description": {
+        "en": "The independent Solus base with weekly tested updates, here with GNOME: one overview for windows, apps and search, and very few distractions.",
+        "de": "Die unabhängige Solus-Basis mit wöchentlich getesteten Updates, hier mit GNOME: eine Übersicht für Fenster, Apps und Suche und sehr wenig Ablenkung."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Solus deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://getsol.us",
+      "color": "#5294e2",
+      "desktop": "GNOME",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.getsol.us/isos/2026-04-18/Solus-GNOME-Release-2026-04-18.iso",
+        "sha256Url": "https://downloads.getsol.us/isos/2026-04-18/Solus-GNOME-Release-2026-04-18.iso.sha256sum",
+        "size": 4173447168
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "ubuntu-budgie",
       "name": "Ubuntu Budgie",
       "version": "26.04.1 LTS",
