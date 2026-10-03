@@ -558,6 +558,35 @@
       "minRamMb": 4096
     },
     {
+      "id": "debian-kde",
+      "name": "Debian",
+      "edition": "KDE Plasma",
+      "version": "13.7",
+      "category": "kde",
+      "summary": {
+        "en": "Debian's stability with the KDE Plasma desktop, a taskbar layout Windows users know.",
+        "de": "Die Stabilität von Debian mit dem KDE-Plasma-Desktop, ein Taskleisten-Layout wie unter Windows."
+      },
+      "description": {
+        "en": "This is plain Debian, run by volunteers and known for being rock solid, with KDE Plasma as the desktop. Plasma has a start menu, a taskbar and a settings app for almost everything. Software versions are a bit older but very well tested, and updates rarely break anything.",
+        "de": "Das ist reines Debian, getragen von Freiwilligen und bekannt für seine Zuverlässigkeit, mit KDE Plasma als Desktop. Plasma hat ein Startmenü, eine Taskleiste und eine Einstellungs-App für fast alles. Die Programmversionen sind etwas älter, aber sehr gut getestet, und Updates machen selten etwas kaputt."
+      },
+      "website": "https://www.debian.org",
+      "color": "#d70a53",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-kde.iso",
+        "sha256Url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA256SUMS",
+        "size": 4186112000
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "fedora-kde",
       "name": "Fedora",
       "edition": "KDE Plasma",
