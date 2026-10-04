@@ -45,6 +45,7 @@ Other changes are listed per file.
 | rocky-workstation, rocky-kde | [Commons: Rocky Linux logo](https://commons.wikimedia.org/wiki/File:Rocky_Linux_logo.svg) | CC BY-SA 4.0 (Josh Urbain, Hayden Young, Rocky Enterprise Software Foundation); trademark of the RESF |
 | bluefin | [ublue-os/bluefin-docs `static/img/logo.svg`](https://github.com/ublue-os/bluefin-docs/blob/main/static/img/logo.svg) | Repository licensed Apache-2.0; no separate trademark policy found |
 | aurora | [ublue-os/aurora-docs `static/img/aurora-logo.svg`](https://github.com/ublue-os/aurora-docs/blob/main/static/img/aurora-logo.svg) | Repository licensed Apache-2.0; no separate trademark policy found; viewBox padded from 375x300 to square |
+| archlinux | [Commons: Arch Linux "Crystal" icon](https://commons.wikimedia.org/wiki/File:Arch_Linux_%22Crystal%22_icon.svg) | GPL; Arch Linux logo is a trademark of the Arch Linux project |
 | garuda-dr460nized | [Commons: Garuda-purple.svg](https://commons.wikimedia.org/wiki/File:Garuda-purple.svg) | CC BY-SA 4.0 |
 | garuda-gaming | same file as garuda-dr460nized | CC BY-SA 4.0 |
 | manjaro-gnome | copy of manjaro-kde.svg (see README.md) | Public domain |

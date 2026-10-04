@@ -2175,6 +2175,41 @@
       ]
     },
     {
+      "id": "archlinux",
+      "name": "Arch Linux",
+      "version": "2026.10.01",
+      "category": "advanced",
+      "summary": {
+        "en": "The simple, do-it-yourself base many other distros build on.",
+        "de": "Die schlichte Grundlage zum Selberbauen, auf der viele andere Distros aufsetzen."
+      },
+      "description": {
+        "en": "Arch Linux gives you a minimal system and lets you decide every piece yourself, from the desktop to each app."
+      },
+      "notes": {
+        "en": "There is no desktop to try: the live system is a text console. Type archinstall to start the guided installer. The ISO does not boot with Secure Boot on, so turn it off in the UEFI settings to start Arch Linux on this PC.",
+        "de": "Es gibt keinen Desktop zum Ausprobieren: Das Live-System ist eine Textkonsole. Tippe archinstall, um den geführten Installer zu starten. Das ISO startet nicht mit eingeschaltetem Secure Boot, schalte es also in den UEFI-Einstellungen aus, um Arch Linux direkt auf dem PC zu starten."
+      },
+      "website": "https://archlinux.org",
+      "color": "#1793d1",
+      "desktop": {
+        "en": "Text console",
+        "de": "Textkonsole"
+      },
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso",
+        "sha256Url": "https://geo.mirror.pkgbuild.com/iso/latest/sha256sums.txt",
+        "size": 1640497152
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 512,
+      "checklist": []
+    },
+    {
       "id": "artix-plasma",
       "name": "Artix Linux",
       "edition": "Plasma (OpenRC)",
