@@ -751,6 +751,40 @@
       "minRamMb": 2048
     },
     {
+      "id": "solus-plasma",
+      "name": "Solus",
+      "edition": "Plasma",
+      "version": "4.9",
+      "category": "kde",
+      "summary": {
+        "en": "Solus with KDE Plasma: an independent system with a desktop you can shape any way you like.",
+        "de": "Solus mit KDE Plasma: ein unabhängiges System mit einem Desktop, den du ganz nach deinem Geschmack formst."
+      },
+      "description": {
+        "en": "The same independent Solus base with weekly tested updates, combined with KDE Plasma and its many settings. A good fit if you like a familiar taskbar and want to tweak things.",
+        "de": "Dieselbe unabhängige Solus-Basis mit wöchentlich getesteten Updates, kombiniert mit KDE Plasma und seinen vielen Einstellungen. Passt gut, wenn du eine vertraute Taskleiste magst und gern an Details drehst."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Solus deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://getsol.us",
+      "color": "#5294e2",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Plasma-Release-2026-04-18.iso",
+        "sha256Url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Plasma-Release-2026-04-18.iso.sha256sum",
+        "size": 4056121344
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "sparky-kde",
       "name": "SparkyLinux",
       "edition": "KDE Plasma",
