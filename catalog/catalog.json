@@ -359,6 +359,40 @@
       ]
     },
     {
+      "id": "solus-budgie",
+      "name": "Solus",
+      "edition": "Budgie",
+      "version": "4.9",
+      "category": "beginner",
+      "summary": {
+        "en": "A polished, independent system with its own Budgie desktop and carefully tested updates.",
+        "de": "Ein ausgereiftes, unabhängiges System mit dem eigenen Budgie-Desktop und sorgfältig getesteten Updates."
+      },
+      "description": {
+        "en": "Solus is built from scratch for home computers and gets tested updates every week. Budgie, the desktop the Solus team started, is clean and easy to understand: a panel, a menu and a sidebar for notifications.",
+        "de": "Solus ist von Grund auf für Heimcomputer gebaut und bekommt jede Woche getestete Updates. Budgie, der Desktop, den das Solus-Team gestartet hat, ist aufgeräumt und leicht zu verstehen: eine Leiste, ein Menü und eine Seitenleiste für Benachrichtigungen."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Solus deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://getsol.us",
+      "color": "#5294e2",
+      "desktop": "Budgie",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Budgie-Release-2026-04-18.iso",
+        "sha256Url": "https://downloads.getsol.us/isos/2026-04-18/Solus-Budgie-Release-2026-04-18.iso.sha256sum",
+        "size": 4338690048
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "ubuntu",
       "name": "Ubuntu",
       "edition": "Desktop",
