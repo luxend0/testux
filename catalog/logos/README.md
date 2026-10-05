@@ -69,6 +69,7 @@ Other changes are listed per file.
 | kali | [Commons: Kali-dragon-icon.svg](https://commons.wikimedia.org/wiki/File:Kali-dragon-icon.svg) | CC BY-SA 4.0 on Commons; Kali Linux is a trademark of OffSec Services Limited. |
 | parrot-home, parrot-security | [Commons: Parrot OS logo, 2023.svg](https://commons.wikimedia.org/wiki/File:Parrot_OS_logo,_2023.svg) | GPL on Commons; Parrot name and logo belong to Parrot Security. Same file for both editions. |
 | nixos | [Commons: NixOS rainbow snowflake 01.svg](https://commons.wikimedia.org/wiki/File:NixOS_rainbow_snowflake_01.svg) | CC BY 4.0 on Commons (NixOS branding); NixOS name and logo belong to the NixOS Foundation. |
+| void-xfce | [Commons: Void Linux logo.svg](https://commons.wikimedia.org/wiki/File:Void_Linux_logo.svg) | Public domain on Commons; the official mark includes the VOID lettering. |
 | gentoo-livegui | [Commons: Gentoo Linux Signet.svg](https://commons.wikimedia.org/wiki/File:Gentoo_Linux_Signet.svg) | CC BY-SA 2.5 on Commons; Gentoo is a trademark of the Gentoo Foundation. |
 | solus-budgie, solus-plasma, solus-gnome | [Commons: Solus.svg](https://commons.wikimedia.org/wiki/File:Solus.svg) | CC BY-SA 4.0 on Commons; Solus name and logo belong to the Solus project. Same file for all editions. |
 | vanilla-os | [Vanilla-OS/website: vanillaos-logo-icon.svg](https://github.com/Vanilla-OS/website/blob/main/public/assets/images/brand/vanillaos-logo-icon.svg) | From the official website repository (AGPL-3.0); Vanilla OS name and logo belong to the Vanilla OS project. |

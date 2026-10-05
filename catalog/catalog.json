@@ -2612,6 +2612,40 @@
       "minRamMb": 4096
     },
     {
+      "id": "void-xfce",
+      "name": "Void Linux",
+      "edition": "Xfce",
+      "version": "20250202",
+      "category": "advanced",
+      "summary": {
+        "en": "An independent, fast rolling system with its own package manager and no systemd.",
+        "de": "Ein unabhängiges, schnelles Rolling-System mit eigenem Paketmanager und ohne systemd."
+      },
+      "description": {
+        "en": "Void is built from scratch: it uses runit instead of systemd, its own xbps package manager and gets updates continuously. It is small, starts quickly and leaves most decisions to you. This live image runs the light Xfce desktop.",
+        "de": "Void ist von Grund auf selbst gebaut: Es nutzt runit statt systemd, den eigenen Paketmanager xbps und bekommt laufend Updates. Es ist schlank, startet schnell und überlässt dir die meisten Entscheidungen. Dieses Live-Image läuft mit dem leichten Xfce-Desktop."
+      },
+      "notes": {
+        "en": "Its ISO only carries a boot image for UEFI, not the boot files Testux copies, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Die ISO enthält für UEFI nur ein Boot-Abbild, nicht die Startdateien, die Testux kopiert. Testux kann Void deshalb nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://voidlinux.org",
+      "color": "#478061",
+      "desktop": "Xfce",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://repo-default.voidlinux.org/live/20250202/void-live-x86_64-20250202-xfce.iso",
+        "sha256Url": "https://repo-default.voidlinux.org/live/20250202/sha256sum.txt",
+        "size": 1446789120
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "almalinux-gnome",
       "name": "AlmaLinux",
       "edition": "GNOME",
