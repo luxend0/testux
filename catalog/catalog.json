@@ -1997,7 +1997,19 @@
       "nvidiaReady": false,
       "bareMetal": false,
       "minRamMb": 3072,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "tails-tor",
+          "title": {
+            "en": "Connect to Tor",
+            "de": "Mit Tor verbinden"
+          },
+          "detail": {
+            "en": "Tails asks how to connect after the start. Open a website in the Tor Browser and see how it feels.",
+            "de": "Tails fragt nach dem Start, wie es sich verbinden soll. Öffne eine Webseite im Tor Browser und schau, wie es sich anfühlt."
+          }
+        }
+      ]
     },
     {
       "id": "edubuntu",
