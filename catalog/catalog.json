@@ -2543,7 +2543,19 @@
       "nvidiaReady": false,
       "bareMetal": false,
       "minRamMb": 4096,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "nixos-desktop",
+          "title": {
+            "en": "Pick your desktop",
+            "de": "Desktop auswählen"
+          },
+          "detail": {
+            "en": "The boot menu offers GNOME and KDE Plasma. Restart the VM to try the other one.",
+            "de": "Das Bootmenü bietet GNOME und KDE Plasma an. Starte die VM neu, um den anderen auszuprobieren."
+          }
+        }
+      ]
     },
     {
       "id": "opensuse-tumbleweed",
