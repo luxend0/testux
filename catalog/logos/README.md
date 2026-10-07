@@ -50,6 +50,7 @@ Other changes are listed per file.
 | garuda-gaming | same file as garuda-dr460nized | CC BY-SA 4.0 |
 | manjaro-gnome | copy of manjaro-kde.svg (see README.md) | Public domain |
 | manjaro-xfce | copy of manjaro-kde.svg (see README.md) | Public domain |
+| kaos | [Commons: KaOS logo 2015](https://commons.wikimedia.org/wiki/File:KaOS_logo_2015.svg) | GPL; trademark of the KaOS project |
 | rebornos | [RebornOS-Team/rebornos-welcome, media/branding/RebornOS_Logo_4.svg](https://github.com/RebornOS-Team/rebornos-welcome/blob/HEAD/media/branding/RebornOS_Logo_4.svg) | Official project artwork; no separate license stated for the logo |
 | archcraft | [Commons: Archcraft-logo.svg](https://commons.wikimedia.org/wiki/File:Archcraft-logo.svg) | CC BY-SA 4.0 |
 | artix-plasma | [Commons: Artix logo.svg](https://commons.wikimedia.org/wiki/File:Artix_logo.svg) | CC BY-SA 4.0 |

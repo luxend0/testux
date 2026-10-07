@@ -624,6 +624,38 @@
       "minRamMb": 4096
     },
     {
+      "id": "kaos",
+      "name": "KaOS",
+      "version": "2026.09",
+      "category": "kde",
+      "summary": {
+        "en": "An independent distro built only for KDE Plasma and Qt apps.",
+        "de": "Eine unabhängige Distro, die ganz auf KDE Plasma und Qt-Apps ausgerichtet ist."
+      },
+      "description": {
+        "en": "KaOS is not based on another distro and focuses on one desktop: KDE Plasma, with apps chosen to fit it. The result is a very consistent system with the newest Plasma soon after release. The repositories are smaller and hand picked, so it suits people who like a tidy, focused setup.",
+        "de": "KaOS basiert auf keiner anderen Distro und konzentriert sich auf einen Desktop: KDE Plasma, mit passend ausgewählten Apps. Das Ergebnis ist ein sehr einheitliches System mit dem neuesten Plasma kurz nach Erscheinen. Die Paketquellen sind kleiner und handverlesen, das passt zu Leuten, die ein aufgeräumtes, fokussiertes System mögen."
+      },
+      "notes": {
+        "en": "The ISO does not boot with Secure Boot on. Turn it off in the UEFI settings to start KaOS on this PC.",
+        "de": "Das ISO startet nicht mit eingeschaltetem Secure Boot. Schalte es in den UEFI-Einstellungen aus, um KaOS direkt auf dem PC zu starten."
+      },
+      "website": "https://kaosx.us",
+      "color": "#3498db",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "rolling",
+      "iso": {
+        "url": "https://downloads.sourceforge.net/project/kaosx/ISO/KaOS-2026.09-x86_64.iso",
+        "sha256": "2db97d2ed70db995b2b40d40f22ce4af804c1bcdede4ce72f7f889f579886a50",
+        "size": 4461391872
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 2048
+    },
+    {
       "id": "kde-neon",
       "name": "KDE neon",
       "edition": "User Edition",
