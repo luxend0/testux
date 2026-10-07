@@ -3145,33 +3145,6 @@
       "liveSession": false,
       "nvidiaReady": true,
       "minRamMb": 4096
-    },
-    {
-      "id": "elementary",
-      "name": "elementary OS",
-      "version": "8.1.1",
-      "category": "other",
-      "summary": {
-        "en": "A calm, tidy desktop with a dock, close to what Mac users know.",
-        "de": "Ein ruhiger, aufgeräumter Desktop mit Dock, ähnlich wie man es vom Mac kennt."
-      },
-      "description": {
-        "en": "elementary OS is built on Ubuntu and puts a lot of care into a consistent look. Apps come from its own AppCenter, many of them pay what you want. It feels simple and quiet, with fewer settings than most desktops.",
-        "de": "elementary OS basiert auf Ubuntu und legt viel Wert auf ein einheitliches Aussehen. Apps kommen aus dem eigenen AppCenter, viele davon zum Wunschpreis. Es wirkt schlicht und ruhig, mit weniger Einstellungen als die meisten Desktops."
-      },
-      "website": "https://elementary.io",
-      "color": "#64baff",
-      "desktop": "Pantheon",
-      "base": "Ubuntu",
-      "releaseModel": "fixed",
-      "iso": {
-        "url": "https://dl.elementaryos.org/MTc5MjI4NDE3Nw==/elementaryos-8.1-stable-amd64.20260219.iso",
-        "size": 3335405568
-      },
-      "secureBoot": true,
-      "liveSession": true,
-      "nvidiaReady": true,
-      "minRamMb": 4096
     }
   ]
 }
