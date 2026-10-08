@@ -1965,6 +1965,34 @@
       "minRamMb": 2048
     },
     {
+      "id": "parrot-home",
+      "name": "Parrot OS",
+      "edition": "Home",
+      "version": "7.4",
+      "category": "privacy",
+      "summary": {
+        "en": "A Debian system with privacy tools built in, for everyday use without the hacking toolkit.",
+        "de": "Ein Debian-System mit eingebauten Privatsphäre-Werkzeugen, für den Alltag ohne Hacking-Werkzeugkasten."
+      },
+      "description": {
+        "en": "The Home edition is Parrot without the penetration testing tools: a KDE Plasma desktop on Debian 13 with privacy helpers such as Tor and encryption tools ready to use."
+      },
+      "website": "https://parrotsec.org",
+      "color": "#15e0ed",
+      "desktop": "KDE Plasma",
+      "base": "Debian",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://deb.parrot.sh/parrot/iso/7.4/Parrot-home-7.4_amd64.iso",
+        "sha256Url": "https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt",
+        "size": 4165287936
+      },
+      "secureBoot": true,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "parrot-security",
       "name": "Parrot OS",
       "edition": "Security",
