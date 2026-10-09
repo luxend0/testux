@@ -2737,6 +2737,39 @@
       "minRamMb": 4096
     },
     {
+      "id": "slackware-live",
+      "name": "Slackware",
+      "edition": "Live",
+      "version": "15.0",
+      "category": "advanced",
+      "summary": {
+        "en": "The oldest Linux distribution still maintained, simple and true to classic Unix.",
+        "de": "Die älteste noch gepflegte Linux-Distribution, schlicht und klassischem Unix treu."
+      },
+      "description": {
+        "en": "Slackware has existed since 1993 and keeps things deliberately simple: plain text configuration, few automatic helpers, very stable software."
+      },
+      "notes": {
+        "en": "Slackware 15.0 is from 2022 and gets security updates. The live system looks for its files by a fixed disk label, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
+        "de": "Slackware 15.0 stammt von 2022 und bekommt Sicherheitsupdates. Das Live-System sucht seine Dateien über ein festes Laufwerkslabel, deshalb kann Testux es nur im Fenster starten. Zum Installieren auf dem PC brauchst du einen USB-Stick."
+      },
+      "website": "https://docs.slackware.com/slackware:liveslak",
+      "color": "#4962ae",
+      "desktop": "KDE Plasma",
+      "base": "independent",
+      "releaseModel": "fixed",
+      "iso": {
+        "url": "https://download.liveslak.org/slackware64-15.0-live/slackware64-live-15.0.iso",
+        "sha256Url": "https://download.liveslak.org/slackware64-15.0-live/slackware64-live-15.0.iso.sha256",
+        "size": 4206968832
+      },
+      "secureBoot": false,
+      "liveSession": true,
+      "nvidiaReady": false,
+      "bareMetal": false,
+      "minRamMb": 4096
+    },
+    {
       "id": "void-xfce",
       "name": "Void Linux",
       "edition": "Xfce",
