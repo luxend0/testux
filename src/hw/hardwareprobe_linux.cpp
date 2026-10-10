@@ -74,6 +74,8 @@ QString fallbackVendorName(quint16 vendor)
     }
 }
 
+// Looks the device up in pci.ids: vendor lines start at column 0 ("10de  NVIDIA
+// Corporation"), their devices follow indented by one tab ("\t2684  AD102 [...]").
 QString pciName(quint16 vendor, quint16 device, const QByteArray &pciIds)
 {
     const QByteArray vendorKey = QByteArray::number(vendor, 16).rightJustified(4, '0') + "  ";
