@@ -169,6 +169,7 @@ bool onGptDisk(const QString &drive)
            info.PartitionStyle == PARTITION_STYLE_GPT;
 }
 
+// For REG_MULTI_SZ properties (hardware ids) this returns the first, most specific entry.
 QString deviceProperty(HDEVINFO set, SP_DEVINFO_DATA &device, DWORD property)
 {
     DWORD required = 0;
