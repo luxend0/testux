@@ -99,6 +99,8 @@ QString systemDrive()
 {
     wchar_t windowsDir[MAX_PATH];
     const UINT length = GetSystemWindowsDirectoryW(windowsDir, MAX_PATH);
+    if (length < 2 || length >= MAX_PATH)
+        return QStringLiteral("C:");
     return QString::fromWCharArray(windowsDir, 2);
 }
 
