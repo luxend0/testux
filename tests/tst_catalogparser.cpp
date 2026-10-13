@@ -23,6 +23,7 @@ private slots:
     void parsesShippedCatalog();
 };
 
+// A minimal valid entry; tests override single fields.
 static QJsonObject entry(const QString &id)
 {
     return QJsonObject{
