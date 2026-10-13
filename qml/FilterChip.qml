@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Basic
 
+// Compact on/off filter.
 AbstractButton {
     id: chip
 
