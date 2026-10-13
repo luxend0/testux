@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
 
+// Centered modal with a title. Buttons placed in `actions` end up right-aligned below.
 Dialog {
     id: dialog
 
