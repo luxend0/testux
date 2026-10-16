@@ -1280,7 +1280,8 @@
         "de": "Extrem leicht und schnell, sogar auf PCs nützlich, die deutlich über zehn Jahre alt sind."
       },
       "description": {
-        "en": "antiX is a Debian based system built to run on very little memory."
+        "en": "antiX is a Debian based system built to run on very little memory. It uses simple window managers instead of a big desktop and starts in seconds even on old hardware. It is a good way to give an old laptop a second life, but it looks plain and expects you to explore a bit.",
+        "de": "antiX ist ein Debian-basiertes System, das mit sehr wenig Arbeitsspeicher auskommt. Es nutzt einfache Fenstermanager statt eines großen Desktops und startet selbst auf alter Hardware in Sekunden. Damit bekommt ein alter Laptop ein zweites Leben, es sieht aber schlicht aus und erwartet, dass du dich etwas umschaust."
       },
       "notes": {
         "en": "antiX does not use systemd, and its kernel is not signed, so booting it on your PC needs Secure Boot turned off.",
@@ -2354,7 +2355,30 @@
       "liveSession": true,
       "nvidiaReady": false,
       "minRamMb": 512,
-      "checklist": []
+      "checklist": [
+        {
+          "id": "archinstall",
+          "title": {
+            "en": "Run the guided installer",
+            "de": "Den geführten Installer starten"
+          },
+          "detail": {
+            "en": "Type archinstall and go through the menu. Pick a desktop under Profile to get a graphical system.",
+            "de": "Tippe archinstall und geh durch das Menü. Wähle unter Profile einen Desktop, dann bekommst du ein grafisches System."
+          }
+        },
+        {
+          "id": "iwctl",
+          "title": {
+            "en": "Connect to Wi-Fi in the console",
+            "de": "In der Konsole mit WLAN verbinden"
+          },
+          "detail": {
+            "en": "Type iwctl, then station wlan0 connect followed by your network name. In a window the network already works.",
+            "de": "Tippe iwctl, dann station wlan0 connect und deinen Netzwerknamen. Im Fenster funktioniert das Netzwerk schon."
+          }
+        }
+      ]
     },
     {
       "id": "artix-plasma",
