@@ -2045,7 +2045,8 @@
         "de": "Parrot mit dem kompletten Werkzeugkasten für Penetrationstests und digitale Forensik."
       },
       "description": {
-        "en": "The Security edition adds hundreds of tools for penetration testing, forensics and reverse engineering to the Parrot desktop."
+        "en": "The Security edition adds hundreds of tools for penetration testing, forensics and reverse engineering to the Parrot desktop. It runs KDE Plasma on Debian 13 and is a popular alternative to Kali.",
+        "de": "Die Security-Edition ergänzt den Parrot-Desktop um Hunderte Werkzeuge für Penetrationstests, Forensik und Reverse Engineering. Sie läuft mit KDE Plasma auf Debian 13 und ist eine beliebte Alternative zu Kali."
       },
       "notes": {
         "en": "A toolkit for security professionals, not a daily system for beginners; for everyday use pick Parrot Home. Its system image is larger than 4 GB, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
