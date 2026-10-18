@@ -24,7 +24,7 @@ COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 SIZE_TOLERANCE = 0.10
 TIMEOUT = 30
-ATTEMPTS = 3  # mirror redirectors (Fedora's in particular) reset connections now and then
+ATTEMPTS = 3  # mirrors reset connections or answer 500 now and then (Fedora, archive.org)
 USER_AGENT = "testux-catalog-check/1 (+https://github.com/luxend0/testux)"
 
 
@@ -141,8 +141,11 @@ def request(url, method="GET", headers=None):
         try:
             return urllib.request.urlopen(
                 urllib.request.Request(url, method=method, headers=headers), timeout=TIMEOUT)
-        except urllib.error.HTTPError:
-            raise  # a real answer from the server, retrying will not change it
+        except urllib.error.HTTPError as error:
+            # A 4xx is a real answer; a 5xx (archive.org now and then) is worth another try.
+            if error.code < 500 or attempt == ATTEMPTS:
+                raise
+            time.sleep(2 * attempt)
         except (urllib.error.URLError, OSError):
             if attempt == ATTEMPTS:
                 raise
