@@ -53,6 +53,7 @@ QtObject {
         return matchesQuery(d)
     }
 
+    // Every word of the query has to appear somewhere in the distro's searchable text.
     function matchesQuery(d: distro): bool {
         const words = query.toLowerCase().split(/\s+/).filter(word => word !== "")
         if (words.length === 0)

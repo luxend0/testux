@@ -18,6 +18,9 @@ outcome is reported with code "partition-untouched" and exit code 2.
 Safe to run more than once: whatever is already gone is skipped. With -Quiet (used by
 prepare-boot.ps1 while undoing a failed setup) no progress is written and errors are
 thrown to the caller.
+#>
+# Script scope parameters are used inside the helper functions, and the helpers are not
+# meant to be called on their own, so these two rules only produce noise here.
 [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSReviewUnusedParameter', '')]
 [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
 [CmdletBinding()]
