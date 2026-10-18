@@ -1,5 +1,9 @@
 {
   "version": 1,
+  "app": {
+    "latest": "0.1.0",
+    "url": "https://github.com/luxend0/testux/releases/latest"
+  },
   "categories": [
     {
       "id": "beginner",
@@ -2017,7 +2021,8 @@
         "de": "Ein Debian-System mit eingebauten Privatsphäre-Werkzeugen, für den Alltag ohne Hacking-Werkzeugkasten."
       },
       "description": {
-        "en": "The Home edition is Parrot without the penetration testing tools: a KDE Plasma desktop on Debian 13 with privacy helpers such as Tor and encryption tools ready to use."
+        "en": "The Home edition is Parrot without the penetration testing tools: a KDE Plasma desktop on Debian 13 with privacy helpers such as Tor and encryption tools ready to use. It is the calmer of the two Parrot editions.",
+        "de": "Die Home-Edition ist Parrot ohne die Pentest-Werkzeuge: ein KDE-Plasma-Desktop auf Debian 13 mit Privatsphäre-Helfern wie Tor und Verschlüsselungswerkzeugen. Sie ist die ruhigere der beiden Parrot-Editionen."
       },
       "website": "https://parrotsec.org",
       "color": "#15e0ed",
@@ -2333,7 +2338,8 @@
         "de": "Die schlichte Grundlage zum Selberbauen, auf der viele andere Distros aufsetzen."
       },
       "description": {
-        "en": "Arch Linux gives you a minimal system and lets you decide every piece yourself, from the desktop to each app."
+        "en": "Arch Linux gives you a minimal system and lets you decide every piece yourself, from the desktop to each app. It always has the newest software and the Arch Wiki is one of the best Linux guides there is. The guided installer archinstall asks a few questions and sets everything up.",
+        "de": "Arch Linux gibt dir ein minimales System und lässt dich jedes Teil selbst wählen, vom Desktop bis zu jeder App. Die Software ist immer topaktuell und das Arch Wiki ist eine der besten Linux-Anleitungen überhaupt. Der geführte Installer archinstall stellt ein paar Fragen und richtet alles ein."
       },
       "notes": {
         "en": "There is no desktop to try: the live system is a text console. Type archinstall to start the guided installer. The ISO does not boot with Secure Boot on, so turn it off in the UEFI settings to start Arch Linux on this PC.",
@@ -2772,7 +2778,8 @@
         "de": "Die älteste noch gepflegte Linux-Distribution, schlicht und klassischem Unix treu."
       },
       "description": {
-        "en": "Slackware has existed since 1993 and keeps things deliberately simple: plain text configuration, few automatic helpers, very stable software."
+        "en": "Slackware has existed since 1993 and keeps things deliberately simple: plain text configuration, few automatic helpers, very stable software. This live edition is built by Eric Hameleers from the Slackware team and runs KDE Plasma 5 on Slackware 15.0.",
+        "de": "Slackware gibt es seit 1993, und es hält die Dinge bewusst einfach: Konfiguration in Textdateien, wenige automatische Helfer, sehr stabile Software. Diese Live-Edition baut Eric Hameleers aus dem Slackware-Team, sie läuft mit KDE Plasma 5 auf Slackware 15.0."
       },
       "notes": {
         "en": "Slackware 15.0 is from 2022 and gets security updates. The live system looks for its files by a fixed disk label, so Testux can only run it in a window. Use a USB stick to install it on your PC.",
