@@ -58,11 +58,18 @@ Panel {
         }
 
         Notice {
-            kind: "warning"
+            kind: VmManager.fastModeError !== "" ? "error" : "warning"
             visible: VmManager.available && VmManager.setupHint !== ""
-            title: qsTr("This will run slowly")
-            text: VmManager.setupHint
+            title: VmManager.restartPending ? qsTr("Restart Windows for fast mode") : qsTr("This will run slowly")
+            text: VmManager.fastModeError !== "" ? VmManager.fastModeError : VmManager.setupHint
             Layout.fillWidth: true
+
+            AppButton {
+                visible: VmManager.canEnableFastMode
+                enabled: !VmManager.enablingFastMode
+                text: VmManager.enablingFastMode ? qsTr("Turning on fast mode") : qsTr("Turn on fast mode")
+                onClicked: VmManager.enableFastMode()
+            }
         }
 
         Notice {

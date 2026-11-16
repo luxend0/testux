@@ -71,7 +71,11 @@ class VmManager : public QObject
     QML_SINGLETON
     Q_PROPERTY(bool available READ available CONSTANT)
     Q_PROPERTY(QString accelerator READ accelerator CONSTANT)
-    Q_PROPERTY(QString setupHint READ setupHint CONSTANT)
+    Q_PROPERTY(QString setupHint READ setupHint NOTIFY setupChanged)
+    Q_PROPERTY(bool canEnableFastMode READ canEnableFastMode NOTIFY setupChanged)
+    Q_PROPERTY(bool enablingFastMode READ enablingFastMode NOTIFY setupChanged)
+    Q_PROPERTY(bool restartPending READ restartPending NOTIFY setupChanged)
+    Q_PROPERTY(QString fastModeError READ fastModeError NOTIFY setupChanged)
     Q_PROPERTY(VmSession *session READ session NOTIFY sessionChanged)
 
 public:
@@ -82,10 +86,18 @@ public:
     // What the user should do to get a fast VM: install QEMU, join the kvm group, enable
     // the Windows Hypervisor Platform. "" when everything is in place.
     QString setupHint() const { return m_setupHint; }
+    // Windows only: the Windows Hypervisor Platform is not installed and enableFastMode() can
+    // install it. That is the one step that needs an administrator; VMs run without one.
+    bool canEnableFastMode() const { return m_canEnableFastMode; }
+    bool enablingFastMode() const { return m_enablingFastMode; }
+    bool restartPending() const { return m_restartPending; } // installed, Windows must restart
+    QString fastModeError() const { return m_fastModeError; }
     VmSession *session() const { return m_session; }
 
     // Stops a running session first. Returns nullptr if QEMU is missing.
     Q_INVOKABLE VmSession *start(const Distro &distro, const QString &isoPath, bool withTestDisk);
+    // Installs the Windows Hypervisor Platform through a UAC prompt (dism from System32).
+    Q_INVOKABLE void enableFastMode();
     Q_INVOKABLE bool hasTestDisk(const QString &distroId) const;
     Q_INVOKABLE void removeTestDisk(const QString &distroId);
     // {"ramUsedMb": int, "measuredAt": QDateTime} or empty when never measured.
@@ -93,6 +105,7 @@ public:
 
 signals:
     void sessionChanged();
+    void setupChanged();
     void testDisksChanged();
     void measurementsChanged();
 
@@ -103,5 +116,9 @@ private:
     QString m_firmwareVarsTemplate;
     QString m_accelerator;
     QString m_setupHint;
+    QString m_fastModeError;
+    bool m_canEnableFastMode = false;
+    bool m_enablingFastMode = false;
+    bool m_restartPending = false;
     VmSession *m_session = nullptr;
 };

@@ -86,6 +86,12 @@ namespace BareMetalPlatform {
 bool supported();  // Windows booted in UEFI mode
 QString dataDir(); // %ProgramData%\Testux, "" where unsupported
 
+// Starts `program` elevated (UAC prompt) and hidden without waiting. `finished` is called with
+// the exit code on `context`'s thread once it ends. Returns false and sets `error` if the user
+// declined the prompt or nothing started. `program` must not be writable by the user.
+bool runElevated(const QString &program, const QStringList &arguments, QObject *context,
+                 std::function<void(int exitCode)> finished, QString *error);
+
 // Starts the script in an elevated, hidden powershell.exe (UAC prompt) without waiting.
 // `finished` is called with the exit code on `context`'s thread once the script ends.
 // Returns false and sets `error` if the user declined the prompt or nothing started.
