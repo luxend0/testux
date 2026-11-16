@@ -63,6 +63,7 @@ private:
     qint64 m_received = 0;
     qint64 m_total = 0;
     QString m_error;
+    int m_retries = 0; // automatic resumes since data last arrived
 };
 
 // Owns the IsoDownload objects, one per ISO file, under AppLocalDataLocation/isos.
