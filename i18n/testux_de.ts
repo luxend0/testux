@@ -93,18 +93,46 @@
         <source>Booting without a USB stick is only available on Windows.</source>
         <translation>Starten ohne USB-Stick gibt es nur unter Windows.</translation>
     </message>
+    <message>
+        <location filename="../src/baremetal/baremetal_win.cpp" line="110"/>
+        <source>Testux needs administrator rights for this step and the request was declined.</source>
+        <translation>Testux braucht für diesen Schritt Administratorrechte und die Anfrage wurde abgelehnt.</translation>
+    </message>
+    <message>
+        <location filename="../src/baremetal/baremetal_win.cpp" line="113"/>
+        <source>Could not start %1 (error %2).</source>
+        <translation>%1 konnte nicht gestartet werden (Fehler %2).</translation>
+    </message>
+    <message>
+        <location filename="../src/baremetal/baremetal_win.cpp" line="119"/>
+        <source>%1 did not start.</source>
+        <translation>%1 ist nicht gestartet.</translation>
+    </message>
+    <message>
+        <location filename="../src/baremetal/baremetal_win.cpp" line="141"/>
+        <source>Windows refused to restart. Please restart manually.</source>
+        <translation>Windows hat den Neustart verweigert. Bitte starte selbst neu.</translation>
+    </message>
 </context>
 <context>
     <name>BootPanel</name>
     <message>
-        <location filename="../qml/BootPanel.qml" line="29"/>
         <source>Boot it on this PC</source>
-        <translation>Auf diesem PC starten</translation>
+        <translation type="vanished">Auf diesem PC starten</translation>
+    </message>
+    <message>
+        <source>Starts %1 directly on your hardware, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards.</source>
+        <translation type="vanished">Startet %1 direkt auf deiner Hardware, ganz ohne USB-Stick. Es läuft mit voller Geschwindigkeit und du kannst es von dort aus installieren. Windows bleibt und startet danach wie gewohnt.</translation>
+    </message>
+    <message>
+        <location filename="../qml/BootPanel.qml" line="29"/>
+        <source>Next step: start it on this PC</source>
+        <translation>Nächster Schritt: auf diesem PC starten</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="34"/>
-        <source>Starts %1 directly on your hardware, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards.</source>
-        <translation>Startet %1 direkt auf deiner Hardware, ganz ohne USB-Stick. Es läuft mit voller Geschwindigkeit und du kannst es von dort aus installieren. Windows bleibt und startet danach wie gewohnt.</translation>
+        <source>Liked it? Testux can start %1 directly on your PC, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards. This step needs administrator rights.</source>
+        <translation>Gefällt es dir? Testux kann %1 direkt auf deinem PC starten, ganz ohne USB-Stick. Es läuft mit voller Geschwindigkeit und du kannst es von dort aus installieren. Windows bleibt und startet danach wie gewohnt. Für diesen Schritt brauchst du Administratorrechte.</translation>
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="42"/>
@@ -138,8 +166,12 @@
     </message>
     <message>
         <location filename="../qml/BootPanel.qml" line="74"/>
+        <source>Set it up</source>
+        <translation>Einrichten</translation>
+    </message>
+    <message>
         <source>Set up boot</source>
-        <translation>Start einrichten</translation>
+        <translation type="vanished">Start einrichten</translation>
     </message>
 </context>
 <context>
@@ -358,12 +390,12 @@
 <context>
     <name>Catalog</name>
     <message>
-        <location filename="../src/catalog/catalog.cpp" line="110"/>
+        <location filename="../src/catalog/catalog.cpp" line="111"/>
         <source>Could not update the catalog: %1</source>
         <translation>Die Distro-Liste konnte nicht aktualisiert werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/catalog/catalog.cpp" line="126"/>
+        <location filename="../src/catalog/catalog.cpp" line="127"/>
         <source>The catalog lists no usable distros.</source>
         <translation>Die Distro-Liste enthält keine nutzbaren Distros.</translation>
     </message>
@@ -529,14 +561,22 @@
 <context>
     <name>DistroCard</name>
     <message>
-        <location filename="../qml/DistroCard.qml" line="89"/>
         <source>Secure Boot</source>
-        <translation>Secure Boot</translation>
+        <translation type="vanished">Secure Boot</translation>
     </message>
     <message>
-        <location filename="../qml/DistroCard.qml" line="94"/>
         <source>Live session</source>
-        <translation>Live-System</translation>
+        <translation type="vanished">Live-System</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistroCard.qml" line="89"/>
+        <source>Try without installing</source>
+        <translation>Ohne Installation testen</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistroCard.qml" line="89"/>
+        <source>Installer only</source>
+        <translation>Nur Installer</translation>
     </message>
 </context>
 <context>
@@ -612,19 +652,27 @@
         <translation>Secure Boot muss aus sein</translation>
     </message>
     <message>
-        <location filename="../qml/DistroPage.qml" line="141"/>
         <source>Live session</source>
-        <translation>Live-System</translation>
+        <translation type="vanished">Live-System</translation>
     </message>
     <message>
-        <location filename="../qml/DistroPage.qml" line="141"/>
         <source>Yes, try before installing</source>
-        <translation>Ja, vor dem Installieren testen</translation>
+        <translation type="vanished">Ja, vor dem Installieren testen</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="141"/>
         <source>No, installer only</source>
         <translation>Nein, nur Installer</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistroPage.qml" line="141"/>
+        <source>Try without installing</source>
+        <translation>Ohne Installation testen</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistroPage.qml" line="141"/>
+        <source>Yes</source>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../qml/DistroPage.qml" line="142"/>
@@ -645,128 +693,143 @@
 <context>
     <name>DistrosPage</name>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="70"/>
+        <location filename="../qml/DistrosPage.qml" line="76"/>
         <source>Pick a Linux to try</source>
         <translation>Such dir ein Linux zum Testen aus</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="71"/>
+        <location filename="../qml/DistrosPage.qml" line="77"/>
         <source>Every distro runs in a window first, so nothing on your PC changes until you decide.</source>
         <translation>Jede Distro läuft zuerst in einem Fenster. An deinem PC ändert sich nichts, bis du dich entscheidest.</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="76"/>
+        <location filename="../qml/DistrosPage.qml" line="82"/>
         <source>Testux %1 is available.</source>
         <translation>Testux %1 ist verfügbar.</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="81"/>
+        <location filename="../qml/DistrosPage.qml" line="87"/>
         <source>Get the update</source>
         <translation>Update holen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="88"/>
+        <location filename="../qml/DistrosPage.qml" line="94"/>
         <source>The online list could not be loaded, showing the list built into Testux.</source>
         <translation>Die Online-Liste konnte nicht geladen werden, du siehst die in Testux eingebaute Liste.</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="24"/>
+        <location filename="../qml/DistrosPage.qml" line="29"/>
         <source>All</source>
         <translation>Alle</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="30"/>
+        <location filename="../qml/DistrosPage.qml" line="35"/>
         <source>Works with Secure Boot</source>
         <translation>Läuft mit Secure Boot</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="31"/>
+        <location filename="../qml/DistrosPage.qml" line="36"/>
         <source>Live session</source>
         <translation>Live-System</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="32"/>
+        <location filename="../qml/DistrosPage.qml" line="37"/>
         <source>NVIDIA driver included</source>
         <translation>NVIDIA-Treiber dabei</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="33"/>
+        <location filename="../qml/DistrosPage.qml" line="38"/>
         <source>Rolling updates</source>
         <translation>Rolling Release</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="34"/>
+        <location filename="../qml/DistrosPage.qml" line="39"/>
         <source>Fixed releases</source>
         <translation>Feste Versionen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="35"/>
+        <location filename="../qml/DistrosPage.qml" line="40"/>
         <source>Fits my PC</source>
         <translation>Passt zu meinem PC</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="99"/>
+        <location filename="../qml/DistrosPage.qml" line="112"/>
+        <source>All distros</source>
+        <translation>Alle Distros</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistrosPage.qml" line="119"/>
         <source>Search by name, desktop or base</source>
         <translation>Nach Name, Desktop oder Basis suchen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="120"/>
+        <location filename="../qml/DistrosPage.qml" line="142"/>
         <source>Category</source>
         <translation>Kategorie</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="127"/>
+        <location filename="../qml/DistrosPage.qml" line="149"/>
         <source>Desktop</source>
         <translation>Desktop</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="134"/>
+        <location filename="../qml/DistrosPage.qml" line="156"/>
         <source>Based on</source>
         <translation>Basiert auf</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="155"/>
+        <location filename="../qml/DistrosPage.qml" line="177"/>
         <source>More</source>
         <translation>Mehr</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="168"/>
+        <location filename="../qml/DistrosPage.qml" line="190"/>
         <source>%1 of %2 distros</source>
         <translation>%1 von %2 Distros</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="169"/>
+        <location filename="../qml/DistrosPage.qml" line="191"/>
         <source>%1 distros</source>
         <translation>%1 Distros</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="176"/>
-        <location filename="../qml/DistrosPage.qml" line="234"/>
+        <location filename="../qml/DistrosPage.qml" line="198"/>
+        <location filename="../qml/DistrosPage.qml" line="267"/>
         <source>Clear filters</source>
         <translation>Filter zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="193"/>
+        <location filename="../qml/DistrosPage.qml" line="209"/>
+        <source>Fewer filters</source>
+        <translation>Weniger Filter</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistrosPage.qml" line="209"/>
+        <source>More filters</source>
+        <translation>Mehr Filter</translation>
+    </message>
+    <message>
+        <location filename="../qml/DistrosPage.qml" line="226"/>
         <source>Loading the distro list</source>
         <translation>Distro-Liste wird geladen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="201"/>
+        <location filename="../qml/DistrosPage.qml" line="234"/>
         <source>No distros to show</source>
         <translation>Keine Distros zum Anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="206"/>
+        <location filename="../qml/DistrosPage.qml" line="239"/>
         <source>Try again</source>
         <translation>Erneut versuchen</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="220"/>
+        <location filename="../qml/DistrosPage.qml" line="253"/>
         <source>No distro matches</source>
         <translation>Keine Distro passt</translation>
     </message>
     <message>
-        <location filename="../qml/DistrosPage.qml" line="226"/>
+        <location filename="../qml/DistrosPage.qml" line="259"/>
         <source>Try fewer filters or another search word.</source>
         <translation>Nimm weniger Filter oder ein anderes Suchwort.</translation>
     </message>
@@ -810,13 +873,21 @@
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="75"/>
-        <source>ISO downloaded and verified (%1)</source>
-        <translation>ISO heruntergeladen und geprüft (%1)</translation>
+        <source>Downloaded and checked (%1)</source>
+        <translation>Heruntergeladen und geprüft (%1)</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="82"/>
+        <source>Delete download</source>
+        <translation>Download löschen</translation>
+    </message>
+    <message>
+        <source>ISO downloaded and verified (%1)</source>
+        <translation type="vanished">ISO heruntergeladen und geprüft (%1)</translation>
+    </message>
+    <message>
         <source>Delete ISO</source>
-        <translation>ISO löschen</translation>
+        <translation type="vanished">ISO löschen</translation>
     </message>
     <message>
         <location filename="../qml/DownloadPanel.qml" line="90"/>
@@ -946,24 +1017,172 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="13"/>
+        <location filename="../qml/Main.qml" line="14"/>
         <source>Distros</source>
         <translation>Distros</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="14"/>
+        <location filename="../qml/Main.qml" line="15"/>
         <source>Compare</source>
         <translation>Vergleich</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="15"/>
+        <location filename="../qml/Main.qml" line="16"/>
         <source>This PC</source>
         <translation>Dieser PC</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="16"/>
+        <location filename="../qml/Main.qml" line="17"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="38"/>
+        <source>Welcome to Testux</source>
+        <translation>Willkommen bei Testux</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="39"/>
+        <source>Testux lets you try Linux in a window on this PC. Nothing gets installed and Windows stays exactly as it is.</source>
+        <translation>Mit Testux probierst du Linux in einem Fenster auf diesem PC aus. Nichts wird installiert und Windows bleibt genau so, wie es ist.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="40"/>
+        <source>Not sure where to start?</source>
+        <translation>Du weißt nicht, wo du anfangen sollst?</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="41"/>
+        <source>Answer three quick questions here and Testux suggests three distros that fit you.</source>
+        <translation>Beantworte hier drei kurze Fragen und Testux schlägt dir drei passende Distros vor.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="42"/>
+        <source>Or look around yourself</source>
+        <translation>Oder schau dich selbst um</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="43"/>
+        <source>All distros are listed here. Click one to read what it is like.</source>
+        <translation>Hier stehen alle Distros. Klick auf eine, um zu lesen, wie sie ist.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="44"/>
+        <source>Try it</source>
+        <translation>Ausprobieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="45"/>
+        <source>On a distro&apos;s page press Try it. Testux downloads it once, checks it and opens Linux in its own window. Close that window when you are done.</source>
+        <translation>Drück auf der Seite einer Distro auf Ausprobieren. Testux lädt sie einmal herunter, prüft sie und öffnet Linux in einem eigenen Fenster. Schließ das Fenster, wenn du fertig bist.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="46"/>
+        <source>Will it run well?</source>
+        <translation>Läuft es gut auf deinem PC?</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="47"/>
+        <source>This PC checks your memory, graphics and Wi-Fi, so you know what to expect.</source>
+        <translation>Unter Dieser PC prüft Testux Arbeitsspeicher, Grafik und WLAN, damit du weißt, was dich erwartet.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="48"/>
+        <source>Need this again?</source>
+        <translation>Willst du das noch mal sehen?</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="49"/>
+        <source>Start this tour again here at any time.</source>
+        <translation>Hier kannst du diese Tour jederzeit wieder starten.</translation>
+    </message>
+</context>
+<context>
+    <name>QuizPanel</name>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="22"/>
+        <source>What do you mostly use your PC for?</source>
+        <translation>Wofür nutzt du deinen PC hauptsächlich?</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="24"/>
+        <source>Everyday &amp; office</source>
+        <translation>Alltag &amp; Büro</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="25"/>
+        <source>Gaming</source>
+        <translation>Gaming</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="26"/>
+        <source>Creative work &amp; coding</source>
+        <translation>Kreativ &amp; Programmieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="27"/>
+        <source>Older or slow PC</source>
+        <translation>Alter oder langsamer PC</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="32"/>
+        <source>How should it look?</source>
+        <translation>Wie soll es aussehen?</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="34"/>
+        <source>Like Windows</source>
+        <translation>Wie Windows</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="35"/>
+        <source>Like macOS</source>
+        <translation>Wie macOS</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="36"/>
+        <source>Doesn&apos;t matter, modern</source>
+        <translation>Egal, modern</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="41"/>
+        <source>How much do you want to tinker?</source>
+        <translation>Wie viel willst du basteln?</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="43"/>
+        <source>Not at all</source>
+        <translation>Gar nicht</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="44"/>
+        <source>A little</source>
+        <translation>Ein bisschen</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="45"/>
+        <source>I love it</source>
+        <translation>Sehr gerne</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="73"/>
+        <source>Which Linux suits you?</source>
+        <translation>Welches Linux passt zu dir?</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="79"/>
+        <source>Based on your answers, these three are a good start.</source>
+        <translation>Nach deinen Antworten sind diese drei ein guter Anfang.</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="80"/>
+        <source>Answer three quick questions and Testux suggests three distros to try.</source>
+        <translation>Beantworte drei kurze Fragen und Testux schlägt dir drei Distros zum Ausprobieren vor.</translation>
+    </message>
+    <message>
+        <location filename="../qml/QuizPanel.qml" line="89"/>
+        <source>Start over</source>
+        <translation>Neu beginnen</translation>
     </message>
 </context>
 <context>
@@ -1192,6 +1411,69 @@
     </message>
 </context>
 <context>
+    <name>Recommend</name>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="48"/>
+        <source>Easy for everyday use</source>
+        <translation>Einfach im Alltag</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="51"/>
+        <source>Set up for gaming</source>
+        <translation>Fürs Gaming eingerichtet</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="52"/>
+        <source>NVIDIA driver included</source>
+        <translation>NVIDIA-Treiber dabei</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="54"/>
+        <source>Comes with creative apps</source>
+        <translation>Mit Kreativ-Apps</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="55"/>
+        <source>Great for programming</source>
+        <translation>Gut zum Programmieren</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="57"/>
+        <source>Runs well on older PCs</source>
+        <translation>Läuft gut auf älteren PCs</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="68"/>
+        <source>Taskbar and start menu like Windows</source>
+        <translation>Taskleiste und Startmenü wie bei Windows</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="71"/>
+        <source>Feels a bit like macOS</source>
+        <translation>Fühlt sich ein bisschen wie macOS an</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="74"/>
+        <source>A clean, modern desktop</source>
+        <translation>Ein aufgeräumter, moderner Desktop</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="84"/>
+        <source>Works out of the box</source>
+        <translation>Läuft sofort ohne Einrichten</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="89"/>
+        <source>Lets you change everything</source>
+        <translation>Du kannst alles anpassen</translation>
+    </message>
+    <message>
+        <location filename="../src/catalog/recommend.cpp" line="90"/>
+        <source>Always the newest software</source>
+        <translation>Immer die neueste Software</translation>
+    </message>
+</context>
+<context>
     <name>SessionView</name>
     <message>
         <location filename="../qml/SessionView.qml" line="39"/>
@@ -1315,17 +1597,22 @@
 <context>
     <name>Sidebar</name>
     <message>
-        <location filename="../qml/Sidebar.qml" line="93"/>
+        <location filename="../qml/Sidebar.qml" line="88"/>
+        <source>How Testux works</source>
+        <translation>So funktioniert Testux</translation>
+    </message>
+    <message>
+        <location filename="../qml/Sidebar.qml" line="109"/>
         <source>Running: %1</source>
         <translation>Läuft: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Sidebar.qml" line="100"/>
+        <location filename="../qml/Sidebar.qml" line="116"/>
         <source>Stop</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../qml/Sidebar.qml" line="108"/>
+        <location filename="../qml/Sidebar.qml" line="124"/>
         <source>Version %1</source>
         <translation>Version %1</translation>
     </message>
@@ -1468,69 +1755,160 @@
     </message>
 </context>
 <context>
+    <name>TourOverlay</name>
+    <message>
+        <location filename="../qml/TourOverlay.qml" line="129"/>
+        <source>Step %1 of %2</source>
+        <translation>Schritt %1 von %2</translation>
+    </message>
+    <message>
+        <location filename="../qml/TourOverlay.qml" line="155"/>
+        <source>Skip tour</source>
+        <translation>Tour überspringen</translation>
+    </message>
+    <message>
+        <location filename="../qml/TourOverlay.qml" line="165"/>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <location filename="../qml/TourOverlay.qml" line="172"/>
+        <source>Let&apos;s go</source>
+        <translation>Los geht&apos;s</translation>
+    </message>
+    <message>
+        <location filename="../qml/TourOverlay.qml" line="172"/>
+        <source>Next</source>
+        <translation>Weiter</translation>
+    </message>
+</context>
+<context>
     <name>TryPanel</name>
     <message>
-        <location filename="../qml/TryPanel.qml" line="41"/>
+        <location filename="../qml/TryPanel.qml" line="71"/>
+        <location filename="../qml/TryPanel.qml" line="156"/>
         <source>Try it in a window</source>
         <translation>Im Fenster ausprobieren</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="46"/>
         <source>%1 runs in a window next to your apps. Your PC stays exactly as it is.</source>
-        <translation>%1 läuft in einem Fenster neben deinen Apps. Dein PC bleibt genau so, wie er ist.</translation>
+        <translation type="vanished">%1 läuft in einem Fenster neben deinen Apps. Dein PC bleibt genau so, wie er ist.</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="55"/>
+        <location filename="../qml/TryPanel.qml" line="76"/>
+        <source>%1 opens in its own window next to your apps. Nothing on your PC changes, close the window when you are done.</source>
+        <translation>%1 öffnet sich in einem eigenen Fenster neben deinen Apps. An deinem PC ändert sich nichts, schließ das Fenster einfach, wenn du fertig bist.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="85"/>
         <source>QEMU is missing</source>
         <translation>QEMU fehlt</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="63"/>
+        <location filename="../qml/TryPanel.qml" line="93"/>
         <source>This will run slowly</source>
         <translation>Das wird langsam laufen</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="70"/>
-        <source>%1 has no live desktop. The window opens its installer, so use a test disk to see the system.</source>
-        <translation>%1 hat keinen Live-Desktop. Im Fenster öffnet sich der Installer, nimm also eine Test-Disk, um das System zu sehen.</translation>
+        <location filename="../qml/TryPanel.qml" line="93"/>
+        <source>Restart Windows for fast mode</source>
+        <translation>Windows für den schnellen Modus neu starten</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="94"/>
+        <location filename="../qml/TryPanel.qml" line="100"/>
+        <source>Turning on fast mode</source>
+        <translation>Schneller Modus wird eingeschaltet</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="100"/>
+        <source>Turn on fast mode</source>
+        <translation>Schnellen Modus einschalten</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="107"/>
+        <source>%1 cannot be tried without installing. The window opens its installer, so turn on &quot;Keep a test install&quot; below to see the system.</source>
+        <translation>%1 lässt sich nicht ohne Installation testen. Im Fenster öffnet sich der Installer, schalte also unten &quot;Testinstallation behalten&quot; ein, um das System zu sehen.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="120"/>
+        <source>%1 opens by itself when the download is done.</source>
+        <translation>%1 startet von selbst, sobald der Download fertig ist.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="156"/>
+        <source>Try it</source>
+        <translation>Ausprobieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="164"/>
+        <source>Download paused at %1 of %2.</source>
+        <translation>Download bei %1 von %2 pausiert.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="165"/>
+        <source>Downloads %1 once and checks it, then it starts.</source>
+        <translation>Lädt einmalig %1 herunter, prüft es und startet dann.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="175"/>
+        <source>Continue my test install</source>
+        <translation>Meine Testinstallation fortsetzen</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="175"/>
+        <source>Keep a test install</source>
+        <translation>Testinstallation behalten</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="177"/>
+        <source>The system you installed last time starts again.</source>
+        <translation>Das System, das du letztes Mal installiert hast, startet wieder.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="178"/>
+        <source>Run the installer inside the window and keep the result for next time. Uses up to 30 GB, only what is needed.</source>
+        <translation>Führe den Installer im Fenster aus und behalte das Ergebnis fürs nächste Mal. Belegt bis zu 30 GB, nur so viel wie nötig.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="189"/>
+        <source>Delete test install</source>
+        <translation>Testinstallation löschen</translation>
+    </message>
+    <message>
+        <source>%1 has no live desktop. The window opens its installer, so use a test disk to see the system.</source>
+        <translation type="vanished">%1 hat keinen Live-Desktop. Im Fenster öffnet sich der Installer, nimm also eine Test-Disk, um das System zu sehen.</translation>
+    </message>
+    <message>
+        <location filename="../qml/TryPanel.qml" line="140"/>
         <source>The VM stopped with an error</source>
         <translation>Die VM wurde mit einem Fehler beendet</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="107"/>
         <source>Use my test disk</source>
-        <translation>Meine Test-Disk verwenden</translation>
+        <translation type="vanished">Meine Test-Disk verwenden</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="107"/>
         <source>Add a test disk</source>
-        <translation>Test-Disk hinzufügen</translation>
+        <translation type="vanished">Test-Disk hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="109"/>
         <source>Your test install from last time is kept.</source>
-        <translation>Deine Testinstallation vom letzten Mal bleibt erhalten.</translation>
+        <translation type="vanished">Deine Testinstallation vom letzten Mal bleibt erhalten.</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="110"/>
         <source>Lets you run the installer for a real test install. Takes up to 30 GB, only what is used.</source>
-        <translation>Damit kannst du den Installer für eine echte Testinstallation nutzen. Belegt bis zu 30 GB, nur so viel wie gebraucht wird.</translation>
+        <translation type="vanished">Damit kannst du den Installer für eine echte Testinstallation nutzen. Belegt bis zu 30 GB, nur so viel wie gebraucht wird.</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="120"/>
         <source>Start in a window</source>
-        <translation>Im Fenster starten</translation>
+        <translation type="vanished">Im Fenster starten</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="128"/>
         <source>Delete test disk</source>
-        <translation>Test-Disk löschen</translation>
+        <translation type="vanished">Test-Disk löschen</translation>
     </message>
     <message>
-        <location filename="../qml/TryPanel.qml" line="139"/>
+        <location filename="../qml/TryPanel.qml" line="200"/>
         <source>Another distro is running. Starting this one stops it first.</source>
         <translation>Eine andere Distro läuft gerade. Wenn du diese startest, wird die andere zuerst beendet.</translation>
     </message>
@@ -1538,37 +1916,56 @@
 <context>
     <name>VmManager</name>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="144"/>
+        <location filename="../src/vm/vmmanager.cpp" line="145"/>
         <source>QEMU is missing from the Testux folder. Reinstall Testux to fix it.</source>
         <translation>QEMU fehlt im Testux-Ordner. Installiere Testux neu, um das zu beheben.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="148"/>
+        <location filename="../src/vm/vmmanager.cpp" line="149"/>
         <source>QEMU is not installed. Install qemu-system-x86_64 and qemu-img with your package manager.</source>
         <translation>QEMU ist nicht installiert. Installiere qemu-system-x86_64 und qemu-img mit deinem Paketmanager.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="150"/>
+        <location filename="../src/vm/vmmanager.cpp" line="151"/>
         <source>QEMU is not installed. Install it with: %1</source>
         <translation>QEMU ist nicht installiert. Installiere es mit: %1</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="157"/>
-        <source>The Windows Hypervisor Platform is off, so VMs run very slowly. Run this in an administrator terminal, then restart: dism /online /enable-feature /featurename:HypervisorPlatform /all</source>
-        <translation>Die Windows-Hypervisorplattform ist aus, deshalb laufen VMs sehr langsam. Führe das in einem Terminal als Administrator aus und starte dann neu: dism /online /enable-feature /featurename:HypervisorPlatform /all</translation>
+        <location filename="../src/vm/vmmanager.cpp" line="159"/>
+        <source>Fast mode is off, so Linux runs slowly. Testux can turn it on, Windows then asks for an administrator once and needs a restart.</source>
+        <translation>Der schnelle Modus ist aus, deshalb läuft Linux langsam. Testux kann ihn einschalten, Windows fragt dann einmal nach einem Administrator und braucht einen Neustart.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="162"/>
+        <location filename="../src/vm/vmmanager.cpp" line="161"/>
+        <source>Restart Windows to finish turning on fast mode. If Linux still runs slowly afterwards, turn on virtualization (Intel VT-x or AMD-V/SVM) in your PC&apos;s BIOS/UEFI settings.</source>
+        <translation>Starte Windows neu, um den schnellen Modus fertig einzuschalten. Läuft Linux danach immer noch langsam, schalte die Virtualisierung (Intel VT-x oder AMD-V/SVM) in den BIOS/UEFI-Einstellungen deines PCs ein.</translation>
+    </message>
+    <message>
+        <location filename="../src/vm/vmmanager.cpp" line="545"/>
+        <source>Fast mode is on after the next restart of Windows. Until then Linux runs slowly.</source>
+        <translation>Der schnelle Modus ist nach dem nächsten Neustart von Windows an. Bis dahin läuft Linux langsam.</translation>
+    </message>
+    <message>
+        <location filename="../src/vm/vmmanager.cpp" line="549"/>
+        <source>Windows could not turn on fast mode (dism error %1).</source>
+        <translation>Windows konnte den schnellen Modus nicht einschalten (dism-Fehler %1).</translation>
+    </message>
+    <message>
+        <source>The Windows Hypervisor Platform is off, so VMs run very slowly. Run this in an administrator terminal, then restart: dism /online /enable-feature /featurename:HypervisorPlatform /all</source>
+        <translation type="vanished">Die Windows-Hypervisorplattform ist aus, deshalb laufen VMs sehr langsam. Führe das in einem Terminal als Administrator aus und starte dann neu: dism /online /enable-feature /featurename:HypervisorPlatform /all</translation>
+    </message>
+    <message>
+        <location filename="../src/vm/vmmanager.cpp" line="166"/>
         <source>Your user may not use KVM, so VMs run very slowly. Run: sudo usermod -aG kvm $USER, then log out and back in.</source>
         <translation>Dein Benutzer darf KVM nicht nutzen, deshalb laufen VMs sehr langsam. Führe sudo usermod -aG kvm $USER aus, melde dich dann ab und wieder an.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="164"/>
+        <location filename="../src/vm/vmmanager.cpp" line="168"/>
         <source>KVM is not available, so VMs run very slowly. Enable virtualization (Intel VT-x or AMD-V/SVM) in your firmware settings.</source>
         <translation>KVM ist nicht verfügbar, deshalb laufen VMs sehr langsam. Aktiviere die Virtualisierung (Intel VT-x oder AMD-V/SVM) in deinen Firmware-Einstellungen.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="268"/>
+        <location filename="../src/vm/vmmanager.cpp" line="272"/>
         <source>%1 in Testux</source>
         <translation>%1 in Testux</translation>
     </message>
@@ -1576,17 +1973,17 @@
 <context>
     <name>VmSession</name>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="376"/>
+        <location filename="../src/vm/vmmanager.cpp" line="380"/>
         <source>QEMU stopped unexpectedly (exit code %1).</source>
         <translation>QEMU wurde unerwartet beendet (Exitcode %1).</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="431"/>
+        <location filename="../src/vm/vmmanager.cpp" line="435"/>
         <source>QEMU did not open its control channel.</source>
         <translation>QEMU hat seinen Steuerkanal nicht geöffnet.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="461"/>
+        <location filename="../src/vm/vmmanager.cpp" line="465"/>
         <source>QEMU could not be started: %1</source>
         <translation>QEMU konnte nicht gestartet werden: %1</translation>
     </message>

@@ -118,7 +118,11 @@ qt_add_translations(testux
     TS_FILE_BASE testux
     TS_FILE_DIR i18n
     RESOURCE_PREFIX /i18n
-    NO_GENERATE_PLURALS_TS_FILE)
+    NO_GENERATE_PLURALS_TS_FILE
+    # Each platform compiles only its own half; lupdate should see both.
+    SOURCES
+        src/baremetal/baremetal_win.cpp src/hw/hardwareprobe_win.cpp
+        src/baremetal/baremetal_stub.cpp src/hw/hardwareprobe_linux.cpp)
 
 if(WIN32)
     # Flat layout: testux.exe next to scripts\ and qemu\, where the app looks for them.
