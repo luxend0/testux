@@ -59,23 +59,24 @@ private slots:
     void accelerator_data()
     {
         QTest::addColumn<QString>("accelerator");
-        QTest::addColumn<QString>("accelOption");
+        QTest::addColumn<QStringList>("accelOption");
         QTest::addColumn<QStringList>("cpu");
-        QTest::newRow("kvm") << "kvm" << "kvm" << QStringList{"host"};
-        QTest::newRow("whpx") << "whpx" << "whpx,kernel-irqchip=off" << QStringList{};
-        QTest::newRow("tcg") << "tcg" << "tcg" << QStringList{"max"};
-        QTest::newRow("unknown falls back to tcg") << "hvf" << "tcg" << QStringList{"max"};
+        QTest::newRow("kvm") << "kvm" << QStringList{"kvm"} << QStringList{"host"};
+        QTest::newRow("whpx falls back to tcg")
+            << "whpx" << QStringList{"whpx,kernel-irqchip=off", "tcg"} << QStringList{};
+        QTest::newRow("tcg") << "tcg" << QStringList{"tcg"} << QStringList{"max"};
+        QTest::newRow("unknown falls back to tcg") << "hvf" << QStringList{"tcg"} << QStringList{"max"};
     }
 
     void accelerator()
     {
         QFETCH(QString, accelerator);
-        QFETCH(QString, accelOption);
+        QFETCH(QStringList, accelOption);
         QFETCH(QStringList, cpu);
         QemuConfig config = baseConfig();
         config.accelerator = accelerator;
         const QStringList args = QemuArgs::build(config);
-        QCOMPARE(valuesOf(args, "-accel"), QStringList{accelOption});
+        QCOMPARE(valuesOf(args, "-accel"), accelOption);
         QCOMPARE(valuesOf(args, "-cpu"), cpu);
     }
 
