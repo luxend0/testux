@@ -1,7 +1,7 @@
 {
   "version": 1,
   "app": {
-    "latest": "0.1.0",
+    "latest": "0.2.0",
     "url": "https://github.com/luxend0/testux/releases/latest"
   },
   "categories": [
@@ -1244,7 +1244,7 @@
     {
       "id": "regataos",
       "name": "Regata OS",
-      "version": "26.0.5",
+      "version": "26.0.7",
       "category": "gaming",
       "summary": {
         "en": "openSUSE based, with its own game store and launcher for Windows games.",
@@ -1264,9 +1264,9 @@
       "base": "openSUSE",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://downloads.sourceforge.net/project/regataos/regataos-26/Regata_OS_26_en-US.x86_64-26.0.5.iso",
-        "sha256": "d9231534a6533d423959bccf83f4b386e974c4712c309bba96af93dd54f77b07",
-        "size": 3588704256
+        "url": "https://downloads.sourceforge.net/project/regataos/regataos-26/Regata_OS_26_en-US.x86_64-26.0.7.iso",
+        "sha256": "ebf1710fedc29bd7b1c28e82510abef0c218586006cd92bcff8df8f6a1c95d06",
+        "size": 3604086784
       },
       "secureBoot": false,
       "liveSession": true,
@@ -2076,7 +2076,7 @@
     {
       "id": "tails",
       "name": "Tails",
-      "version": "7.15",
+      "version": "7.17",
       "category": "privacy",
       "summary": {
         "en": "A portable system that sends everything through Tor and forgets everything when you shut it down.",
@@ -2096,9 +2096,9 @@
       "base": "Debian",
       "releaseModel": "fixed",
       "iso": {
-        "url": "https://download.tails.net/tails/stable/tails-amd64-7.15/tails-amd64-7.15.iso",
-        "sha256": "48fc76cd04b92b0c7b91ff29d1cfd11569b7cd464ae0063b3eae4e5f96139825",
-        "size": 1879158784
+        "url": "https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.iso",
+        "sha256": "a2c41e74ded59380353109b087834853fa1f783349412306247e9dc51f6eaa5b",
+        "size": 1891307520
       },
       "secureBoot": true,
       "liveSession": true,
@@ -2331,7 +2331,7 @@
     {
       "id": "archlinux",
       "name": "Arch Linux",
-      "version": "2026.10.01",
+      "version": "2026.11.01",
       "category": "advanced",
       "summary": {
         "en": "The simple, do-it-yourself base many other distros build on.",
@@ -2356,7 +2356,7 @@
       "iso": {
         "url": "https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso",
         "sha256Url": "https://geo.mirror.pkgbuild.com/iso/latest/sha256sums.txt",
-        "size": 1640497152
+        "size": 1317568512
       },
       "secureBoot": false,
       "liveSession": true,
@@ -2391,7 +2391,7 @@
       "id": "artix-plasma",
       "name": "Artix Linux",
       "edition": "Plasma (OpenRC)",
-      "version": "2026-08-13",
+      "version": "2026-11-04",
       "category": "advanced",
       "summary": {
         "en": "Arch Linux without systemd, for people who care about the init system.",
@@ -2411,9 +2411,9 @@
       "base": "Arch",
       "releaseModel": "rolling",
       "iso": {
-        "url": "https://download.artixlinux.org/iso/artix-plasma-openrc-20260813-x86_64.iso",
+        "url": "https://download.artixlinux.org/iso/artix-plasma-openrc-20261104-x86_64.iso",
         "sha256Url": "https://download.artixlinux.org/iso/sha256sums",
-        "size": 2387892224
+        "size": 2469974016
       },
       "secureBoot": false,
       "liveSession": true,
@@ -3271,9 +3271,9 @@
       "base": "Debian",
       "releaseModel": "rolling",
       "iso": {
-        "url": "https://github.com/Vanilla-OS/live-iso/releases/download/3.0/Vanilla-OS-3-stable-amd64.20260828.iso",
-        "sha256Url": "https://github.com/Vanilla-OS/live-iso/releases/download/3.0/Vanilla-OS-3-stable-amd64.20260828.sha256.txt",
-        "size": 2088960000
+        "url": "https://github.com/Vanilla-OS/live-iso/releases/download/3.0/Vanilla-OS-3-stable-amd64.20261106.iso",
+        "sha256Url": "https://github.com/Vanilla-OS/live-iso/releases/download/3.0/Vanilla-OS-3-stable-amd64.20261106.sha256.txt",
+        "size": 1756446720
       },
       "secureBoot": true,
       "liveSession": false,
