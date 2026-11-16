@@ -6,6 +6,8 @@ AbstractButton {
     id: card
 
     required property distro distro
+    // Why the quiz picked it; replaces the feature line when set.
+    property string reason: ""
 
     padding: Theme.gapL + 2
     implicitWidth: 260
@@ -83,6 +85,7 @@ AbstractButton {
         }
 
         RowLayout {
+            visible: card.reason === ""
             spacing: Theme.gapL
 
             Flag {
@@ -94,6 +97,16 @@ AbstractButton {
                 text: qsTr("Live session")
                 on: card.distro.liveSession
             }
+        }
+
+        Label {
+            visible: card.reason !== ""
+            text: card.reason
+            color: Theme.accent
+            font.pixelSize: Theme.fontSmall
+            font.weight: Font.DemiBold
+            wrapMode: Text.Wrap
+            Layout.fillWidth: true
         }
     }
 }

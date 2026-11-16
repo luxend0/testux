@@ -23,6 +23,7 @@ qt_add_qml_module(testux
         src/catalog/distro.h
         src/catalog/catalogparser.h src/catalog/catalogparser.cpp
         src/catalog/catalog.h src/catalog/catalog.cpp
+        src/catalog/recommend.h src/catalog/recommend.cpp
         src/download/checksum.h src/download/checksum.cpp
         src/download/useragent.h
         src/download/isolibrary.h src/download/isolibrary.cpp
@@ -69,6 +70,7 @@ qt_add_qml_module(testux
         qml/Notice.qml
         qml/PageHeader.qml
         qml/PageScroll.qml
+        qml/QuizPanel.qml
         qml/Panel.qml
         qml/ReadinessList.qml
         qml/SearchBox.qml

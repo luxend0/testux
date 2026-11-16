@@ -1,6 +1,7 @@
 #include "catalog/catalog.h"
 
 #include "catalog/catalogparser.h"
+#include "catalog/recommend.h"
 #include "download/useragent.h"
 
 #include <QDir>
@@ -148,4 +149,15 @@ void Catalog::setLoading(bool loading)
         return;
     m_loading = loading;
     emit loadingChanged();
+}
+
+QVariantList Catalog::recommend(const QString &purpose, const QString &look,
+                                const QString &tinker) const
+{
+    QVariantList result;
+    for (const Recommend::Pick &pick : Recommend::pick(m_distros, {purpose, look, tinker})) {
+        result.append(QVariantMap{{u"distro"_s, QVariant::fromValue(distro(pick.id))},
+                                  {u"reason"_s, pick.reasons.join(u" · "_s)}});
+    }
+    return result;
 }

@@ -89,10 +89,24 @@ PageScroll {
         Layout.fillWidth: true
     }
 
+    QuizPanel {
+        id: quiz
+        visible: !page.empty
+        onDistroSelected: id => page.distroSelected(id)
+        Layout.fillWidth: true
+    }
+
     ColumnLayout {
+        id: browse
         visible: !page.empty
         spacing: Theme.gapM
         Layout.fillWidth: true
+
+        Heading {
+            text: qsTr("All distros")
+            Layout.topMargin: Theme.gapS
+            Layout.fillWidth: true
+        }
 
         SearchBox {
             id: search
