@@ -2,9 +2,12 @@
 
 #include <QCoreApplication>
 #include <QDir>
+#include <QFileInfo>
 #include <QProcess>
 #include <QSettings>
 #include <QWinEventNotifier>
+
+#include <utility>
 
 #include <windows.h>
 
@@ -81,8 +84,16 @@ bool BareMetalPlatform::runElevatedScript(const QString &scriptPath, const QStri
         QStringList{"-NoProfile", "-NonInteractive", "-ExecutionPolicy",
                     "Bypass",     "-File",           QDir::toNativeSeparators(scriptPath)} +
         arguments;
-    const std::wstring program = powerShellPath();
-    const std::wstring parameterLine = commandLine(parameters).toStdWString();
+    return runElevated(QString::fromStdWString(powerShellPath()), parameters, context,
+                       std::move(finished), error);
+}
+
+bool BareMetalPlatform::runElevated(const QString &programPath, const QStringList &arguments,
+                                    QObject *context, std::function<void(int)> finished,
+                                    QString *error)
+{
+    const std::wstring program = QDir::toNativeSeparators(programPath).toStdWString();
+    const std::wstring parameterLine = commandLine(arguments).toStdWString();
 
     SHELLEXECUTEINFOW info = {};
     info.cbSize = sizeof(info);
@@ -99,12 +110,14 @@ bool BareMetalPlatform::runElevatedScript(const QString &scriptPath, const QStri
                 ? QCoreApplication::translate(
                       "BareMetal", "Testux needs administrator rights for this step and the "
                                    "request was declined.")
-                : QCoreApplication::translate("BareMetal", "Could not start PowerShell (error %1).")
+                : QCoreApplication::translate("BareMetal", "Could not start %1 (error %2).")
+                      .arg(QFileInfo(programPath).fileName())
                       .arg(code);
         return false;
     }
     if (!info.hProcess) {
-        *error = QCoreApplication::translate("BareMetal", "PowerShell did not start.");
+        *error = QCoreApplication::translate("BareMetal", "%1 did not start.")
+                     .arg(QFileInfo(programPath).fileName());
         return false;
     }
 

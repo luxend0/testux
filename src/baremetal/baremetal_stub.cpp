@@ -24,6 +24,13 @@ QString BareMetalPlatform::dataDir()
     return {};
 }
 
+bool BareMetalPlatform::runElevated(const QString &, const QStringList &, QObject *,
+                                    std::function<void(int)>, QString *error)
+{
+    *error = unsupportedMessage();
+    return false;
+}
+
 bool BareMetalPlatform::runElevatedScript(const QString &, const QStringList &, QObject *,
                                           std::function<void(int)>, QString *error)
 {

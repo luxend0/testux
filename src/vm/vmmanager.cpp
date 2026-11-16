@@ -1,5 +1,6 @@
 #include "vm/vmmanager.h"
 
+#include "baremetal/baremetal.h"
 #include "hw/hostinfo.h"
 #include "vm/qemuargs.h"
 
@@ -154,9 +155,12 @@ QString missingQemuHint()
 QString slowVmHint()
 {
 #ifdef Q_OS_WIN
-    return VmManager::tr("The Windows Hypervisor Platform is off, so VMs run very slowly. Run "
-                         "this in an administrator terminal, then restart: dism /online "
-                         "/enable-feature /featurename:HypervisorPlatform /all");
+    if (!HostInfo::hypervisorPlatformInstalled())
+        return VmManager::tr("Fast mode is off, so Linux runs slowly. Testux can turn it on, "
+                             "Windows then asks for an administrator once and needs a restart.");
+    return VmManager::tr("Restart Windows to finish turning on fast mode. If Linux still runs "
+                         "slowly afterwards, turn on virtualization (Intel VT-x or AMD-V/SVM) "
+                         "in your PC's BIOS/UEFI settings.");
 #else
     if (QFileInfo::exists("/dev/kvm"))
         return VmManager::tr("Your user may not use KVM, so VMs run very slowly. Run: sudo "
@@ -512,8 +516,44 @@ VmManager::VmManager(QObject *parent)
     const Firmware firmware = findFirmware(m_qemu);
     m_firmware = firmware.code;
     m_firmwareVarsTemplate = firmware.varsTemplate;
-    if (m_accelerator == "tcg")
+    if (m_accelerator == "tcg") {
         m_setupHint = slowVmHint();
+#ifdef Q_OS_WIN
+        m_canEnableFastMode = !HostInfo::hypervisorPlatformInstalled();
+#endif
+    }
+}
+
+void VmManager::enableFastMode()
+{
+    if (!m_canEnableFastMode || m_enablingFastMode)
+        return;
+    QString error;
+    // dism.exe from System32: an elevated program must not be one the user could swap, and
+    // Testux itself lives in a folder the user owns.
+    const bool started = BareMetalPlatform::runElevated(
+        HostInfo::systemProgram("dism.exe"),
+        {"/online", "/enable-feature", "/featurename:HypervisorPlatform", "/all", "/norestart",
+         "/quiet"},
+        this,
+        [this](int exitCode) {
+            m_enablingFastMode = false;
+            constexpr int RestartRequired = 3010;
+            if (exitCode == 0 || exitCode == RestartRequired) {
+                m_canEnableFastMode = false;
+                m_restartPending = true;
+                m_setupHint = tr("Fast mode is on after the next restart of Windows. Until "
+                                 "then Linux runs slowly.");
+            } else {
+                m_fastModeError =
+                    tr("Windows could not turn on fast mode (dism error %1).").arg(exitCode);
+            }
+            emit setupChanged();
+        },
+        &error);
+    m_enablingFastMode = started;
+    m_fastModeError = started ? QString() : error;
+    emit setupChanged();
 }
 
 VmSession *VmManager::start(const Distro &distro, const QString &isoPath, bool withTestDisk)

@@ -63,8 +63,11 @@ Get the latest version from the [releases page](https://github.com/luxend0/testu
 
 ### Windows
 
-Download and run the `TestuxSetup` installer. It installs Testux together with QEMU and
-turns on the Windows Hypervisor Platform feature, which can require one restart.
+Download and run the `TestuxSetup` installer. It installs Testux together with QEMU for your
+user account and needs no administrator rights. Linux runs in a window right away. For full
+speed Windows needs its Hypervisor Platform feature: Testux offers a "Turn on fast mode"
+button, which asks for an administrator once and takes effect after a restart. Without it
+everything still works, only slower.
 
 The installer is not code signed yet, so Windows SmartScreen will show "Windows protected
 your PC". Click **More info**, then **Run anyway**. Signing is on the list.

@@ -1,5 +1,7 @@
 #include "hw/hostinfo.h"
 
+#include <QDir>
+#include <QFileInfo>
 #include <QtGlobal>
 
 #ifdef Q_OS_WIN
@@ -51,6 +53,19 @@ bool HostInfo::hardwareVirtualization()
     return present;
 }
 
+QString HostInfo::systemProgram(const QString &fileName)
+{
+    wchar_t system[MAX_PATH];
+    const UINT length = GetSystemDirectoryW(system, MAX_PATH);
+    return QDir(QDir::fromNativeSeparators(QString::fromWCharArray(system, length)))
+        .filePath(fileName);
+}
+
+bool HostInfo::hypervisorPlatformInstalled()
+{
+    return QFileInfo::exists(systemProgram("WinHvPlatform.dll"));
+}
+
 #else
 
 int HostInfo::totalRamMb()
@@ -69,6 +84,16 @@ bool HostInfo::hardwareVirtualization()
         return false;
     ::close(fd);
     return true;
+}
+
+bool HostInfo::hypervisorPlatformInstalled()
+{
+    return true;
+}
+
+QString HostInfo::systemProgram(const QString &fileName)
+{
+    return fileName;
 }
 
 #endif
