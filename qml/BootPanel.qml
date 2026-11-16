@@ -26,12 +26,12 @@ Panel {
             Layout.fillWidth: true
 
             Heading {
-                text: qsTr("Boot it on this PC")
+                text: qsTr("Next step: start it on this PC")
                 Layout.fillWidth: true
             }
 
             BodyText {
-                text: qsTr("Starts %1 directly on your hardware, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards.").arg(panel.distro.name)
+                text: qsTr("Liked it? Testux can start %1 directly on your PC, without a USB stick. It runs at full speed and you can install it from there. Windows stays and starts as usual afterwards. This step needs administrator rights.").arg(panel.distro.name)
                 muted: true
                 Layout.fillWidth: true
             }
@@ -71,7 +71,7 @@ Panel {
             }
 
             AppButton {
-                text: qsTr("Set up boot")
+                text: qsTr("Set it up")
                 onClicked: panel.setupRequested()
             }
         }

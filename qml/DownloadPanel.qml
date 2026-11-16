@@ -72,14 +72,14 @@ ColumnLayout {
         StatusDot {}
 
         Label {
-            text: qsTr("ISO downloaded and verified (%1)").arg(Format.bytes(panel.total))
+            text: qsTr("Downloaded and checked (%1)").arg(Format.bytes(panel.total))
             color: Theme.textMuted
             Layout.fillWidth: true
         }
 
         AppButton {
             kind: "quiet"
-            text: qsTr("Delete ISO")
+            text: qsTr("Delete download")
             onClicked: panel.download.remove()
         }
     }
