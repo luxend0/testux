@@ -32,6 +32,10 @@ QStringList machineArgs(const QemuConfig &config)
     QStringList args{"-name", escaped(config.title), "-nodefaults"};
     args << "-machine" << "q35";
     args << "-accel" << acceleratorOption(config.accelerator);
+    // QEMU tries accelerators in order: when WHPX reports ready but fails to set up (Hyper-V
+    // conflicts), the VM still starts, only slower.
+    if (config.accelerator == "whpx")
+        args << "-accel" << "tcg";
     args << cpuArgs(config.accelerator);
     args << "-m" << QString::number(config.ramMb);
     args << "-smp" << QString::number(config.cpus);

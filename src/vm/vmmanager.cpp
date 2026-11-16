@@ -192,6 +192,23 @@ bool qemuSupports(const QString &qemu, const QString &option, const QString &nam
                        [&](const QString &line) { return line.trimmed() == name; });
 }
 
+// QEMU refuses to start at all when the sound server it was given is not running (minimal
+// installs, PipeWire without its pulse part, SSH sessions), so a driver only counts when its
+// socket is there. Without one the VM runs silent.
+bool soundServerRunning(const QString &driver)
+{
+#ifdef Q_OS_WIN
+    Q_UNUSED(driver);
+    return true;
+#else
+    const QString runtime = qEnvironmentVariable("XDG_RUNTIME_DIR");
+    if (driver == "pa")
+        return qEnvironmentVariableIsSet("PULSE_SERVER") ||
+               QFileInfo::exists(runtime + "/pulse/native");
+    return QFileInfo::exists(runtime + "/pipewire-0");
+#endif
+}
+
 QString audioDriver(const QString &qemu)
 {
 #ifdef Q_OS_WIN
@@ -200,7 +217,7 @@ QString audioDriver(const QString &qemu)
     const QStringList preferred{"pa", "pipewire"};
 #endif
     for (const QString &driver : preferred) {
-        if (qemuSupports(qemu, "-audiodev", driver))
+        if (qemuSupports(qemu, "-audiodev", driver) && soundServerRunning(driver))
             return driver;
     }
     return {};
