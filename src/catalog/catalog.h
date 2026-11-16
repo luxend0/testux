@@ -38,6 +38,9 @@ public:
     QString error() const { return m_error; }
 
     Q_INVOKABLE Distro distro(const QString &id) const;
+    // Quiz result: [{distro, reason}], best first. Answers as in Recommend::Answers.
+    Q_INVOKABLE QVariantList recommend(const QString &purpose, const QString &look,
+                                       const QString &tinker) const;
     Q_INVOKABLE void refresh();
 
 signals:
