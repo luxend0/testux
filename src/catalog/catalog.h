@@ -3,6 +3,7 @@
 #include "catalog/distro.h"
 
 #include <QObject>
+#include <QVariant>
 
 class QNetworkAccessManager;
 
