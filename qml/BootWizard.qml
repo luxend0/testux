@@ -37,6 +37,8 @@ PageScroll {
                 wizard.step = BootWizard.Step.Prepare
             else if (BareMetal.state === BareMetal.ReadyToReboot)
                 wizard.step = BootWizard.Step.Restart
+            else if (BareMetal.state === BareMetal.Idle && wizard.step === BootWizard.Step.Prepare)
+                wizard.step = BootWizard.Step.Check // "Undo changes" finished, start over
         }
     }
 
@@ -314,6 +316,13 @@ PageScroll {
                 visible: wizard.makeRoom
                 text: qsTr("To install, open the installer on the desktop and pick \"install alongside Windows\" or the free space.")
                 muted: true
+                Layout.fillWidth: true
+            }
+
+            Notice {
+                kind: "error"
+                visible: BareMetal.state === BareMetal.Failed
+                text: BareMetal.error
                 Layout.fillWidth: true
             }
 

@@ -51,8 +51,9 @@ ApplicationWindow {
         })
     }
 
-    function openBootWizard(id: string) {
-        stack.push(bootWizard, { distro: Catalog.distro(id) })
+    // The distro object itself: the online catalog may have dropped its id meanwhile.
+    function openBootWizard(entry: distro) {
+        stack.push(bootWizard, { distro: entry })
     }
 
     width: 1180
@@ -124,7 +125,7 @@ ApplicationWindow {
             id: detail
 
             onBackRequested: stack.pop()
-            onBootRequested: window.openBootWizard(detail.distro.id)
+            onBootRequested: window.openBootWizard(detail.distro)
         }
     }
 
