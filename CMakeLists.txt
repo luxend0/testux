@@ -82,6 +82,7 @@ qt_add_qml_module(testux
         qml/StepIndicator.qml
         qml/Theme.qml
         qml/ThisPcPage.qml
+        qml/TourOverlay.qml
         qml/TryPanel.qml
         qml/WelcomeBackDialog.qml
     RESOURCES

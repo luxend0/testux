@@ -1,5 +1,6 @@
 pragma ComponentBehavior: Bound
 
+import QtCore
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
@@ -26,6 +27,28 @@ ApplicationWindow {
         const distro = Catalog.distro(id)
         if (distro.id !== "")
             stack.push(distroPage, { distro: distro })
+    }
+
+    function startTour() {
+        showSection("distros")
+        Qt.callLater(() => {
+            const page = stack.currentItem
+            tour.reveal = item => page.reveal(item)
+            tour.start([
+                { target: null, title: qsTr("Welcome to Testux"),
+                  text: qsTr("Testux lets you try Linux in a window on this PC. Nothing gets installed and Windows stays exactly as it is.") },
+                { target: page.quiz, title: qsTr("Not sure where to start?"),
+                  text: qsTr("Answer three quick questions here and Testux suggests three distros that fit you.") },
+                { target: page.browse, title: qsTr("Or look around yourself"),
+                  text: qsTr("All distros are listed here. Click one to read what it is like.") },
+                { target: null, title: qsTr("Try it"),
+                  text: qsTr("On a distro's page press Try it. Testux downloads it once, checks it and opens Linux in its own window. Close that window when you are done.") },
+                { target: sidebar.itemFor("pc"), title: qsTr("Will it run well?"),
+                  text: qsTr("This PC checks your memory, graphics and Wi-Fi, so you know what to expect.") },
+                { target: sidebar.helpButton, title: qsTr("Need this again?"),
+                  text: qsTr("Start this tour again here at any time.") }
+            ])
+        })
     }
 
     function openBootWizard(id: string) {
@@ -62,7 +85,9 @@ ApplicationWindow {
         spacing: 0
 
         Sidebar {
+            id: sidebar
             sections: window.sections
+            onHelpRequested: window.startTour()
             current: window.section
             onPicked: key => window.showSection(key)
             Layout.fillHeight: true
@@ -135,8 +160,27 @@ ApplicationWindow {
         id: welcomeBack
     }
 
+    TourOverlay {
+        id: tour
+        onFinished: {
+            tourState.done = true
+            const page = stack.currentItem
+            if (page && page.reveal)
+                (page.contentItem as Flickable).contentY = 0
+        }
+    }
+
+    Settings {
+        id: tourState
+        category: "tour"
+
+        property bool done: false
+    }
+
     Component.onCompleted: {
         if (BareMetal.postBoot || BareMetal.pending)
             welcomeBack.open()
+        else if (!tourState.done)
+            startTour()
     }
 }
