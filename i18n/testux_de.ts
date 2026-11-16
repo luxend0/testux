@@ -177,212 +177,212 @@
 <context>
     <name>BootWizard</name>
     <message>
-        <location filename="../qml/BootWizard.qml" line="45"/>
+        <location filename="../qml/BootWizard.qml" line="47"/>
         <source>Back to %1</source>
         <translation>Zurück zu %1</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="53"/>
+        <location filename="../qml/BootWizard.qml" line="55"/>
         <source>Boot %1 on this PC</source>
         <translation>%1 auf diesem PC starten</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="54"/>
+        <location filename="../qml/BootWizard.qml" line="56"/>
         <source>Your PC starts %1 once, straight from the hard drive. No USB stick needed.</source>
         <translation>Dein PC startet %1 einmal direkt von der Festplatte. Kein USB-Stick nötig.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="58"/>
+        <location filename="../qml/BootWizard.qml" line="60"/>
         <source>Check</source>
         <translation>Prüfen</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="58"/>
+        <location filename="../qml/BootWizard.qml" line="60"/>
         <source>Space</source>
         <translation>Platz</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="58"/>
+        <location filename="../qml/BootWizard.qml" line="60"/>
         <source>Confirm</source>
         <translation>Bestätigen</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="58"/>
+        <location filename="../qml/BootWizard.qml" line="60"/>
         <source>Prepare</source>
         <translation>Vorbereiten</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="58"/>
+        <location filename="../qml/BootWizard.qml" line="60"/>
         <source>Restart</source>
         <translation>Neustart</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="77"/>
+        <location filename="../qml/BootWizard.qml" line="79"/>
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="89"/>
+        <location filename="../qml/BootWizard.qml" line="91"/>
         <source>Next</source>
         <translation>Weiter</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="97"/>
+        <location filename="../qml/BootWizard.qml" line="99"/>
         <source>Prepare boot</source>
         <translation>Start vorbereiten</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="110"/>
+        <location filename="../qml/BootWizard.qml" line="112"/>
         <source>Is this PC ready?</source>
         <translation>Ist dieser PC bereit?</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="125"/>
+        <location filename="../qml/BootWizard.qml" line="127"/>
         <source>Checking your PC</source>
         <translation>Dein PC wird geprüft</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="137"/>
+        <location filename="../qml/BootWizard.qml" line="139"/>
         <source>Check again</source>
         <translation>Erneut prüfen</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="152"/>
+        <location filename="../qml/BootWizard.qml" line="154"/>
         <source>Do you want to install it later?</source>
         <translation>Möchtest du es später installieren?</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="161"/>
+        <location filename="../qml/BootWizard.qml" line="163"/>
         <source>Just try it</source>
         <translation>Nur ausprobieren</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="162"/>
+        <location filename="../qml/BootWizard.qml" line="164"/>
         <source>Only the boot files go on your drive. You can still install later.</source>
         <translation>Nur die Startdateien kommen auf dein Laufwerk. Installieren kannst du später immer noch.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="170"/>
+        <location filename="../qml/BootWizard.qml" line="172"/>
         <source>Make room to install it next to Windows</source>
         <translation>Platz schaffen, um es neben Windows zu installieren</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="171"/>
+        <location filename="../qml/BootWizard.qml" line="173"/>
         <source>Testux shrinks drive C: and leaves the space free. In the live system, pick &quot;install alongside Windows&quot;.</source>
         <translation>Testux verkleinert Laufwerk C: und lässt den Platz frei. Wähle im Live-System „Neben Windows installieren“.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="185"/>
+        <location filename="../qml/BootWizard.qml" line="187"/>
         <source>Space for %1: %2 GB</source>
         <translation>Platz für %1: %2 GB</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="199"/>
+        <location filename="../qml/BootWizard.qml" line="201"/>
         <source>40 GB is plenty for the system, apps and some files.</source>
         <translation>40 GB reichen locker für System, Apps und ein paar Dateien.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="219"/>
+        <location filename="../qml/BootWizard.qml" line="221"/>
         <source>Before you start</source>
         <translation>Bevor es losgeht</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="232"/>
+        <location filename="../qml/BootWizard.qml" line="234"/>
         <source>Drive C:</source>
         <translation>Laufwerk C:</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="233"/>
+        <location filename="../qml/BootWizard.qml" line="235"/>
         <source>Shrinks by about %1 GB for the boot files and %2.</source>
         <translation>Wird um etwa %1 GB verkleinert, für die Startdateien und %2.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="234"/>
+        <location filename="../qml/BootWizard.qml" line="236"/>
         <source>Shrinks by about %1 GB for the boot files.</source>
         <translation>Wird um etwa %1 GB verkleinert, für die Startdateien.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="235"/>
+        <location filename="../qml/BootWizard.qml" line="237"/>
         <source>Next restart</source>
         <translation>Nächster Neustart</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="235"/>
+        <location filename="../qml/BootWizard.qml" line="237"/>
         <source>Starts %1 once. After that Windows starts as usual.</source>
         <translation>Startet einmal %1. Danach startet Windows wie gewohnt.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="236"/>
+        <location filename="../qml/BootWizard.qml" line="238"/>
         <source>BitLocker</source>
         <translation>BitLocker</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="236"/>
+        <location filename="../qml/BootWizard.qml" line="238"/>
         <source>Paused for that one restart if it is on. Keep your recovery key at hand anyway.</source>
         <translation>Wird für diesen einen Neustart pausiert, falls aktiv. Halte deinen Wiederherstellungsschlüssel trotzdem bereit.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="237"/>
+        <location filename="../qml/BootWizard.qml" line="239"/>
         <source>Undo</source>
         <translation>Rückgängig</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="237"/>
+        <location filename="../qml/BootWizard.qml" line="239"/>
         <source>Back in Windows, Testux removes the boot files again.</source>
         <translation>Zurück in Windows entfernt Testux die Startdateien wieder.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="243"/>
+        <location filename="../qml/BootWizard.qml" line="245"/>
         <source>I have a backup of my important files</source>
         <translation>Ich habe eine Sicherung meiner wichtigen Dateien</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="244"/>
+        <location filename="../qml/BootWizard.qml" line="246"/>
         <source>Changing partitions is safe in almost every case. A backup covers the rest.</source>
         <translation>Partitionen zu ändern ist fast immer sicher. Eine Sicherung deckt den Rest ab.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="259"/>
+        <location filename="../qml/BootWizard.qml" line="261"/>
         <source>Something went wrong</source>
         <translation>Etwas ist schiefgelaufen</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="259"/>
+        <location filename="../qml/BootWizard.qml" line="261"/>
         <source>Preparing your PC</source>
         <translation>Dein PC wird vorbereitet</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="284"/>
+        <location filename="../qml/BootWizard.qml" line="286"/>
         <source>Undo changes</source>
         <translation>Änderungen rückgängig machen</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="290"/>
+        <location filename="../qml/BootWizard.qml" line="292"/>
         <source>Back to the start</source>
         <translation>Zurück zum Anfang</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="304"/>
+        <location filename="../qml/BootWizard.qml" line="306"/>
         <source>Ready to restart</source>
         <translation>Bereit zum Neustart</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="309"/>
+        <location filename="../qml/BootWizard.qml" line="311"/>
         <source>Save your work and close your apps. After the restart your PC starts %1. Have fun looking around!</source>
         <translation>Speichere deine Arbeit und schließe deine Apps. Nach dem Neustart startet dein PC %1. Viel Spaß beim Umschauen!</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="315"/>
+        <location filename="../qml/BootWizard.qml" line="317"/>
         <source>To install, open the installer on the desktop and pick &quot;install alongside Windows&quot; or the free space.</source>
         <translation>Zum Installieren öffne den Installer auf dem Desktop und wähle „Neben Windows installieren“ oder den freien Speicherplatz.</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="325"/>
+        <location filename="../qml/BootWizard.qml" line="334"/>
         <source>Restart now</source>
         <translation>Jetzt neu starten</translation>
     </message>
     <message>
-        <location filename="../qml/BootWizard.qml" line="331"/>
+        <location filename="../qml/BootWizard.qml" line="340"/>
         <source>Later</source>
         <translation>Später</translation>
     </message>
@@ -969,47 +969,53 @@
 <context>
     <name>IsoDownload</name>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="93"/>
+        <location filename="../src/download/isolibrary.cpp" line="125"/>
         <source>Not enough free disk space. The download needs %1 more.</source>
         <translation>Nicht genug freier Speicherplatz. Der Download braucht noch %1 mehr.</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="107"/>
+        <location filename="../src/download/isolibrary.cpp" line="138"/>
+        <source>Another Testux window is already downloading this.</source>
+        <translation>Ein anderes Testux-Fenster lädt das bereits herunter.</translation>
+    </message>
+    <message>
+        <location filename="../src/download/isolibrary.cpp" line="139"/>
         <source>Cannot write %1.</source>
         <translation>%1 kann nicht geschrieben werden.</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="131"/>
+        <location filename="../src/download/isolibrary.cpp" line="165"/>
         <source>Could not delete the ISO. Is a VM still using it?</source>
         <translation>Die ISO konnte nicht gelöscht werden. Benutzt eine VM sie noch?</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="178"/>
+        <location filename="../src/download/isolibrary.cpp" line="213"/>
+        <location filename="../src/download/isolibrary.cpp" line="247"/>
         <source>Writing the ISO failed: %1</source>
         <translation>Schreiben der ISO fehlgeschlagen: %1</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="194"/>
+        <location filename="../src/download/isolibrary.cpp" line="238"/>
         <source>Download failed: %1</source>
         <translation>Download fehlgeschlagen: %1</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="219"/>
+        <location filename="../src/download/isolibrary.cpp" line="271"/>
         <source>Could not fetch the checksum: %1</source>
         <translation>Die Prüfsumme konnte nicht geladen werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="233"/>
+        <location filename="../src/download/isolibrary.cpp" line="285"/>
         <source>The checksum list does not mention %1.</source>
         <translation>Die Prüfsummenliste enthält %1 nicht.</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="240"/>
+        <location filename="../src/download/isolibrary.cpp" line="292"/>
         <source>The download is damaged (checksum mismatch). Please try again.</source>
         <translation>Der Download ist beschädigt (Prüfsumme stimmt nicht). Bitte versuche es noch einmal.</translation>
     </message>
     <message>
-        <location filename="../src/download/isolibrary.cpp" line="244"/>
+        <location filename="../src/download/isolibrary.cpp" line="296"/>
         <source>Could not move the ISO to %1.</source>
         <translation>Die ISO konnte nicht nach %1 verschoben werden.</translation>
     </message>
@@ -1095,6 +1101,31 @@
         <location filename="../qml/Main.qml" line="49"/>
         <source>Start this tour again here at any time.</source>
         <translation>Hier kannst du diese Tour jederzeit wieder starten.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="178"/>
+        <source>Close Testux?</source>
+        <translation>Testux schließen?</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="182"/>
+        <source>The Linux window closes too, anything unsaved in it is lost.</source>
+        <translation>Das Linux-Fenster schließt sich mit, alles Ungespeicherte darin geht verloren.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="183"/>
+        <source>The download pauses and continues the next time you start it.</source>
+        <translation>Der Download pausiert und geht beim nächsten Start weiter.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="189"/>
+        <source>Keep open</source>
+        <translation>Offen lassen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="194"/>
+        <source>Close Testux</source>
+        <translation>Testux schließen</translation>
     </message>
 </context>
 <context>
@@ -1188,224 +1219,224 @@
 <context>
     <name>Readiness</name>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="52"/>
+        <location filename="../src/hw/readiness.cpp" line="53"/>
         <source>Checking hardware</source>
         <translation>Hardware wird geprüft</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="53"/>
+        <location filename="../src/hw/readiness.cpp" line="54"/>
         <source>The hardware check has not finished yet.</source>
         <translation>Die Hardwareprüfung ist noch nicht fertig.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="58"/>
+        <location filename="../src/hw/readiness.cpp" line="59"/>
         <source>Windows only for now</source>
         <translation>Vorerst nur unter Windows</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="59"/>
+        <location filename="../src/hw/readiness.cpp" line="60"/>
         <source>Booting a distro on this PC works from Windows. On Linux, try it in a window instead.</source>
         <translation>Eine Distro auf diesem PC zu starten geht von Windows aus. Unter Linux teste sie stattdessen im Fenster.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="66"/>
+        <location filename="../src/hw/readiness.cpp" line="67"/>
         <source>Starts in UEFI mode</source>
         <translation>Startet im UEFI-Modus</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="67"/>
+        <location filename="../src/hw/readiness.cpp" line="68"/>
         <source>Legacy BIOS mode</source>
         <translation>Legacy-BIOS-Modus</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="68"/>
+        <location filename="../src/hw/readiness.cpp" line="69"/>
         <source>This PC starts Windows in legacy BIOS mode. Booting a live system from the drive needs UEFI mode. Try the distro in a window instead.</source>
         <translation>Dieser PC startet Windows im Legacy-BIOS-Modus. Ein Live-System vom Laufwerk zu starten braucht den UEFI-Modus. Teste die Distro stattdessen im Fenster.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="75"/>
+        <location filename="../src/hw/readiness.cpp" line="76"/>
         <source>GPT system disk</source>
         <translation>GPT-Systemdatenträger</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="76"/>
+        <location filename="../src/hw/readiness.cpp" line="77"/>
         <source>MBR system disk</source>
         <translation>MBR-Systemdatenträger</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="77"/>
+        <location filename="../src/hw/readiness.cpp" line="78"/>
         <source>Windows is installed on an MBR disk. Testux can only add its boot partition to GPT disks. Try the distro in a window instead.</source>
         <translation>Windows ist auf einem MBR-Datenträger installiert. Testux kann seine Startpartition nur auf GPT-Datenträgern anlegen. Teste die Distro stattdessen im Fenster.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="84"/>
+        <location filename="../src/hw/readiness.cpp" line="85"/>
         <source>Can start from the hard drive</source>
         <translation>Kann von der Festplatte starten</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="87"/>
+        <location filename="../src/hw/readiness.cpp" line="88"/>
         <source>This ISO cannot start from the hard drive</source>
         <translation>Diese ISO kann nicht von der Festplatte starten</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="90"/>
+        <location filename="../src/hw/readiness.cpp" line="91"/>
         <source>Try %1 in a window instead, or put it on a USB stick.</source>
         <translation>Teste %1 stattdessen im Fenster oder schreib die ISO auf einen USB-Stick.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="97"/>
+        <location filename="../src/hw/readiness.cpp" line="98"/>
         <source>Secure Boot is off</source>
         <translation>Secure Boot ist aus</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="97"/>
+        <location filename="../src/hw/readiness.cpp" line="98"/>
         <source>Every distro can start.</source>
         <translation>Jede Distro kann starten.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="100"/>
-        <location filename="../src/hw/readiness.cpp" line="102"/>
+        <location filename="../src/hw/readiness.cpp" line="101"/>
+        <location filename="../src/hw/readiness.cpp" line="103"/>
         <source>Secure Boot is on</source>
         <translation>Secure Boot ist an</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="101"/>
+        <location filename="../src/hw/readiness.cpp" line="102"/>
         <source>%1 is signed for Secure Boot and starts as is.</source>
         <translation>%1 ist für Secure Boot signiert und startet ohne Änderungen.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="103"/>
+        <location filename="../src/hw/readiness.cpp" line="104"/>
         <source>%1 is not signed for Secure Boot. Hold Shift while clicking Restart, then choose Troubleshoot &gt; Advanced options &gt; UEFI Firmware Settings and turn Secure Boot off. You can turn it back on after testing.</source>
         <translation>%1 ist nicht für Secure Boot signiert. Halte die Umschalttaste gedrückt und klicke auf Neu starten, wähle dann Problembehandlung &gt; Erweiterte Optionen &gt; UEFI-Firmwareeinstellungen und schalte Secure Boot aus. Nach dem Testen kannst du es wieder einschalten.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="112"/>
+        <location filename="../src/hw/readiness.cpp" line="113"/>
         <source>Enough free space</source>
         <translation>Genug freier Speicherplatz</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="113"/>
+        <location filename="../src/hw/readiness.cpp" line="114"/>
         <source>%1 GB needed, %2 GB free.</source>
         <translation>%1 GB nötig, %2 GB frei.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="114"/>
+        <location filename="../src/hw/readiness.cpp" line="115"/>
         <source>Not enough free space</source>
         <translation>Nicht genug freier Speicherplatz</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="115"/>
+        <location filename="../src/hw/readiness.cpp" line="116"/>
         <source>Testux needs %1 GB on the Windows drive for the live system and the space for Linux, but only %2 GB are free. Free up space or reserve less for Linux.</source>
         <translation>Testux braucht %1 GB auf dem Windows-Laufwerk für das Live-System und den Platz für Linux, es sind aber nur %2 GB frei. Schaffe Platz oder reserviere weniger für Linux.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="124"/>
+        <location filename="../src/hw/readiness.cpp" line="125"/>
         <source>Drive not encrypted</source>
         <translation>Laufwerk nicht verschlüsselt</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="125"/>
+        <location filename="../src/hw/readiness.cpp" line="126"/>
         <source>BitLocker is on</source>
         <translation>BitLocker ist an</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="126"/>
+        <location filename="../src/hw/readiness.cpp" line="127"/>
         <source>Testux pauses BitLocker for one restart so Windows starts normally afterwards. Keep your recovery key at hand: aka.ms/myrecoverykey. Once Linux is installed, starting Windows through the Linux boot menu can make BitLocker ask for it; picking Windows in the firmware boot menu avoids that.</source>
         <translation>Testux pausiert BitLocker für einen Neustart, damit Windows danach normal startet. Halte deinen Wiederherstellungsschlüssel bereit: aka.ms/myrecoverykey. Ist Linux installiert und du startest Windows über das Linux-Startmenü, kann BitLocker danach fragen. Wählst du Windows im Startmenü der Firmware, passiert das nicht.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="136"/>
+        <location filename="../src/hw/readiness.cpp" line="137"/>
         <source>Fast Startup is off</source>
         <translation>Schnellstart ist aus</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="137"/>
+        <location filename="../src/hw/readiness.cpp" line="138"/>
         <source>Fast Startup is on</source>
         <translation>Schnellstart ist an</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="138"/>
+        <location filename="../src/hw/readiness.cpp" line="139"/>
         <source>With Fast Startup Windows never fully shuts down, so Linux can read but not change your Windows files. Turn it off in Control Panel &gt; Power Options &gt; Choose what the power buttons do.</source>
         <translation>Mit Schnellstart fährt Windows nie ganz herunter, deshalb kann Linux deine Windows-Dateien lesen, aber nicht ändern. Schalte ihn aus unter Systemsteuerung &gt; Energieoptionen &gt; Auswählen, was beim Drücken von Netzschaltern geschehen soll.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="147"/>
+        <location filename="../src/hw/readiness.cpp" line="148"/>
         <source>Enough memory</source>
         <translation>Genug Arbeitsspeicher</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="147"/>
+        <location filename="../src/hw/readiness.cpp" line="148"/>
         <source>%1 GB RAM.</source>
         <translation>%1 GB RAM.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="149"/>
+        <location filename="../src/hw/readiness.cpp" line="150"/>
         <source>Little memory</source>
         <translation>Wenig Arbeitsspeicher</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="150"/>
+        <location filename="../src/hw/readiness.cpp" line="151"/>
         <source>%1 recommends %2 GB of RAM, this PC has %3 GB. It runs, but may feel slow.</source>
         <translation>%1 empfiehlt %2 GB RAM, dieser PC hat %3 GB. Es läuft, kann sich aber langsam anfühlen.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="158"/>
+        <location filename="../src/hw/readiness.cpp" line="159"/>
         <source>Graphics</source>
         <translation>Grafik</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="159"/>
+        <location filename="../src/hw/readiness.cpp" line="160"/>
         <source>Intel and AMD graphics work with the drivers built into Linux.</source>
         <translation>Intel- und AMD-Grafik laufen mit den Treibern, die in Linux eingebaut sind.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="161"/>
-        <location filename="../src/hw/readiness.cpp" line="164"/>
+        <location filename="../src/hw/readiness.cpp" line="162"/>
+        <location filename="../src/hw/readiness.cpp" line="165"/>
         <source>NVIDIA graphics</source>
         <translation>NVIDIA-Grafik</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="162"/>
+        <location filename="../src/hw/readiness.cpp" line="163"/>
         <source>%1 includes the NVIDIA driver or offers it during setup.</source>
         <translation>%1 bringt den NVIDIA-Treiber mit oder bietet ihn bei der Installation an.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="165"/>
+        <location filename="../src/hw/readiness.cpp" line="166"/>
         <source>%1 starts with the open-source NVIDIA driver, which can be slow. If the screen stays black, pick the safe graphics (nomodeset) entry in the boot menu and install the NVIDIA driver after setup.</source>
         <translation>%1 startet mit dem quelloffenen NVIDIA-Treiber, der langsam sein kann. Bleibt der Bildschirm schwarz, wähle im Startmenü den Eintrag mit sicherer Grafik (nomodeset) und installiere den NVIDIA-Treiber nach der Installation.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="174"/>
+        <location filename="../src/hw/readiness.cpp" line="175"/>
         <source>Network</source>
         <translation>Netzwerk</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="175"/>
+        <location filename="../src/hw/readiness.cpp" line="176"/>
         <source>Broadcom Wi-Fi</source>
         <translation>Broadcom-WLAN</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="176"/>
+        <location filename="../src/hw/readiness.cpp" line="177"/>
         <source>Broadcom Wi-Fi chips often need an extra driver on Linux. Keep a network cable or USB tethering from your phone ready.</source>
         <translation>Broadcom-WLAN-Chips brauchen unter Linux oft einen extra Treiber. Halte ein Netzwerkkabel oder USB-Tethering vom Handy bereit.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="183"/>
+        <location filename="../src/hw/readiness.cpp" line="184"/>
         <source>Live desktop</source>
         <translation>Live-Desktop</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="184"/>
+        <location filename="../src/hw/readiness.cpp" line="185"/>
         <source>%1 runs from the boot partition and changes nothing until you install it.</source>
         <translation>%1 läuft von der Startpartition und ändert nichts, bis du es installierst.</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="187"/>
+        <location filename="../src/hw/readiness.cpp" line="188"/>
         <source>Installer only</source>
         <translation>Nur Installer</translation>
     </message>
     <message>
-        <location filename="../src/hw/readiness.cpp" line="188"/>
+        <location filename="../src/hw/readiness.cpp" line="189"/>
         <source>%1 has no live desktop. The ISO starts its installer right away, so you cannot try it before installing.</source>
         <translation>%1 hat keinen Live-Desktop. Die ISO startet sofort den Installer, du kannst es also vor dem Installieren nicht ausprobieren.</translation>
     </message>
@@ -1941,12 +1972,12 @@
         <translation>Starte Windows neu, um den schnellen Modus fertig einzuschalten. Läuft Linux danach immer noch langsam, schalte die Virtualisierung (Intel VT-x oder AMD-V/SVM) in den BIOS/UEFI-Einstellungen deines PCs ein.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="545"/>
+        <location filename="../src/vm/vmmanager.cpp" line="562"/>
         <source>Fast mode is on after the next restart of Windows. Until then Linux runs slowly.</source>
         <translation>Der schnelle Modus ist nach dem nächsten Neustart von Windows an. Bis dahin läuft Linux langsam.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="549"/>
+        <location filename="../src/vm/vmmanager.cpp" line="566"/>
         <source>Windows could not turn on fast mode (dism error %1).</source>
         <translation>Windows konnte den schnellen Modus nicht einschalten (dism-Fehler %1).</translation>
     </message>
@@ -1965,7 +1996,7 @@
         <translation>KVM ist nicht verfügbar, deshalb laufen VMs sehr langsam. Aktiviere die Virtualisierung (Intel VT-x oder AMD-V/SVM) in deinen Firmware-Einstellungen.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="272"/>
+        <location filename="../src/vm/vmmanager.cpp" line="289"/>
         <source>%1 in Testux</source>
         <translation>%1 in Testux</translation>
     </message>
@@ -1973,17 +2004,17 @@
 <context>
     <name>VmSession</name>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="380"/>
+        <location filename="../src/vm/vmmanager.cpp" line="397"/>
         <source>QEMU stopped unexpectedly (exit code %1).</source>
         <translation>QEMU wurde unerwartet beendet (Exitcode %1).</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="435"/>
+        <location filename="../src/vm/vmmanager.cpp" line="452"/>
         <source>QEMU did not open its control channel.</source>
         <translation>QEMU hat seinen Steuerkanal nicht geöffnet.</translation>
     </message>
     <message>
-        <location filename="../src/vm/vmmanager.cpp" line="465"/>
+        <location filename="../src/vm/vmmanager.cpp" line="482"/>
         <source>QEMU could not be started: %1</source>
         <translation>QEMU konnte nicht gestartet werden: %1</translation>
     </message>

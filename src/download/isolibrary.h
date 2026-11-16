@@ -73,6 +73,7 @@ class IsoLibrary : public QObject
     QML_ELEMENT
     QML_SINGLETON
     Q_PROPERTY(qint64 usedBytes READ usedBytes NOTIFY usedBytesChanged)
+    Q_PROPERTY(bool busy READ busy NOTIFY usedBytesChanged) // a download is running
 
 public:
     explicit IsoLibrary(QObject *parent = nullptr);
@@ -82,6 +83,7 @@ public:
     Q_INVOKABLE void removeAll();
 
     qint64 usedBytes() const;
+    bool busy() const;
 
 signals:
     void usedBytesChanged();

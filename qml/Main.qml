@@ -161,6 +161,45 @@ ApplicationWindow {
         id: welcomeBack
     }
 
+    // Closing ends a running VM and pauses downloads; nobody should lose either by accident.
+    property bool closeConfirmed: false
+    readonly property bool vmActive: VmManager.session !== null
+                                     && (VmManager.session.state === VmSession.Starting || VmManager.session.state === VmSession.Running)
+
+    onClosing: close => {
+        if (!closeConfirmed && (vmActive || IsoLibrary.busy)) {
+            close.accepted = false
+            closeDialog.open()
+        }
+    }
+
+    AppDialog {
+        id: closeDialog
+        title: qsTr("Close Testux?")
+
+        BodyText {
+            text: window.vmActive
+                  ? qsTr("The Linux window closes too, anything unsaved in it is lost.")
+                  : qsTr("The download pauses and continues the next time you start it.")
+            Layout.fillWidth: true
+        }
+
+        actions: [
+            AppButton {
+                text: qsTr("Keep open")
+                onClicked: closeDialog.close()
+            },
+            AppButton {
+                kind: "danger"
+                text: qsTr("Close Testux")
+                onClicked: {
+                    window.closeConfirmed = true
+                    window.close()
+                }
+            }
+        ]
+    }
+
     TourOverlay {
         id: tour
         onFinished: {

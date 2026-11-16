@@ -1,6 +1,7 @@
 #include "hw/readiness.h"
 
 #include <QCoreApplication>
+#include <QLocale>
 
 #include <algorithm>
 
@@ -38,7 +39,7 @@ QString displayName(const Distro &distro)
 
 QString gib(qint64 bytes)
 {
-    return QString::number(double(bytes) / GiB, 'f', 1);
+    return QLocale().toString(double(bytes) / GiB, 'f', 1); // "3,5" in German
 }
 
 // One function per line of the traffic light. A class only to give lupdate the context.
