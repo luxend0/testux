@@ -58,7 +58,8 @@ PageScroll {
     // Typing anywhere on the page goes to the search field.
     Keys.onPressed: event => {
         const plainKey = !(event.modifiers & (Qt.ControlModifier | Qt.AltModifier | Qt.MetaModifier))
-        if (plainKey && event.text.length === 1 && event.text.trim() !== "") {
+        // Printable only: Escape and friends arrive as control characters in event.text.
+        if (plainKey && event.text.length === 1 && event.text.charCodeAt(0) > 32 && event.text.charCodeAt(0) !== 127) {
             search.forceActiveFocus()
             search.insert(search.cursorPosition, event.text)
             event.accepted = true
