@@ -88,7 +88,8 @@ QString dataDir(); // %ProgramData%\Testux, "" where unsupported
 
 // Starts `program` elevated (UAC prompt) and hidden without waiting. `finished` is called with
 // the exit code on `context`'s thread once it ends. Returns false and sets `error` if the user
-// declined the prompt or nothing started. `program` must not be writable by the user.
+// declined the prompt or nothing started. Prefer programs the user cannot change (System32):
+// with a per-user install Testux's own folder, scripts included, is writable by the user.
 bool runElevated(const QString &program, const QStringList &arguments, QObject *context,
                  std::function<void(int exitCode)> finished, QString *error);
 
