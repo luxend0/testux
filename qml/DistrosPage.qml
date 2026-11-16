@@ -9,6 +9,8 @@ PageScroll {
 
     signal distroSelected(string id)
 
+    property bool showFilters: false
+
     readonly property DistroFilter filter: DistroFilter {
         pcRamMb: HardwareCheck.report.valid ? HardwareCheck.report.ramMb : 0
         categoryTitles: Catalog.categories.reduce((titles, c) => {
@@ -125,7 +127,9 @@ PageScroll {
             onPicked: value => page.filter.category = value
         }
 
+        // Desktop, base and the yes/no facts mean little to newcomers, so they wait behind a button.
         Flow {
+            visible: page.showFilters || !categoryTabs.visible
             spacing: Theme.gapS
             Layout.fillWidth: true
 
@@ -189,6 +193,17 @@ PageScroll {
                 visible: page.filter.active
                 text: qsTr("Clear filters")
                 onClicked: page.filter.clear()
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            AppButton {
+                kind: "quiet"
+                visible: categoryTabs.visible
+                text: page.showFilters ? qsTr("Fewer filters") : qsTr("More filters")
+                onClicked: page.showFilters = !page.showFilters
             }
         }
     }

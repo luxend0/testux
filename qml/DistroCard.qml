@@ -84,19 +84,10 @@ AbstractButton {
             Layout.fillWidth: true
         }
 
-        RowLayout {
+        Flag {
             visible: card.reason === ""
-            spacing: Theme.gapL
-
-            Flag {
-                text: qsTr("Secure Boot")
-                on: card.distro.secureBoot
-            }
-
-            Flag {
-                text: qsTr("Live session")
-                on: card.distro.liveSession
-            }
+            text: card.distro.liveSession ? qsTr("Try without installing") : qsTr("Installer only")
+            on: card.distro.liveSession
         }
 
         Label {
