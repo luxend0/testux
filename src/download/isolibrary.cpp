@@ -8,11 +8,13 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QLocale>
+#include <QLockFile>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QQmlEngine>
 #include <QStandardPaths>
 #include <QStorageInfo>
+#include <QTimer>
 #include <QtConcurrentRun>
 
 using namespace Qt::StringLiterals;
@@ -23,6 +25,27 @@ namespace {
 constexpr qint64 SpaceMargin = 512LL * 1024 * 1024;
 // Inactivity limit: a stalled connection fails instead of hanging, slow ones are fine.
 constexpr int TransferTimeoutMs = 60 * 1000;
+// A dropped connection or a hiccup at the mirror resumes by itself this many times, waiting
+// 2, 4, 8, ... seconds. The count starts over as soon as data flows again.
+constexpr int MaxRetries = 5;
+
+// Errors worth a quiet retry: the network or the mirror, not the request itself.
+bool transient(const QNetworkReply *reply)
+{
+    switch (reply->error()) {
+    case QNetworkReply::RemoteHostClosedError:
+    case QNetworkReply::TimeoutError:
+    case QNetworkReply::OperationCanceledError: // the transfer timeout ends up here
+    case QNetworkReply::TemporaryNetworkFailureError:
+    case QNetworkReply::NetworkSessionFailedError:
+    case QNetworkReply::ProxyConnectionClosedError:
+    case QNetworkReply::HostNotFoundError:
+    case QNetworkReply::UnknownNetworkError:
+        return true;
+    default:
+        return reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() >= 500;
+    }
+}
 
 QString partPath(const QString &isoPath)
 {
@@ -39,10 +62,15 @@ int httpStatus(const QNetworkReply *reply)
 // The .part file opened for appending, together with the hash of everything written to it.
 struct IsoDownload::Part
 {
-    explicit Part(const QString &path) : file(path) {}
+    explicit Part(const QString &path) : file(path), lock(path + u".lock"_s) {}
 
     // Opens or creates the file and hashes what an earlier attempt left in it. Blocking.
-    bool open() { return file.open(QIODevice::ReadWrite) && hash.addData(&file); }
+    // A second Testux appending to the same file would ruin it, hence the lock.
+    bool open()
+    {
+        busy = !lock.tryLock(0);
+        return !busy && file.open(QIODevice::ReadWrite) && hash.addData(&file);
+    }
 
     bool append(const QByteArray &chunk)
     {
@@ -62,8 +90,10 @@ struct IsoDownload::Part
     QString sha256() const { return QString::fromLatin1(hash.result().toHex()); }
 
     QFile file;
+    QLockFile lock;
     QCryptographicHash hash{QCryptographicHash::Sha256};
     bool rangeChecked = false;
+    bool busy = false; // another Testux holds the lock
 };
 
 IsoDownload::IsoDownload(const Distro &distro, const QString &path, QNetworkAccessManager *network,
@@ -103,10 +133,12 @@ void IsoDownload::start()
             return; // cancelled or restarted while hashing
         if (!opened) {
             m_part.reset();
-            setState(Failed,
-                     tr("Cannot write %1.").arg(QDir::toNativeSeparators(partPath(m_path))));
+            setState(Failed, part->busy ? tr("Another Testux window is already downloading this.")
+                                        : tr("Cannot write %1.")
+                                              .arg(QDir::toNativeSeparators(partPath(m_path))));
             return;
         }
+        m_retries = 0;
         download();
     });
 }
@@ -149,6 +181,7 @@ void IsoDownload::download()
         request.setRawHeader("Range", "bytes=" + QByteArray::number(offset) + '-');
 
     m_received = offset;
+    m_part->rangeChecked = false; // every request, a retry too, may get a 200 or a 206
     emit progressChanged();
 
     m_reply = m_network->get(request);
@@ -179,6 +212,7 @@ void IsoDownload::receive()
         return;
     }
     m_received += chunk.size();
+    m_retries = 0;
     emit progressChanged();
 }
 
@@ -190,11 +224,27 @@ void IsoDownload::transferFinished()
     // 416 means there is nothing left to fetch: the .part was already complete.
     const bool alreadyComplete = httpStatus(reply) == 416 && m_part->file.size() > 0;
     if (reply->error() != QNetworkReply::NoError && !alreadyComplete) {
+        if (transient(reply) && m_retries < MaxRetries) {
+            const int delayMs = 2000 << m_retries++;
+            QTimer::singleShot(delayMs, this, [this, part = m_part] {
+                if (m_part == part) // not cancelled meanwhile
+                    download();
+            });
+            return;
+        }
         m_part.reset();
         setState(Failed, tr("Download failed: %1").arg(reply->errorString()));
         return;
     }
 
+    // The hash covers what was received; make sure all of it is on disk before calling the
+    // file complete (a full disk can show up only here).
+    if (!m_part->file.flush()) {
+        const QString reason = m_part->file.errorString();
+        m_part.reset();
+        setState(Failed, tr("Writing the ISO failed: %1").arg(reason));
+        return;
+    }
     const QString actualSha256 = m_part->sha256();
     m_part.reset(); // closes the file before it gets renamed
     setState(Verifying);
@@ -292,7 +342,7 @@ void IsoLibrary::removeAll()
         download->remove();
     // Also files of distros that were dropped from the catalog.
     const QDir dir(m_dir);
-    for (const QString &name : dir.entryList({u"*.iso"_s, u"*.part"_s}, QDir::Files))
+    for (const QString &name : dir.entryList({u"*.iso"_s, u"*.part"_s, u"*.lock"_s}, QDir::Files))
         QFile::remove(dir.filePath(name));
     emit usedBytesChanged();
 }
