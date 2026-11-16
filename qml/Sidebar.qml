@@ -12,6 +12,14 @@ Rectangle {
     property string current: ""
 
     signal picked(string key)
+    signal helpRequested()
+
+    readonly property alias helpButton: helpButton
+
+    function itemFor(key: string): Item {
+        const index = sections.findIndex(section => section.key === key)
+        return index < 0 ? null : nav.itemAt(index)
+    }
 
     readonly property VmSession session: VmManager.session
     readonly property bool sessionActive: session !== null
@@ -58,6 +66,7 @@ Rectangle {
         }
 
         Repeater {
+            id: nav
             model: sidebar.sections
 
             NavItem {
@@ -72,6 +81,13 @@ Rectangle {
 
         Item {
             Layout.fillHeight: true
+        }
+
+        NavItem {
+            id: helpButton
+            text: qsTr("How Testux works")
+            onClicked: sidebar.helpRequested()
+            Layout.fillWidth: true
         }
 
         Rectangle {

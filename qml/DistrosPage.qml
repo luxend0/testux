@@ -9,6 +9,9 @@ PageScroll {
 
     signal distroSelected(string id)
 
+    // For the tour in Main.qml.
+    readonly property alias quiz: quiz
+    readonly property alias browse: browse
     property bool showFilters: false
 
     readonly property DistroFilter filter: DistroFilter {
