@@ -17,6 +17,8 @@
 #include <QTimer>
 #include <QtConcurrentRun>
 
+#include <algorithm>
+
 using namespace Qt::StringLiterals;
 
 namespace {
@@ -345,6 +347,14 @@ void IsoLibrary::removeAll()
     for (const QString &name : dir.entryList({u"*.iso"_s, u"*.part"_s, u"*.lock"_s}, QDir::Files))
         QFile::remove(dir.filePath(name));
     emit usedBytesChanged();
+}
+
+bool IsoLibrary::busy() const
+{
+    return std::any_of(m_isos.begin(), m_isos.end(), [](const IsoDownload *download) {
+        return download->state() == IsoDownload::Downloading ||
+               download->state() == IsoDownload::Verifying;
+    });
 }
 
 qint64 IsoLibrary::usedBytes() const
