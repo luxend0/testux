@@ -8,45 +8,55 @@ Testux lets you try Linux distributions in a window on your current system, and 
 found one you like, boot its live ISO directly on your PC and install it from there. No
 USB stick needed.
 
-![The Testux distro catalog: a grid of distros with their logos, category tabs, search and filters](assets/screenshots/distros.png)
+![The Testux start page: the "Which Linux suits you?" quiz answered with everyday use, Windows look and no tinkering, suggesting Linux Mint, Zorin OS and Fedora Cinnamon above the list of all distros](assets/screenshots/distros.png)
 
 <table>
   <tr>
-    <td width="33%"><a href="assets/screenshots/filters.png"><img src="assets/screenshots/filters.png" alt="Distro list filtered to KDE Plasma desktops that work with Secure Boot"></a><br><sub>Search and filters</sub></td>
-    <td width="33%"><a href="assets/screenshots/detail.png"><img src="assets/screenshots/detail.png" alt="Linux Mint detail page with the Try it in a window panel, the facts at a glance and the checklist of things to try"></a><br><sub>Try a distro in a window</sub></td>
+    <td width="33%"><a href="assets/screenshots/filters.png"><img src="assets/screenshots/filters.png" alt="Distro list filtered to KDE Plasma desktops that work with Secure Boot, with the extra filters opened"></a><br><sub>Search and filters</sub></td>
+    <td width="33%"><a href="assets/screenshots/detail.png"><img src="assets/screenshots/detail.png" alt="Linux Mint detail page with the Try it button, the facts at a glance and the checklist of things to try"></a><br><sub>Try a distro in a window</sub></td>
     <td width="33%"><a href="assets/screenshots/boot.png"><img src="assets/screenshots/boot.png" alt="Boot wizard for Fedora KDE Plasma, first step: a traffic light of checks such as UEFI, Secure Boot, free space, BitLocker and Fast Startup"></a><br><sub>Boot it on this PC (Windows)</sub></td>
   </tr>
   <tr>
     <td width="33%"><a href="assets/screenshots/compare.png"><img src="assets/screenshots/compare.png" alt="Compare page: a table of all distros with desktop, base, release model, download size, minimum memory, Secure Boot, live session and NVIDIA support"></a><br><sub>Compare distros side by side</sub></td>
     <td width="33%"><a href="assets/screenshots/this-pc.png"><img src="assets/screenshots/this-pc.png" alt="This PC page showing memory, processor threads, free space, virtualization, boot mode, Secure Boot, graphics and Wi-Fi"></a><br><sub>What Testux found out about your PC</sub></td>
-    <td width="33%"></td>
+    <td width="33%"><a href="assets/screenshots/tour.png"><img src="assets/screenshots/tour.png" alt="The first-start tour highlighting the quiz with the text Not sure where to start?"></a><br><sub>A short tour on first start</sub></td>
   </tr>
 </table>
 
 ## Who it is for
 
-- **Windows users who are curious about Linux.** Click a distro, it downloads and starts in
-  a window. Poke around, open the app store, check if your games and tools are there. If it
+- **Windows users who are curious about Linux.** Answer three questions or pick a distro,
+  press Try it, and it downloads and starts in a window. No administrator rights needed. Poke around, open the app store, check if your games and tools are there. If it
   feels right, Testux prepares your PC so it can boot that distro for real.
 - **Linux users who hop distros.** Try the newest Fedora, CachyOS or openSUSE in a VM
   without hunting for ISOs, checksums and QEMU flags.
 
 ## Features
 
+- **Which Linux suits you?** Three quick questions (what you use your PC for, how it should
+  look, how much you want to tinker) and Testux suggests three distros, each with the
+  reason it fits.
+- **One button to try**: Try it downloads the distro once, checks it and opens it in a
+  window by itself.
+- **A short tour** on first start that shows where everything is. It is always one click
+  away under "How Testux works".
 - **Catalog of 88 distros** in eight groups: beginner friendly, KDE Plasma, gaming, older
   PCs, privacy and security, creative and education, for experienced users, and more.
   From Linux Mint, Ubuntu, Fedora and Zorin OS to CachyOS, Bazzite, Tails, NixOS and Arch.
   The catalog is fetched from this repository on every start, so new versions and new
   distros show up without updating the app.
-- **Search and filters**: by name, desktop, base, Secure Boot, live session, NVIDIA driver,
-  release model and whether a distro fits your PC's memory.
+- **Search and filters**: by name and category, plus (under "More filters") desktop, base,
+  Secure Boot, live session, NVIDIA driver, release model and whether a distro fits your
+  PC's memory.
 - **Official ISOs only**, downloaded from the distro's own servers and verified against
-  their published SHA-256 checksums. Downloads resume if they get interrupted.
+  their published SHA-256 checksums. Downloads resume if they get interrupted, after a
+  dropped connection even by themselves.
 - **VM mode**: the live system runs in a QEMU window with hardware acceleration (KVM on
-  Linux, Windows Hypervisor Platform on Windows). RAM and CPU cores are picked
+  Linux, Windows Hypervisor Platform on Windows). It needs no administrator rights; on
+  Windows a "Turn on fast mode" button enables the Hypervisor Platform once if it is off. RAM and CPU cores are picked
   automatically. On Windows, copy and paste works between your system and the VM (the
   QEMU builds of Linux distros leave that feature out).
-- **Optional test disk**: a 30 GB disk (it only takes the space you actually use) so you
+- **Optional test install**: a 30 GB disk (it only takes the space you actually use) so you
   can run the distro's installer inside the VM and keep the installed system.
 - **Hardware check**: Secure Boot, BitLocker, Fast Startup, UEFI, free space, NVIDIA GPU,
   Broadcom Wi-Fi and RAM, shown as a simple traffic light for the distro you picked.
